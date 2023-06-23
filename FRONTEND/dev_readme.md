@@ -12,4 +12,4 @@ Frontend on:
 T3 Next.js App + tailwind
 Responsive
 pnpm
-v.0.0.0.0
+
