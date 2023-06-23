@@ -1,5 +1,4 @@
 import { type Config } from "tailwindcss";
-import image from "./src/assets/background.png";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -25,7 +24,7 @@ export default {
       colors: {
         primary: "rgba(255, 255, 255, 0.9)",
         secondary: "rgba(255, 255, 255, 0.4)",
-        cta: "rgba(131, 173, 175, 1)",
+        cta: "rgba(44, 200, 207, 1)",
         "bg-secondary": "rgba(7, 7, 10, 0.4)",
       },
       backgroundImage: {
