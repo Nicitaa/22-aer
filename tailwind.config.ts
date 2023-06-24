@@ -13,8 +13,10 @@ export default {
       big: "4rem", // Large
     },
     screens: {
-      tablet: "700px",
-      // => @media (min-width: 700px) { ... }
+      tablet: "768px",
+      // => @media (min-width: 768px) { ... }
+      laptop: "1024px",
+      // => @media (min-width: 1024px) { ... }
     },
     extend: {
       backgroundImage: {
