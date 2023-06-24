@@ -3,4 +3,4 @@ import ListView from "./ListView";
 
 import ProductsHeader from "./ProductsHeader";
 
-export { ProductsHeader, GridView, ListView };
+export { ProductsHeader, ListView, GridView };

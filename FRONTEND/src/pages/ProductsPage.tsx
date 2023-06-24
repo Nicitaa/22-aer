@@ -1,4 +1,4 @@
-import { GridView, ListView, ProductsHeader } from "~/components";
+import { ListView, ProductsHeader, GridView } from "~/components";
 
 import { useState } from "react";
 
