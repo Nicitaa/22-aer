@@ -1,3 +1,6 @@
-import ProductCard from "./ProductCard";
+import GridView from "./GridView";
+import ListVew from "./ListVew";
 
-export { ProductCard };
+import ProductsHeader from "./ProductsHeader";
+
+export { ProductsHeader, GridView, ListVew };
