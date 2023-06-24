@@ -18,7 +18,7 @@ const ListView = ({ products }: { products: Product[] }) => {
           return (
             <article
               key={id}
-              className="flex flex-col gap-12 px-4 tablet:flex-row tablet:justify-center "
+              className="flex flex-col laptop:gap-12 gap-6 px-4 tablet:flex-row tablet:justify-center "
             >
               <Image
                 className=" duration-300 group-hover:scale-125"

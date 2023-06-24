@@ -1,6 +1,6 @@
-import { ListView, ProductsHeader, GridView } from "~/components";
-
 import { useState } from "react";
+import { ListView, ProductsHeader, GridView } from "../components";
+import React from "react";
 
 type Product = {
   name: string;
@@ -100,7 +100,7 @@ const productData: Product[] = [
 const ProductsPage = () => {
   const [sortOption, setSortOption] = useState({ grid: true, list: false });
   return (
-    <main className="flex h-full min-h-screen flex-col items-center justify-center bg-bg-primary">
+    <main className="flex h-full min-h-screen flex-col items-center justify-center bg-img">
       <section className="mx-auto my-0  w-full max-w-[1284px] px-8 tablet:px-0">
         <ProductsHeader
           sortOption={sortOption}

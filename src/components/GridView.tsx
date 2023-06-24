@@ -14,7 +14,7 @@ const GridView = ({ products }: { products: Product[] }) => {
       {products.map((product, index) => (
         <section
           key={index}
-          className="group  relative mx-4 mb-8 overflow-hidden rounded-t-2xl"
+          className="group relative mx-4 mb-8 overflow-hidden rounded-t-2xl"
         >
           <Link href={`SingleProduct/${product.id}`}>
             <Image
@@ -28,7 +28,7 @@ const GridView = ({ products }: { products: Product[] }) => {
               objectPosition="center"
             />
           </Link>
-          <div className="absolute bottom-0 flex w-full justify-between bg-gray-800 bg-opacity-50  px-1 font-primary text-xs capitalize text-white tablet:text-xl ">
+          <div className="font-primary absolute bottom-0 flex w-full justify-between bg-gray-800 bg-opacity-50  px-1 text-[14px] capitalize text-white tablet:text-xs laptop:text-medium ">
             <span>{product.name}</span>
             <span className="text-cta">
               ${(product.price / 100).toFixed(2)}
