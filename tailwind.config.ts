@@ -1,5 +1,4 @@
 import { type Config } from "tailwindcss";
-import image from "./src/assets/background.png";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -19,7 +18,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        "bg-primary": "url('/background.png')",
+        img: "url('/background.webp')",
       },
       colors: {
         primary: "rgba(255, 255, 255, 0.9)",
