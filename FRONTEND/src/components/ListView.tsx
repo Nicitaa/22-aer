@@ -9,7 +9,7 @@ type Product = {
   description: string;
   image: string;
 };
-const ListVew = ({ products }: { products: Product[] }) => {
+const ListView = ({ products }: { products: Product[] }) => {
   return (
     <div className="md:grid-cols-2 grid max-h-[750px] grid-cols-1 gap-12 overflow-y-scroll">
       <section className=" grid gap-y-12">
@@ -54,4 +54,4 @@ const ListVew = ({ products }: { products: Product[] }) => {
   );
 };
 
-export default ListVew;
+export default ListView;

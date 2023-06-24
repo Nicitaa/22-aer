@@ -1,4 +1,4 @@
-import { GridView, ListVew, ProductsHeader } from "~/components";
+import { GridView, ListView, ProductsHeader } from "~/components";
 
 import { useState } from "react";
 
@@ -108,7 +108,7 @@ const ProductsPage = () => {
           productsCount={productData.length}
         />
         {sortOption.grid && <GridView products={productData} />}
-        {sortOption.list && <ListVew products={productData} />}
+        {sortOption.list && <ListView products={productData} />}
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
 import GridView from "./GridView";
-import ListVew from "./ListVew";
+import ListView from "./ListView";
 
 import ProductsHeader from "./ProductsHeader";
 
-export { ProductsHeader, GridView, ListVew };
+export { ProductsHeader, GridView, ListView };
