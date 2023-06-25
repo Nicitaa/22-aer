@@ -1,5 +1,4 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import "normalize.css";
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
