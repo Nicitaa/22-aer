@@ -26,7 +26,7 @@ export default {
         primary: "rgba(255, 255, 255, 0.9)",
         "primary-darker": "rgba(255,255,255,0.4)",
         secondary: "rgba(7, 7, 10, 0.4)",
-        cta: "rgba(131, 173, 175, 1)",
+        cta: "rgba(44, 200, 207, 1)",
       },
     },
   },
