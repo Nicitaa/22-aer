@@ -11,7 +11,7 @@ type Product = {
 };
 const ListView = ({ products }: { products: Product[] }) => {
   return (
-    <div className="md:grid-cols-2 grid max-h-[750px] grid-cols-1 gap-12 overflow-y-scroll">
+    <div className="scrollbar md:grid-cols-2 grid max-h-[750px] grid-cols-1 gap-12 overflow-y-scroll">
       <section className=" grid gap-y-12">
         {products.map((product) => {
           const { id, name, price, description, image } = product;
