@@ -5,3 +5,9 @@
 svg {
   -webkit-tap-highlight-color: transparent;
 }
+
+html,
+body,
+:root {
+  height: 100%;
+}

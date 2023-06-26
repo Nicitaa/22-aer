@@ -1,6 +1,17 @@
-import GridView from "./GridView";
-import ListView from "./ListView";
+import ClientOnly from "./ClientOnly"
+import { Container } from "./Container"
 
-import ProductsHeader from "./ProductsHeader";
+export { ClientOnly, Container }
 
-export { ProductsHeader, ListView, GridView };
+/* Products Page */
+import GridView from "./GridView"
+import ListView from "./ListView"
+
+import ProductsHeader from "./ProductsHeader"
+
+export { ProductsHeader, ListView, GridView }
+
+/* Home Page */
+import { Navbar } from "./Navbar"
+
+export { Navbar }
