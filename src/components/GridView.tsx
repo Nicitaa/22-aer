@@ -10,7 +10,7 @@ type Product = {
 };
 const GridView = ({ products }: { products: Product[] }) => {
   return (
-    <section className=" scrollbar grid max-h-[750px] grid-cols-2 gap-4 overflow-y-scroll tablet:grid-cols-4">
+    <section className="scrollbar grid max-h-[750px] grid-cols-2 gap-4 overflow-y-scroll tablet:grid-cols-4">
       {products.map((product, index) => (
         <section
           key={index}
