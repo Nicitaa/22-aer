@@ -4,7 +4,7 @@ import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className="bg-img bg-cover bg-center text-primary">
+    <div className="relative overflow-hidden h-screen bg-img bg-cover bg-center text-primary">
       <Navbar />
       <Component {...pageProps} />
     </div>
