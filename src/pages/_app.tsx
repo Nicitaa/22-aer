@@ -8,7 +8,7 @@ import { Navbar } from "~/components"
 const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
-      <div className="relative overflow-hidden h-screen bg-img bg-cover bg-center text-primary">
+      <div className="relative overflow-hidden min-h-screen bg-img bg-cover bg-center text-primary">
         <Navbar />
         <Component {...pageProps} />
       </div>
