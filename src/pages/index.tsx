@@ -8,7 +8,7 @@ export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" })
 
   return (
-    <>
+    <div>
       <div className="text-center w-full h-[90%] flex flex-col gap-2 justify-between">
         <Container>
           <h1 className="font-primary text-big font-bold">
@@ -31,7 +31,7 @@ export default function Home() {
         <p className="text-2xl text-blue-400">{hello.data ? hello.data.greeting : "Loading tRPC query..."}</p>
         <AuthShowcase />
       </div>
-    </>
+    </div>
   )
 }
 
