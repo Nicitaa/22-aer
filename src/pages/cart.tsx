@@ -1,26 +1,26 @@
-import Image from "next/image"
 import Link from "next/link"
-import { BiSolidTrashAlt } from "react-icons/bi"
 import { CartItem } from "~/components"
 const Cart = () => {
   return (
     <main className="flex h-full min-h-screen flex-col items-center">
       <section className="mx-auto my-0 w-full max-w-[1062px] bg-secondary  tablet:px-0 rounded-t-xl">
-        <div className="tablet:max-h-[390px] max-h-[320px] overflow-y-auto scrollbar">
-          <table className=" rounded-xl w-full ">
-            <tr className="text-small tablet:text-medium font-bold">
-              <th className="py-8">Name</th>
-              <th className="py-8">Price</th>
-              <th className="py-8">Quantity</th>
-              <th className="py-8">Subtotal</th>
-            </tr>
-            <tbody className="bg-secondary">
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
-              <CartItem />
+        <div className="tablet:max-h-[390px] max-h-[300px] overflow-y-auto scrollbar">
+          <table className="bg-secondary rounded-xl border-b-[64px] border-transparent w-full">
+            <tbody>
+              <tr className="text-small tablet:text-medium font-bold">
+                <th className="py-8">Name</th>
+                <th className="py-8">Price</th>
+                <th className="py-8">Quantity</th>
+                <th className="py-8">Subtotal</th>
+              </tr>
+              <>
+                <CartItem key={1} />
+                <CartItem key={2} />
+                <CartItem key={3} />
+                <CartItem key={4} />
+                <CartItem key={5} />
+                <CartItem key={6} />
+              </>
             </tbody>
           </table>
         </div>
