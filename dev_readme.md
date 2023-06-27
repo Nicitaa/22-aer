@@ -12,7 +12,4 @@ Frontend on:
 T3 Next.js App + tailwind
 Responsive
 pnpm
-
-# Getting an OAuth Client ID
-
-Here is how you get an [OAuth Client ID for Github](https://scribehow.com/shared/How_to_Create_an_OAuth_App_on_Github__OQGvWZ9gR4WJBx8QXPO2vw)
+v.0.2.0.0

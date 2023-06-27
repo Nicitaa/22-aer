@@ -1,30 +1,47 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import Head from "next/head";
-import Link from "next/link";
-import { api } from "~/utils/api";
+import { signIn, signOut, useSession } from "next-auth/react"
+import Head from "next/head"
+import Link from "next/link"
+import { api } from "~/utils/api"
+import { Container, Navbar, Slider, SliderCounter } from "~/components"
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const hello = api.example.hello.useQuery({ text: "from tRPC" })
 
   return (
     <>
+      <div className="text-center w-full h-[90%] flex flex-col gap-2 justify-between">
+        <Container>
+          <h1 className="font-primary text-big font-bold">
+            The best <br /> bag behind you
+          </h1>
+          <p className="font-secondary text-small text-primary-darker">
+            We provide high quality for each bag. In our shop you can find bag that fits your needs - it can be
+            colorfull / spacious / waterproof bag - what is yours? - you may create your own!{" "}
+          </p>
+        </Container>
+
+        <Container>
+          <SliderCounter />
+        </Container>
+
+        <Slider />
+      </div>
+
       <div className="flex flex-col items-center gap-2">
-        <p className="text-2xl text-blue-400">
-          {hello.data ? hello.data.greeting : "Loading tRPC query..."}
-        </p>
+        <p className="text-2xl text-blue-400">{hello.data ? hello.data.greeting : "Loading tRPC query..."}</p>
         <AuthShowcase />
       </div>
     </>
-  );
+  )
 }
 
 function AuthShowcase() {
-  const { data: sessionData } = useSession();
+  const { data: sessionData } = useSession()
 
   const { data: secretMessage } = api.example.getSecretMessage.useQuery(
     undefined, // no input
     { enabled: sessionData?.user !== undefined }
-  );
+  )
 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
@@ -39,5 +56,5 @@ function AuthShowcase() {
         {sessionData ? "Sign out" : "Sign in"}
       </button>
     </div>
-  );
+  )
 }

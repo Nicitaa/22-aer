@@ -5,3 +5,29 @@
 svg {
   -webkit-tap-highlight-color: transparent;
 }
+
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(7, 7, 10, 0.4);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(7, 7, 10, 0.4);
+  }
+}

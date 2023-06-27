@@ -1,7 +1,6 @@
 # What inside?
 ![work in progress](https://i.imgur.com/2hHq62J.jpg)
 
-
 # Clone repository
 
 ## Step 1.1 - clone repository (variant 1)
