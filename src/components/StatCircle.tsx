@@ -1,5 +1,7 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { easeQuadInOut } from 'd3-ease';
+import AnimatedProgressProvider from './AnimatedProgressProvider';
 
 interface StatCircle {
   label: string
@@ -16,28 +18,38 @@ export function StatCircle({ label, percent, big }: StatCircle) {
       </h1>
 
       <div className={`${big ? 'w-24 h-24' : 'w-16 h-16'}`}>
-        <CircularProgressbar value={percent} text={`${percent * 100}%`}
+        <CircularProgressbar
+          value={percent} text={`${percent * 100}%`}
           styles={buildStyles({
-            // Rotation of path and trail, in number of turns (0-1)
-            rotation: 0.25,
-
-            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-            strokeLinecap: 'butt',
-
-            // Text size
-            textSize: '16px',
-
-            // How long animation takes to go from one percentage to another, in seconds
-            pathTransitionDuration: 0.5,
+            pathTransitionDuration: 1,
 
             // Can specify path transition in more detail, or remove it entirely
             pathTransition: 'ease-in-out',
-
-            // Colors
-            pathColor: `#0000FF`,
-            trailColor: '#FF0000',
           })} />
       </div>
+
+
+      <AnimatedProgressProvider
+        valueStart={0}
+        valueEnd={66}
+        duration={1.4}
+        easingFunction={easeQuadInOut}
+        repeat
+      >
+        {(value: any) => {
+          const roundedValue = Math.round(value);
+          return (
+            <CircularProgressbar
+              value={value}
+              text={`${roundedValue}%`}
+              /* This is important to include, because if you're fully managing the
+        animation yourself, you'll want to disable the CSS animation. */
+              styles={buildStyles({ pathTransition: "ease" })}
+            />
+          );
+        }}
+      </AnimatedProgressProvider>
+
       {/* <div className={`relative
       ${big ? 'border-[1rem] p-16' : 'border-[0.75rem] p-12'}
       border-solid border-stats-bar rounded-full

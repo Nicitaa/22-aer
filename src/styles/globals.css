@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: rgba(255, 255, 255, 0.9);
+  --stats-bar: rgba(79, 70, 186, 1);
+  --stats-fill: rgba(51, 23, 165, 1);
+}
+
+
 svg {
   -webkit-tap-highlight-color: transparent;
 }
@@ -12,6 +19,8 @@ body,
 :root {
   height: 100%;
 }
+
+/* Products page - scrollbar */
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
@@ -30,4 +39,18 @@ body,
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(7, 7, 10, 0.4);
   }
+}
+
+
+/* About page */
+.CircularProgressbar-path {
+  stroke: var(--stats-fill) !important;
+}
+
+.CircularProgressbar-trail {
+  stroke: var(--stats-bar) !important;
+}
+
+.CircularProgressbar-text {
+  fill: var(--primary) !important;
 }
