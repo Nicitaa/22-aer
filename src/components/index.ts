@@ -1,7 +1,9 @@
+import Layout from "./Layout"
+export { Layout }
+
 import ClientOnly from "./ClientOnly"
 import { Container } from "./Container"
 import { Navbar } from "./Navbar"
-
 export { ClientOnly, Container, Navbar }
 
 /* Products Page */
