@@ -9,7 +9,7 @@ export default {
     fontSize: {
       xs: "1rem",
       small: "1.25rem",
-      medium: "1.5rem",
+      medium: "clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);", //320-768px
       big: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem);" //320-768px
     },
     screens: {

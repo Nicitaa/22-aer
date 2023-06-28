@@ -6,6 +6,8 @@
   --primary: rgba(255, 255, 255, 0.9);
   --stats-bar: rgba(79, 70, 186, 1);
   --stats-fill: rgba(51, 23, 165, 1);
+  /* 320-768px */
+  --medium: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
 }
 
 
@@ -53,4 +55,23 @@ body,
 
 .CircularProgressbar-text {
   fill: var(--primary) !important;
+  font-size: var(--medium) !important;
+  animation: neonAnim 1s alternate-reverse infinite !important;
+  color: var(--primary) !important;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow:
+      0 0 10px var(--primary),
+      0 0 40px var(--primary),
+      0 0 100px var(--primary);
+  }
+
+  to {
+    text-shadow:
+      0 0px 12px var(--primary),
+      0 0 41px var(--primary),
+      0 0 102px var(--primary);
+  }
 }

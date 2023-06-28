@@ -28,7 +28,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/components/AnimatedProgressProvider.js"
+    "src/components/ProgressProvider.ts",
+    "src/components/StatCircle.tsx"
   ],
   "exclude": ["node_modules"]
 }
