@@ -17,3 +17,7 @@ import { SliderCounter } from "./SliderCounter"
 import { Slider } from "./Slider"
 
 export { SliderCounter, Slider }
+
+/* Cart Page*/
+import CartItem from "./CartItem"
+export { CartItem }
