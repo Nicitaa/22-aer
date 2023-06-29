@@ -1,6 +1,7 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import ProgressProvider from './ProgressProvider';
+import { motion } from 'framer-motion';
 
 interface StatCircle {
   label: string
@@ -10,9 +11,10 @@ interface StatCircle {
 
 export function StatCircle({ label, percent, big }: StatCircle) {
   return (
-    <div className="w-full flex flex-col gap-2 items-center">
+    <motion.div className="w-full flex flex-col gap-2 justify-around items-center"
+      initial={{ scale: 0 }} animate={{ scale: 1 }}>
 
-      <h1 className="font-primary text-medium font-bold">
+      <h1 className="font-primary text-medium font-bold whitespace-nowrap">
         {label}
       </h1>
 
@@ -27,6 +29,6 @@ export function StatCircle({ label, percent, big }: StatCircle) {
         </ProgressProvider>
       </div>
 
-    </div>
+    </motion.div>
   )
 }

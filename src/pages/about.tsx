@@ -1,17 +1,30 @@
 import { StatCircle } from "~/components/StatCircle"
-import TrdingViewWidget from '../components/TradingViewWidget'
+import Link from 'next/link'
+import { useSlider } from "~/hooks/useSlider"
 
 export default function about() {
+
+  const { move, onMouseTouchDown } = useSlider()
+
   return (
     <div className="min-h-[80vh] flex flex-col items-center">
-      <div className="w-full bg-secondary p-4 flex flex-col justify-center gap-6">
-        <div className="flex flex-row gap-6">
+      <div className="w-full bg-secondary py-6 flex flex-col gap-6">
+        <div className="flex flex-row gap-6 overflow-hidden px-3"
+          onMouseDown={onMouseTouchDown}
+          onTouchStart={onMouseTouchDown}
+          onMouseMove={move}
+          onTouchMove={move}>
+          <StatCircle label="24/6 Supprot" percent={84} />
           <StatCircle label="Returns" percent={0.001} />
           <StatCircle label="PE Ratio" percent={31.69} big />
           <StatCircle label="Secure" percent={100} />
+          <StatCircle label="Quality" percent={100} />
         </div>
-        <h1 className="font-primary text-medium font-bold">Want become our partner? -
-          <span className="font-primary text-medium font-bold text-cta"> buy our actions</span></h1>
+        <h1 className="font-primary text-medium font-bold px-6">Want become our partner? -&nbsp;
+          <Link className="font-primary text-medium font-bold text-cta"
+            href="https://www.interactivebrokers.com/en/pagemap/pagemap_newaccounts_v3.php"
+            target="_blank">
+            buy our actions AER</Link></h1>
       </div>
 
       <iframe style={{ width: '100%', height: '60vh' }}
