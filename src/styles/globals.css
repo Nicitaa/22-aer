@@ -13,6 +13,13 @@ body,
   height: 100%;
 }
 
+/* remove scroll on mobile */
+@media screen and (max-width: 768px) {
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 18px;
