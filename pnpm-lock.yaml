@@ -29,9 +29,6 @@ dependencies:
   '@trpc/server':
     specifier: ^10.32.0
     version: 10.32.0
-  igniteui-react-charts:
-    specifier: ^18.2.0
-    version: 18.2.0(igniteui-react-core@18.2.0)
   next:
     specifier: ^13.4.2
     version: 13.4.2(react-dom@18.2.0)(react@18.2.0)
@@ -1744,21 +1741,6 @@ packages:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
     engines: {node: '>=14.18.0'}
     dev: true
-
-  /igniteui-react-charts@18.2.0(igniteui-react-core@18.2.0):
-    resolution: {integrity: sha512-AAZIOuzftvmTJqJFcSZcHDoUM5X70wVAspTZVIt38ImANrDzLVpC66Big1e6cUcymHEMlEI1lYyDY1hcHgQxQA==}
-    peerDependencies:
-      igniteui-react-core: 18.2.0
-    dependencies:
-      igniteui-react-core: 18.2.0
-      tslib: 2.5.3
-    dev: false
-
-  /igniteui-react-core@18.2.0:
-    resolution: {integrity: sha512-GCvkahGR10zG8Kflp+nnNC9yl08j3n8dZsyqowtM4PcOv5FpOKP9sNtPyZNEs72ODKh4tnRJlUzuXsx6ZvmrJg==}
-    dependencies:
-      tslib: 2.5.3
-    dev: false
 
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
