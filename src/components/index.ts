@@ -1,10 +1,8 @@
 import Layout from "./Layout"
-export { Layout }
-
 import ClientOnly from "./ClientOnly"
 import { Container } from "./Container"
 import { Navbar } from "./Navbar"
-export { ClientOnly, Container, Navbar }
+export { Layout, ClientOnly, Container, Navbar }
 
 /* Products Page */
 import GridView from "./GridView"
