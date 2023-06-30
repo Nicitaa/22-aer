@@ -3,15 +3,14 @@ import { SessionProvider } from "next-auth/react"
 import { type AppType } from "next/app"
 import { api } from "~/utils/api"
 import "~/styles/globals.css"
-import { Navbar } from "~/components"
+import { Layout } from "~/components"
 
 const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
-      <div className="relative overflow-hidden min-h-screen bg-img bg-cover bg-center text-primary">
-        <Navbar />
+      <Layout>
         <Component {...pageProps} />
-      </div>
+      </Layout>
     </SessionProvider>
   )
 }
