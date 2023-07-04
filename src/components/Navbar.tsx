@@ -3,7 +3,7 @@ import { HiMenu } from "react-icons/hi"
 export function Navbar() {
   return (
     <nav
-      className="flex justify-between items-center px-4 py-2
+      className="text-primary flex justify-between items-center px-4 py-2
      tablet:px-8 tablet:py-4
      laptop:px-12 laptop:py-6"
     >

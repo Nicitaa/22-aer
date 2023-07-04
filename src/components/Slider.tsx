@@ -6,7 +6,7 @@ export function Slider() {
       className="relative bg-secondary h-[40vh] py-4 
     flex flex-col gap-4 items-center
     tablet:py-8 tablet:h-[30vh]
-    laptop:py-12"
+    laptop:py-12 overflow-hidden"
     >
       <h1 className="font-primary font-bold text-md">Top Sales</h1>
 
