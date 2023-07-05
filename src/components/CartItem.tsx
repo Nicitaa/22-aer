@@ -2,7 +2,7 @@ import { BiSolidTrashAlt } from "react-icons/bi"
 import Image from "next/image"
 const CartItem = () => {
   return (
-    <tr className=" text-xs tablet:text-medium">
+    <tr className=" text-xs tablet:text-md">
       <td className="pt-8 tablet:grid grid-cols-2 gap-4 items-center tablet:w-full max-w-[250px] pl-2 tablet:pl-8 ">
         <Image
           className="tablet:w-[100px] w-[50px]"
