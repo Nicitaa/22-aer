@@ -7,7 +7,7 @@ const Cart = () => {
         <div className="tablet:max-h-[390px] max-h-[300px] overflow-y-auto scrollbar">
           <table className="bg-secondary rounded-xl border-b-[64px] border-transparent w-full">
             <tbody>
-              <tr className="text-small tablet:text-medium font-bold">
+              <tr className="text-sm tablet:text-md font-bold">
                 <th className="py-8">Name</th>
                 <th className="py-8">Price</th>
                 <th className="py-8">Quantity</th>
@@ -24,7 +24,7 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className="relative w-full h-full text-xs tablet:text-small font-bold bg-secondary rounded-b-xl">
+        <div className="relative w-full h-full text-xs tablet:text-sm font-bold bg-secondary rounded-b-xl">
           <Link
             className="bg-cta top-8  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 left-8"
             href={`products`}
