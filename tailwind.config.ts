@@ -6,7 +6,6 @@ export default {
       primary: ["Inter", "sans-serif"],
       secondary: ["Proxima Nova", "sans-serif"]
     },
-    //previously xs, small, medium big
     fontSize: {
       xs: "1rem",
       sm: "1.25rem",
