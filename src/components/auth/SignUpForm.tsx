@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import styles from "./auth.module.css"
-import { FaEye } from "react-icons/fa"
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 
 type Props = {}
 
@@ -41,7 +41,11 @@ function SignUpForm({}: Props) {
           className="absolute right-4"
           onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)}
         >
-          <FaEye className="w-8 h-8 text-secondary" />
+          {showPassword ? (
+            <AiFillEye className="w-8 h-8 text-secondary" />
+          ) : (
+            <AiFillEyeInvisible className="w-8 h-8 text-secondary" />
+          )}
         </button>
       </div>
       <div className="flex relative items-center">
@@ -59,7 +63,11 @@ function SignUpForm({}: Props) {
           className="absolute right-4"
           onClick={() => setShowRepeatPassword((prevShowPassword) => !prevShowPassword)}
         >
-          <FaEye className="w-8 h-8 text-secondary" />
+          {showRepeatPassword ? (
+            <AiFillEye className="w-8 h-8 text-secondary" />
+          ) : (
+            <AiFillEyeInvisible className="w-8 h-8 text-secondary" />
+          )}
         </button>
       </div>
       <div className="flex justify-between items-center">
