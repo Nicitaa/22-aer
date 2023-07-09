@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { type GetServerSidePropsContext } from "next"
 import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
-import GithubProvider from "next-auth/providers/github"
+//import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
 
@@ -35,6 +35,9 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
+  pages: {
+    //signIn: "/auth/signin"
+  },
   callbacks: {
     session: ({ session, user }) => ({
       ...session,
@@ -46,17 +49,17 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    GithubProvider({
+    /*GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
       clientSecret: env.GITHUB_CLIENT_SECRET
-    }),
+    }),*/
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET
     }),
     FacebookProvider({
       clientId: env.FACEBOOK_CLIENT_ID,
-      clientSecret:env.FACEBOOK_CLIENT_SECRET
+      clientSecret: env.FACEBOOK_CLIENT_SECRET
     })
     /**
      * ...add more providers here.
