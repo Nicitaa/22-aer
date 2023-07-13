@@ -2,36 +2,67 @@ import React, { useState } from "react"
 import styles from "./auth.module.css"
 import Link from "next/link"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-type Props = {
-  providers: object
+import { useForm } from "react-hook-form"
+
+interface SignInFormData {
+  email: string
+  password: string
 }
 
-function SignInForm({ providers }: Props) {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+function SignInForm() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm({ defaultValues: { email: "", password: "" } })
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
+  const onSubmit = (data: SignInFormData) => {
+    console.log("form submitted")
+    console.log(data)
+  }
   return (
-    <form action="#" className="w-full space-y-4">
-      <label htmlFor="sign-in-email"></label>
-      <input
-        type="text"
-        id="sign-in-email"
-        placeholder="Email or Username"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={styles.formInput}
-      />
-      <div className="flex relative items-center">
-        <label htmlFor="sign-in-password"></label>
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4">
+      <div>
+        <label htmlFor="email" className="visually-hidden">
+          Email
+        </label>
         <input
-          type={`${showPassword ? "text" : "password"}`}
-          id="sign-in-password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          id="email"
+          {...register("email", {
+            required: { value: true, message: "Email is required" },
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: "Must be a valid email"
+            }
+          })}
+          placeholder="Email"
+          type="email"
           className={styles.formInput}
         />
+
+        {errors.email && <p className="text-xs text-cta-danger mt-1">{errors.email.message}</p>}
+      </div>
+
+      <div className="flex relative items-center w-full">
+        <label htmlFor="password" className="visually-hidden">
+          Password
+        </label>
+
+        <input
+          id="password"
+          {...register("password", {
+            required: { value: true, message: "Password is required" },
+            minLength: {
+              value: 6,
+              message: "Password must be at least 6 characters long"
+            }
+          })}
+          placeholder="Password"
+          type={`${showPassword ? "text" : "password"}`}
+          className={styles.formInput}
+        />
+
         <button
           type="button"
           className="absolute right-4"
@@ -44,6 +75,7 @@ function SignInForm({ providers }: Props) {
           )}
         </button>
       </div>
+      {errors.password && <p className="text-xs text-cta-danger mt-1">{errors.password.message}</p>}
       <div className="flex justify-between items-center">
         <div className="flex flex-row-reverse gap-1 items-center ">
           <label htmlFor="sign-in-rememberMe" className="text-xs">
@@ -60,6 +92,7 @@ function SignInForm({ providers }: Props) {
           Forgot Password?
         </Link>
       </div>
+
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
         Login
       </button>

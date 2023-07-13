@@ -6,7 +6,6 @@ svg {
   -webkit-tap-highlight-color: transparent;
 }
 
-
 html,
 body,
 :root {
@@ -37,4 +36,15 @@ body,
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(7, 7, 10, 0.4);
   }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

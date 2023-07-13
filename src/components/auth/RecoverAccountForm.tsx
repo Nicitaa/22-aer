@@ -1,28 +1,48 @@
 import React, { useState } from "react"
 
 import styles from "./auth.module.css"
-type Props = {}
+import { useForm } from "react-hook-form"
+interface RecoverFormData {
+  email: string
+}
 
-function RecoverAccountForm({}: Props) {
-  const [email, setEmail] = useState("")
+function RecoverAccountForm() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm({ defaultValues: { email: "" } })
+  const onSubmit = (data: RecoverFormData) => {
+    console.log("form submitted")
+    console.log(data)
+  }
 
   return (
-    <div className="w-full space-y-4">
-      <form action="#">
-        <label htmlFor="remember-email"></label>
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4">
+      <div>
+        <label htmlFor="email" className="visually-hidden">
+          Email
+        </label>
         <input
-          type="text"
-          id="remember-email"
-          placeholder="Email or Username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+          {...register("email", {
+            required: { value: true, message: "Email is required" },
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: "Must be a valid email"
+            }
+          })}
+          placeholder="Email"
+          type="email"
           className={styles.formInput}
         />
-      </form>
+
+        {errors.email && <p className="text-xs text-cta-danger mt-1">{errors.email.message}</p>}
+      </div>
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
-        Submit
+        Login
       </button>
-    </div>
+    </form>
   )
 }
 
