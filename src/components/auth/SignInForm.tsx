@@ -92,7 +92,6 @@ function SignInForm() {
           Forgot Password?
         </Link>
       </div>
-
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
         Login
       </button>
