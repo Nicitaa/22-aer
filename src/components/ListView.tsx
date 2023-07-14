@@ -6,7 +6,7 @@ type Product = {
   price: number
   id: number
   description: string
-  image: string
+  image: string[]
 }
 const ListView = ({ products }: { products: Product[] }) => {
   return (
@@ -21,7 +21,7 @@ const ListView = ({ products }: { products: Product[] }) => {
             >
               <Image
                 className=" duration-300 group-hover:scale-125"
-                src={image}
+                src={image[0] ?? ""}
                 alt="Placeholder Image"
                 width={300}
                 height={200}
@@ -36,7 +36,7 @@ const ListView = ({ products }: { products: Product[] }) => {
                 </div>
                 <p className="mb-4 max-w-lg">{description.substring(0, 150)}...</p>
                 <Link
-                  href={`/products/${id}`}
+                  href={`/product?id=${id}`}
                   className=" bg-cta px-2 py-1 text-xs absolute tablet:w-16 w-full  text-center right-0 tablet:static"
                 >
                   Details
