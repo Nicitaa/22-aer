@@ -1,9 +1,9 @@
-import { Container } from "./Container"
+import { Container } from "./Container";
 
 export function SliderCounter() {
   return (
     <Container>
-      <h1 className="font-primary text-md font-bold">/01</h1>
+      <h1 className='font-primary text-medium font-bold'>/01</h1>
 
       <div>
         <div className="w-full rounded-md bg-secondary border-2 border-solid border-secondary overflow-hidden">
@@ -11,6 +11,7 @@ export function SliderCounter() {
         </div>
         <h1>Work collection</h1>
       </div>
+
     </Container>
   )
 }

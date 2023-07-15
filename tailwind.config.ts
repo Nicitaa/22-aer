@@ -6,14 +6,12 @@ export default {
       primary: ["Inter", "sans-serif"],
       secondary: ["Proxima Nova", "sans-serif"]
     },
-    //previously xs, small, medium big
     fontSize: {
       xs: "1rem",
       small: "1.25rem",
       medium: "clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);", //320-768px
       big: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem);" //320-768px
     },
-
     screens: {
       tablet: "768px",
       // => @media (min-width: 768px) { ... }

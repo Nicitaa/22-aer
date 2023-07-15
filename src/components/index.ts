@@ -21,10 +21,3 @@ export { SliderCounter, Slider }
 /* Cart Page*/
 import CartItem from "./CartItem"
 export { CartItem }
-
-/* Auth */
-
-import SignInForm from "./auth/SignInForm"
-export { SignInForm }
-import ProviderButton from "./auth/ProviderButton"
-export { ProviderButton }
