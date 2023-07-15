@@ -4,16 +4,17 @@ import { useSlider } from "~/hooks/useSlider"
 
 export default function about() {
 
-  const { move, onMouseTouchDown } = useSlider()
+  const { handleMouseDown, handleMouseMove, handleTouchDown, handleTouchMove, wrapperRef } = useSlider()
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center">
       <div className="w-full bg-secondary py-6 flex flex-col gap-6">
         <div className="flex flex-row gap-6 overflow-hidden px-3"
-          onMouseDown={onMouseTouchDown}
-          onTouchStart={onMouseTouchDown}
-          onMouseMove={move}
-          onTouchMove={move}>
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchDown}
+          onTouchMove={handleTouchMove}
+          ref={wrapperRef}>
           <StatCircle label="24/6 Supprot" percent={84} />
           <StatCircle label="Returns" percent={0.001} />
           <StatCircle label="PE Ratio" percent={31.69} big />
