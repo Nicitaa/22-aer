@@ -27,7 +27,10 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs"
+    "**/*.mjs",
+    "src/components/ProgressProvider.ts",
+    "src/components/StatCircle.tsx",
+    "src/components/TradingViewWidget.jsx"
   ],
   "exclude": ["node_modules"]
 }
