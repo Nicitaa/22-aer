@@ -2,8 +2,11 @@ import { useRouter } from "next/router"
 import React, { useState } from "react"
 import Image from "next/image"
 import { productData } from "~/constant/tempProducts"
+
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
+
+
 const Product = () => {
   const router = useRouter()
   const { id } = router.query
@@ -67,7 +70,7 @@ const Product = () => {
         {/* About item container */}
         <div className=" relative laptop:w-1/2 w-full laptop:bg-secondary mt-24 laptop:mt-0">
           <article className=" flex flex-col py-6 px-8">
-            <h1 className=" text-lg font-bold">{name.toUpperCase()}</h1>
+            <h1 className=" text-lg font-bold">{name}</h1>
             <span className=" text-md font-bold">Price</span>
             <p className="scrollbar text-sm text-primary-darker h-full max-h-[350px] overflow-y-auto">
               ${(price / 100).toFixed(2)}
