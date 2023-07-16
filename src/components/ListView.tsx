@@ -3,12 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 type Product = {
-  name: string;
-  price: number;
-  id: number;
-  description: string;
-  image: string;
-};
+  name: string
+  price: number
+  id: number
+  description: string
+  image: string[]
+}
 const ListView = ({ products }: { products: Product[] }) => {
   return (
     <div className="scrollbar md:grid-cols-2 grid max-h-[750px] grid-cols-1 gap-12 overflow-y-scroll">
@@ -22,7 +22,7 @@ const ListView = ({ products }: { products: Product[] }) => {
             >
               <Image
                 className=" duration-300 group-hover:scale-125"
-                src={image}
+                src={image[0] ?? ""}
                 alt="Placeholder Image"
                 width={300}
                 height={200}
@@ -40,9 +40,8 @@ const ListView = ({ products }: { products: Product[] }) => {
                   {description.substring(0, 150)}...
                 </p>
                 <Link
-                  href={`/products/${id}`}
-                  className=" bg-cta px-2 py-1 text-xs"
-                >
+                  href={`/product?id=${id}`}
+                  className=" bg-cta px-2 py-1 text-xs absolute tablet:w-16 w-full  text-center right-0 tablet:static">
                   Details
                 </Link>
               </div>
