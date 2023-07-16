@@ -9,8 +9,8 @@ export default {
     fontSize: {
       xs: "1rem",
       sm: "1.25rem",
-      md: "1.5rem",
-      lg: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem);" //320-768px
+      md: "clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem)", //320-768px
+      lg: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem)" //320-768px
     },
 
     screens: {
@@ -29,7 +29,9 @@ export default {
         secondary: "rgba(7, 7, 10, 0.4)",
         cta: "rgba(44, 200, 207, 1)",
         "cta-danger": "rgba(197, 52, 52, 1)",
-        "cta-success": "rgba(58, 184, 63, 1)"
+        "cta-success": "rgba(58, 184, 63, 1)",
+        "stats-bar": "rgba(79, 70, 186, 1)",
+        "stats-fill": "rgba(51, 23, 165, 1)"
       }
     }
   },
