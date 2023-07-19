@@ -7,7 +7,7 @@ function Layout({ children }: Props) {
     <>
       <Navbar />
       <div className="fixed inset-0 z-[-40] h-screen bg-img bg-cover bg-center bg-fixed"></div>
-      <div className="text-primary">{children}</div>
+      <div className="font-primary text-primary text-md">{children}</div>
     </>
   )
 }
