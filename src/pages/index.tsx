@@ -1,6 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react"
 import { api } from "~/utils/api"
 import { Container, Slider, SliderCounter } from "~/components"
+import { topSales } from '../constant/topSales'
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" })
@@ -19,7 +20,7 @@ export default function Home() {
         </Container>
 
         <Container>
-          <SliderCounter />
+          <SliderCounter slidesLength={topSales.length} />
         </Container>
 
         <Slider />
