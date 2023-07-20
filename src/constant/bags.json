@@ -1,107 +1,82 @@
 [
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Eono",
-      "subTitle": "Cool",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Aer bag",
-      "subTitle": "Cool",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Light",
-      "subTitle": "Cool",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Dark",
-      "subTitle": "Light",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Color",
-      "subTitle": "Dark",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Modern",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Simple",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Protfolio",
-      "subTitle": "Lui",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Gucci",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "123",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Air Bag",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Air Bag",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Air Bag",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Air Bag",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    },
-    {
-      "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-      "title": "Air Bag",
-      "subTitle": "Cool bag",
-      "price": 109.99,
-      "imgUrl": "./"
-    }
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-1.jpg",
+    "title": "Green bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-2.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-3.jpeg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-4.jpg",
+    "title": "White bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-5.jpeg",
+    "title": "Yellow? bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-6.jpg",
+    "title": "Blue bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-7.jpeg",
+    "title": "Gray bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-8.jpg",
+    "title": "Red bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-9.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-10.jpeg",
+    "title": "Orange bag",
+    "subTitle": "AI subtitle",
+    "price": 109.99,
+    "imagesUrl": ["/", "/"]
+  }
 ]

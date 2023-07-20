@@ -2,11 +2,12 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 type Product = {
-  name: string
+  id: string
+  preview: string
+  title: string
+  subTitle: string
   price: number
-  id: number
-  description: string
-  image: string[]
+  imagesUrl: string[]
 }
 const GridView = ({ products }: { products: Product[] }) => {
   return (
@@ -16,17 +17,17 @@ const GridView = ({ products }: { products: Product[] }) => {
           <Link href={`product?id=${product.id}`}>
             <Image
               className=" duration-300 group-hover:scale-125"
-              src={product.image[0] ?? ""}
+              src={product.preview ?? ""}
               alt="Placeholder Image"
-              width={600}
-              height={600}
+              width={1280}
+              height={720}
               layout="intrinsic"
               objectFit="cover"
               objectPosition="center"
             />
           </Link>
           <div className="font-primary absolute bottom-0 flex w-full justify-between bg-gray-800 bg-opacity-50  px-1 text-[14px] capitalize text-white tablet:text-xs laptop:text-md ">
-            <span>{product.name}</span>
+            <span>{product.title}</span>
             <span className="text-cta">${(product.price / 100).toFixed(2)}</span>
           </div>
         </section>
