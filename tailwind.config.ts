@@ -10,7 +10,7 @@ export default {
       xs: "1rem",
       sm: "1.25rem",
       md: "clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem)", //320-768px
-      lg: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem)" //320-768px
+      lg: "clamp(2rem, 1.6rem + 2vw, 4rem)" //320-1920px
     },
 
     screens: {

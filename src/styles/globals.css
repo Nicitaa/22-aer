@@ -99,7 +99,7 @@ body,
   }
 
   .slide-image-active {
-    width: 200px;
+    width: 250px;
     aspect-ratio: 16 / 9;
   }
 }

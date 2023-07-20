@@ -1,19 +1,19 @@
 import { Container, Slider, SliderCounter } from "~/components"
-import { topSales } from '../constant/topSales'
 import Link from "next/link"
+
 
 export default function Home() {
 
   return (
     <>
-      <div className="text-center">
-        <Container className="flex flex-col items-center text-start">
-          <SliderCounter className="text-center" slidesLength={topSales.length} />
-          <div className="w-full text-center laptop:w-[75%] laptop:pl-32 laptop:pr-12">
-            <h1 className="text-lg font-bold">
+      <main className="mt-12 laptop:mt-0 text-center laptop:text-start">
+        <Container className="absolute top-1/2 -translate-y-full flex flex-col-reverse laptop:flex-row items-center gap-y-4">
+          <SliderCounter className="w-full laptop:ml-[10%]" />
+          <div className="w-full max-h-[60vh]">
+            <h1 className="text-lg font-bold laptop:w-[85%] laptop:ml-auto">
               The best <br /> bag behind you
             </h1>
-            <p className="font-secondary text-sm text-primary-dark">
+            <p className="hidden font-secondary text-sm text-primary-dark tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
               Have questions how we did something? - ask us<br />
               As junior developers we provide low prices for now - its your chance!
               <br /><Link className="text-cta" href="https://t.me/icpcedu" target="_blank">t.me/icpcedu</Link>
@@ -21,12 +21,13 @@ export default function Home() {
           </div>
         </Container>
 
-        <Slider className="relative bg-secondary
-    flex flex-col justify-center mt-auto
-    tablet:pb-4 tablet:pt-12
-    laptop:pb-8 laptop:py-16 overflow-hidden" />
-      </div>
-    </ >
+        <div className="absolute bottom-0">
+          <Slider className="bg-secondary
+    flex flex-col justify-center mt-auto"
+            label="Top sales" labelClassName="font-bold" />
+        </div>
+      </main>
+    </>
   )
 }
 
