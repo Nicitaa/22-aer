@@ -14,11 +14,12 @@ interface ISlider {
   arrowLeft?: IconType
   arrowRight?: IconType
   arrowSize?: number
-
+  array: any
 }
 
-export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize }: ISlider) {
-  const [currentSlide, setCurrentSlide] = useState(Math.floor((topSales.length) / 2))
+export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize,
+  array }: ISlider) {
+  const [currentSlide, setCurrentSlide] = useState(Math.floor((array.length) / 2))
 
   const changeChild = useCallback(
     (e: KeyboardEvent) => {
@@ -44,15 +45,15 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
 
   function slideTo(index: number) {
 
-    if (index > topSales.length - 1) {
+    if (index > array.length - 1) {
       index = 0;
     } else if (index < 0) {
-      index = topSales.length - 1
+      index = array.length - 1
     }
 
     document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
       let width = image.getBoundingClientRect().width;
-      (image as HTMLDivElement).style.transform = `translateX(${(topSales.length - index - (topSales.length / 2) + 0.5) * width - width}px)`
+      (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
 
       document.querySelectorAll(".slider-image").forEach((image: Element) => {
         (image as HTMLImageElement).classList.remove('slide-image-active')
@@ -83,7 +84,7 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
 
       <div className="realative flex flex-col py-8 pt-16 tablet:pt-20 tablet:gap-y-4" >
         <div className="relative flex flex-none justify-center items-center w-[100vw]">
-          <Images slideTo={slideTo} />
+          <Images slideTo={slideTo} array={array} />
         </div>
 
         <div className="text-center flex justify-center w-full items-center gap-8">
@@ -106,10 +107,10 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
 }
 
 
-function Images(data: { slideTo: Function }) {
+function Images(data: { slideTo: Function, array: any }) {
   return (
     <>
-      {topSales?.map((image: { imgSrc: string }, index: number) => (
+      {data.array?.map((image: { imgSrc: string }, index: number) => (
         <div onClick={() => {
           data.slideTo(index);
         }} key={index} className={`image-wrapper flex-none grid`}>
@@ -120,7 +121,7 @@ function Images(data: { slideTo: Function }) {
             height={'320'}
             src={image.imgSrc}
             alt='image'
-            className={`slider-image w-48 object-cover cursor-pointer ${index === (Math.floor(topSales.length / 2)) ? 'slide-image-active' : ''}`}
+            className={`slider-image w-48 object-cover cursor-pointer ${index === (Math.floor(data.array.length / 2)) ? 'slide-image-active' : ''}`}
             key={image.imgSrc} />
         </div>
       ))}

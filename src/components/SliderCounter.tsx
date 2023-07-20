@@ -1,10 +1,9 @@
 "use client"
-import { topSales } from "../constant/topSales"
 import { useState } from "react"
 
 
-export function SliderCounter(data: { className?: string }) {
-  const slidesLength = topSales.length
+export function SliderCounter(data: { className?: string, array: any }) {
+  const slidesLength = data.array.length
   const [currentIndex, setCurrentIndex] = useState(Math.floor((slidesLength / 2)))
   let percent = (100 * (currentIndex + 1)) / slidesLength;
 
@@ -26,8 +25,8 @@ export function SliderCounter(data: { className?: string }) {
         </div>
 
         <div className="px-1">
-          <h1 className="font-bold text-2xl">{topSales[currentIndex]?.title}</h1>
-          <p className='font-secondary text-sm text-primary-dark'>{topSales[currentIndex]?.subTitle}</p>
+          <h1 className="font-bold text-2xl">{data.array[currentIndex]?.title}</h1>
+          <p className='font-secondary text-sm text-primary-dark'>{data.array[currentIndex]?.subTitle}</p>
         </div>
       </div>
     </div>
