@@ -1,19 +1,10 @@
+"use client"
+
 import { topSales } from "../constant/topSales"
 import { Container } from "./Container"
 import { useState } from "react"
 
-interface ISliderCounter {
-  slidesLength: number,
-
-}
-
-type Params = {
-  params: {
-    sliderIndex: string
-  }
-}
-
-export function SliderCounter(data: ISliderCounter) {
+export function SliderCounter(data: { slidesLength: number, className?: string }) {
   const [currentIndex, setCurrentIndex] = useState(Math.floor((data.slidesLength / 2)))
   let percent = (100 * (currentIndex + 1)) / data.slidesLength;
 
@@ -24,18 +15,18 @@ export function SliderCounter(data: ISliderCounter) {
     })
   }
 
-
   return (
-    <Container>
-      <h1 className="font-primary text-md font-bold">/{currentIndex + 1}</h1>
+    <Container className={data.className}>
+      <h1 className="font-bold ml-1">/0{currentIndex + 1}</h1>
 
       <div>
-        <div className="w-full rounded-md bg-secondary border-2 border-solid border-secondary overflow-hidden">
-          <div style={{ width: `${percent}%` }} className={` h-[1px] bg-cta transition-all duration-500 ease-in-out`}></div>
+        <div className="w-full laptop:w-[50%] mx-auto rounded-md bg-secondary border-2 border-solid border-secondary overflow-hidden">
+          <div style={{ width: `${percent}%` }} className={` h-[3px] bg-cta transition-all duration-500 ease-in-out`} />
         </div>
-        <div>
-          <h1 className="font-bold text-2xl">Work collection</h1>
-          <p className='text-gray-400'>{topSales[currentIndex]?.description}</p>
+
+        <div className="px-1">
+          <h1 className="font-bold text-2xl">{topSales[currentIndex]?.title}</h1>
+          <p className='font-secondary text-sm text-primary-dark'>{topSales[currentIndex]?.subTitle}</p>
         </div>
       </div>
     </Container>

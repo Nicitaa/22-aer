@@ -1,15 +1,18 @@
 "use client"
-import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
-import { topSales } from '../constant/topSales'
+
 import Image from 'next/image'
 import { useEffect, useState, useCallback } from "react"
+
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
+
+import { topSales } from '../constant/topSales'
 
 interface ITopSales {
   imgSrc: string
 }[]
 
 
-export function Slider() {
+export function Slider({ className }: { className?: string }) {
   const [currentSlide, setCurrentSlide] = useState(Math.floor((topSales.length) / 2))
 
   const changeChild = useCallback(
@@ -74,30 +77,27 @@ export function Slider() {
         }
 
       }}
-      className="main-container relative bg-secondary
-    flex flex-col gap-4 justify-between
-    tablet:py-8 
-    laptop:py-16 overflow-hidden"
+      className={className}
     >
 
-      <h1 className="font-primary font-bold text-md">Top Sales</h1>
+      <h1 className="absolute top-[5%] left-1/2 -translate-x-1/2 font-bold">Top Sales</h1>
 
-      <div className="slideshow" >
-        <div className="slider-wrapper">
+      <div className="realative flex flex-col gap-4" >
+        <div className="relative flex flex-none justify-center items-center w-[100vw] p-2">
           <Images slideTo={slideTo} />
         </div>
 
-        <div className="slider-controls">
+        <div className="text-center flex justify-center w-full items-center gap-8">
           <span onClick={() => {
             slideTo(currentSlide - 1)
-          }} className="left caret">
-            <PiCaretLeftBold size={18} />
+          }} className="text-primary cursor-pointer">
+            <PiCaretLeftBold size={32} />
           </span>
 
           <span onClick={() => {
             slideTo(currentSlide + 1)
-          }} className="right caret">
-            <PiCaretRightBold size={18} />
+          }} className="text-primary cursor-pointer">
+            <PiCaretRightBold size={32} />
           </span>
         </div>
       </div>
@@ -107,16 +107,13 @@ export function Slider() {
 }
 
 
-function Images(data: {
-  slideTo: Function
-}) {
-
+function Images(data: { slideTo: Function }) {
   return (
     <>
       {topSales?.map((image: ITopSales, index: number) => (
         <div onClick={() => {
           data.slideTo(index);
-        }} key={index} className={`image-wrapper`}>
+        }} key={index} className={`image-wrapper flex-none grid`}>
           <Image
             placeholder="blur"
             blurDataURL={image.imgSrc}
@@ -124,7 +121,7 @@ function Images(data: {
             height={'330'}
             src={image.imgSrc}
             alt='image'
-            className={`slider-image ${index === (Math.floor(topSales.length / 2)) ? 'slide-image-active' : ''}`}
+            className={`slider-image w-48 object-cover cursor-pointer ${index === (Math.floor(topSales.length / 2)) ? 'slide-image-active' : ''}`}
             key={image.imgSrc} />
         </div>
       ))}

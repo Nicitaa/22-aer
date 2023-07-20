@@ -72,11 +72,11 @@ const Product = () => {
           <article className=" flex flex-col py-6 px-8">
             <h1 className=" text-lg font-bold">{name}</h1>
             <span className=" text-md font-bold">Price</span>
-            <p className="scrollbar text-sm text-primary-darker h-full max-h-[350px] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-dark h-full max-h-[350px] overflow-y-auto">
               ${(price / 100).toFixed(2)}
             </p>
             <span className=" text-md font-bold">Description:</span>
-            <p className="scrollbar text-sm text-primary-darker h-full max-h-[350px] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-dark h-full max-h-[350px] overflow-y-auto">
               {description.substring(0, 150)}
             </p>
           </article>
