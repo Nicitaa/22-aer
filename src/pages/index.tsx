@@ -9,6 +9,7 @@ export default function Home() {
       <main className="mt-12 laptop:mt-0 text-center laptop:text-start">
         <Container className="absolute top-1/2 -translate-y-full flex flex-col-reverse laptop:flex-row items-center gap-y-4">
           <SliderCounter className="w-full laptop:ml-[10%]" array={topSales} progressfillClassname="h-[3px] bg-cta"
+            subTitleClassName="font-secondary text-sm text-primary-dark" titleClassName="font-bold"
             progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary" />
           <div className="w-full max-h-[60vh]">
             <h1 className="text-lg font-bold laptop:w-[85%] laptop:ml-auto">
