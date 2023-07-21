@@ -5,6 +5,9 @@ import { useEffect, useState, useCallback } from "react"
 
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
 import { IconType } from 'react-icons'
+import { ITopSales } from '~/interfaces/ITopSales'
+
+
 
 
 interface ISlider {
@@ -14,7 +17,7 @@ interface ISlider {
   arrowLeft?: IconType
   arrowRight?: IconType
   arrowSize?: number
-  array: any
+  array: ITopSales[]
 }
 
 export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize,
@@ -44,7 +47,6 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
 
 
   function slideTo(index: number) {
-
     if (index > array.length - 1) {
       index = 0;
     } else if (index < 0) {
@@ -52,7 +54,7 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
     }
 
     document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
-      let width = image.getBoundingClientRect().width;
+      const width = image.getBoundingClientRect().width;
       (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
 
       document.querySelectorAll(".slider-image").forEach((image: Element) => {
@@ -77,10 +79,10 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
         }
 
       }}
-      className={`${className} overflow-hidden`}
+      className={`${className as string} overflow-hidden`}
     >
 
-      <h1 className={`absolute top-[5%] left-1/2 -translate-x-1/2 ${labelClassName}`}>{label}</h1>
+      <h1 className={`absolute top-[5%] left-1/2 -translate-x-1/2 ${labelClassName as string}`}>{label}</h1>
 
       <div className="realative flex flex-col py-8 pt-16 tablet:pt-20 tablet:gap-y-4" >
         <div className="relative flex flex-none justify-center items-center w-[100vw]">
@@ -107,7 +109,7 @@ export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft,
 }
 
 
-function Images(data: { slideTo: Function, array: any }) {
+function Images(data: { slideTo: (index: number) => void, array: ITopSales[] }) {
   return (
     <>
       {data.array?.map((image: { imgSrc: string }, index: number) => (

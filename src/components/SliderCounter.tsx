@@ -1,9 +1,10 @@
 "use client"
 import { useState } from "react"
+import { ITopSales } from "~/interfaces/ITopSales"
 
 interface ISliderCounter {
   className?: string
-  array: any
+  array: ITopSales[]
   progressbarClassName?: string
   progressfillClassname?: string
   titleClassName?: string
@@ -14,13 +15,13 @@ interface ISliderCounter {
 export function SliderCounter({ className, array, progressbarClassName, progressfillClassname,
   titleClassName, subTitleClassName, counterClassName }: ISliderCounter) {
   const slidesLength = array.length
-  const [currentIndex, setCurrentIndex] = useState(Math.floor((slidesLength / 2)))
-  let percent = (100 * (currentIndex + 1)) / slidesLength;
+  const [currentIndex, setCurrentIndex] = useState<number>(Math.floor((slidesLength / 2)))
+  const percent = (100 * (currentIndex + 1)) / slidesLength;
 
   if (typeof window !== "undefined") {
     window.addEventListener('storage', () => {
-      let index = JSON.parse(localStorage.getItem('currentIndex')!) ?? Math.floor((slidesLength / 2));
-      setCurrentIndex(index)
+      const index: number = JSON.parse(localStorage.getItem('currentIndex') ?? '') as number;
+      setCurrentIndex(index ?? Math.floor(slidesLength / 2));
     })
   }
 
@@ -29,9 +30,9 @@ export function SliderCounter({ className, array, progressbarClassName, progress
       <h1 className={`${counterClassName ? counterClassName : 'text-white text-[1.5rem]'} ml-1`}>/0{currentIndex + 1}</h1>
 
       <div>
-        <div className={`${progressbarClassName}
+        <div className={`${progressbarClassName as string}
          mx-auto laptop:ml-0 rounded-md border-2 border-solid overflow-hidden`}>
-          <div style={{ width: `${percent}%` }} className={` ${progressfillClassname ? progressfillClassname : 'h-[3px] bg-red-500'
+          <div style={{ width: `${percent}%` }} className={` ${progressfillClassname ? progressfillClassname : 'h-[3px] bg-red-500 border-transparent'
             } transition-all duration-500 ease-in-out`} />
         </div>
 
