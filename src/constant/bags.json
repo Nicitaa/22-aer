@@ -4,7 +4,7 @@
     "preview": "/images/products/stock-1.jpg",
     "title": "Green bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 1099.99,
     "imagesUrl": ["/", "/"]
   },
   {
@@ -12,15 +12,15 @@
     "preview": "/images/products/stock-2.jpg",
     "title": "Black bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 149.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-    "preview": "/images/products/stock-3.jpeg",
+    "preview": "/images/products/stock-3.jpg",
     "title": "Black bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 449.99,
     "imagesUrl": ["/", "/"]
   },
   {
@@ -28,15 +28,15 @@
     "preview": "/images/products/stock-4.jpg",
     "title": "White bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 559.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-    "preview": "/images/products/stock-5.jpeg",
-    "title": "Yellow? bag",
+    "preview": "/images/products/stock-5.jpg",
+    "title": "Yellow bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 1999.99,
     "imagesUrl": ["/", "/"]
   },
   {
@@ -44,15 +44,15 @@
     "preview": "/images/products/stock-6.jpg",
     "title": "Blue bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 299.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-    "preview": "/images/products/stock-7.jpeg",
+    "preview": "/images/products/stock-7.jpg",
     "title": "Gray bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 99.99,
     "imagesUrl": ["/", "/"]
   },
   {
@@ -60,7 +60,7 @@
     "preview": "/images/products/stock-8.jpg",
     "title": "Red bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 259.99,
     "imagesUrl": ["/", "/"]
   },
   {
@@ -68,15 +68,95 @@
     "preview": "/images/products/stock-9.jpg",
     "title": "Black bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 188.97,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
-    "preview": "/images/products/stock-10.jpeg",
+    "preview": "/images/products/stock-10.jpg",
     "title": "Orange bag",
     "subTitle": "AI subtitle",
-    "price": 109.99,
+    "price": 199.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-11.jpg",
+    "title": "Balck bag",
+    "subTitle": "AI subtitle",
+    "price": 499.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-12.jpg",
+    "title": "Pink bag",
+    "subTitle": "AI subtitle",
+    "price": 189.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-13.jpg",
+    "title": "Blue bag",
+    "subTitle": "AI subtitle",
+    "price": 394.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-14.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 129.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-15.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 749.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-16.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 1099.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-17.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 1129.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-18.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 900.0,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-19.jpg",
+    "title": "Black bag",
+    "subTitle": "AI subtitle",
+    "price": 99.99,
+    "imagesUrl": ["/", "/"]
+  },
+  {
+    "id": "a8414f0c-1413-4d11-a657-64c3fccf3a77",
+    "preview": "/images/products/stock-20.jpg",
+    "title": "Yellow bag",
+    "subTitle": "AI subtitle",
+    "price": 149.99,
     "imagesUrl": ["/", "/"]
   }
 ]
