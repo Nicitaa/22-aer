@@ -3,9 +3,7 @@ import React, { useState } from "react"
 import { FaEye } from "react-icons/fa"
 import { Input } from "../ui"
 
-type Props = {}
-
-function SignUpForm({ }: Props) {
+function SignUpForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")

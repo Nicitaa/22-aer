@@ -1,8 +1,7 @@
-import React, { ReactElement } from "react"
+import React from "react"
 import { Navbar } from "./Navbar"
 
-type Props = { children: ReactElement }
-function Layout({ children }: Props) {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
