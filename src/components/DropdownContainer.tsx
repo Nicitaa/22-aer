@@ -1,10 +1,13 @@
-import { AiOutlineDown } from 'react-icons/ai'
-
-
 import { useEffect, useRef, useState } from 'react';
 
 
-export function DropdownContainer({ children }: { children: React.ReactNode }) {
+interface DropdownContainer {
+  children: React.ReactNode
+  childrenTrigger: React.ReactNode
+  className?: string
+}
+
+export function DropdownContainer({ children, childrenTrigger, className = '' }: DropdownContainer) {
 
   const [isDropdown, setIsDropdown] = useState(false)
 
@@ -24,10 +27,13 @@ export function DropdownContainer({ children }: { children: React.ReactNode }) {
 
 
   return (
-    <div className={`z-10`} ref={dropdownContainerRef}>
-      <div className='flex items-center cursor-pointer' onClick={() => setIsDropdown(!isDropdown)}><h1 className='text-xs font-bold mr-2'>Sort by</h1> <AiOutlineDown /></div>
+    <div className={`relative z-10`} ref={dropdownContainerRef}>
+      <div className='flex items-center cursor-pointer' onClick={() => setIsDropdown(!isDropdown)}>
+        {childrenTrigger}
+      </div>
 
-      <div className={`absolute top-[20%] right-[5%] backdrop-filter broder-[1px] border-solid border-secondary rounded-md w-[500px] z-[2]
+      <div className={`absolute broder-[1px] border-solid border-secondary rounded-md z-[2]
+      ${className}
        ${isDropdown ? 'opacity-100 visible translate-y-0 transition-all duration-300' : 'opacity-0 invisible translate-y-[-20px] transition-all duration-300'}`}>
         <div className='text-md text-secondary bg-primary'>
           {children}

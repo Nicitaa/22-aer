@@ -1,11 +1,11 @@
 import Link from "next/link"
 import React, { useState } from "react"
-import styles from "./auth.module.css"
 import { FaEye } from "react-icons/fa"
+import { Input } from "../ui"
 
 type Props = {}
 
-function SignUpForm({}: Props) {
+function SignUpForm({ }: Props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
@@ -18,24 +18,20 @@ function SignUpForm({}: Props) {
   return (
     <form action="#" className="w-full space-y-4">
       <label htmlFor="sign-up-email"></label>
-      <input
+      <Input
         type="text"
         id="sign-up-email"
         placeholder="Email or Username"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={styles.formInput}
-      />
+        onChange={(e) => setEmail(e.target.value)} />
       <div className="flex relative items-center">
         <label htmlFor="sign-up-password"></label>
-        <input
+        <Input
           type={`${showPassword ? "text" : "password"}`}
           id="sign-up-password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className={styles.formInput}
-        />
+          onChange={(e) => setPassword(e.target.value)} />
         <button
           type="button"
           className="absolute right-4"
@@ -46,14 +42,12 @@ function SignUpForm({}: Props) {
       </div>
       <div className="flex relative items-center">
         <label htmlFor="sign-up-repeatPassword"></label>
-        <input
+        <Input
           type={`${showRepeatPassword ? "text" : "password"}`}
           id="sign-up-repeatPassword"
           placeholder="Repeat Password"
           value={repeatPassword}
-          onChange={(e) => setRepeatPassword(e.target.value)}
-          className={styles.formInput}
-        />
+          onChange={(e) => setRepeatPassword(e.target.value)} />
         <button
           type="button"
           className="absolute right-4"
@@ -67,7 +61,7 @@ function SignUpForm({}: Props) {
           <label htmlFor="sign-up-rememberMe" className="text-xs">
             Remember Me
           </label>
-          <input
+          <Input
             type="checkbox"
             id="sign-up-rememberMe"
             checked={rememberMe}
