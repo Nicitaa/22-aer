@@ -6,12 +6,11 @@ export default {
       primary: ["Inter", "sans-serif"],
       secondary: ["Proxima Nova", "sans-serif"]
     },
-    //previously xs, small, medium big
     fontSize: {
       xs: "1rem",
       sm: "1.25rem",
       md: "clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem)", //320-768px
-      lg: "clamp(2.5rem, 1.4286rem + 5.3571vw, 4rem)" //320-768px
+      lg: "clamp(2rem, 1.6rem + 2vw, 4rem)" //320-1920px
     },
 
     screens: {
@@ -26,7 +25,7 @@ export default {
       },
       colors: {
         primary: "rgba(255, 255, 255, 0.9)",
-        "primary-darker": "rgba(255,255,255,0.4)",
+        "primary-dark": "rgba(255,255,255,0.4)",
         secondary: "rgba(7, 7, 10, 0.4)",
         cta: "rgba(44, 200, 207, 1)",
         "cta-danger": "rgba(197, 52, 52, 1)",

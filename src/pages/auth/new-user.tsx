@@ -1,8 +1,6 @@
 import React from "react"
 
-type Props = {}
-
-function newUser({}: Props) {
+function newUser() {
   return <div>new-user</div>
 }
 

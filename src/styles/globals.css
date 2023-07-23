@@ -3,80 +3,103 @@
 @tailwind utilities;
 
 :root {
-	--primary: rgba(255, 255, 255, 0.9);
-	--stats-bar: rgba(79, 70, 186, 1);
-	--stats-fill: rgba(51, 23, 165, 1);
-	/* 320-768px */
-	--medium: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
+  --primary: rgba(255, 255, 255, 0.9);
+  --stats-bar: rgba(79, 70, 186, 1);
+  --stats-fill: rgba(51, 23, 165, 1);
+  /* 320-768px */
+  --medium: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
 }
-
 
 svg {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
-
 
 html,
 body,
 :root {
-	height: 100%;
+  height: 100%;
 }
 
 /* remove scroll on mobile */
 @media screen and (max-width: 768px) {
-	.scrollbar::-webkit-scrollbar {
-		display: none;
-	}
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
-	.scrollbar::-webkit-scrollbar {
-		width: 18px;
-		height: 18px;
-	}
+  .scrollbar::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+  }
 
-	.scrollbar::-webkit-scrollbar-track {
-		background: rgba(255, 255, 255, 0.6);
-	}
+  .scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.6);
+  }
 
-	.scrollbar::-webkit-scrollbar-thumb {
-		background: rgba(7, 7, 10, 0.4);
-	}
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(7, 7, 10, 0.4);
+  }
 
-	.scrollbar::-webkit-scrollbar-thumb:hover {
-		background: rgba(7, 7, 10, 0.4);
-	}
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(7, 7, 10, 0.4);
+  }
 }
-
 
 /* About page */
 .CircularProgressbar-path {
-	stroke: var(--stats-fill) !important;
+  stroke: var(--stats-fill) !important;
 }
 
 .CircularProgressbar-trail {
-	stroke: var(--stats-bar) !important;
+  stroke: var(--stats-bar) !important;
 }
 
 .CircularProgressbar-text {
-	fill: var(--primary) !important;
-	font-size: var(--medium) !important;
-	animation: neonAnim 1s alternate-reverse infinite !important;
-	color: var(--primary) !important;
+  fill: var(--primary) !important;
+  font-size: var(--medium) !important;
+  animation: neonAnim 1s alternate-reverse infinite !important;
+  color: var(--primary) !important;
 }
 
 @keyframes neonAnim {
-	from {
-		text-shadow:
-			0 0 10px var(--primary),
-			0 0 40px var(--primary),
-			0 0 100px var(--primary);
-	}
+  from {
+    text-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary), 0 0 100px var(--primary);
+  }
 
-	to {
-		text-shadow:
-			0 0px 12px var(--primary),
-			0 0 41px var(--primary),
-			0 0 102px var(--primary);
-	}
+  to {
+    text-shadow: 0 0px 12px var(--primary), 0 0 41px var(--primary), 0 0 102px var(--primary);
+  }
+}
+
+/* Slider */
+.slider-image {
+  aspect-ratio: 16 / 9;
+  transition: 1s ease;
+}
+
+.slide-image-active {
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  cursor: default;
+}
+
+.image-wrapper {
+  transition: 0.8s ease;
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 768px) {
+  .slider-image {
+    width: 150px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .slide-image-active {
+    width: 250px;
+    aspect-ratio: 16 / 9;
+  }
 }

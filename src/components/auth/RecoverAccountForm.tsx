@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 
 import styles from "./auth.module.css"
-type Props = {}
 
-function RecoverAccountForm({}: Props) {
+function RecoverAccountForm() {
   const [email, setEmail] = useState("")
 
   return (
