@@ -3,9 +3,7 @@ import React, { useState } from "react"
 import styles from "./auth.module.css"
 import { FaEye } from "react-icons/fa"
 
-type Props = {}
-
-function SignUpForm({}: Props) {
+function SignUpForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
