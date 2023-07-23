@@ -118,6 +118,23 @@ input[type="radio"]:checked+.label:after {
   align-items: center;
 }
 
+.checkbox-container::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.2s;
+  opacity: 10;
+  pointer-events: none;
+}
+
+.checkbox-container:hover .checkbox-container::before {
+  transform: scale(3.6);
+}
 
 .checkbox-container input[type="checkbox"]::after {
   content: "\f00c";
