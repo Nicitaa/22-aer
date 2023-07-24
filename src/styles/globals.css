@@ -100,6 +100,7 @@ input[type="radio"]:checked+.label:after {
 
 /* Checkbox.tsx */
 .checkbox-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,22 +120,24 @@ input[type="radio"]:checked+.label:after {
   align-items: center;
 }
 
-.checkbox-container::before {
+.checkbox-container input::before {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 10px;
+  left: 6px;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 0.1em;
   transform: scale(0);
-  transition: all 0.2s;
-  opacity: 10;
+  transition: all 0.4s;
+  opacity: 0%;
   pointer-events: none;
+  background-color: var(--cta);
 }
 
-.checkbox-container:hover .checkbox-container::before {
+.checkbox-container:hover input[type="checkbox"]:not(:checked)::before {
   transform: scale(3.6);
+  opacity: 10%;
 }
 
 .checkbox-container input[type="checkbox"]::after {

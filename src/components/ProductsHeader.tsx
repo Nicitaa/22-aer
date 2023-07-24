@@ -85,10 +85,10 @@ const ProductsHeader = ({
                 </div>
               </div>
             </div>
-            {/* <div className="flex flex-col gap-y-2">
+            <div className="flex flex-col gap-y-2">
               <button>Clear all filters</button>
               <button>Create own bag</button>
-            </div> */}
+            </div>
           </div>
 
         </div>
