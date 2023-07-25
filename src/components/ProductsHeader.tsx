@@ -4,6 +4,7 @@ import { AiOutlineDown } from 'react-icons/ai'
 
 import { DropdownContainer } from "./DropdownContainer";
 import { Checkbox, Input, RadioButton } from "./ui";
+import { Button } from "./ui/Button";
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean };
@@ -41,6 +42,7 @@ const ProductsHeader = ({
       </div>
       <p>{productsCount} Products Found</p>
       <hr className=" h-1 w-full border-t border-white" />
+      {/* Dropdown */}
       <DropdownContainer className="top-[30px] right-[-16px] tablet:right-[0px] w-[83vw] tablet:w-[750px]"
         childrenTrigger={
           <>
@@ -50,7 +52,8 @@ const ProductsHeader = ({
         <div className="flex flex-col gap-4 text-center tablet:text-start px-4 py-2 text-xs font-bold tablet:text-sm">
           <h1>Sort by<span className="hidden tablet:inline-block">:</span></h1>
 
-          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-x-8">
+          {/* Radio buttons */}
+          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-y-4">
             <div className="flex flex-col items-center tablet:items-start gap-y-2">
               <RadioButton inputName="name" label="Name A to Z" />
               <RadioButton inputName="name" label="Name Z to A" />
@@ -61,9 +64,10 @@ const ProductsHeader = ({
             </div>
           </div>
 
+          {/* pice - color - buttons */}
           <div className="grid grid-cols-1 gap-x-8 tablet:grid-cols-2 laptop:grid-cols-3">
             <div className="flex flex-col gap-y-2">
-              <h1>Price</h1>
+              <h1 className="text-start">Price:</h1>
               <div className="flex flex-row items-center gap-x-2">
                 <Input placeholder="Min" size='sm' />
                 <h1>-</h1>
@@ -71,9 +75,9 @@ const ProductsHeader = ({
               </div>
               <Input type="range" />
             </div>
-            <div>
-              <h1>Color:</h1>
-              <div className='grid grid-cols-2'>
+            <div className="flex flex-col">
+              <h1 className="text-start">Color:</h1>
+              <div className='grid grid-cols-2 gap-x-4 gap-y-2 tablet:gap-0'>
                 <div className="flex">
                   <Checkbox label="White" />
                 </div>
@@ -85,11 +89,12 @@ const ProductsHeader = ({
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-y-2">
-              <button>Clear all filters</button>
-              <button>Create own bag</button>
+            <div className="col-span-2 laptop:col-span-1 flex flex-col justify-end gap-y-2">
+              <Button>Clear all filters</Button>
+              <Button>Create own bag</Button>
             </div>
           </div>
+
 
         </div>
       </DropdownContainer>
