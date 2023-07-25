@@ -14,7 +14,7 @@ const ProductsHeader = ({
   productsCount,
 }: navProps) => {
   return (
-    <nav className="font-primary  grid w-full max-w-[1284px] grid-cols-1 items-center gap-x-8 px-8 py-4 text-xs font-bold text-white tablet:grid-cols-[auto,auto,1fr,auto]">
+    <nav className="font-primary mb-8 grid w-full max-w-[1284px] grid-cols-1 items-center gap-x-8 px-8 pt-4 text-xs font-bold text-white tablet:grid-cols-[auto,auto,1fr,auto]">
       <div className="grid w-14 grid-cols-2 gap-x-2 ">
         <button
           onClick={() => setSortOption({ grid: true, list: false })}

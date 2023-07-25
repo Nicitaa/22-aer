@@ -1,13 +1,11 @@
 import React from "react"
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
-import { getProviders, signIn } from "next-auth/react"
+import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
 import { ProviderButton } from "~/components"
 import Link from "next/link"
 import SignUpForm from "~/components/auth/SignUpForm"
-
-type Props = {}
 
 function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (

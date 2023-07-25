@@ -1,14 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
-import ProviderButton from "~/components/auth/ProviderButton"
 import Link from "next/link"
 import RecoverAccountForm from "~/components/auth/RecoverAccountForm"
 
-type Props = {}
-
+//eslint-disable-next-line @typescript-eslint/no-unused-vars
 function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className="flex flex-col items-center w-[456px] max-w-[100vw] tablet:max-w-[80vw] mx-auto px-4 py-2 tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
