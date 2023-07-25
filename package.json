@@ -28,7 +28,8 @@
     "superjson": "^1.12.4",
     "tailwind-merge": "^1.14.0",
     "typeface-inter": "^3.18.1",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zustand": "^4.3.9"
   },
   "devDependencies": {
     "@types/eslint": "^8.37.0",

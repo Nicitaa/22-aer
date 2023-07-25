@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export function Navbar() {
 
   const [isHamburgerMenu, setHamburgerMenu] = useState<boolean>(false)
-  const [isNavbar, setNavbar] = useState<boolean>(false)
+  const [isNavbar, setNavbar] = useState<boolean>(true)
 
   function showHamburgerMenu() {
     setNavbar(false)
