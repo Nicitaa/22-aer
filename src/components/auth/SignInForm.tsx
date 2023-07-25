@@ -2,25 +2,66 @@ import React, { useState } from "react"
 import styles from "./auth.module.css"
 import Link from "next/link"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-import { useForm } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form"
 
 interface SignInFormData {
   email: string
   password: string
 }
 
-function SignInForm() {
+const SignInForm: React.FC = () => {
   const {
     handleSubmit,
     register,
+    setError,
+    clearErrors,
     formState: { errors }
-  } = useForm({ defaultValues: { email: "", password: "" } })
+  } = useForm<SignInFormData>({ defaultValues: { email: "", password: "" } })
+
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
-  const onSubmit = (data: SignInFormData) => {
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const emailValue = e.target.value
+    // Manually set/clear error message for email field
+    if (!emailValue) {
+      setError("email", {
+        type: "required",
+        message: "Email is required"
+      })
+    } else if (!/\S+@\S+\.\S+/.test(emailValue)) {
+      setError("email", {
+        type: "pattern",
+        message: "Must be a valid email"
+      })
+    } else {
+      clearErrors("email")
+    }
+  }
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const passwordValue = e.target.value
+    // Manually set/clear error message for password field
+    if (!passwordValue) {
+      setError("password", {
+        type: "required",
+        message: "Password is required"
+      })
+    } else if (passwordValue.length < 6) {
+      setError("password", {
+        type: "minLength",
+        message: "Password must be at least 6 characters long"
+      })
+    } else {
+      clearErrors("password")
+    }
+  }
+
+  const onSubmit: SubmitHandler<SignInFormData> = (data) => {
     console.log("form submitted")
     console.log(data)
   }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4">
       <div>
@@ -39,6 +80,7 @@ function SignInForm() {
           placeholder="Email"
           type="email"
           className={styles.formInput}
+          onChange={handleEmailChange}
         />
 
         {errors.email && <p className="text-xs text-cta-danger mt-1">{errors.email.message}</p>}
@@ -61,6 +103,7 @@ function SignInForm() {
           placeholder="Password"
           type={`${showPassword ? "text" : "password"}`}
           className={styles.formInput}
+          onChange={handlePasswordChange}
         />
 
         <button

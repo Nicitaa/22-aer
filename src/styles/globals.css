@@ -56,60 +56,61 @@ body,
   white-space: nowrap;
   border: 0;
 
-/* About page */
-.CircularProgressbar-path {
-  stroke: var(--stats-fill) !important;
-}
-
-.CircularProgressbar-trail {
-  stroke: var(--stats-bar) !important;
-}
-
-.CircularProgressbar-text {
-  fill: var(--primary) !important;
-  font-size: var(--medium) !important;
-  animation: neonAnim 1s alternate-reverse infinite !important;
-  color: var(--primary) !important;
-}
-
-@keyframes neonAnim {
-  from {
-    text-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary), 0 0 100px var(--primary);
+  /* About page */
+  .CircularProgressbar-path {
+    stroke: var(--stats-fill) !important;
   }
 
-  to {
-    text-shadow: 0 0px 12px var(--primary), 0 0 41px var(--primary), 0 0 102px var(--primary);
+  .CircularProgressbar-trail {
+    stroke: var(--stats-bar) !important;
   }
-}
 
-/* Slider */
-.slider-image {
-  aspect-ratio: 16 / 9;
-  transition: 1s ease;
-}
+  .CircularProgressbar-text {
+    fill: var(--primary) !important;
+    font-size: var(--medium) !important;
+    animation: neonAnim 1s alternate-reverse infinite !important;
+    color: var(--primary) !important;
+  }
 
-.slide-image-active {
-  width: 300px;
-  aspect-ratio: 16 / 9;
-  cursor: default;
-}
+  @keyframes neonAnim {
+    from {
+      text-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary), 0 0 100px var(--primary);
+    }
 
-.image-wrapper {
-  transition: 0.8s ease;
-  width: 300px;
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-}
+    to {
+      text-shadow: 0 0px 12px var(--primary), 0 0 41px var(--primary), 0 0 102px var(--primary);
+    }
+  }
 
-@media (max-width: 768px) {
+  /* Slider */
   .slider-image {
-    width: 150px;
     aspect-ratio: 16 / 9;
+    transition: 1s ease;
   }
 
   .slide-image-active {
-    width: 250px;
+    width: 300px;
     aspect-ratio: 16 / 9;
+    cursor: default;
+  }
+
+  .image-wrapper {
+    transition: 0.8s ease;
+    width: 300px;
+    aspect-ratio: 16 / 9;
+    display: grid;
+    place-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .slider-image {
+      width: 150px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .slide-image-active {
+      width: 250px;
+      aspect-ratio: 16 / 9;
+    }
   }
 }
