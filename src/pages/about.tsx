@@ -2,7 +2,7 @@ import { StatCircle } from "~/components/StatCircle"
 import Link from 'next/link'
 import { useSlider } from "~/hooks/useSlider"
 
-export default function about() {
+export default function About() {
 
   const { handleMouseDown, handleMouseMove, handleTouchDown, handleTouchMove, wrapperRef } = useSlider()
 

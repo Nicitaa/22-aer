@@ -1,58 +1,35 @@
-import { signIn, signOut, useSession } from "next-auth/react"
-import { api } from "~/utils/api"
 import { Container, Slider, SliderCounter } from "~/components"
+import Link from "next/link"
+import { topSales } from "../constant/topSales"
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" })
 
   return (
-    <div>
-      <div className="text-center w-full h-[90%] flex flex-col gap-2 justify-between">
-        <Container>
-          <h1 className="font-primary text-lg font-bold">
-            The best <br /> bag behind you
-          </h1>
-          <p className="font-secondary text-sm text-primary-darker">
-            We provide high quality for each bag. In our shop you can find bag that fits your needs - it can be
-            colorfull / spacious / waterproof bag - what is yours? - you may create your own!{" "}
-          </p>
+    <>
+      <main className="mt-12 laptop:mt-0 text-center laptop:text-start">
+        <Container className="absolute top-1/2 -translate-y-full flex flex-col-reverse laptop:flex-row items-center gap-y-4">
+          <SliderCounter className="w-full laptop:ml-[10%]" array={topSales} progressfillClassname="h-[3px] bg-cta"
+            subTitleClassName="font-secondary text-sm text-primary-dark" titleClassName="font-bold"
+            progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary" />
+          <div className="w-full max-h-[60vh]">
+            <h1 className="text-lg font-bold laptop:w-[85%] laptop:ml-auto">
+              The best <br /> bag behind you
+            </h1>
+            <p className="hidden font-secondary text-sm text-primary-dark tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
+              Have questions how we did something? - ask us<br />
+              As junior developers we provide low prices for now - its your chance!
+              <br /><Link className="text-cta" href="https://t.me/icpcedu" target="_blank">t.me/icpcedu</Link>
+            </p>
+          </div>
         </Container>
 
-        <Container>
-          <SliderCounter />
-        </Container>
-
-        <Slider />
-      </div>
-
-      <div className="flex flex-col items-center gap-2">
-        <p className="text-2xl text-blue-400">{hello.data ? hello.data.greeting : "Loading tRPC query..."}</p>
-        <AuthShowcase />
-      </div>
-    </div>
+        <div className="absolute bottom-0">
+          <Slider className="bg-secondary
+    flex flex-col justify-center mt-auto"
+            label="Top sales" labelClassName="font-bold" array={topSales} />
+        </div>
+      </main>
+    </>
   )
 }
 
-function AuthShowcase() {
-  const { data: sessionData } = useSession()
-
-  const { data: secretMessage } = api.example.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined }
-  )
-
-  return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-2xl text-center text-red-400">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
-      <button
-        className="rounded-full bg-blue-400 px-10 py-3 font-semibold text-red-400 no-underline transition hover:bg-blue-700"
-        onClick={sessionData ? () => void signOut() : () => void signIn()}
-      >
-        {sessionData ? "Sign out" : "Sign in"}
-      </button>
-    </div>
-  )
-}
