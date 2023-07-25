@@ -7,7 +7,7 @@ import React from "react"
 interface IProgressProvider {
   valueStart: number
   valueEnd: number
-  children: (value: number) => void
+  children: (value: number) => React.ReactNode
 }
 
 const ProgressProvider = ({ valueStart, valueEnd, children }: IProgressProvider) => {
