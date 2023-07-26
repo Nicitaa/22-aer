@@ -7,7 +7,7 @@ interface MainTextStore {
 }
 
 const useMainText = create<MainTextStore>((set) => ({
-  isOpen: false,
+  isOpen: true,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false })
 }))

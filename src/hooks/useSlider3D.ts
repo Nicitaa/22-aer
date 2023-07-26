@@ -7,7 +7,7 @@ interface Slider3DStore {
 }
 
 const useSlider3D = create<Slider3DStore>((set) => ({
-  isOpen: false,
+  isOpen: true,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false })
 }))

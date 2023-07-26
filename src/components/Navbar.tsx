@@ -4,15 +4,22 @@ import { useRouter } from "next/router";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import useSlider3D from "~/hooks/useSlider3D";
+import useMainText from "~/hooks/useMainText";
 
 export function Navbar() {
 
   const [isHamburgerMenu, setHamburgerMenu] = useState<boolean>(false)
   const [isNavbar, setNavbar] = useState<boolean>(true)
 
+  const mainText = useMainText()
+  const slider3D = useSlider3D()
+
   function showHamburgerMenu() {
     setNavbar(false)
-    setHamburgerMenu(true)
+    mainText.onClose()
+    slider3D.onClose()
+    // setHamburgerMenu(true)
   }
   //logic for hiding Slider and sliderCounter
 
@@ -50,8 +57,7 @@ export function Navbar() {
      tablet:px-8 tablet:py-4
      laptop:px-12 laptop:py-6"
             initial={{ y: 0 }}
-            animate={{ y: 0 }}
-            exit={{ y: 100 }}>
+            exit={{ y: -50 }}>
 
             {/* LOGO */}
             <h1 className="font-primary text-lg font-bold">Aer</h1>
@@ -80,8 +86,9 @@ export function Navbar() {
           </motion.nav>}
       </AnimatePresence>
 
-      {isHamburgerMenu &&
-        <AnimatePresence>
+
+      <AnimatePresence>
+        {isHamburgerMenu &&
           <motion.div className="flex flex-col items-center gap-y-8"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
@@ -96,8 +103,8 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-          </motion.div>
-        </AnimatePresence>}
+          </motion.div>}
+      </AnimatePresence>
     </>
   )
 }
