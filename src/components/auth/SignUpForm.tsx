@@ -84,7 +84,8 @@ function SignUpForm() {
         <Button variant='cta-danger' >Button text</Button>
         <Button variant='cta-success' >Button text</Button>
         <Button variant='neon'>Button text</Button>
-        <Button variant='nav-link'>Button text</Button>
+        <Button className="text-center" variant='nav-link' active='inactive'>Button text</Button>
+        <Button className="text-center" variant='nav-link' active='active'>Button text active</Button>
         <Button variant='link'>Button text</Button>
         <Button variant='continue-with' >Button text <FaFacebook /></Button>
       </div>
