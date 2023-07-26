@@ -12,12 +12,12 @@ export default function Home() {
 
   return (
     <>
-      <main className="mt-12 laptop:mt-0 text-center laptop:text-start">
+      <main className='absolute inset-0 top-[10vh] overflow-hidden text-center laptop:text-start'>
         <AnimatePresence>
           {mainText.isOpen &&
             <motion.div className="absolute top-1/2 w-full"
-              initial={{ x: 0 }}
-              exit={{ x: -500 }}>
+              animate={{ x: ['-100%', '0%'] }}
+              exit={{ x: ['0%', '-100%'] }}>
               <div className="-translate-y-full w-full flex flex-col-reverse laptop:flex-row items-center gap-y-4 px-4 tablet:px-8 laptop:px-12">
                 <SliderCounter className="w-full laptop:ml-[10%]" array={topSales} progressfillClassname="h-[3px] bg-cta"
                   subTitleClassName="font-secondary text-sm text-primary-dark" titleClassName="font-bold"
@@ -39,8 +39,8 @@ export default function Home() {
         <AnimatePresence>
           {slider3D.isOpen &&
             <motion.div className="absolute bottom-0"
-              initial={{ x: 0 }}
-              exit={{ x: 500 }}>
+              animate={{ x: ['100%', '0%'] }}
+              exit={{ x: ['0%', '100%'] }}>
               <Slider3D className="bg-secondary
     flex flex-col justify-center mt-auto"
                 label="Top sales" labelClassName="font-bold" array={topSales} />
