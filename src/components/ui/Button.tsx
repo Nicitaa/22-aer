@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { VariantProps, cva } from 'class-variance-authority'
 
+
 const buttonVariants = cva(
   'font-bold text-primary px-4 py-2 rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300',
   {
@@ -14,8 +15,22 @@ const buttonVariants = cva(
         "cta-success":
           'bg-cta-success',
         neon:
-          'bg-secondary-dark border-2 border-solid border-cta shadow-cta'
+          'bg-secondary-dark border-2 border-solid border-cta shadow-cta',
+        'nav-link':
+          `w-fit
+          before:absolute before:bottom-[-4px] before:w-full before:content-['']
+           before:invisible before:opacity-0 before:translate-y-[0px]
+           before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
+           before:duration-300 before:pointer-events-none`,
+        link:
+          '',
+        'continue-with':
+          'bg-primary text-secondary-dark flex justify-center items-center gap-x-4'
       },
+      active: {
+        active:
+          'hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[0px]'
+      }
     },
     defaultVariants: {
       variant: 'cta',
@@ -35,8 +50,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       return (
         <Link
           href={href}
-          className={(buttonVariants({ variant, className }))}
-        >
+          className={(buttonVariants({ variant, className }))}>
           {children}
         </Link>
       )
@@ -45,8 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         className={(buttonVariants({ variant, className }))}
         ref={ref}
-        {...props}
-      >
+        {...props}>
         {children}
       </button>
     )
