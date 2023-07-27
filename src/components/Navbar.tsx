@@ -3,7 +3,7 @@ import { AiOutlineMenuFold } from "react-icons/ai"
 import { useRouter } from "next/router";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, animate, motion } from "framer-motion";
 import { useMainText, useSlider3D } from "~/hooks";
 import { Button } from "./ui/Button";
 
@@ -14,18 +14,29 @@ export function Navbar() {
   const mainText = useMainText()
 
   function showHamburgerMenu() {
+    router.pathname === '/' ? '' : animate('main', { y: '150%' })
     slider3D.onClose()
     mainText.onClose()
     setHamburgerMenu(true)
   }
 
   function hideHamburgerMenu() {
-    setHamburgerMenu(false)
     mainText.onOpen()
     slider3D.onOpen()
+    setHamburgerMenu(false)
+    setTimeout(() => {
+      document.querySelector('main')?.removeAttribute('style')
+    }, 500)
   }
-
-  //logic for hiding Slider and sliderCounter
+  function hideHamburgerMenu2() {
+    animate('main', { y: '0%' })
+    mainText.onOpen()
+    slider3D.onOpen()
+    setHamburgerMenu(false)
+    setTimeout(() => {
+      document.querySelector('main')?.removeAttribute('style')
+    }, 500)
+  }
 
   const navLinks = [
     {
@@ -46,7 +57,7 @@ export function Navbar() {
     },
     {
       label: 'Login',
-      href: '/login'
+      href: '/auth/signin'
     },
   ]
 
@@ -59,8 +70,8 @@ export function Navbar() {
           className="text-primary flex justify-between items-center px-4 py-2
      tablet:px-8 tablet:py-4
      laptop:px-12 laptop:py-6"
-          initial={{ y: 0 }}
-          exit={{ y: -400 }}>
+          initial={{ y: '0%' }}
+          exit={{ y: '-100%' }}>
 
           {/* LOGO */}
           <h1 className="font-primary text-lg font-bold">Aer</h1>
@@ -71,23 +82,17 @@ export function Navbar() {
           <ul className="hidden laptop:flex justify-between gap-x-8 text-center">
             {navLinks.map(navLink => (
               <li className="relative" key={navLink.href}>
-                <Link className={twMerge(`before:absolute before:bottom-[-4px] before:w-full before:content-['']
-                 before:invisible before:opacity-0 before:translate-y-[0px]
-           before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
-            before:duration-300 before:pointer-events-none
-            ${router.pathname == navLink.href ? `before:visible before:opacity-100`
-                    : `hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[0px]`}`)}
-                  href={navLink.href}>{navLink.label}</Link>
+                <Button variant='nav-link' active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
+                  href={navLink.href}>{navLink.label}</Button>
               </li>
             ))}
           </ul>
 
 
-
           {/* Hamburger menu */}
           <motion.div animate={{ rotate: isHamburgerMenu ? 90 : 270 }}>
             <AiOutlineMenuFold className='flex laptop:hidden font-bold' size={48}
-              onClick={() => isHamburgerMenu ? hideHamburgerMenu() : showHamburgerMenu()} />
+              onClick={() => isHamburgerMenu ? hideHamburgerMenu2() : showHamburgerMenu()} />
           </motion.div>
 
 
@@ -103,13 +108,11 @@ export function Navbar() {
             <ul>
               {navLinks.map(navLink => (
                 <li className="relative" key={navLink.href}>
-                  <Button className={twMerge(`text-lg text-primary mb-4 before:absolute before:bottom-[-4px] before:w-full
-                   before:content-[''] before:invisible before:opacity-0 before:translate-y-[0px]
-           before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
-            before:duration-300 before:pointer-events-none
-            ${router.pathname == navLink.href ? `text-cta laptop:before:visible before:opacity-100`
-                      : `hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[0px]`}`)}
-                    href={navLink.href}>{navLink.label}</Button>
+                  <Button className="text-lg" variant='nav-link' active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
+                    onClick={() => {
+                      router.push(navLink.href),
+                        router.pathname === navLink.href ? hideHamburgerMenu2() : hideHamburgerMenu()
+                    }}>{navLink.label}</Button>
                 </li>
               ))}
             </ul>

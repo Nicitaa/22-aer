@@ -20,7 +20,7 @@ const Product = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [currentImage, setCurrentImage] = useState(Math.floor(imagesUrl.length / 2))
   return (
-    <main className=" h-full min-h-screen">
+    <div className=" h-full min-h-screen">
       <section className="relative  laptop:flex mx-auto my-0  w-full max-w-[1284px] laptop:px-8 tablet:px-0">
         <div className="laptop:w-1/2 w-full px-8 laptop:px-0">
           <Image
@@ -114,7 +114,7 @@ const Product = () => {
         </div>
         {/* End of about item container */}
       </section>
-    </main>
+    </div>
   )
 }
 

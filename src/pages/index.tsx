@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <main className='absolute inset-0 top-[10vh] overflow-hidden text-center laptop:text-start'>
+      <div className='absolute inset-0 top-[10vh] overflow-hidden text-center laptop:text-start'>
         <AnimatePresence>
           {mainText.isOpen &&
             <motion.div className="absolute top-1/2 w-full"
@@ -46,7 +46,7 @@ export default function Home() {
                 label="Top sales" labelClassName="font-bold" array={topSales} />
             </motion.div>}
         </AnimatePresence>
-      </main>
+      </div>
     </>
   )
 }
