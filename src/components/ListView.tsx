@@ -20,7 +20,7 @@ const ListView = ({ products }: { products: Product[] }) => {
   return (
     <div
       ref={componentRef}
-      className="scrollbar md:grid-cols-2 grid max-h-[750px] grid-cols-1 gap-12 overflow-y-scroll"
+      className="scrollbar max-h-[750px]   overflow-y-scroll"
     >
       <section className=" grid gap-y-12 justify-items-center ">
         {products.map((product) => {

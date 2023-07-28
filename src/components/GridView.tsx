@@ -11,7 +11,7 @@ type Product = {
 }
 const GridView = ({ products }: { products: Product[] }) => {
   return (
-    <section className="scrollbar grid max-h-[750px] grid-cols-2 gap-4 overflow-y-scroll tablet:grid-cols-4">
+    <section className="scrollbar grid max-h-[750px] grid-cols-1 gap-4 overflow-y-scroll tablet:grid-cols-2 laptop:grid-cols-3">
       {products.map((product, index) => (
         <section key={index} className="group relative mx-4 mb-8 overflow-hidden rounded-t-2xl">
           <Link href={`product?id=${product.id}`}>
