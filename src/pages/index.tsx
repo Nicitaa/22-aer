@@ -7,8 +7,9 @@ import useSlider3D from "~/hooks/useSlider3D"
 
 export default function Home() {
 
-  const mainText = useMainText()
   const slider3D = useSlider3D()
+  const mainText = useMainText()
+
 
   return (
     <>
