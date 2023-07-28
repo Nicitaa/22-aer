@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
+import { Button } from "./ui/Button"
 type Product = {
   id: string
   preview: string
@@ -18,10 +18,7 @@ const ListView = ({ products }: { products: Product[] }) => {
     setComponentWidth(initialWidth || 0)
   }, [])
   return (
-    <div
-      ref={componentRef}
-      className="scrollbar max-h-[750px]   overflow-y-scroll"
-    >
+    <div ref={componentRef} className="scrollbar max-h-[750px] overflow-y-scroll">
       <section className=" grid gap-y-12 justify-items-center ">
         {products.map((product) => {
           const { id, preview, title, subTitle, price } = product
@@ -41,26 +38,26 @@ const ListView = ({ products }: { products: Product[] }) => {
                 )}
                 <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
                 {componentWidth > 700 ? (
-                  <Link
+                  <Button
                     href={`/product?id=${id}`}
                     className=" bg-cta px-2 py-1 text-xs absolute tablet:w-20 w-full  text-center right-auto tablet:bottom-0 tablet:right-0"
                   >
                     Details
-                  </Link>
+                  </Button>
                 ) : (
                   <div className="w-full flex gap-8 mt-4">
-                    <Link
+                    <Button
                       href={`/product?id=${id}`}
                       className=" bg-cta px-2 py-1 text-md font-bold flex-grow  text-center rounded-md "
                     >
                       Buy ${(price / 100).toFixed(2)}
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
                       href={`/product?id=${id}`}
                       className=" bg-cta px-2 py-1 text-md font-bold flex-grow  text-center rounded-md "
                     >
                       Details
-                    </Link>
+                    </Button>
                   </div>
                 )}
               </div>
