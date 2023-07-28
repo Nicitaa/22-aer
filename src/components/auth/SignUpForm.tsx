@@ -2,6 +2,9 @@ import Link from "next/link"
 import React, { useState } from "react"
 import { FaEye } from "react-icons/fa"
 import { Input } from "../ui"
+import { Button } from "../ui/Button"
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
+
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -73,7 +76,7 @@ function SignUpForm() {
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
         Register Now
       </button>
-    </form>
+    </form >
   )
 }
 
