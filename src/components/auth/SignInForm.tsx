@@ -1,23 +1,23 @@
 import Link from "next/link"
 import { FaEye } from "react-icons/fa"
-import { Input } from "../ui"
+import { Input, SimpleCheckbox } from "../ui"
 import { useState } from "react"
-type Props = {
-  providers: object
-}
+type Props = {}
 
-function SignInForm({ providers }: Props) {
+function SignInForm({}: Props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
   return (
     <form action="#" className="w-full space-y-4">
       <label htmlFor="sign-in-email"></label>
-      <Input type="text"
+      <Input
+        type="text"
         id="sign-in-email"
         placeholder="Email or Username"
         value={email}
-        onChange={(e) => setEmail(e.target.value)} />
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <div className="flex relative items-center">
         <label htmlFor="sign-in-password"></label>
         <Input
@@ -27,21 +27,15 @@ function SignInForm({ providers }: Props) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
       </div>
       <div className="flex justify-between items-center">
-        <div className="flex flex-row-reverse gap-1 items-center ">
-          <label htmlFor="sign-in-rememberMe" className="text-xs">
-            Remember Me
-          </label>
-          <Input
-            type="checkbox"
-            id="sign-in-rememberMe"
-            checked={rememberMe}
-            onChange={() => setRememberMe((prevValue) => !prevValue)}
-          />
-        </div>
-        <Link href={"./recover"} className="text-cta">
+        <SimpleCheckbox
+          label={"Remember Me"}
+          checkboxValue={rememberMe}
+          setCheckboxValue={setRememberMe}
+          labelReverse={true}
+        />
+        <Link href={"./recover"} className="text-cta text-xs">
           Forgot Password?
         </Link>
       </div>
