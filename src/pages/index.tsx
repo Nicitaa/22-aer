@@ -1,4 +1,4 @@
-import { Container, Slider3D, SliderCounter } from "~/components"
+import { Slider3D, SliderCounter } from "~/components"
 import Link from "next/link"
 import { topSales } from "../constant/topSales"
 import { AnimatePresence, motion } from "framer-motion"
