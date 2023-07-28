@@ -5,21 +5,21 @@ import { twMerge } from 'tailwind-merge'
 
 
 const buttonVariants = cva(
-  'font-bold text-primary px-4 py-2 rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300',
+  'font-bold text-primary rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300',
   {
     variants: {
       variant: {
         cta:
-          'bg-cta',
+          'bg-cta px-4 py-2',
         "cta-danger":
-          'bg-cta-danger',
+          'bg-cta-danger px-4 py-2',
         "cta-success":
-          'bg-cta-success',
+          'bg-cta-success px-4 py-2',
         neon:
-          'bg-secondary-dark border-2 border-solid border-cta shadow-cta',
+          'bg-secondary-dark border-2 border-solid border-cta shadow-cta px-4 py-2',
         'nav-link':
           `relative w-fit
-          before:absolute before:bottom-[-4px] before:w-[90%] before:content-['']
+          before:absolute before:bottom-[-4px] before:w-full before:content-['']
            before:invisible before:opacity-0 before:translate-y-[0px]
            before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
            before:duration-300 before:pointer-events-none`,
