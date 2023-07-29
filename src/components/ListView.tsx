@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Button } from "./ui/Button"
+import { priceFormatter } from "~/utils/priceFormatter"
 type Product = {
   id: string
   preview: string
@@ -32,22 +33,19 @@ const ListView = ({ products }: { products: Product[] }) => {
               <div className="font-primary text-white tablet:w-[35%] tablet:relative">
                 <h4 className="font-bold capitalize text-lg">{title}</h4>
                 {componentWidth > 700 ? (
-                  <h5 className="font-primary font-bold text-md text-cta">${(price / 100).toFixed(2)}</h5>
+                  <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
                 ) : (
                   <></>
                 )}
                 <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
                 {componentWidth > 700 ? (
-                  <Button
-                    href={`/product?id=${id}`}
-                    className="absolute right-0"
-                  >
+                  <Button href={`/product?id=${id}`} className="absolute right-0">
                     Details
                   </Button>
                 ) : (
                   <div className="w-full flex gap-8 mt-4">
                     <Button href={`/product?id=${id}`} className="w-1/2 text-center">
-                      Buy ${(price / 100).toFixed(2)}
+                      {priceFormatter(price)}
                     </Button>
                     <Button href={`/product?id=${id}`} className="w-1/2 text-center">
                       Details
