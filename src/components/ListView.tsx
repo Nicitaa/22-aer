@@ -40,22 +40,16 @@ const ListView = ({ products }: { products: Product[] }) => {
                 {componentWidth > 700 ? (
                   <Button
                     href={`/product?id=${id}`}
-                    className=" bg-cta px-2 py-1 text-xs absolute tablet:w-20 w-full  text-center right-auto tablet:bottom-0 tablet:right-0"
+                    className="absolute right-0"
                   >
                     Details
                   </Button>
                 ) : (
                   <div className="w-full flex gap-8 mt-4">
-                    <Button
-                      href={`/product?id=${id}`}
-                      className=" bg-cta px-2 py-1 text-md font-bold flex-grow  text-center rounded-md "
-                    >
+                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
                       Buy ${(price / 100).toFixed(2)}
                     </Button>
-                    <Button
-                      href={`/product?id=${id}`}
-                      className=" bg-cta px-2 py-1 text-md font-bold flex-grow  text-center rounded-md "
-                    >
+                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
                       Details
                     </Button>
                   </div>
