@@ -80,8 +80,8 @@ export function Navbar() {
 
 
           {/* Hamburger menu */}
-          <motion.div animate={{ rotate: isHamburgerMenu ? 90 : 270 }}>
-            <AiOutlineMenuFold className='flex laptop:hidden font-bold' size={48}
+          <motion.div className="flex laptop:hidden" animate={{ rotate: isHamburgerMenu ? 90 : 270 }}>
+            <AiOutlineMenuFold size={48}
               onClick={() => isHamburgerMenu ? hideHamburgerMenu() : showHamburgerMenu()} />
           </motion.div>
 
