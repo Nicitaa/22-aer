@@ -40,7 +40,7 @@ export default function Home() {
               after:absolute after:right-0 after:w-[25%] after:content-['Nikita']
            after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
            after:transition-all
-           after:duration-300 after:pointer-events-none
+           after:duration-500 after:pointer-events-none
             hover:after:visible hover:after:opacity-100 hover:after:translate-x-[46px]
            text-cta" href="https://t.me/icpcedu" target="_blank">t.me/icpcedu</Link>
                       <Link className="relative w-fit
@@ -52,7 +52,7 @@ export default function Home() {
               after:absolute after:right-0 after:w-[25%] after:content-['Ilya']
            after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
            after:transition-all
-           after:duration-300 after:pointer-events-none
+           after:duration-500 after:pointer-events-none
             hover:after:visible hover:after:opacity-100 hover:after:translate-x-[57px]
            text-cta" href="https://github.com/ottakist" target="_blank">github.com/ottakist</Link>
                       <Link className="relative w-fit
@@ -64,7 +64,7 @@ export default function Home() {
               after:absolute after:right-0 after:w-[25%] after:content-['Ahmad']
            after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
            after:transition-all
-           after:duration-300 after:pointer-events-none
+           after:duration-500 after:pointer-events-none
             hover:after:visible hover:after:opacity-100 hover:after:translate-x-[60px]
            text-cta" href="https://github.com/arifm6" target="_blank">github.com/arifm6</Link>
                     </div>
