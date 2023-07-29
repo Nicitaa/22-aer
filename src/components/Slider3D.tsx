@@ -20,7 +20,7 @@ interface ISlider {
   array: ITopSales[]
 }
 
-export function Slider({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize,
+export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize,
   array }: ISlider) {
   const [currentSlide, setCurrentSlide] = useState(Math.floor((array.length) / 2))
 
