@@ -30,7 +30,44 @@ export default function Home() {
                   <p className="hidden font-secondary text-sm text-primary-dark tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
                     Have questions how we did something? - ask us<br />
                     As junior developers we provide low prices for now - its your chance!
-                    <br /><Link className="text-cta" href="https://t.me/icpcedu" target="_blank">t.me/icpcedu</Link>
+                    <div className="flex flex-col">
+                      <Link className="relative w-fit
+          before:absolute before:right-0 before:w-[25%] before:content-['']
+           before:invisible before:opacity-0 before:translate-x-[0px] before:translate-y-[10px]
+           before:border-b-[4px] before:rotate-90 before:border-solid before:border-cta before:rounded-md before:transition-all
+           before:duration-300 before:pointer-events-none
+            hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
+              after:absolute after:right-0 after:w-[25%] after:content-['Nikita']
+           after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+           after:transition-all
+           after:duration-300 after:pointer-events-none
+            hover:after:visible hover:after:opacity-100 hover:after:translate-x-[46px]
+           text-cta" href="https://t.me/icpcedu" target="_blank">t.me/icpcedu</Link>
+                      <Link className="relative w-fit
+          before:absolute before:right-0 before:w-[20%] before:content-['']
+           before:invisible before:opacity-0 before:translate-x-[10px] before:translate-y-[10px]
+           before:border-b-[4px] before:rotate-90 before:border-solid before:border-cta before:rounded-md before:transition-all
+           before:duration-300 before:pointer-events-none
+            hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
+              after:absolute after:right-0 after:w-[25%] after:content-['Ilya']
+           after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+           after:transition-all
+           after:duration-300 after:pointer-events-none
+            hover:after:visible hover:after:opacity-100 hover:after:translate-x-[57px]
+           text-cta" href="https://github.com/ottakist" target="_blank">github.com/ottakist</Link>
+                      <Link className="relative w-fit
+          before:absolute before:right-[-4px] before:w-[20%] before:content-['']
+           before:invisible before:opacity-0 before:translate-x-[0px] before:translate-y-[10px]
+           before:border-b-[4px] before:rotate-90 before:border-solid before:border-cta before:rounded-md before:transition-all
+           before:duration-300 before:pointer-events-none
+            hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
+              after:absolute after:right-0 after:w-[25%] after:content-['Ahmad']
+           after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+           after:transition-all
+           after:duration-300 after:pointer-events-none
+            hover:after:visible hover:after:opacity-100 hover:after:translate-x-[60px]
+           text-cta" href="https://github.com/arifm6" target="_blank">github.com/arifm6</Link>
+                    </div>
                   </p>
                 </div>
               </div>
