@@ -69,7 +69,7 @@ export function Navbar() {
 
 
           {/* Nav-links */}
-          <ul className="hidden laptop:flex justify-between gap-x-8 text-center">
+          <ul className="hidden laptop:flex justify-between gap-x-8 text-sm">
             {navLinks.map(navLink => (
               <li className="relative" key={navLink.href}>
                 <Button variant='nav-link' active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
