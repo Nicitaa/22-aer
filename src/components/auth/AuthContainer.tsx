@@ -13,7 +13,7 @@ interface AuthContainerProps {
 export default function AuthContainer({ children, title, customContent, providers }: AuthContainerProps) {
   return (
     <div
-      className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
+      className="flex text-md flex-col items-center w-[456px] max-w-[90vw] mx-auto px-4 py-2 rounded-[12px]
   tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary "
     >
       <h1 className="text-md font-bold text-primary">{title}</h1>
