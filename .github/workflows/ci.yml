@@ -43,6 +43,27 @@ jobs:
 
       - name: Building
         run: pnpm build
+        env:
+          NEXTAUTH_SECRET: 'FRqfW3Puy5CM0gaFu8joMw2zFNwbIBgRqHX2WW3HcVu7U5gwXQDBbGRbp2eg'
+          NEXTAUTH_URL: 'http://localhost:3000'
+          GITHUB_CLIENT_ID: '123'
+          GITHUB_CLIENT_SECRET: '1234'
+          GOOGLE_CLIENT_ID: '12345'
+          GOOGLE_CLIENT_SECRET: '123456'
+          FACEBOOK_CLIENT_ID: '1234567'
+          FACEBOOK_CLIENT_SECRET: '12345678'
 
       - name: lintrc
         run: pnpm lint
+        env:
+          NEXTAUTH_SECRET: 'FRqfW3Puy5CM0gaFu8joMw2zFNwbIBgRqHX2WW3HcVu7U5gwXQDBbGRbp2eg'
+          NEXTAUTH_URL: 'http://localhost:3000'
+          GITHUB_CLIENT_ID: '123'
+          GITHUB_CLIENT_SECRET: '1234'
+          GOOGLE_CLIENT_ID: '12345'
+          GOOGLE_CLIENT_SECRET: '123456'
+          FACEBOOK_CLIENT_ID: '1234567'
+          FACEBOOK_CLIENT_SECRET: '12345678'
+
+      - name: Type-checking
+        run: pnpm type-check
