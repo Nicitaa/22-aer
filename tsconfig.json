@@ -28,7 +28,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/components/ProgressProvider.ts",
+    "src/components/ProgressProvider.tsx",
     "src/components/StatCircle.tsx",
     "src/components/TradingViewWidget.jsx"
   ],
