@@ -6,7 +6,7 @@ import bags from "~/constant/bags.json"
 const ProductsPage = () => {
   const [sortOption, setSortOption] = useState({ grid: true, list: false })
   return (
-    <div className="flex h-full min-h-screen flex-col items-center ">
+    <div className="flex h-fit flex-col items-center ">
       <section className="mx-auto my-0  w-full max-w-[1284px] px-8 tablet:px-0">
         <ProductsHeader sortOption={sortOption} setSortOption={setSortOption} productsCount={bags.length} />
         {sortOption.grid && <GridView products={bags} />}
