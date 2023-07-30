@@ -43,11 +43,11 @@ const ListView = ({ products }: { products: Product[] }) => {
                     Details
                   </Button>
                 ) : (
-                  <div className="w-full flex gap-8 mt-4">
-                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
-                      {priceFormatter(price)}
+                  <div className="w-full flex flex-col gap-3 mt-4">
+                    <Button href={`/product?id=${id}`} className="w-full text-center">
+                      Buy {priceFormatter(price)}
                     </Button>
-                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
+                    <Button href={`/product?id=${id}`} className="w-full text-center">
                       Details
                     </Button>
                   </div>
