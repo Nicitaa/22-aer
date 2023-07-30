@@ -1,16 +1,12 @@
 import React from "react"
 
-// If you don't have a version of React that supports
-// hooks, you can use a class-based version of this
-// component in ProgressProviderUsingClass.js
-
 interface IProgressProvider {
   valueStart: number
   valueEnd: number
-  children: (value: number) => React.ReactNode
+  children: (value: number) => JSX.Element
 }
 
-const ProgressProvider = ({ valueStart, valueEnd, children }: IProgressProvider) => {
+const ProgressProvider = ({valueStart, valueEnd, children}: IProgressProvider) => {
   const [value, setValue] = React.useState(valueStart)
   React.useEffect(() => {
     setValue(valueEnd)
@@ -18,4 +14,5 @@ const ProgressProvider = ({ valueStart, valueEnd, children }: IProgressProvider)
 
   return children(value)
 }
+
 export default ProgressProvider
