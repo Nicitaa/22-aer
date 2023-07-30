@@ -19,7 +19,7 @@ const ListView = ({ products }: { products: Product[] }) => {
     setComponentWidth(initialWidth || 0)
   }, [])
   return (
-    <div ref={componentRef} className="scrollbar max-h-[750px] overflow-y-scroll">
+    <div ref={componentRef} className="scrollbar max-h-[75vh] overflow-y-scroll">
       <section className=" grid gap-y-12 justify-items-center ">
         {products.map((product) => {
           const { id, preview, title, subTitle, price } = product
