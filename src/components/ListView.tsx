@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Button } from "./ui/Button"
@@ -28,16 +29,8 @@ const ListView = ({ products }: { products: Product[] }) => {
               key={id}
               className="relative flex flex-col laptop:gap-6  w-full gap-6 tablet:px-8 tablet:flex-row  "
             >
-              <div className="tablet:w-[55%] ">
-                <Image
-                  className=" h-full  w-full "
-                  src={preview ?? ""}
-                  alt="Placeholder Image"
-                  height={1300}
-                  width={731}
-                  layout="fixed"
-                  objectFit="contain"
-                />
+              <div className="tablet:w-[55%] w-full overflow-hidden ">
+                <img src={preview} alt="Placeholder Image" className="w-full h-full object-cover" />
               </div>
               <div className="font-primary text-white tablet:w-[35%] tablet:relative flex flex-col justify-between ">
                 <div className="">
