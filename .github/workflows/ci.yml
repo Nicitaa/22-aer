@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: Linting
-        run: pnpm lint
+        run: pnpx lint

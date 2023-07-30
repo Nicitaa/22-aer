@@ -5,7 +5,7 @@
 # exit with non-zero status after issuing an appropriate message if
 # it wants to stop the commit.
 echo "--- Running ES-Lint ---"
-pnpm run lint-fix
+pnpx run lint-fix
 if [[ "$?" == 0 ]]; then
     git add -A
     printf "\033[32m✅ ESLint Passed\033[0m\n"
