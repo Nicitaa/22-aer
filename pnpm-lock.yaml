@@ -100,6 +100,9 @@ devDependencies:
   eslint-config-next:
     specifier: ^13.4.2
     version: 13.4.2(eslint@8.40.0)(typescript@5.0.4)
+  pnpm:
+    specifier: ^8.6.10
+    version: 8.6.10
   postcss:
     specifier: ^8.4.21
     version: 8.4.21
@@ -2460,6 +2463,12 @@ packages:
   /pirates@4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /pnpm@8.6.10:
+    resolution: {integrity: sha512-EBlPdgrAqmIDK6lflNm8M4lueWGM4PKJIDngt6vJ1+fmzh3e0482tg52nUjiuGvkzZ2sngA181GLqknXhAHgIg==}
+    engines: {node: '>=16.14'}
+    hasBin: true
     dev: true
 
   /postcss-import@14.1.0(postcss@8.4.21):
