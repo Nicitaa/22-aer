@@ -27,20 +27,20 @@ const ListView = ({ products }: { products: Product[] }) => {
           return (
             <article
               key={id}
-              className="relative flex flex-col laptop:gap-6  w-full gap-6 tablet:px-8 tablet:flex-row  "
-            >
-              <div className="tablet:w-[55%] w-full overflow-hidden ">
-                <img src={preview} alt="Placeholder Image" className="w-full h-full object-cover" />
-              </div>
-              <div className="font-primary text-white tablet:w-[35%] tablet:relative flex flex-col justify-between ">
-                <div className="">
-                  <h4 className="font-bold capitalize text-lg">{title}</h4>
+              className="relative flex flex-col laptop:flex-row gap-6 w-full tablet:px-8">
+              <Image className="w-full object-cover object-center"
+                src={preview ?? ""} alt="Placeholder Image"
+                width={600} height={480} />
+
+              <div className="font-primary text-white w-full flex flex-col justify-between">
+                <div className='text-center tablet:text-start'>
+                  <h1 className='capitalize text-lg font-bold'>{title}</h1>
                   {componentWidth > 1024 ? (
                     <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
                   ) : (
                     <></>
                   )}
-                  <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
+                  <p className="text-md">{subTitle.substring(0, 150)}...</p>
                 </div>
                 {componentWidth > 1024 ? (
                   <div className="w-full flex text-sm gap-3  mt-4">
