@@ -44,7 +44,7 @@ jobs:
       - name: Building
         run: pnpm build
         env:
-          NEXTAUTH_SECRET: 'FRqfW3Puy5CM0gaFu8joMw2zFNwbIBgRqHX2WW3HcVu7U5gwXQDBbGRbp2eg'
+          NEXTAUTH_SECRET: 'random'
           NEXTAUTH_URL: 'http://localhost:3000'
           GITHUB_CLIENT_ID: '123'
           GITHUB_CLIENT_SECRET: '1234'
@@ -56,7 +56,7 @@ jobs:
       - name: lintrc
         run: pnpm lint
         env:
-          NEXTAUTH_SECRET: 'FRqfW3Puy5CM0gaFu8joMw2zFNwbIBgRqHX2WW3HcVu7U5gwXQDBbGRbp2eg'
+          NEXTAUTH_SECRET: 'random'
           NEXTAUTH_URL: 'http://localhost:3000'
           GITHUB_CLIENT_ID: '123'
           GITHUB_CLIENT_SECRET: '1234'
