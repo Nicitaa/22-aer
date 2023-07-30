@@ -44,6 +44,7 @@ jobs:
       - name: Building
         run: pnpm build
         env:
+          DATABASE_URL: 'randomurl'
           NEXTAUTH_SECRET: 'random'
           NEXTAUTH_URL: 'http://localhost:3000'
           GITHUB_CLIENT_ID: '123'
@@ -56,6 +57,7 @@ jobs:
       - name: lintrc
         run: pnpm lint
         env:
+          DATABASE_URL: 'randomurl'
           NEXTAUTH_SECRET: 'random'
           NEXTAUTH_URL: 'http://localhost:3000'
           GITHUB_CLIENT_ID: '123'
