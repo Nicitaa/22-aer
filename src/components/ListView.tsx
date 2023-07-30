@@ -28,19 +28,27 @@ const ListView = ({ products }: { products: Product[] }) => {
               key={id}
               className="relative flex flex-col laptop:gap-6  w-full gap-6 tablet:px-8 tablet:flex-row  "
             >
-              <Image className="tablet:w-[55%]" src={preview ?? ""} alt="Placeholder Image" width={600} height={480} />
-
+              <div className="tablet:w-[55%] ">
+                <Image
+                  className=" h-full  w-full "
+                  src={preview ?? ""}
+                  alt="Placeholder Image"
+                  height={1300}
+                  width={731}
+                  layout="fixed"
+                  objectFit="contain"
+                />
+              </div>
               <div className="font-primary text-white tablet:w-[35%] tablet:relative flex flex-col justify-between ">
                 <div className="">
-
-                <h4 className="font-bold capitalize text-lg">{title}</h4>
-                {componentWidth > 1024 ? (
-                  <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
+                  <h4 className="font-bold capitalize text-lg">{title}</h4>
+                  {componentWidth > 1024 ? (
+                    <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
                   ) : (
                     <></>
-                    )}
-                <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
-                    </div>
+                  )}
+                  <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
+                </div>
                 {componentWidth > 1024 ? (
                   <div className="w-full flex text-sm gap-3  mt-4">
                     <Button href={`/product?id=${id}`} className="w-1/2 text-center">
