@@ -5,6 +5,7 @@ import { AiOutlineDown } from "react-icons/ai"
 import { DropdownContainer } from "./DropdownContainer"
 import { Checkbox, Input, RadioButton } from "./ui"
 import { Button } from "./ui/Button"
+import { useState } from "react"
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean }
@@ -12,6 +13,23 @@ interface navProps {
   productsCount: number
 }
 const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) => {
+  //fix  prices when ready.
+  const priceFloor = 0
+  const [minPrice, setMinPrice] = useState<number>(priceFloor)
+  const priceCeiling = 100
+  const [maxPrice, setMaxPrice] = useState<number>(priceCeiling)
+  const [priceRange, setPriceRange] = useState(50)
+  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMinPrice(parseInt(e.target.value, 10))
+  }
+  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxPrice(parseInt(e.target.value, 10))
+  }
+  //temp
+  const handlePriceRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPriceRange(parseInt(e.target.value, 10))
+  }
+
   return (
     <nav className="font-primary mb-8 grid w-full max-w-[1284px] grid-cols-1 items-center gap-x-8 px-8 pt-4 text-xs font-bold text-white tablet:grid-cols-[auto,auto,1fr,auto]">
       <div className="grid w-14 grid-cols-2 gap-x-2 ">
@@ -68,15 +86,34 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
                 <Input
                   placeholder="Min"
                   size="sm"
-                  type="text"
+                  type="number"
                   label="Minimum Price"
                   id="min-price"
                   labelHidden={true}
+                  value={minPrice}
+                  handleChange={handleMinPriceChange}
                 />
                 <h1>-</h1>
-                <Input placeholder="Max" size="sm" type="text" label="Max Price" id="max-price" labelHidden={true} />
+                <Input
+                  placeholder="Max"
+                  size="sm"
+                  type="number"
+                  label="Max Price"
+                  id="max-price"
+                  labelHidden={true}
+                  value={maxPrice}
+                  handleChange={handleMaxPriceChange}
+                />
               </div>
-              <Input type="range" label="Price Range" labelHidden={true} id="price-range" />
+              {/***NOTE. I recommend making a new component for sliders. This slider is being heavily affected by default styles of Input */}
+              <Input
+                type="range"
+                label="Price Range"
+                labelHidden={false}
+                id="price-range"
+                handleChange={handlePriceRangeChange}
+                value={priceRange}
+              />
             </div>
             <div className="flex flex-col">
               <h1 className="text-start">Color:</h1>

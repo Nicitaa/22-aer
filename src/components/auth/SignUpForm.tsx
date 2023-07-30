@@ -1,9 +1,5 @@
-import Link from "next/link"
 import React, { useState } from "react"
-import { FaEye } from "react-icons/fa"
 import { Input, SimpleCheckbox } from "../ui"
-import { Button } from "../ui/Button"
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
 import AuthForm from "./AuthForm"
 
 function SignUpForm() {
@@ -15,14 +11,32 @@ function SignUpForm() {
   const [showRepeatPassword, setShowRepeatPassword] = useState(false)
 
   const [rememberMe, setRememberMe] = useState(false)
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+  const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRepeatPassword(e.target.value)
+  }
+
   const inputs = [
-    <Input type="email" label="Email" labelHidden={true} id="email" placeholder="Email" />,
+    <Input
+      value={email}
+      type="email"
+      label="Email"
+      labelHidden={true}
+      id="email"
+      placeholder="Email"
+      handleChange={handleEmailChange}
+    />,
     <Input
       type={`${showPassword ? "text" : "password"}`}
       id="password"
       placeholder="Password"
       value={password}
-      onChange={(e) => setPassword(e.target.value)}
+      handleChange={handlePasswordChange}
       label="Password"
       labelHidden={true}
     />,
@@ -31,9 +45,9 @@ function SignUpForm() {
       id="repeatPassword"
       placeholder="Repeat Password"
       value={repeatPassword}
-      onChange={(e) => setRepeatPassword(e.target.value)}
       label="Repeat Password"
       labelHidden={true}
+      handleChange={handleRepeatPasswordChange}
     />,
     <div className="flex justify-start">
       <SimpleCheckbox

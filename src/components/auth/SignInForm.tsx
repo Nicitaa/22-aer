@@ -9,6 +9,12 @@ function SignInForm({}: Props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
   const inputs = [
     <Input
       label="Email"
@@ -17,7 +23,7 @@ function SignInForm({}: Props) {
       id="email"
       placeholder="Email"
       value={email}
-      onChange={(e) => setEmail(e.target.value)}
+      handleChange={handleEmailChange}
     />,
     <Input
       labelHidden={true}
@@ -26,7 +32,7 @@ function SignInForm({}: Props) {
       id="password"
       placeholder="Password"
       value={password}
-      onChange={(e) => setPassword(e.target.value)}
+      handleChange={handlePasswordChange}
     />,
     <div className="flex justify-between items-center">
       <SimpleCheckbox
