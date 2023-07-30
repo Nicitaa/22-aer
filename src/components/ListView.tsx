@@ -32,16 +32,21 @@ const ListView = ({ products }: { products: Product[] }) => {
 
               <div className="font-primary text-white tablet:w-[35%] tablet:relative">
                 <h4 className="font-bold capitalize text-lg">{title}</h4>
-                {componentWidth > 700 ? (
+                {componentWidth > 1024 ? (
                   <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
                 ) : (
                   <></>
                 )}
                 <p className="max-w-lg text-md">{subTitle.substring(0, 150)}...</p>
-                {componentWidth > 700 ? (
-                  <Button href={`/product?id=${id}`} className="absolute right-0">
-                    Details
-                  </Button>
+                {componentWidth > 1024 ? (
+                  <div className="w-full flex text-sm gap-3  mt-4">
+                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
+                      Buy {priceFormatter(price)}
+                    </Button>
+                    <Button href={`/product?id=${id}`} className="w-1/2 text-center">
+                      Details
+                    </Button>
+                  </div>
                 ) : (
                   <div className="w-full flex flex-col gap-3 mt-4">
                     <Button href={`/product?id=${id}`} className="w-full text-center">
