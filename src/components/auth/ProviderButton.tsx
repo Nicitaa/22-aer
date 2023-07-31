@@ -18,6 +18,11 @@ export function ProviderButton({ provider }: Props) {
 
   const handleSignIn = () => {
     signIn(provider.id)
+      .then(() => {
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
