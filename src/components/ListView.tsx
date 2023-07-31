@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import React, {useEffect, useRef, useState} from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import {Button} from "./ui/Button"
-import {priceFormatter} from "~/utils/priceFormatter"
+import { Button } from "./ui/Button"
+import { priceFormatter } from "~/utils/priceFormatter"
 type Product = {
   id: string
   preview: string
@@ -12,7 +12,7 @@ type Product = {
   imagesUrl: string[]
 }
 
-const ListView = ({products}: {products: Product[]}) => {
+const ListView = ({ products }: { products: Product[] }) => {
   const componentRef = useRef<HTMLDivElement>(null)
   const [componentWidth, setComponentWidth] = useState<number>(0)
   useEffect(() => {
@@ -23,7 +23,7 @@ const ListView = ({products}: {products: Product[]}) => {
     <div ref={componentRef} className="scrollbar max-h-[75vh] overflow-y-scroll">
       <section className=" grid gap-y-12 justify-items-center ">
         {products.map(product => {
-          const {id, preview, title, subTitle, price} = product
+          const { id, preview, title, subTitle, price } = product
           return (
             <article key={id} className="relative flex flex-col laptop:flex-row gap-6 w-full tablet:px-8">
               <Image
@@ -42,7 +42,10 @@ const ListView = ({products}: {products: Product[]}) => {
                   ) : (
                     <></>
                   )}
-                  <p className="text-md">{subTitle.substring(0, 150)}...</p>
+                  <p className="text-md">
+                    {subTitle.substring(0, 150)}
+                    ...
+                  </p>
                 </div>
                 {componentWidth > 1024 ? (
                   <div className="w-full flex text-sm gap-3  mt-4">

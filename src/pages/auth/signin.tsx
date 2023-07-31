@@ -1,12 +1,12 @@
-import type {GetServerSidePropsContext, InferGetServerSidePropsType} from "next"
-import {getProviders} from "next-auth/react"
-import {getServerSession} from "next-auth/next"
-import {authOptions} from "../../server/auth"
-import {ProviderButton} from "~/components/auth/ProviderButton"
-import {SignInForm} from "~/components"
+import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
+import { getProviders } from "next-auth/react"
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "../../server/auth"
+import { ProviderButton } from "~/components/auth/ProviderButton"
+import { SignInForm } from "~/components"
 import Link from "next/link"
 
-export default function SignIn({providers}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div
       className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
@@ -34,12 +34,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // Note: Make sure not to redirect to the same page
   // To avoid an infinite loop!
   if (session) {
-    return {redirect: {destination: "/"}}
+    return { redirect: { destination: "/" } }
   }
 
   const providers = await getProviders()
 
   return {
-    props: {providers: providers ?? []}
+    props: { providers: providers ?? [] },
   }
 }

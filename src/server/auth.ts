@@ -1,12 +1,12 @@
-import {PrismaAdapter} from "@next-auth/prisma-adapter"
-import {type GetServerSidePropsContext} from "next"
-import {getServerSession, type NextAuthOptions, type DefaultSession} from "next-auth"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { type GetServerSidePropsContext } from "next"
+import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
 
-import {env} from "~/env.mjs"
-import {prisma} from "~/server/db"
+import { env } from "~/env.mjs"
+import { prisma } from "~/server/db"
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -39,13 +39,13 @@ export const authOptions: NextAuthOptions = {
     //signIn: "/auth/signin"
   },
   callbacks: {
-    session: ({session, user}) => ({
+    session: ({ session, user }) => ({
       ...session,
       user: {
         ...session.user,
-        id: user.id
-      }
-    })
+        id: user.id,
+      },
+    }),
   },
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -55,12 +55,12 @@ export const authOptions: NextAuthOptions = {
     }),*/
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
     FacebookProvider({
       clientId: env.FACEBOOK_CLIENT_ID,
-      clientSecret: env.FACEBOOK_CLIENT_SECRET
-    })
+      clientSecret: env.FACEBOOK_CLIENT_SECRET,
+    }),
     /**
      * ...add more providers here.
      *
@@ -70,7 +70,7 @@ export const authOptions: NextAuthOptions = {
      *
      * @see https://next-auth.js.org/providers/github
      */
-  ]
+  ],
 }
 
 /**

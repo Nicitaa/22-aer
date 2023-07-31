@@ -3,7 +3,7 @@ interface RadioButton {
   inputName: string
 }
 
-export function RadioButton({label, inputName}: RadioButton) {
+export function RadioButton({ label, inputName }: RadioButton) {
   return (
     <label htmlFor={label} className="relative cursor-pointer flex items-center group">
       <input type="radio" name={inputName} id={label} className="hidden" />

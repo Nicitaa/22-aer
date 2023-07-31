@@ -1,6 +1,6 @@
 "use client"
-import {useState} from "react"
-import {ITopSales} from "~/interfaces/ITopSales"
+import { useState } from "react"
+import { ITopSales } from "~/interfaces/ITopSales"
 
 interface ISliderCounter {
   className?: string
@@ -19,7 +19,7 @@ export function SliderCounter({
   progressfillClassname,
   titleClassName,
   subTitleClassName,
-  counterClassName
+  counterClassName,
 }: ISliderCounter) {
   const slidesLength = array.length
   const [currentIndex, setCurrentIndex] = useState<number>(Math.floor(slidesLength / 2))
@@ -43,7 +43,7 @@ export function SliderCounter({
           className={`${progressbarClassName as string}
          mx-auto laptop:ml-0 rounded-md border-2 border-solid overflow-hidden`}>
           <div
-            style={{width: `${percent}%`}}
+            style={{ width: `${percent}%` }}
             className={` ${
               progressfillClassname ? progressfillClassname : "h-[3px] bg-red-500 border-transparent"
             } transition-all duration-500 ease-in-out`}

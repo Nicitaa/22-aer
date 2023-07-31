@@ -1,9 +1,9 @@
-import {AiOutlineMenuFold} from "react-icons/ai"
-import {useRouter} from "next/router"
-import {useState} from "react"
-import {AnimatePresence, motion} from "framer-motion"
-import {useMainText, useSlider3D} from "~/hooks"
-import {Button} from "./ui/Button"
+import { AiOutlineMenuFold } from "react-icons/ai"
+import { useRouter } from "next/router"
+import { useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { useMainText, useSlider3D } from "~/hooks"
+import { Button } from "./ui/Button"
 import useMain from "~/hooks/useMain"
 
 export function Navbar() {
@@ -26,31 +26,32 @@ export function Navbar() {
   }
 
   function navClick(href: string) {
-    void router.push(href)
-    hideHamburgerMenu()
+    //semi for ';' at the end of line
+    void router.push(href) //semi true
+    hideHamburgerMenu() //semi false
   }
 
   const navLinks = [
     {
       label: "Home",
-      href: "/"
+      href: "/",
     },
     {
       label: "Products",
-      href: "/products"
+      href: "/products",
     },
     {
       label: "About",
-      href: "/about"
+      href: "/about",
     },
     {
       label: "Cart",
-      href: "/cart"
+      href: "/cart",
     },
     {
       label: "Login",
-      href: "/auth/signin"
-    }
+      href: "/auth/signin",
+    },
   ]
 
   const router = useRouter()
@@ -80,7 +81,11 @@ export function Navbar() {
           </ul>
 
           {/* Hamburger menu */}
-          <motion.div className="flex laptop:hidden" animate={{rotate: isHamburgerMenu ? 90 : 270}}>
+          <motion.div
+            className="flex laptop:hidden"
+            animate={{
+              rotate: isHamburgerMenu ? 90 : 270,
+            }}>
             <AiOutlineMenuFold
               size={48}
               onClick={() => (isHamburgerMenu ? hideHamburgerMenu() : showHamburgerMenu())}
@@ -93,10 +98,10 @@ export function Navbar() {
         {isHamburgerMenu && (
           <motion.div
             className="absolute left-1/2 flex flex-col gap-y-8 text-center z-[99]"
-            initial={{y: "-150%", x: "-50%", opacity: -1}}
-            animate={{y: "50%", x: "-50%", opacity: 1}}
-            exit={{y: "-150%", x: "-50%", opacity: -1}}
-            transition={{ease: "circOut", duration: 0.3}}>
+            initial={{ y: "-150%", x: "-50%", opacity: -1 }}
+            animate={{ y: "50%", x: "-50%", opacity: 1 }}
+            exit={{ y: "-150%", x: "-50%", opacity: -1 }}
+            transition={{ ease: "circOut", duration: 0.3 }}>
             <ul>
               {navLinks.map(navLink => (
                 <li className="relative" key={navLink.href}>

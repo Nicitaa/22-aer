@@ -1,5 +1,5 @@
 import Link from "next/link"
-import {CartItem} from "~/components"
+import { CartItem } from "~/components"
 const Cart = () => {
   return (
     <div className="flex h-full min-h-screen flex-col items-center">

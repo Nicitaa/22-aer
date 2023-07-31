@@ -1,11 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import {useEffect, useState, useCallback} from "react"
+import { useEffect, useState, useCallback } from "react"
 
-import {PiCaretLeftBold, PiCaretRightBold} from "react-icons/pi"
-import type {IconType} from "react-icons"
-import type {ITopSales} from "~/interfaces/ITopSales"
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
+import type { IconType } from "react-icons"
+import type { ITopSales } from "~/interfaces/ITopSales"
 
 interface ISlider {
   className?: string
@@ -24,7 +24,7 @@ export function Slider3D({
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
   arrowSize,
-  array
+  array,
 }: ISlider) {
   const [currentSlide, setCurrentSlide] = useState(Math.floor(array.length / 2))
 
@@ -43,7 +43,7 @@ export function Slider3D({
         }px)`
 
         document.querySelectorAll(".slider-image").forEach((image: Element) => {
-          ;(image as HTMLImageElement).classList.remove("slide-image-active")
+          image.classList.remove("slide-image-active")
         })
 
         document.querySelectorAll(".slider-image")[index]?.classList.add("slide-image-active")
@@ -85,8 +85,7 @@ export function Slider3D({
         }
       }}
       className={`${className as string} overflow-hidden`}>
-      <h1 className={`absolute top-[5%] left-1/2 -translate-x-1/2 ${labelClassName as string}`}>{label}</h1>
-
+      <h1 className={`absolute top-[5%] left-1/2 -translate-x-1/2 ${labelClassName as string}`}>{label}</h1>z
       <div className="realative flex flex-col py-8 pt-16 tablet:pt-20 tablet:gap-y-4">
         <div className="relative flex flex-none justify-center items-center w-[100vw]">
           <Images slideTo={slideTo} array={array} />
@@ -122,10 +121,10 @@ export function Slider3D({
   )
 }
 
-function Images(data: {slideTo: (index: number) => void; array: ITopSales[]}) {
+function Images(data: { slideTo: (index: number) => void; array: ITopSales[] }) {
   return (
     <>
-      {data.array?.map((image: {imgSrc: string}, index: number) => (
+      {data.array?.map((image: { imgSrc: string }, index: number) => (
         <div
           onClick={() => {
             data.slideTo(index)

@@ -1,6 +1,6 @@
 import Link from "next/link"
-import {Input} from "../ui"
-import {useState} from "react"
+import { Input } from "../ui"
+import { useState } from "react"
 
 function SignInForm() {
   const [email, setEmail] = useState("")

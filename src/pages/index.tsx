@@ -1,7 +1,7 @@
-import {Slider3D, SliderCounter} from "~/components"
+import { Slider3D, SliderCounter } from "~/components"
 import Link from "next/link"
-import {topSales} from "../constant/topSales"
-import {AnimatePresence, motion} from "framer-motion"
+import { topSales } from "../constant/topSales"
+import { AnimatePresence, motion } from "framer-motion"
 import useMainText from "~/hooks/useMainText"
 import useSlider3D from "~/hooks/useSlider3D"
 
@@ -14,7 +14,10 @@ export default function Home() {
       <div className="absolute inset-0 top-[10vh] overflow-hidden text-center laptop:text-start">
         <AnimatePresence>
           {mainText.isOpen && (
-            <motion.div className="absolute top-1/2 w-full" animate={{x: ["-100%", "0%"]}} exit={{x: ["0%", "-100%"]}}>
+            <motion.div
+              className="absolute top-1/2 w-full"
+              animate={{ x: ["-100%", "0%"] }}
+              exit={{ x: ["0%", "-100%"] }}>
               <div className="-translate-y-full w-full flex flex-col-reverse laptop:flex-row items-center gap-y-4 px-4 tablet:px-8 laptop:px-12">
                 <SliderCounter
                   className="w-full laptop:ml-[10%]"
@@ -45,7 +48,7 @@ export default function Home() {
 
         <AnimatePresence>
           {slider3D.isOpen && (
-            <motion.div className="absolute bottom-0" animate={{x: ["100%", "0%"]}} exit={{x: ["0%", "100%"]}}>
+            <motion.div className="absolute bottom-0" animate={{ x: ["100%", "0%"] }} exit={{ x: ["0%", "100%"] }}>
               <Slider3D
                 className="bg-secondary
     flex flex-col justify-center mt-auto"

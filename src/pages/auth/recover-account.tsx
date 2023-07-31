@@ -1,13 +1,13 @@
 import React from "react"
-import type {GetServerSidePropsContext, InferGetServerSidePropsType} from "next"
-import {getProviders} from "next-auth/react"
-import {getServerSession} from "next-auth/next"
-import {authOptions} from "../../server/auth"
+import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
+import { getProviders } from "next-auth/react"
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "../../server/auth"
 import Link from "next/link"
 import RecoverAccountForm from "~/components/auth/RecoverAccountForm"
 
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
-function recoverAccount({providers}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div
       className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
@@ -33,12 +33,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // Note: Make sure not to redirect to the same page
   // To avoid an infinite loop!
   if (session) {
-    return {redirect: {destination: "/"}}
+    return { redirect: { destination: "/" } }
   }
 
   const providers = await getProviders()
 
   return {
-    props: {providers: providers ?? []}
+    props: { providers: providers ?? [] },
   }
 }

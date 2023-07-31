@@ -1,5 +1,5 @@
-import {ChangeEvent, useState} from "react"
-import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
+import { ChangeEvent, useState } from "react"
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   type?: string
@@ -9,7 +9,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   size?: "sm" | "" | undefined
 }
 
-export function Input({type, size, ...props}: InputProps) {
+export function Input({ type, size, ...props }: InputProps) {
   const [showPassword, setShowPassword] = useState(false)
 
   return (

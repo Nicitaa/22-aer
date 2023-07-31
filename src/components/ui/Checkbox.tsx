@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 
 interface CheckboxProps {
   checked?: boolean
@@ -6,7 +6,7 @@ interface CheckboxProps {
   labelClassName?: string
 }
 
-export function Checkbox({checked = false, label, labelClassName = ""}: CheckboxProps) {
+export function Checkbox({ checked = false, label, labelClassName = "" }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(checked)
   return (
     <div className="checkbox-container">

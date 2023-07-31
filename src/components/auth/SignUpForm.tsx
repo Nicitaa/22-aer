@@ -1,7 +1,7 @@
 import Link from "next/link"
-import React, {useState} from "react"
-import {FaEye} from "react-icons/fa"
-import {Input} from "../ui"
+import React, { useState } from "react"
+import { FaEye } from "react-icons/fa"
+import { Input } from "../ui"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")

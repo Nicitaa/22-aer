@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import {Input} from "../ui"
+import React, { useState } from "react"
+import { Input } from "../ui"
 
 function RecoverAccountForm() {
   const [email, setEmail] = useState("")

@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface DropdownContainer {
   children: React.ReactNode
@@ -6,7 +6,7 @@ interface DropdownContainer {
   className?: string
 }
 
-export function DropdownContainer({children, childrenTrigger, className = ""}: DropdownContainer) {
+export function DropdownContainer({ children, childrenTrigger, className = "" }: DropdownContainer) {
   const [isDropdown, setIsDropdown] = useState(false)
 
   const dropdownContainerRef = useRef<HTMLDivElement>(null)

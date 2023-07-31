@@ -1,12 +1,12 @@
-import {ClientSafeProvider, signIn} from "next-auth/react"
+import { ClientSafeProvider, signIn } from "next-auth/react"
 import React from "react"
-import {FaFacebook, FaGithub, FaGoogle} from "react-icons/fa"
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
 
 export type Props = {
   provider: ClientSafeProvider
 }
 
-export function ProviderButton({provider}: Props) {
+export function ProviderButton({ provider }: Props) {
   const providerIcon =
     provider.id === "google" ? (
       <FaGoogle className="text-md" />

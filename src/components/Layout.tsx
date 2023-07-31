@@ -1,10 +1,10 @@
 import React from "react"
-import {Navbar} from "./Navbar"
-import {AnimatePresence, motion} from "framer-motion"
+import { Navbar } from "./Navbar"
+import { AnimatePresence, motion } from "framer-motion"
 import useMain from "~/hooks/useMain"
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 
-function Layout({children}: {children: React.ReactNode}) {
+function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const main = useMain()
   return (
@@ -17,9 +17,18 @@ function Layout({children}: {children: React.ReactNode}) {
           : main.isOpen && (
               <motion.main
                 className="font-primary text-primary text-md"
-                animate={{opacity: [0, 1], y: ["100%", "0%"]}}
-                exit={{opacity: [1, 0], y: ["0%", "100%"]}}
-                transition={{ease: "circIn", duration: 0.3}}>
+                animate={{
+                  opacity: [0, 1],
+                  y: ["100%", "0%"],
+                }}
+                exit={{
+                  opacity: [1, 0],
+                  y: ["0%", "100%"],
+                }}
+                transition={{
+                  ease: "circIn",
+                  duration: 0.3,
+                }}>
                 {children}
               </motion.main>
             )}

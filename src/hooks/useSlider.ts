@@ -8,7 +8,7 @@ e.g <div onMouseDown={onMouseTouchDown} ...></div>
         ref={wrapperRef} //if you need center
 */
 
-import {useEffect, useState, useRef} from "react"
+import { useEffect, useState, useRef } from "react"
 
 export function useSlider() {
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -71,6 +71,6 @@ export function useSlider() {
     handleTouchMove,
     handleMouseDown,
     handleTouchDown,
-    wrapperRef
+    wrapperRef,
   }
 }
