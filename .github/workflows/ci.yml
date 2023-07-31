@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ['master']
+    branches: ["master"]
   pull_request:
     types: [opened, synchronize]
 
@@ -41,31 +41,44 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Building
         run: pnpm build
         env:
-          DATABASE_URL: 'http://localhost:3000'
-          NEXTAUTH_SECRET: 'random'
-          NEXTAUTH_URL: 'http://localhost:3000'
-          GITHUB_CLIENT_ID: '123'
-          GITHUB_CLIENT_SECRET: '1234'
-          GOOGLE_CLIENT_ID: '12345'
-          GOOGLE_CLIENT_SECRET: '123456'
-          FACEBOOK_CLIENT_ID: '1234567'
-          FACEBOOK_CLIENT_SECRET: '12345678'
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
+          GITHUB_CLIENT_ID: "123"
+          GITHUB_CLIENT_SECRET: "1234"
+          GOOGLE_CLIENT_ID: "12345"
+          GOOGLE_CLIENT_SECRET: "123456"
+          FACEBOOK_CLIENT_ID: "1234567"
+          FACEBOOK_CLIENT_SECRET: "12345678"
 
       - name: lintrc
         run: pnpm lint
         env:
-          DATABASE_URL: 'http://localhost:3000'
-          NEXTAUTH_SECRET: 'random'
-          NEXTAUTH_URL: 'http://localhost:3000'
-          GITHUB_CLIENT_ID: '123'
-          GITHUB_CLIENT_SECRET: '1234'
-          GOOGLE_CLIENT_ID: '12345'
-          GOOGLE_CLIENT_SECRET: '123456'
-          FACEBOOK_CLIENT_ID: '1234567'
-          FACEBOOK_CLIENT_SECRET: '12345678'
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
+          GITHUB_CLIENT_ID: "123"
+          GITHUB_CLIENT_SECRET: "1234"
+          GOOGLE_CLIENT_ID: "12345"
+          GOOGLE_CLIENT_SECRET: "123456"
+          FACEBOOK_CLIENT_ID: "1234567"
+          FACEBOOK_CLIENT_SECRET: "12345678"
 
       - name: Type-checking
         run: pnpm type-check
