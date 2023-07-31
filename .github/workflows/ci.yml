@@ -51,13 +51,13 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Setup prettier
-        uses: prettier/prettier@3.0.0
+        run: pnpm i prettier --save-dev
 
       - name: prettierrc
         run: pnpm prettier --write src/*
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm i
 
       - name: Building
         run: pnpm build
