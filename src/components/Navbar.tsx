@@ -98,10 +98,10 @@ export function Navbar() {
               {navLinks.map(navLink => (
                 <li className="relative" key={navLink.href}>
                   <Button className="text-lg" variant='nav-link' active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
-                    onClick={async () => {
-                      await
-                        router.push(navLink.href), hideHamburgerMenu()
-                    }}>{navLink.label}</Button>
+                    onClick={() => {
+                      void (async () => { router.push(navLink.href), hideHamburgerMenu() })
+                    }
+                    }>{navLink.label}</Button>
                 </li>
               ))}
             </ul>
