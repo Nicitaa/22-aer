@@ -38,20 +38,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Cache Primes
-        id: cache-primes
-        uses: actions/cache@v3
-        with:
-          path: prime-numbers
-          key: ${{ runner.os }}-primes
-
-      - name: Generate Prime Numbers
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: /generate-primes.sh -d prime-numbers
-
-      - name: Use Prime Numbers
-        run: /primes.sh -d prime-numbers
-
       - name: Install dependencies
         run: pnpm install
 
@@ -83,4 +69,3 @@ jobs:
 
       - name: Type-checking
         run: pnpm type-check
-
