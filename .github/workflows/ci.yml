@@ -50,6 +50,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
+      - name: Setup prettier
+        uses: prettier/prettier@3.0.0
+
       - name: prettierrc
         run: pnpm prettier --write src/*
 
