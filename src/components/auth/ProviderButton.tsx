@@ -1,7 +1,8 @@
-import { ClientSafeProvider, signIn } from "next-auth/react"
+import { signIn } from "next-auth/react"
+import type { ClientSafeProvider } from "next-auth/react"
+
 import React from "react"
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
-
 export type Props = {
   provider: ClientSafeProvider
 }
@@ -19,7 +20,9 @@ function ProviderButton({ provider }: Props) {
   return (
     <div
       className="flex items-center w-full p-4 bg-primary text-black rounded-lg cursor-pointer"
-      onClick={() => signIn(provider.id)}
+      onClick={() => {
+        void signIn(provider.id)
+      }}
     >
       <div>{providerIcon}</div>
 

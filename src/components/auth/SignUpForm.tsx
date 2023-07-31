@@ -7,9 +7,6 @@ function SignUpForm() {
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
 
-  const [showPassword, setShowPassword] = useState(false)
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false)
-
   const [rememberMe, setRememberMe] = useState(false)
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -30,26 +27,29 @@ function SignUpForm() {
       id="email"
       placeholder="Email"
       handleChange={handleEmailChange}
+      key="Email"
     />,
     <Input
-      type={`${showPassword ? "text" : "password"}`}
+      type="password"
       id="password"
       placeholder="Password"
       value={password}
       handleChange={handlePasswordChange}
       label="Password"
       labelHidden={true}
+      key="Password"
     />,
     <Input
-      type={`${showRepeatPassword ? "text" : "password"}`}
+      type="password"
       id="repeatPassword"
       placeholder="Repeat Password"
       value={repeatPassword}
       label="Repeat Password"
       labelHidden={true}
       handleChange={handleRepeatPasswordChange}
+      key="Repeat Password"
     />,
-    <div className="flex justify-start">
+    <div className="flex justify-start" key="Remember Me">
       <SimpleCheckbox
         label="Remember Me"
         labelReverse={true}
@@ -57,11 +57,18 @@ function SignUpForm() {
         setCheckboxValue={setRememberMe}
       />
     </div>,
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
+    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Register
     </button>
   ]
-  return <AuthForm inputs={inputs} onSubmit={() => {}} />
+  return (
+    <AuthForm
+      inputs={inputs}
+      onSubmit={() => {
+        return null
+      }}
+    />
+  )
 }
 
 export default SignUpForm

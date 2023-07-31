@@ -1,11 +1,9 @@
 import Link from "next/link"
-import { FaEye } from "react-icons/fa"
 import { Input, SimpleCheckbox } from "../ui"
 import { useState } from "react"
 import AuthForm from "./AuthForm"
-type Props = {}
 
-function SignInForm({}: Props) {
+function SignInForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
@@ -24,6 +22,7 @@ function SignInForm({}: Props) {
       placeholder="Email"
       value={email}
       handleChange={handleEmailChange}
+      key="Email"
     />,
     <Input
       labelHidden={true}
@@ -33,8 +32,9 @@ function SignInForm({}: Props) {
       placeholder="Password"
       value={password}
       handleChange={handlePasswordChange}
+      key="Password"
     />,
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center" key="Remember Me and Recover">
       <SimpleCheckbox
         label={"Remember Me"}
         checkboxValue={rememberMe}
@@ -46,11 +46,18 @@ function SignInForm({}: Props) {
       </Link>
     </div>,
 
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
+    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Login
     </button>
   ]
-  return <AuthForm inputs={inputs} onSubmit={() => {}} />
+  return (
+    <AuthForm
+      inputs={inputs}
+      onSubmit={() => {
+        return null
+      }}
+    />
+  )
 }
 
 export default SignInForm

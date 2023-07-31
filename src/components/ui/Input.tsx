@@ -1,6 +1,6 @@
-import { ChangeEvent, useState } from "react"
+import { useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-
+import type { ChangeEvent } from "react"
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   type: string
   value: number | string
@@ -21,8 +21,7 @@ export function Input({ type, size, id, label, value, labelHidden, handleChange,
     //move cursor to end of input
     // Move the cursor to the end of the input's value
     const newValue = value as string
-    var inputLength = newValue.length
-    inputLength = inputLength ? inputLength : 0
+    const inputLength = newValue.length
     //had to set a timeout because of the way react states work. I am updating the type from text to password or vice versa which refreshes the cursor position
     setTimeout(() => {
       inputElement?.focus()

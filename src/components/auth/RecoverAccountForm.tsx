@@ -16,12 +16,20 @@ function RecoverAccountForm() {
       label="Email"
       labelHidden={true}
       handleChange={handleEmailChange}
+      key="Email"
     />,
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
+    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Send Email
     </button>
   ]
-  return <AuthForm inputs={inputs} onSubmit={() => {}} />
+  return (
+    <AuthForm
+      inputs={inputs}
+      onSubmit={() => {
+        return null
+      }}
+    />
+  )
 }
 
 export default RecoverAccountForm

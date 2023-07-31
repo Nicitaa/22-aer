@@ -13,8 +13,8 @@ export default function AuthForm({ inputs, onSubmit, ...props }: AuthFormProps) 
       }}
       className="w-full space-y-4"
     >
-      {inputs.map((input): any => {
-        return <div>{input}</div>
+      {inputs.map((input, index): ReactNode => {
+        return <div key={index}>{input}</div>
       })}
     </form>
   )

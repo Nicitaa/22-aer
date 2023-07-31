@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React from "react"
+import type { Dispatch, SetStateAction } from "react"
 
 interface SimpleCheckboxProps {
   label: string
@@ -9,7 +10,7 @@ interface SimpleCheckboxProps {
 
 export function SimpleCheckbox({ checkboxValue, setCheckboxValue, label, labelReverse }: SimpleCheckboxProps) {
   return (
-    <div className={`flex ${labelReverse && "flex-row-reverse"} gap-1 items-center `}>
+    <div className={`flex ${labelReverse ? "flex-row-reverse" : ""} gap-1 items-center `}>
       <label htmlFor={label} className="text-xs">
         {label}
       </label>
