@@ -16,8 +16,8 @@ export function ProviderButton({ provider }: Props) {
       <FaGithub className="text-md" />
     );
 
-  const handleSignIn = async () => {
-    await signIn(provider.id);
+  const handleSignIn = () => {
+    signIn(provider.id)
   };
 
   return (
@@ -27,7 +27,9 @@ export function ProviderButton({ provider }: Props) {
     >
       <div>{providerIcon}</div>
 
-      <h3 className="flex grow justify-center text-xs tablet:text-sm laptop:text-md">Sign in with {provider.name}</h3>
+      <h3 className="flex grow justify-center text-xs tablet:text-sm laptop:text-md">
+        Sign in with {provider.name}
+      </h3>
     </div>
   );
 }
