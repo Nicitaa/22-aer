@@ -18,10 +18,9 @@ const config = {
     locales: ["en"],
     defaultLocale: "en"
   },
-  webpack5: true,
-
   // Enable build caching
-  cache: true
+  cache: true,
+  enableBuildCache: true
 }
 
 export default config
