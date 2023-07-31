@@ -21,5 +21,11 @@ const config = {
   // Enable build caching
 }
 
+module.exports = {
+  // Your other Next.js configuration options...
+
+  enableBuildCache: true
+}
+
 export default config
 
