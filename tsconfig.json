@@ -31,7 +31,7 @@
     "src/components/ProgressProvider.tsx",
     "src/components/StatCircle.tsx",
     "src/components/TradingViewWidget.jsx",
-    "next.config.mjs"
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }

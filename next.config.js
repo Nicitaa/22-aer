@@ -17,10 +17,8 @@ const config = {
   i18n: {
     locales: ["en"],
     defaultLocale: "en"
-  },
+  }
   // Enable build caching
-  cache: true,
-  enableBuildCache: true
 }
 
 export default config

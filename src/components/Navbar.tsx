@@ -101,6 +101,7 @@ export function Navbar() {
                     className="text-lg"
                     variant="nav-link"
                     active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
+                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
                     onClick={async (): Promise<void> => {
                       await router.push(navLink.href);
                       hideHamburgerMenu();
@@ -112,7 +113,7 @@ export function Navbar() {
               ))}
             </ul>
           </motion.div>}
-      </AnimatePresence>
+      </AnimatePresence >
     </>
   )
 }
