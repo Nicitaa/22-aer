@@ -47,9 +47,9 @@ export function useSlider() {
     e.currentTarget.scrollLeft = scrollLeft - walk
   }
   function handleTouchMove(e: React.TouchEvent<HTMLDivElement>) {
-    if (!isDown || !e.currentTarget || !e.changedTouches[0]) return // Added null check for e.currentTarget
+    if (!isDown || !e.currentTarget || !e.changedTouches[0]) return
 
-    const x = e.changedTouches[0].pageX - (e.currentTarget.offsetLeft || 0) // Added null check for offsetLeft
+    const x = e.changedTouches[0].pageX - (e.currentTarget.offsetLeft || 0)
     const speed = 1
     const walk = (x - startX) * speed
     e.currentTarget.scrollLeft = scrollLeft - walk

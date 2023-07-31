@@ -1,9 +1,7 @@
-import Link from "next/link"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { useRouter } from "next/router";
-import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { AnimatePresence, animate, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMainText, useSlider3D } from "~/hooks";
 import { Button } from "./ui/Button";
 import useMain from "~/hooks/useMain";
@@ -100,7 +98,7 @@ export function Navbar() {
               {navLinks.map(navLink => (
                 <li className="relative" key={navLink.href}>
                   <Button className="text-lg" variant='nav-link' active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
-                    onClick={() => {
+                    onClick={async () => {
                       router.push(navLink.href), hideHamburgerMenu()
                     }}>{navLink.label}</Button>
                 </li>

@@ -6,5 +6,8 @@
   "singleQuote": false,
   "bracketSameLine": true,
   "bracketSpacing": false,
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "crlf"
 }
+
