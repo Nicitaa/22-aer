@@ -2,8 +2,6 @@ import Link from "next/link"
 import React, { useState } from "react"
 import { FaEye } from "react-icons/fa"
 import { Input } from "../ui"
-import { Button } from "../ui/Button"
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
 
 
 function SignUpForm() {

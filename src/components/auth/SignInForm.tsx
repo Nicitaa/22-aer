@@ -1,12 +1,9 @@
 import Link from "next/link"
-import { FaEye } from "react-icons/fa"
 import { Input } from "../ui"
 import { useState } from "react"
-type Props = {
-  providers: object
-}
 
-function SignInForm({ providers }: Props) {
+
+function SignInForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)

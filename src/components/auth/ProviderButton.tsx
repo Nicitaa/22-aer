@@ -17,7 +17,7 @@ export function ProviderButton({ provider }: Props) {
     );
 
   const handleSignIn = async () => {
-    await signIn(provider.id);
+    signIn(provider.id);
   };
 
   return (

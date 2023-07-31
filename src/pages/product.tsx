@@ -1,4 +1,3 @@
-import { useRouter } from "next/router"
 import React, { useState } from "react"
 import Image from "next/image"
 import bags from "~/constant/bags.json"
@@ -8,7 +7,6 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
 
 
 const Product = () => {
-  const router = useRouter()
   // const { id } = router.query
   const foundProduct = bags?.find((bag) => bag.id)
   const [quantity, setQuantity] = useState(1)
@@ -16,7 +14,7 @@ const Product = () => {
   if (!foundProduct) {
     return <h1 className="mx-auto text-lg text-center">Loading...</h1>
   }
-  const { id, preview, title, subTitle, price, imagesUrl } = foundProduct
+  const { title, subTitle, price, imagesUrl } = foundProduct
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [currentImage, setCurrentImage] = useState(Math.floor(imagesUrl.length / 2))
   return (
