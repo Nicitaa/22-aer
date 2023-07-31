@@ -101,9 +101,10 @@ export function Navbar() {
                     className="text-lg"
                     variant="nav-link"
                     active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
-                    onClick={async () => {
-                      await router.push(navLink.href);
-                      hideHamburgerMenu();
+                    onClick={() => {
+                      router.push(navLink.href).then(() => {
+                        hideHamburgerMenu()
+                      })
                     }}>
                     {navLink.label}
                   </Button>
