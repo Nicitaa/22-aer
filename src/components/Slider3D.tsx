@@ -1,11 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState, useCallback } from "react"
+import {useEffect, useState, useCallback} from "react"
 
-import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
-import type { IconType } from "react-icons"
-import type { ITopSales } from "~/interfaces/ITopSales"
+import {PiCaretLeftBold, PiCaretRightBold} from "react-icons/pi"
+import type {IconType} from "react-icons"
+import type {ITopSales} from "~/interfaces/ITopSales"
 
 interface ISlider {
   className?: string
@@ -37,12 +37,13 @@ export function Slider3D({
       }
 
       document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
-        const width = image.getBoundingClientRect().width;
-        (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - array.length / 2 + 0.5) * width - width
-          }px)`
+        const width = image.getBoundingClientRect().width
+        ;(image as HTMLDivElement).style.transform = `translateX(${
+          (array.length - index - array.length / 2 + 0.5) * width - width
+        }px)`
 
         document.querySelectorAll(".slider-image").forEach((image: Element) => {
-          (image as HTMLImageElement).classList.remove("slide-image-active")
+          ;(image as HTMLImageElement).classList.remove("slide-image-active")
         })
 
         document.querySelectorAll(".slider-image")[index]?.classList.add("slide-image-active")
@@ -121,10 +122,10 @@ export function Slider3D({
   )
 }
 
-function Images(data: { slideTo: (index: number) => void; array: ITopSales[] }) {
+function Images(data: {slideTo: (index: number) => void; array: ITopSales[]}) {
   return (
     <>
-      {data.array?.map((image: { imgSrc: string }, index: number) => (
+      {data.array?.map((image: {imgSrc: string}, index: number) => (
         <div
           onClick={() => {
             data.slideTo(index)
@@ -138,8 +139,9 @@ function Images(data: { slideTo: (index: number) => void; array: ITopSales[] }) 
             height={"320"}
             src={image.imgSrc}
             alt="image"
-            className={`slider-image w-48 object-cover cursor-pointer ${index === Math.floor(data.array.length / 2) ? "slide-image-active" : ""
-              }`}
+            className={`slider-image w-48 object-cover cursor-pointer ${
+              index === Math.floor(data.array.length / 2) ? "slide-image-active" : ""
+            }`}
             key={image.imgSrc}
           />
         </div>
