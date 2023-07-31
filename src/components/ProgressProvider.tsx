@@ -6,7 +6,7 @@ interface IProgressProvider {
   children: (value: number) => JSX.Element
 }
 
-const ProgressProvider = ({ valueStart, valueEnd, children }: IProgressProvider) => {
+const ProgressProvider = ({valueStart, valueEnd, children}: IProgressProvider) => {
   const [value, setValue] = React.useState(valueStart)
   React.useEffect(() => {
     setValue(valueEnd)

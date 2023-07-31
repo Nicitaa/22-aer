@@ -1,8 +1,7 @@
 import Link from "next/link"
-import React, { useState } from "react"
-import { FaEye } from "react-icons/fa"
-import { Input } from "../ui"
-
+import React, {useState} from "react"
+import {FaEye} from "react-icons/fa"
+import {Input} from "../ui"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -22,7 +21,8 @@ function SignUpForm() {
         id="sign-up-email"
         placeholder="Email or Username"
         value={email}
-        onChange={(e) => setEmail(e.target.value)} />
+        onChange={e => setEmail(e.target.value)}
+      />
       <div className="flex relative items-center">
         <label htmlFor="sign-up-password"></label>
         <Input
@@ -30,12 +30,12 @@ function SignUpForm() {
           id="sign-up-password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)} />
+          onChange={e => setPassword(e.target.value)}
+        />
         <button
           type="button"
           className="absolute right-4"
-          onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)}
-        >
+          onClick={() => setShowPassword(prevShowPassword => !prevShowPassword)}>
           <FaEye className="w-8 h-8 text-secondary" />
         </button>
       </div>
@@ -46,12 +46,12 @@ function SignUpForm() {
           id="sign-up-repeatPassword"
           placeholder="Repeat Password"
           value={repeatPassword}
-          onChange={(e) => setRepeatPassword(e.target.value)} />
+          onChange={e => setRepeatPassword(e.target.value)}
+        />
         <button
           type="button"
           className="absolute right-4"
-          onClick={() => setShowRepeatPassword((prevShowPassword) => !prevShowPassword)}
-        >
+          onClick={() => setShowRepeatPassword(prevShowPassword => !prevShowPassword)}>
           <FaEye className="w-8 h-8 text-secondary" />
         </button>
       </div>
@@ -64,7 +64,7 @@ function SignUpForm() {
             type="checkbox"
             id="sign-up-rememberMe"
             checked={rememberMe}
-            onChange={() => setRememberMe((prevValue) => !prevValue)}
+            onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
         <Link href={"./recover"} className="text-cta">
@@ -74,7 +74,7 @@ function SignUpForm() {
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
         Register Now
       </button>
-    </form >
+    </form>
   )
 }
 

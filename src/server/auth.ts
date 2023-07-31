@@ -1,12 +1,12 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { type GetServerSidePropsContext } from "next"
-import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
+import {PrismaAdapter} from "@next-auth/prisma-adapter"
+import {type GetServerSidePropsContext} from "next"
+import {getServerSession, type NextAuthOptions, type DefaultSession} from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
 
-import { env } from "~/env.mjs"
-import { prisma } from "~/server/db"
+import {env} from "~/env.mjs"
+import {prisma} from "~/server/db"
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -39,7 +39,7 @@ export const authOptions: NextAuthOptions = {
     //signIn: "/auth/signin"
   },
   callbacks: {
-    session: ({ session, user }) => ({
+    session: ({session, user}) => ({
       ...session,
       user: {
         ...session.user,

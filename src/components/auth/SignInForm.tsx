@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { Input } from "../ui"
-import { useState } from "react"
-
+import {Input} from "../ui"
+import {useState} from "react"
 
 function SignInForm() {
   const [email, setEmail] = useState("")
@@ -10,11 +9,13 @@ function SignInForm() {
   return (
     <form action="#" className="w-full space-y-4">
       <label htmlFor="sign-in-email"></label>
-      <Input type="text"
+      <Input
+        type="text"
         id="sign-in-email"
         placeholder="Email or Username"
         value={email}
-        onChange={(e) => setEmail(e.target.value)} />
+        onChange={e => setEmail(e.target.value)}
+      />
       <div className="flex relative items-center">
         <label htmlFor="sign-in-password"></label>
         <Input
@@ -22,9 +23,8 @@ function SignInForm() {
           id="sign-in-password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
         />
-
       </div>
       <div className="flex justify-between items-center">
         <div className="flex flex-row-reverse gap-1 items-center ">
@@ -35,7 +35,7 @@ function SignInForm() {
             type="checkbox"
             id="sign-in-rememberMe"
             checked={rememberMe}
-            onChange={() => setRememberMe((prevValue) => !prevValue)}
+            onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
         <Link href={"./recover"} className="text-cta">

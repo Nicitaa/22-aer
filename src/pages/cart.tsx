@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { CartItem } from "~/components"
+import {CartItem} from "~/components"
 const Cart = () => {
   return (
     <div className="flex h-full min-h-screen flex-col items-center">
@@ -27,8 +27,7 @@ const Cart = () => {
         <div className="relative w-full h-full text-xs tablet:text-sm font-bold bg-secondary rounded-b-xl">
           <Link
             className="bg-cta top-8  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 left-8"
-            href={`products`}
-          >
+            href={`products`}>
             Back to products
           </Link>
           <button className="bg-cta-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">

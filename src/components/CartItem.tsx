@@ -1,4 +1,4 @@
-import { BiSolidTrashAlt } from "react-icons/bi"
+import {BiSolidTrashAlt} from "react-icons/bi"
 import Image from "next/image"
 const CartItem = () => {
   return (

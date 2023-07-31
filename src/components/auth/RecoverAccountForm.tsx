@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Input } from "../ui"
+import React, {useState} from "react"
+import {Input} from "../ui"
 
 function RecoverAccountForm() {
   const [email, setEmail] = useState("")
@@ -13,7 +13,7 @@ function RecoverAccountForm() {
           id="remember-email"
           placeholder="Email or Username"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
         />
       </form>
       <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
