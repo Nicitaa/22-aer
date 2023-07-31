@@ -6,7 +6,7 @@ export type Props = {
   provider: ClientSafeProvider;
 };
 
-export default function ProviderButton({ provider }: Props) {
+export function ProviderButton({ provider }: Props) {
   const providerIcon =
     provider.id === "google" ? (
       <FaGoogle className="text-md" />
