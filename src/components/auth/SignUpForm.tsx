@@ -59,7 +59,7 @@ function SignUpForm() {
     </div>,
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Register
-    </button>
+    </button>,
   ]
   return (
     <AuthForm

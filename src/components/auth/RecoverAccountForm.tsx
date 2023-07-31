@@ -20,7 +20,7 @@ function RecoverAccountForm() {
     />,
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Send Email
-    </button>
+    </button>,
   ]
   return (
     <AuthForm

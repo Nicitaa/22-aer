@@ -26,5 +26,5 @@ export { CartItem }
 
 import SignInForm from "./auth/SignInForm"
 export { SignInForm }
-import ProviderButton from "./auth/ProviderButton"
+import { ProviderButton } from "./auth/ProviderButton"
 export { ProviderButton }

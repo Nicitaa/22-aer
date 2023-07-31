@@ -7,7 +7,7 @@ export type Props = {
   provider: ClientSafeProvider
 }
 
-function ProviderButton({ provider }: Props) {
+export function ProviderButton({ provider }: Props) {
   const providerIcon =
     provider.id === "google" ? (
       <FaGoogle className="text-md" />
@@ -17,18 +17,25 @@ function ProviderButton({ provider }: Props) {
       <FaGithub className="text-md" />
     )
 
+  const handleSignIn = () => {
+    signIn(provider.id)
+      .then(() => {
+        // Handle successful sign-in
+        console.log("Successfully signed in")
+      })
+      .catch(error => {
+        // Handle sign-in error
+        console.log("Sign-in error:", error)
+      })
+  }
+
   return (
     <div
       className="flex items-center w-full p-4 bg-primary text-black rounded-lg cursor-pointer"
-      onClick={() => {
-        void signIn(provider.id)
-      }}
-    >
+      onClick={handleSignIn}>
       <div>{providerIcon}</div>
 
       <h3 className="flex grow justify-center text-xs tablet:text-sm laptop:text-md">Sign in with {provider.name}</h3>
     </div>
   )
 }
-
-export default ProviderButton

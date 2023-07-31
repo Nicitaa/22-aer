@@ -48,7 +48,7 @@ function SignInForm() {
 
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Login
-    </button>
+    </button>,
   ]
   return (
     <AuthForm

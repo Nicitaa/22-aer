@@ -15,7 +15,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
 export function Input({ type, size, id, label, value, labelHidden, handleChange, ...props }: InputProps) {
   const [showPassword, setShowPassword] = useState(false)
   const toggleShowPassword = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword)
+    setShowPassword(prevShowPassword => !prevShowPassword)
     const inputElement = document.getElementById(id) as HTMLInputElement
     //focus on input
     //move cursor to end of input
@@ -40,7 +40,7 @@ export function Input({ type, size, id, label, value, labelHidden, handleChange,
      border-2 border-transparent  focus:border-cta outline-none ${size === "sm" ? "w-[100px] h-[50px]" : ""}`}
         type={type === "password" ? (showPassword ? "text" : type) : type}
         {...props}
-        onChange={(e) => {
+        onChange={e => {
           handleChange(e)
         }}
       />
