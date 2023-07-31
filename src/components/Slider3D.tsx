@@ -8,8 +8,6 @@ import type { IconType } from 'react-icons'
 import type { ITopSales } from '~/interfaces/ITopSales'
 
 
-
-
 interface ISlider {
   className?: string
   label?: string
@@ -20,9 +18,34 @@ interface ISlider {
   array: ITopSales[]
 }
 
-export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize,
-  array }: ISlider) {
+export function Slider3D({
+  className, label, labelClassName, arrowLeft: ArrowLeft, arrowRight: ArrowRight, arrowSize, array }: ISlider) {
+
   const [currentSlide, setCurrentSlide] = useState(Math.floor((array.length) / 2))
+
+
+  const slideTo = useCallback((index: number) => {
+    if (index > array.length - 1) {
+      index = 0;
+    } else if (index < 0) {
+      index = array.length - 1;
+    }
+
+    document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
+      const width = image.getBoundingClientRect().width;
+      (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
+
+      document.querySelectorAll(".slider-image").forEach((image: Element) => {
+        (image as HTMLImageElement).classList.remove('slide-image-active')
+      })
+
+      document.querySelectorAll(".slider-image")[index]?.classList.add('slide-image-active')
+    })
+
+    setCurrentSlide(index)
+    localStorage.setItem('currentIndex', JSON.stringify(index));
+    window.dispatchEvent(new Event("storage"));
+  }, [array.length, setCurrentSlide]);
 
   const changeChild = useCallback(
     (e: KeyboardEvent) => {
@@ -44,32 +67,6 @@ export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLef
     };
   })
 
-
-
-  function slideTo(index: number) {
-    useCallback(() => {
-      if (index > array.length - 1) {
-        index = 0;
-      } else if (index < 0) {
-        index = array.length - 1
-      }
-
-      document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
-        const width = image.getBoundingClientRect().width;
-        (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
-
-        document.querySelectorAll(".slider-image").forEach((image: Element) => {
-          (image as HTMLImageElement).classList.remove('slide-image-active')
-        })
-
-        document.querySelectorAll(".slider-image")[index]?.classList.add('slide-image-active')
-      })
-
-      setCurrentSlide(index)
-      localStorage.setItem('currentIndex', JSON.stringify(index));
-      window.dispatchEvent(new Event("storage"));
-    }, [])
-  }
 
   return (
     <div
