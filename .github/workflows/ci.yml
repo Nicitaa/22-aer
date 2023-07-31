@@ -15,18 +15,20 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js 12.x
-        uses: actions/setup-node@v2.4.0
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 20
 
       - name: Setup pnpm
-        run: npm install -g pnpm@6
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.6.6
 
       - name: Get pnpm store directory
         id: pnpm-cache
         run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_ENV
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm cache
         uses: actions/cache@v2
@@ -35,7 +37,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-            ${{ runner.os }}-pnpm-store-
 
       - name: Cache Primes
         id: cache-primes
@@ -43,6 +44,11 @@ jobs:
         with:
           path: prime-numbers
           key: ${{ runner.os }}-primes
+      - name: Generate Prime Numbers
+        if: steps.cache-primes.outputs.cache-hit != 'true'
+        run: /generate-primes.sh -d prime-numbers
+      - name: Use Prime Numbers
+        run: /primes.sh -d prime-numbers
 
       - name: Generate Prime Numbers
         if: steps.cache-primes.outputs.cache-hit != 'true'
@@ -55,11 +61,11 @@ jobs:
         run: pnpm install
 
       - name: Building
-        run: pnpm build --prefer-offline
+        run: pnpm build
         env:
-          DATABASE_URL: http://localhost:3000
-          NEXTAUTH_SECRET: random
-          NEXTAUTH_URL: http://localhost:3000
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
           GITHUB_CLIENT_ID: "123"
           GITHUB_CLIENT_SECRET: "1234"
           GOOGLE_CLIENT_ID: "12345"
@@ -70,9 +76,9 @@ jobs:
       - name: lintrc
         run: pnpm lint
         env:
-          DATABASE_URL: http://localhost:3000
-          NEXTAUTH_SECRET: random
-          NEXTAUTH_URL: http://localhost:3000
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
           GITHUB_CLIENT_ID: "123"
           GITHUB_CLIENT_SECRET: "1234"
           GOOGLE_CLIENT_ID: "12345"
@@ -82,3 +88,4 @@ jobs:
 
       - name: Type-checking
         run: pnpm type-check
+
