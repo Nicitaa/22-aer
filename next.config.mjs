@@ -18,7 +18,6 @@ const config = {
     locales: ["en"],
     defaultLocale: "en"
   }
-  // Enable build caching
 }
 
 export default config
