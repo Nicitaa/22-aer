@@ -18,11 +18,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en"
   },
-  // Enable build caching
-  experimental: {
-    optimizeCss: true,
-    workerThreads: true,
-    pageEnv: true
+  future: {
+    webpack5: true
   }
 }
 
