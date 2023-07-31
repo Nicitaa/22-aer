@@ -42,7 +42,7 @@ export function Slider3D({
             }px)`
 
         document.querySelectorAll(".slider-image").forEach((image: Element) => {
-          (image as HTMLDivElement).classList.remove("slide-image-active")
+          image.classList.remove("slide-image-active")
         })
 
         document.querySelectorAll(".slider-image")[index]?.classList.add("slide-image-active")
