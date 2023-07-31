@@ -19,7 +19,9 @@ function ProviderButton({ provider }: Props) {
   return (
     <div
       className="flex items-center w-full p-4 bg-primary text-black rounded-lg cursor-pointer"
-      onClick={() => signIn(provider.id)}
+      onClick={async () => {
+        await signIn(provider.id);
+      }}
     >
       <div>{providerIcon}</div>
 

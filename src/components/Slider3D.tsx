@@ -33,7 +33,7 @@ export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLef
       }
 
     },
-    [currentSlide, slideTo]
+    [currentSlide]
   );
 
   useEffect(() => {
