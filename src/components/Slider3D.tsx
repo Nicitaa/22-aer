@@ -33,7 +33,7 @@ export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLef
       }
 
     },
-    [currentSlide]
+    [currentSlide, slideTo]
   );
 
   useEffect(() => {
@@ -47,26 +47,28 @@ export function Slider3D({ className, label, labelClassName, arrowLeft: ArrowLef
 
 
   function slideTo(index: number) {
-    if (index > array.length - 1) {
-      index = 0;
-    } else if (index < 0) {
-      index = array.length - 1
-    }
+    useCallback(() => {
+      if (index > array.length - 1) {
+        index = 0;
+      } else if (index < 0) {
+        index = array.length - 1
+      }
 
-    document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
-      const width = image.getBoundingClientRect().width;
-      (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
+      document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
+        const width = image.getBoundingClientRect().width;
+        (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - (array.length / 2) + 0.5) * width - width}px)`
 
-      document.querySelectorAll(".slider-image").forEach((image: Element) => {
-        (image as HTMLImageElement).classList.remove('slide-image-active')
+        document.querySelectorAll(".slider-image").forEach((image: Element) => {
+          (image as HTMLImageElement).classList.remove('slide-image-active')
+        })
+
+        document.querySelectorAll(".slider-image")[index]?.classList.add('slide-image-active')
       })
 
-      document.querySelectorAll(".slider-image")[index]?.classList.add('slide-image-active')
-    })
-
-    setCurrentSlide(index)
-    localStorage.setItem('currentIndex', JSON.stringify(index));
-    window.dispatchEvent(new Event("storage"));
+      setCurrentSlide(index)
+      localStorage.setItem('currentIndex', JSON.stringify(index));
+      window.dispatchEvent(new Event("storage"));
+    }, [])
   }
 
   return (
