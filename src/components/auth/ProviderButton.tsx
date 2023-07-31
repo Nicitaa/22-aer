@@ -19,9 +19,12 @@ export function ProviderButton({ provider }: Props) {
   const handleSignIn = () => {
     signIn(provider.id)
       .then(() => {
+        // Handle successful sign-in
+        console.log("Successfully signed in");
       })
       .catch((error) => {
-        console.log(error);
+        // Handle sign-in error
+        console.log("Sign-in error:", error);
       });
   };
 
