@@ -101,11 +101,11 @@ export function Navbar() {
                     className="text-lg"
                     variant="nav-link"
                     active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
-                    onClick={() => {
-                      router.push(navLink.href).then(() => {
-                        hideHamburgerMenu()
-                      })
-                    }}>
+                    onClick={(): void => {
+                      router.push(navLink.href);
+                      hideHamburgerMenu();
+                    }}
+                  >
                     {navLink.label}
                   </Button>
                 </li>
