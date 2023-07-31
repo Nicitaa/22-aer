@@ -2,7 +2,6 @@
   "name": "22_aer",
   "version": "0.3.3",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -56,3 +55,4 @@
     "initVersion": "7.14.0"
   }
 }
+
