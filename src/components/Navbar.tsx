@@ -28,6 +28,11 @@ export function Navbar() {
     //loading gif
   }
 
+  const navClick = async (navLink: { href: string }) => {
+    await router.push(navLink.href);
+    hideHamburgerMenu();
+  };
+
   const navLinks = [
     {
       label: 'Home',
@@ -101,10 +106,8 @@ export function Navbar() {
                     className="text-lg"
                     variant="nav-link"
                     active={`${router.pathname === navLink.href ? 'active' : 'inactive'}`}
-                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
                     onClick={async (): Promise<void> => {
-                      await router.push(navLink.href);
-                      hideHamburgerMenu();
+                      navClick(navLink)
                     }}
                   >
                     {navLink.label}
@@ -117,3 +120,5 @@ export function Navbar() {
     </>
   )
 }
+
+//eslint-disable-next-line @typescript-eslint/no-misused-promises
