@@ -5,14 +5,13 @@ interface AuthFormProps {
   onSubmit: () => void
 }
 
-export default function AuthForm({ inputs, onSubmit, ...props }: AuthFormProps) {
+export default function AuthForm({ inputs, onSubmit }: AuthFormProps) {
   return (
     <form
       onSubmit={() => {
         onSubmit()
       }}
-      className="w-full space-y-4"
-    >
+      className="w-full space-y-4">
       {inputs.map((input, index): ReactNode => {
         return <div key={index}>{input}</div>
       })}
