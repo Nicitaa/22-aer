@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useEffect, useState, useCallback } from "react"
 
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
-import { IconType } from 'react-icons'
-import { ITopSales } from '~/interfaces/ITopSales'
+import type { IconType } from 'react-icons'
+import type { ITopSales } from '~/interfaces/ITopSales'
 
 
 
