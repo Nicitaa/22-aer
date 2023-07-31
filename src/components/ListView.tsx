@@ -22,25 +22,30 @@ const ListView = ({ products }: { products: Product[] }) => {
   return (
     <div ref={componentRef} className="scrollbar max-h-[75vh] overflow-y-scroll">
       <section className=" grid gap-y-12 justify-items-center ">
-        {products.map((product) => {
+        {products.map(product => {
           const { id, preview, title, subTitle, price } = product
           return (
-            <article
-              key={id}
-              className="relative flex flex-col laptop:flex-row gap-6 w-full tablet:px-8">
-              <Image className="w-full object-cover object-center"
-                src={preview ?? ""} alt="Placeholder Image"
-                width={600} height={480} />
+            <article key={id} className="relative flex flex-col laptop:flex-row gap-6 w-full tablet:px-8">
+              <Image
+                className="w-full object-cover object-center"
+                src={preview ?? ""}
+                alt="Placeholder Image"
+                width={600}
+                height={480}
+              />
 
               <div className="font-primary text-white w-full flex flex-col justify-between">
-                <div className='text-center tablet:text-start'>
-                  <h1 className='capitalize text-lg font-bold'>{title}</h1>
+                <div className="text-center tablet:text-start">
+                  <h1 className="capitalize text-lg font-bold">{title}</h1>
                   {componentWidth > 1024 ? (
                     <h5 className="font-primary font-bold text-md text-cta">{priceFormatter(price)}</h5>
                   ) : (
                     <></>
                   )}
-                  <p className="text-md">{subTitle.substring(0, 150)}...</p>
+                  <p className="text-md">
+                    {subTitle.substring(0, 150)}
+                    ...
+                  </p>
                 </div>
                 {componentWidth > 1024 ? (
                   <div className="w-full flex text-sm gap-3  mt-4">

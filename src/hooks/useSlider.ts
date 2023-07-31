@@ -32,7 +32,10 @@ export function useSlider() {
   }
   function handleTouchDown(e: React.TouchEvent<HTMLDivElement>) {
     setDown(true)
-    setX(e.changedTouches[0].pageX - e.currentTarget.offsetLeft)
+
+    if (e.changedTouches[0] != undefined) {
+      setX(e.changedTouches[0].pageX - e.currentTarget.offsetLeft)
+    }
     setScrollLeft(e.currentTarget.scrollLeft)
   }
 
@@ -44,8 +47,9 @@ export function useSlider() {
     e.currentTarget.scrollLeft = scrollLeft - walk
   }
   function handleTouchMove(e: React.TouchEvent<HTMLDivElement>) {
-    if (!isDown) return
-    const x = e.changedTouches[0].pageX - e.currentTarget.offsetLeft
+    if (!isDown || !e.currentTarget || !e.changedTouches[0]) return
+
+    const x = e.changedTouches[0].pageX - (e.currentTarget.offsetLeft || 0)
     const speed = 1
     const walk = (x - startX) * speed
     e.currentTarget.scrollLeft = scrollLeft - walk
@@ -67,6 +71,6 @@ export function useSlider() {
     handleTouchMove,
     handleMouseDown,
     handleTouchDown,
-    wrapperRef
+    wrapperRef,
   }
 }

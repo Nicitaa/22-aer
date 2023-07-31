@@ -9,7 +9,8 @@ import RecoverAccountForm from "~/components/auth/RecoverAccountForm"
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
 function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
+    <div
+      className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
      tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
       <h1 className="text-md font-bold text-primary">Recover Account</h1>
       <RecoverAccountForm />
@@ -38,6 +39,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const providers = await getProviders()
 
   return {
-    props: { providers: providers ?? [] }
+    props: { providers: providers ?? [] },
   }
 }
