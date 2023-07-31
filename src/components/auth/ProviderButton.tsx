@@ -1,10 +1,10 @@
-import { ClientSafeProvider, signIn } from "next-auth/react"
-import React from "react"
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
+import { ClientSafeProvider, signIn } from "next-auth/react";
+import React from "react";
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 
 export type Props = {
-  provider: ClientSafeProvider
-}
+  provider: ClientSafeProvider;
+};
 
 function ProviderButton({ provider }: Props) {
   const providerIcon =
@@ -14,20 +14,20 @@ function ProviderButton({ provider }: Props) {
       <FaFacebook className="text-md" />
     ) : (
       <FaGithub className="text-md" />
-    )
+    );
+
+  const handleSignIn = async () => {
+    await signIn(provider.id);
+  };
 
   return (
     <div
       className="flex items-center w-full p-4 bg-primary text-black rounded-lg cursor-pointer"
-      onClick={async () => {
-        await signIn(provider.id);
-      }}
+      onClick={handleSignIn}
     >
       <div>{providerIcon}</div>
 
       <h3 className="flex grow justify-center text-xs tablet:text-sm laptop:text-md">Sign in with {provider.name}</h3>
     </div>
-  )
+  );
 }
-
-export default ProviderButton
