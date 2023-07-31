@@ -29,7 +29,7 @@ export function Navbar() {
   }
 
   function navClick(href: string) {
-    void router.push(href);
+    void router.push(href)
     hideHamburgerMenu()
   }
 

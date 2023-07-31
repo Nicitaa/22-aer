@@ -43,8 +43,8 @@ export function Slider3D({
     })
 
     setCurrentSlide(index)
-    localStorage.setItem('currentIndex', JSON.stringify(index));
-    window.dispatchEvent(new Event("storage"));
+    localStorage.setItem('currentIndex', JSON.stringify(index))
+    window.dispatchEvent(new Event("storage"))
   }, [array.length, setCurrentSlide]);
 
   const changeChild = useCallback(
