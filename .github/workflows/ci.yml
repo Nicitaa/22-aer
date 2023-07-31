@@ -15,38 +15,50 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v3
+      - name: Set up Node.js 12.x
+        uses: actions/setup-node@v2.4.0
         with:
-          node-version: 20
+          node-version: 12.x
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 8.6.6
+        run: npm install -g pnpm@6
 
       - name: Get pnpm store directory
         id: pnpm-cache
         run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Cache Primes
+        id: cache-primes
+        uses: actions/cache@v2
+        with:
+          path: prime-numbers
+          key: ${{ runner.os }}-primes
+
+      - name: Generate Prime Numbers
+        if: steps.cache-primes.outputs.cache-hit != 'true'
+        run: /generate-primes.sh -d prime-numbers
+
+      - name: Use Prime Numbers
+        run: /primes.sh -d prime-numbers
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Building
-        run: pnpm build
+        run: pnpm build --prefer-offline
         env:
-          DATABASE_URL: "http://localhost:3000"
-          NEXTAUTH_SECRET: "random"
-          NEXTAUTH_URL: "http://localhost:3000"
+          DATABASE_URL: http://localhost:3000
+          NEXTAUTH_SECRET: random
+          NEXTAUTH_URL: http://localhost:3000
           GITHUB_CLIENT_ID: "123"
           GITHUB_CLIENT_SECRET: "1234"
           GOOGLE_CLIENT_ID: "12345"
@@ -57,9 +69,9 @@ jobs:
       - name: lintrc
         run: pnpm lint
         env:
-          DATABASE_URL: "http://localhost:3000"
-          NEXTAUTH_SECRET: "random"
-          NEXTAUTH_URL: "http://localhost:3000"
+          DATABASE_URL: http://localhost:3000
+          NEXTAUTH_SECRET: random
+          NEXTAUTH_URL: http://localhost:3000
           GITHUB_CLIENT_ID: "123"
           GITHUB_CLIENT_SECRET: "1234"
           GOOGLE_CLIENT_ID: "12345"
