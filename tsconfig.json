@@ -28,8 +28,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/components/ProgressProvider.tsx",
-    "src/components/StatCircle.tsx",
+    "src/components/pages/about/ProgressProvider.tsx",
+    "src/components/pages/about/StatCircle.tsx",
     "src/components/TradingViewWidget.jsx",
     "next.config.mjs"
   ],

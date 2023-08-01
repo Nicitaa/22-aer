@@ -2,7 +2,7 @@ import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "nex
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
-import { ProviderButton } from "~/components/auth/ProviderButton"
+import { ProviderButton } from "~/components/pages/auth/ProviderButton"
 import { SignInForm } from "~/components"
 import Link from "next/link"
 

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Input } from "../ui"
+import { Input } from "../../ui"
 import { useState } from "react"
 
 function SignInForm() {
