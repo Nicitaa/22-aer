@@ -14,9 +14,9 @@ export { ProductsHeader, ListView, GridView }
 
 /* Home Page */
 import { SliderCounter } from "./SliderCounter"
-import { Slider } from "./Slider"
+import { Slider3D } from "./Slider3D"
 
-export { SliderCounter, Slider }
+export { SliderCounter, Slider3D }
 
 /* Cart Page*/
 import CartItem from "./CartItem"
@@ -26,5 +26,5 @@ export { CartItem }
 
 import SignInForm from "./auth/SignInForm"
 export { SignInForm }
-import ProviderButton from "./auth/ProviderButton"
+import { ProviderButton } from "./auth/ProviderButton"
 export { ProviderButton }

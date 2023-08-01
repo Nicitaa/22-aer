@@ -23,10 +23,14 @@ export default {
       backgroundImage: {
         img: "url('/background.webp')"
       },
+      boxShadow: {
+  cta: '0px 0px 8px 1px rgb(44 200 207 / 1)',
+},
       colors: {
         primary: "rgba(255, 255, 255, 0.9)",
         "primary-dark": "rgba(255,255,255,0.4)",
         secondary: "rgba(7, 7, 10, 0.4)",
+        "secondary-dark": "rgba(7, 7, 10, 1)",
         cta: "rgba(44, 200, 207, 1)",
         "cta-danger": "rgba(197, 52, 52, 1)",
         "cta-success": "rgba(58, 184, 63, 1)",

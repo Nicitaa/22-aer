@@ -15,8 +15,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
 
   {
@@ -28,8 +28,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
   {
     name: "Black bag",
@@ -40,8 +40,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
 
   {
@@ -53,8 +53,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
   {
     name: "Black bag",
@@ -65,8 +65,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
 
   {
@@ -78,8 +78,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
   {
     name: "Black bag",
@@ -90,8 +90,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
 
   {
@@ -103,8 +103,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
   {
     name: "Black bag",
@@ -115,8 +115,8 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
+      "/images/products/original/flat-bag-2g.webp",
+    ],
   },
 
   {
@@ -128,7 +128,7 @@ export const productData: Product[] = [
     image: [
       "/images/products/original/flat-bag-1b.webp",
       "/images/products/original/flat-bag-1g.webp",
-      "/images/products/original/flat-bag-2g.webp"
-    ]
-  }
+      "/images/products/original/flat-bag-2g.webp",
+    ],
+  },
 ]

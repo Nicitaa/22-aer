@@ -1,13 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --primary: rgba(255, 255, 255, 0.9);
+  --secondary: rgba(7, 7, 10, 0.4);
   --stats-bar: rgba(79, 70, 186, 1);
   --stats-fill: rgba(51, 23, 165, 1);
   /* 320-768px */
-  --medium: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
+  --md: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
+
+  --cta: rgba(44, 200, 207, 1);
 }
 
 svg {
@@ -57,7 +62,7 @@ body,
 
 .CircularProgressbar-text {
   fill: var(--primary) !important;
-  font-size: var(--medium) !important;
+  font-size: var(--md) !important;
   animation: neonAnim 1s alternate-reverse infinite !important;
   color: var(--primary) !important;
 }
@@ -70,6 +75,108 @@ body,
   to {
     text-shadow: 0 0px 12px var(--primary), 0 0 41px var(--primary), 0 0 102px var(--primary);
   }
+}
+
+/* RadioButton.tsx */
+input[type="radio"]:checked + .label {
+  border-color: var(--cta);
+}
+
+input[type="radio"]:checked + .label:after {
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+  opacity: 1;
+}
+
+.label::after {
+  background-color: var(--cta);
+}
+
+.label {
+  border: 1px solid var(--secondary);
+}
+
+/* Checkbox.tsx */
+.checkbox-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  outline: none;
+  -webkit-appearance: 0;
+  height: 15px;
+  width: 15px;
+  margin: 0px 5px 0px 3px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container input::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 0.1em;
+  transform: scale(0);
+  transition: all 0.4s;
+  opacity: 0%;
+  pointer-events: none;
+  background-color: var(--cta);
+}
+
+.checkbox-container:hover input[type="checkbox"]:not(:checked)::before {
+  transform: scale(3.6);
+  opacity: 10%;
+}
+
+.checkbox-container input[type="checkbox"]::after {
+  content: "\f00c";
+  font-family: "Font awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  color: #000000;
+}
+
+.checkbox-container input[type="checkbox"]:not(:checked)::after {
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:not(:checked) {
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.checkbox-container input[type="checkbox"]:not(:checked):hover {
+  background-color: var(--cta);
+}
+
+.checkbox-container input[type="checkbox"]:not(:checked):active {
+  background-color: var(--cta);
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: var(--cta);
+}
+
+.checkbox-container input[type="checkbox"]:checked:hover {
+  background-color: var(--cta);
+}
+
+.checkbox-container input[type="checkbox"]:checked:active {
+  background-color: var(--cta);
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+  display: flex;
 }
 
 /* Slider */
