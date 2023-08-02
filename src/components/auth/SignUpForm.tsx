@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Input, SimpleCheckbox } from "../ui"
 import AuthForm from "./AuthForm"
+import { CheckboxInput, EmailInput, PasswordInput } from "../ui/inputs"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -19,9 +19,8 @@ function SignUpForm() {
   }
 
   const inputs = [
-    <Input
+    <EmailInput
       value={email}
-      type="email"
       label="Email"
       labelHidden={true}
       id="email"
@@ -29,8 +28,7 @@ function SignUpForm() {
       handleChange={handleEmailChange}
       key="Email"
     />,
-    <Input
-      type="password"
+    <PasswordInput
       id="password"
       placeholder="Password"
       value={password}
@@ -39,8 +37,7 @@ function SignUpForm() {
       labelHidden={true}
       key="Password"
     />,
-    <Input
-      type="password"
+    <PasswordInput
       id="repeatPassword"
       placeholder="Repeat Password"
       value={repeatPassword}
@@ -50,12 +47,7 @@ function SignUpForm() {
       key="Repeat Password"
     />,
     <div className="flex justify-start" key="Remember Me">
-      <SimpleCheckbox
-        label="Remember Me"
-        labelReverse={true}
-        checkboxValue={rememberMe}
-        setCheckboxValue={setRememberMe}
-      />
+      <CheckboxInput label="Remember Me" labelReverse={true} isChecked={rememberMe} setIsChecked={setRememberMe} />
     </div>,
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Register

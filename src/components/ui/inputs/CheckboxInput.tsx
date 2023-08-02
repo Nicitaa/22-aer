@@ -12,23 +12,25 @@ interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
 
 export default function CheckboxInput({
   label,
-  labelReverse,
   labelClassName,
   isChecked,
   id,
   setIsChecked,
+  inputClassName,
 }: CheckboxProps) {
   return (
-    <label className="flex justify-center items-center cursor-pointer gap-1" htmlFor={id}>
+    <label
+      className={`${labelClassName} flex justify-center items-center cursor-pointer gap-1  z-[999999]`}
+      htmlFor={id}>
       <div className="flex justify-center items-center relative group">
         <input
-          className="checkbox-input checkbox-isChecked "
+          className={`${inputClassName} checkbox-input checkbox-isChecked `}
           type="checkbox"
           id={id}
           checked={isChecked}
           onChange={() => setIsChecked(prevIsChecked => !prevIsChecked)}
         />
-        <div className="checkbox-animation group-hover:opacity-10 group-hover:scale-[3.6]"></div>
+        <div className="checkbox-animation group-hover:opacity-20 group-hover:scale-[3.6]"></div>
       </div>
       {label}
     </label>

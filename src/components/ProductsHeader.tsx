@@ -6,6 +6,7 @@ import { DropdownContainer } from "./DropdownContainer"
 import { Checkbox, Input, RadioButton } from "./ui"
 import { Button } from "./ui/Button"
 import { useState } from "react"
+import { CheckboxInput } from "./ui/inputs"
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean }
@@ -29,6 +30,9 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
   const handlePriceRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPriceRange(parseInt(e.target.value, 10))
   }
+  const [whiteIsChecked, setWhiteIsChecked] = useState(false)
+  const [grayIsChecked, setGrayIsChecked] = useState(false)
+  const [blackIsChecked, setBlackIsChecked] = useState(false)
 
   return (
     <nav className="font-primary mb-8 grid w-full max-w-[1284px] grid-cols-1 items-center gap-x-8 tablet:px-8 pt-4 text-xs font-bold text-white tablet:grid-cols-[auto,auto,1fr,auto]">
@@ -116,13 +120,28 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
               <h1 className="text-start">Color:</h1>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 tablet:gap-0">
                 <div className="flex">
-                  <Checkbox label="White" />
+                  <CheckboxInput
+                    label="White"
+                    isChecked={whiteIsChecked}
+                    setIsChecked={setWhiteIsChecked}
+                    labelReverse={false}
+                  />
                 </div>
                 <div className="flex">
-                  <Checkbox label="Gray" />
+                  <CheckboxInput
+                    label="Gray"
+                    isChecked={grayIsChecked}
+                    setIsChecked={setGrayIsChecked}
+                    labelReverse={false}
+                  />
                 </div>
                 <div className="flex">
-                  <Checkbox label="Black" />
+                  <CheckboxInput
+                    label="Black"
+                    isChecked={blackIsChecked}
+                    setIsChecked={setBlackIsChecked}
+                    labelReverse={false}
+                  />
                 </div>
               </div>
             </div>
