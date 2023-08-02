@@ -12,6 +12,7 @@ export default function EmailInput({ label, labelHidden, value, handleChange, id
  border-2 border-transparent  focus:border-cta outline-none ${size === "sm" ? "w-[100px] h-[50px]" : ""}`}
         type="email"
         {...props}
+        value={value}
         onChange={e => {
           console.log("HI")
           handleChange(e)

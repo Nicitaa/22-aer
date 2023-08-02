@@ -1,22 +1,21 @@
 import React from "react"
 import type { Dispatch, SetStateAction } from "react"
-import SharedInputProps from "./SharedInput"
 interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   label: string
   labelClassName?: string
   isChecked: boolean
   setIsChecked: Dispatch<SetStateAction<boolean>>
-  labelReverse: boolean
+  labelReverse?: boolean
   inputClassName?: string
 }
 
 export default function CheckboxInput({
   label,
-  labelClassName,
+  labelClassName = "",
   isChecked,
   id,
   setIsChecked,
-  inputClassName,
+  inputClassName = "",
 }: CheckboxProps) {
   return (
     <label

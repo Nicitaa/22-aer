@@ -13,6 +13,7 @@ export default function TextInput({ label, labelHidden, value, handleChange, id,
         className={`p-4 w-full text-sm tablet:text-md text-black bg-[#D9D9D9] placeholder:text-secondary
      border-2 border-transparent  focus:border-cta outline-none ${size === "sm" ? "w-[100px] h-[50px]" : ""}`}
         type="text"
+        value={value}
         {...props}
         onChange={e => {
           handleChange(e)

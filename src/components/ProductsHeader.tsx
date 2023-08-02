@@ -3,7 +3,7 @@ import { FaListUl } from "react-icons/fa"
 import { AiOutlineDown } from "react-icons/ai"
 
 import { DropdownContainer } from "./DropdownContainer"
-import { Checkbox, Input, RadioButton } from "./ui"
+import { Input, RadioButton } from "./ui"
 import { Button } from "./ui/Button"
 import { useState } from "react"
 import { CheckboxInput } from "./ui/inputs"
