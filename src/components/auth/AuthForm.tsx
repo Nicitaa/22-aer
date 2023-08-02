@@ -8,7 +8,8 @@ interface AuthFormProps {
 export default function AuthForm({ inputs, onSubmit }: AuthFormProps) {
   return (
     <form
-      onSubmit={() => {
+      onSubmit={e => {
+        e.preventDefault()
         onSubmit()
       }}
       className="w-full space-y-4">

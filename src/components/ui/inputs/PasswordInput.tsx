@@ -21,7 +21,7 @@ export default function PasswordInput({ label, labelHidden, value, handleChange,
   }
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <label htmlFor={id} className={`${labelHidden ? "visually-hidden" : ""}`}>
         {label}
       </label>
