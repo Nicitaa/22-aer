@@ -43,9 +43,9 @@ export const authOptions: NextAuthOptions = {
       ...session,
       user: {
         ...session.user,
-        id: user.id
-      }
-    })
+        id: user.id,
+      },
+    }),
   },
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -55,12 +55,12 @@ export const authOptions: NextAuthOptions = {
     }),*/
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
     FacebookProvider({
       clientId: env.FACEBOOK_CLIENT_ID,
-      clientSecret: env.FACEBOOK_CLIENT_SECRET
-    })
+      clientSecret: env.FACEBOOK_CLIENT_SECRET,
+    }),
     /**
      * ...add more providers here.
      *
@@ -70,7 +70,7 @@ export const authOptions: NextAuthOptions = {
      *
      * @see https://next-auth.js.org/providers/github
      */
-  ]
+  ],
 }
 
 /**

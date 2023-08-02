@@ -1,4 +1,3 @@
-import { useRouter } from "next/router"
 import React, { useState } from "react"
 import Image from "next/image"
 import bags from "~/constant/bags.json"
@@ -6,17 +5,15 @@ import bags from "~/constant/bags.json"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
 
-
 const Product = () => {
-  const router = useRouter()
   // const { id } = router.query
-  const foundProduct = bags?.find((bag) => bag.id)
+  const foundProduct = bags?.find(bag => bag.id)
   const [quantity, setQuantity] = useState(1)
 
   if (!foundProduct) {
     return <h1 className="mx-auto text-lg text-center">Loading...</h1>
   }
-  const { id, preview, title, subTitle, price, imagesUrl } = foundProduct
+  const { title, subTitle, price, imagesUrl } = foundProduct
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [currentImage, setCurrentImage] = useState(Math.floor(imagesUrl.length / 2))
   return (
@@ -38,7 +35,7 @@ const Product = () => {
               <IoIosArrowBack
                 className="h-[30px] laptop:h-[80px] w-auto hover:fill-cta active:scale-150 duration-300"
                 onClick={() => {
-                  setCurrentImage((prev) => (prev === 0 ? imagesUrl.length - 1 : prev - 1))
+                  setCurrentImage(prev => (prev === 0 ? imagesUrl.length - 1 : prev - 1))
                 }}
               />
               {imagesUrl.map((imageUrl, index) => {
@@ -61,7 +58,7 @@ const Product = () => {
               <IoIosArrowForward
                 className="h-[30px] laptop:h-[80px] w-auto hover:fill-cta active:scale-150 duration-300"
                 onClick={() => {
-                  setCurrentImage((prev) => (prev === imagesUrl.length - 1 ? 0 : prev + 1))
+                  setCurrentImage(prev => (prev === imagesUrl.length - 1 ? 0 : prev + 1))
                 }}
               />
             </div>
@@ -87,7 +84,7 @@ const Product = () => {
                 <AiOutlineMinus
                   className="text-white text-center w-5 h-6"
                   onClick={() => {
-                    setQuantity((prev) => (prev !== 1 ? prev - 1 : 1))
+                    setQuantity(prev => (prev !== 1 ? prev - 1 : 1))
                   }}
                 />
               </button>
@@ -96,7 +93,7 @@ const Product = () => {
                 <AiOutlinePlus
                   className="text-white text-center w-7 h-7"
                   onClick={() => {
-                    setQuantity((prev) => prev + 1)
+                    setQuantity(prev => prev + 1)
                   }}
                 />
               </button>

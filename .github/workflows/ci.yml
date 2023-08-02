@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: ["development"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test-build:
+    name: lintrc
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.6.6
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Setup build cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+              ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Setup prettier
+        run: pnpm i prettier --save-dev
+
+      - name: prettierrc
+        run: pnpm prettier --write src/*
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Building
+        run: pnpm build
+        env:
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
+          GITHUB_CLIENT_ID: "123"
+          GITHUB_CLIENT_SECRET: "1234"
+          GOOGLE_CLIENT_ID: "12345"
+          GOOGLE_CLIENT_SECRET: "123456"
+          FACEBOOK_CLIENT_ID: "1234567"
+          FACEBOOK_CLIENT_SECRET: "12345678"
+
+      - name: lintrc
+        run: pnpm lint
+        env:
+          DATABASE_URL: "http://localhost:3000"
+          NEXTAUTH_SECRET: "random"
+          NEXTAUTH_URL: "http://localhost:3000"
+          GITHUB_CLIENT_ID: "123"
+          GITHUB_CLIENT_SECRET: "1234"
+          GOOGLE_CLIENT_ID: "12345"
+          GOOGLE_CLIENT_SECRET: "123456"
+          FACEBOOK_CLIENT_ID: "1234567"
+          FACEBOOK_CLIENT_SECRET: "12345678"
+
+      - name: Type-checking
+        run: pnpm type-check
+
