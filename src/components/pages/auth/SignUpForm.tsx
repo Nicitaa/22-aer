@@ -1,11 +1,12 @@
-import Link from "next/link"
-import { useState } from "react"
-import AuthForm from "./AuthForm"
-import { CheckboxInput, EmailInput, PasswordInput } from "../ui/inputs"
+import React, { useState } from "react"
+import { Checkbox, Input } from "../../ui"
+import { AuthForm } from "."
 
-function SignInForm() {
+function SignUpForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [repeatPassword, setRepeatPassword] = useState("")
+
   const [rememberMe, setRememberMe] = useState(false)
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -13,34 +14,46 @@ function SignInForm() {
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value)
   }
+  const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRepeatPassword(e.target.value)
+  }
+
   const inputs = [
-    <EmailInput
+    <Input
+      value={email}
+      type="email"
       label="Email"
       labelHidden={true}
       id="email"
       placeholder="Email"
-      value={email}
       handleChange={handleEmailChange}
       key="Email"
     />,
-    <PasswordInput
-      labelHidden={true}
-      label="Password"
+    <Input
       id="password"
+      type="password"
       placeholder="Password"
       value={password}
       handleChange={handlePasswordChange}
+      label="Password"
+      labelHidden={true}
       key="Password"
     />,
-    <div className="flex justify-between items-center" key="Remember Me and Recover">
-      <CheckboxInput label="Remember Me" isChecked={rememberMe} setIsChecked={setRememberMe} labelReverse={true} />
-      <Link href="./recover" className="text-cta text-xs">
-        Forgot Password?
-      </Link>
+    <Input
+      id="repeatPassword"
+      type="password"
+      placeholder="Repeat Password"
+      value={repeatPassword}
+      label="Repeat Password"
+      labelHidden={true}
+      handleChange={handleRepeatPasswordChange}
+      key="Repeat Password"
+    />,
+    <div className="flex justify-start" key="Remember Me">
+      <Checkbox label="Remember Me" />
     </div>,
-
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
-      Login
+      Register
     </button>,
   ]
   return (
@@ -53,4 +66,4 @@ function SignInForm() {
   )
 }
 
-export default SignInForm
+export default SignUpForm

@@ -4,8 +4,8 @@ import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
 import Link from "next/link"
-import SignUpForm from "~/components/auth/SignUpForm"
-import { AuthContainer } from "~/components/auth"
+import SignUpForm from "~/components/pages/auth/SignUpForm"
+import AuthContainer from "~/components/pages/auth/AuthContainer"
 
 function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (

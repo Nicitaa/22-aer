@@ -3,10 +3,8 @@ import { FaListUl } from "react-icons/fa"
 import { AiOutlineDown } from "react-icons/ai"
 
 import { DropdownContainer } from "./DropdownContainer"
-import { Input, RadioButton } from "./ui"
-import { Button } from "./ui/Button"
-import { useState } from "react"
-import { CheckboxInput } from "./ui/inputs"
+import { Checkbox, Input, RadioButton } from "../../ui"
+import { Button } from "../../ui/Button"
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean }
@@ -38,14 +36,24 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
     <nav className="font-primary mb-8 grid w-full max-w-[1284px] grid-cols-1 items-center gap-x-8 tablet:px-8 pt-4 text-xs font-bold text-white tablet:grid-cols-[auto,auto,1fr,auto]">
       <div className="grid w-14 grid-cols-2 gap-x-2 ">
         <button
-          onClick={() => setSortOption({ grid: true, list: false })}
+          onClick={() =>
+            setSortOption({
+              grid: true,
+              list: false,
+            })
+          }
           className={`w-6 rounded-md ${
             sortOption.grid ? "bg-black text-white" : "scale-90 bg-white text-black"
           }  stroke-black stroke-2  p-1 `}>
           {<BsGridFill size={16} />}
         </button>
         <button
-          onClick={() => setSortOption({ grid: false, list: true })}
+          onClick={() =>
+            setSortOption({
+              grid: false,
+              list: true,
+            })
+          }
           className={`w-6 rounded-md ${
             sortOption.list ? "bg-black text-white" : "scale-90 bg-white  text-black"
           }  stroke-black stroke-2  p-1 `}>

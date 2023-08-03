@@ -1,4 +1,4 @@
-import { StatCircle } from "~/components/StatCircle"
+import { StatCircle } from "~/components/index"
 import Link from "next/link"
 import { useSlider } from "~/hooks/useSlider"
 

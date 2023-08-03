@@ -1,12 +1,11 @@
-import React, { useState } from "react"
+import Link from "next/link"
+import { Checkbox, Input } from "../../ui"
+import { useState } from "react"
 import AuthForm from "./AuthForm"
-import { CheckboxInput, EmailInput, PasswordInput } from "../ui/inputs"
 
-function SignUpForm() {
+function SignInForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [repeatPassword, setRepeatPassword] = useState("")
-
   const [rememberMe, setRememberMe] = useState(false)
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -14,43 +13,36 @@ function SignUpForm() {
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value)
   }
-  const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setRepeatPassword(e.target.value)
-  }
-
   const inputs = [
-    <EmailInput
-      value={email}
+    <Input
       label="Email"
+      type="email"
       labelHidden={true}
       id="email"
       placeholder="Email"
+      value={email}
       handleChange={handleEmailChange}
       key="Email"
     />,
-    <PasswordInput
+    <Input
+      labelHidden={true}
+      label="Password"
+      type="password"
       id="password"
       placeholder="Password"
       value={password}
       handleChange={handlePasswordChange}
-      label="Password"
-      labelHidden={true}
       key="Password"
     />,
-    <PasswordInput
-      id="repeatPassword"
-      placeholder="Repeat Password"
-      value={repeatPassword}
-      label="Repeat Password"
-      labelHidden={true}
-      handleChange={handleRepeatPasswordChange}
-      key="Repeat Password"
-    />,
-    <div className="flex justify-start" key="Remember Me">
-      <CheckboxInput label="Remember Me" labelReverse={true} isChecked={rememberMe} setIsChecked={setRememberMe} />
+    <div className="flex justify-between items-center" key="Remember Me and Recover">
+      <Checkbox label="Remember Me" />
+      <Link href="./recover" className="text-cta text-xs">
+        Forgot Password?
+      </Link>
     </div>,
+
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
-      Register
+      Login
     </button>,
   ]
   return (
@@ -63,4 +55,4 @@ function SignUpForm() {
   )
 }
 
-export default SignUpForm
+export default SignInForm

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
+import { Input } from "../../ui"
 import AuthForm from "./AuthForm"
-import { EmailInput } from "../ui/inputs"
 
 function RecoverAccountForm() {
   const [email, setEmail] = useState("")
@@ -8,8 +8,9 @@ function RecoverAccountForm() {
     setEmail(e.target.value)
   }
   const inputs = [
-    <EmailInput
+    <Input
       id="email"
+      type="email"
       placeholder="Email"
       value={email}
       label="Email"

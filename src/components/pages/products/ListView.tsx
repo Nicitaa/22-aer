@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { Button } from "./ui/Button"
+import { Button } from "../../ui/Button"
 import { priceFormatter } from "~/utils/priceFormatter"
 type Product = {
   id: string

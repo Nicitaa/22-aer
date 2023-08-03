@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
 import { SignInForm } from "~/components"
 import Link from "next/link"
-import AuthContainer from "~/components/auth/AuthContainer"
+import AuthContainer from "~/components/pages/auth/AuthContainer"
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
