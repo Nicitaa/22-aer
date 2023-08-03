@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
 import { ProviderButton } from "~/components"
 import Link from "next/link"
-import SignUpForm from "~/components/auth/SignUpForm"
+import SignUpForm from "~/components/pages/auth/SignUpForm"
 
 function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (

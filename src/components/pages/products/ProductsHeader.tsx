@@ -3,8 +3,8 @@ import { FaListUl } from "react-icons/fa"
 import { AiOutlineDown } from "react-icons/ai"
 
 import { DropdownContainer } from "./DropdownContainer"
-import { Checkbox, Input, RadioButton } from "./ui"
-import { Button } from "./ui/Button"
+import { Checkbox, Input, RadioButton } from "../../ui"
+import { Button } from "../../ui/Button"
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean }
@@ -27,9 +27,8 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
               list: false,
             })
           }
-          className={`w-6 rounded-md ${
-            sortOption.grid ? "bg-black text-white" : "scale-90 bg-white text-black"
-          }  stroke-black stroke-2  p-1 `}>
+          className={`w-6 rounded-md ${sortOption.grid ? "bg-black text-white" : "scale-90 bg-white text-black"
+            }  stroke-black stroke-2  p-1 `}>
           {<BsGridFill size={16} />}
         </button>
         <button
@@ -39,9 +38,8 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
               list: true,
             })
           }
-          className={`w-6 rounded-md ${
-            sortOption.list ? "bg-black text-white" : "scale-90 bg-white  text-black"
-          }  stroke-black stroke-2  p-1 `}>
+          className={`w-6 rounded-md ${sortOption.list ? "bg-black text-white" : "scale-90 bg-white  text-black"
+            }  stroke-black stroke-2  p-1 `}>
           {<FaListUl size={16} />}
         </button>
       </div>

@@ -4,7 +4,7 @@ import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
 import Link from "next/link"
-import RecoverAccountForm from "~/components/auth/RecoverAccountForm"
+import RecoverAccountForm from "~/components/pages/auth/RecoverAccountForm"
 
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
 function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
