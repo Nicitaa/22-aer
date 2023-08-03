@@ -9,7 +9,7 @@ import AuthContainer from "~/components/auth/AuthContainer"
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
     <p>
-      New to Aer?{" "}
+      New to Aer?&nbsp;
       <span className="text-cta">
         <Link href="./signup">Register</Link>
       </span>

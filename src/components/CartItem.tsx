@@ -6,7 +6,7 @@ const CartItem = () => {
       <td className="pt-8 tablet:grid grid-cols-2 gap-4 items-center tablet:w-full max-w-[250px] pl-2 tablet:pl-8 ">
         <Image
           className="tablet:w-[100px] w-[50px]"
-          src={"/images/products/original/flat-bag-1b.webp"}
+          src="/images/products/original/flat-bag-1b.webp"
           alt="Placeholder Image"
           width={200}
           height={200}

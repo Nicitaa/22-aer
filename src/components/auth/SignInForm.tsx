@@ -33,8 +33,8 @@ function SignInForm() {
       key="Password"
     />,
     <div className="flex justify-between items-center" key="Remember Me and Recover">
-      <CheckboxInput label={"Remember Me"} isChecked={rememberMe} setIsChecked={setRememberMe} labelReverse={true} />
-      <Link href={"./recover"} className="text-cta text-xs">
+      <CheckboxInput label="Remember Me" isChecked={rememberMe} setIsChecked={setRememberMe} labelReverse={true} />
+      <Link href="./recover" className="text-cta text-xs">
         Forgot Password?
       </Link>
     </div>,

@@ -38,8 +38,9 @@ export function Slider3D({
 
       document.querySelectorAll(".image-wrapper").forEach((image: Element) => {
         const width = image.getBoundingClientRect().width
-          ; (image as HTMLDivElement).style.transform = `translateX(${(array.length - index - array.length / 2 + 0.5) * width - width
-            }px)`
+        ;(image as HTMLDivElement).style.transform = `translateX(${
+          (array.length - index - array.length / 2 + 0.5) * width - width
+        }px)`
 
         document.querySelectorAll(".slider-image").forEach((image: Element) => {
           image.classList.remove("slide-image-active")
@@ -49,7 +50,7 @@ export function Slider3D({
       })
 
       setCurrentSlide(index)
-      localStorage.setItem("currentIndex", JSON.stringify(index));
+      localStorage.setItem("currentIndex", JSON.stringify(index))
       window.dispatchEvent(new Event("storage"))
     },
     [array.length, setCurrentSlide]
@@ -133,12 +134,13 @@ function Images(data: { slideTo: (index: number) => void; array: ITopSales[] }) 
           <Image
             placeholder="blur"
             blurDataURL={image.imgSrc}
-            width={"480"}
-            height={"320"}
+            width="480"
+            height="320"
             src={image.imgSrc}
             alt="image"
-            className={`slider-image w-48 object-cover cursor-pointer ${index === Math.floor(data.array.length / 2) ? "slide-image-active" : ""
-              }`}
+            className={`slider-image w-48 object-cover cursor-pointer ${
+              index === Math.floor(data.array.length / 2) ? "slide-image-active" : ""
+            }`}
             key={image.imgSrc}
           />
         </div>

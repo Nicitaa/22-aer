@@ -11,9 +11,9 @@ import { AuthContainer } from "~/components/auth"
 function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
     <p>
-      Remember password?{" "}
+      Remember password?&nbsp;
       <span className="text-cta">
-        <Link href="./signin">{""}Login</Link>
+        <Link href="./signin">Login</Link>
       </span>
     </p>
   )

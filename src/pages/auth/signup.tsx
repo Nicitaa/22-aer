@@ -10,9 +10,9 @@ import { AuthContainer } from "~/components/auth"
 function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
     <p>
-      Already have an account?{" "}
+      Already have an account?&nbsp;
       <span className="text-cta">
-        <Link href="./signin">{""}Login</Link>
+        <Link href="./signin">Login</Link>
       </span>
     </p>
   )
