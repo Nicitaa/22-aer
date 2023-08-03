@@ -5,6 +5,7 @@ import { AiOutlineDown } from "react-icons/ai"
 import { DropdownContainer } from "./DropdownContainer"
 import { Checkbox, Input, RadioButton } from "../../ui"
 import { Button } from "../../ui/Button"
+import { useState } from "react"
 
 interface navProps {
   sortOption: { grid: boolean; list: boolean }
@@ -128,28 +129,13 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
               <h1 className="text-start">Color:</h1>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 tablet:gap-0">
                 <div className="flex">
-                  <CheckboxInput
-                    label="White"
-                    isChecked={whiteIsChecked}
-                    setIsChecked={setWhiteIsChecked}
-                    labelReverse={false}
-                  />
+                  <Checkbox label="White" />
                 </div>
                 <div className="flex">
-                  <CheckboxInput
-                    label="Gray"
-                    isChecked={grayIsChecked}
-                    setIsChecked={setGrayIsChecked}
-                    labelReverse={false}
-                  />
+                  <Checkbox label="Gray" />
                 </div>
                 <div className="flex">
-                  <CheckboxInput
-                    label="Black"
-                    isChecked={blackIsChecked}
-                    setIsChecked={setBlackIsChecked}
-                    labelReverse={false}
-                  />
+                  <Checkbox label="Black" />
                 </div>
               </div>
             </div>
