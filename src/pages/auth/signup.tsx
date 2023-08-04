@@ -11,7 +11,7 @@ import { Button } from "~/components/ui/Button"
 
 import { AiOutlineGoogle } from 'react-icons/ai'
 
-function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function Signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [isChecked, setIsChecked] = useState(false) //example
   const [label1, setLabel1] = useState('') //example
   const [label2, setLabel2] = useState('') //example
@@ -27,10 +27,10 @@ function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideP
       {/* usage example - start*/}
       <Checkbox label="label" onChange={() => setIsChecked(isChecked => !isChecked)} isChecked={isChecked} />
       <p>{isChecked ? 'checked' : '!checked'}</p>
-      <RadioButton label="label1" inputName="input-name1" onChange={e => setLabel1(e.target.value)} />
-      <RadioButton label="label2" inputName="input-name1" onChange={e => setLabel1(e.target.value)} />
-      <RadioButton label="label3" inputName="input-name2" onChange={e => setLabel2(e.target.value)} />
-      <RadioButton label="label4" inputName="input-name2" onChange={e => setLabel2(e.target.value)} />
+      <RadioButton label="label1" inputName="input-name1" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLabel1(e.target.value)} />
+      <RadioButton label="label2" inputName="input-name1" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLabel1(e.target.value)} />
+      <RadioButton label="label3" inputName="input-name2" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLabel2(e.target.value)} />
+      <RadioButton label="label4" inputName="input-name2" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLabel2(e.target.value)} />
       <p>{label1 == 'label1' ? 'do stuff 1' : 'do stuff 2'}</p>
       <p>{label2}</p>
       <Input placeholder="Email" type='email' value={email} onChange={e => setEmail(e.target.value)} />
@@ -64,7 +64,7 @@ function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideP
   )
 }
 
-export default signup
+export default Signup
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)

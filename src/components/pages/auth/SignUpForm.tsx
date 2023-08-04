@@ -1,6 +1,5 @@
 import Link from "next/link"
 import React, { useState } from "react"
-import { FaEye } from "react-icons/fa"
 import { Checkbox, Input } from "../../ui"
 
 function SignUpForm() {

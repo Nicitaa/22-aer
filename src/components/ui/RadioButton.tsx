@@ -3,7 +3,7 @@ import { ChangeEvent } from "react"
 interface RadioButton extends React.HTMLAttributes<HTMLInputElement> {
   label: string
   inputName: string
-  onChange: (e: any) => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export function RadioButton({ label, inputName, onChange, ...props }: RadioButton) {
