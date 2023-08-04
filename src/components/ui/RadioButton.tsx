@@ -1,12 +1,15 @@
-interface RadioButton {
+import { ChangeEvent } from "react"
+
+interface RadioButton extends React.HTMLAttributes<HTMLInputElement> {
   label: string
   inputName: string
+  onChange: (e: any) => void
 }
 
-export function RadioButton({ label, inputName }: RadioButton) {
+export function RadioButton({ label, inputName, onChange, ...props }: RadioButton) {
   return (
     <label htmlFor={label} className="relative cursor-pointer flex items-center group">
-      <input type="radio" name={inputName} id={label} className="hidden" />
+      <input type="radio" name={inputName} value={label} id={label} className="hidden" onChange={onChange} {...props} />
       <span
         className={`label relative block float-left mr-[10px] w-[20px] h-[20px]
        rounded-[50%] after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:w-[10px] after:h-[10px] after:rounded-[50%]
