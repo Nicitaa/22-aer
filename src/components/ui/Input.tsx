@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
-  type: 'email' | 'password'
+  type: 'email' | 'password' | 'number'
   placeholder?: string
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
@@ -53,7 +53,7 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
             left-1 top-[50%] translate-y-[-120%] text-xs
             peer-placeholder-shown/input:left-4 peer-placeholder-shown/input:translate-y-[-50%] peer-placeholder-shown/input:text-md
              font-secondary text-secondary transition-all duration-300
-             pointer-events-none select-none">Email</label>
+             pointer-events-none select-none">{type === 'number' ? placeholder : 'Email'}</label>
           </div>
         )}
     </>

@@ -62,12 +62,13 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
           {/* Radio buttons */}
           <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-y-4">
             <div className="flex flex-col items-center tablet:items-start gap-y-2">
-              <RadioButton inputName="name" label="Name A to Z" />
-              <RadioButton inputName="name" label="Name Z to A" />
+              {/* Add on change event using documentation in src/components/ui/dev_readme.md  */}
+              {/* <RadioButton label="Name A to Z" inputName="name" onChange={() => {}} /> */}
+              {/* <RadioButton inputName="name" label="Name Z to A" /> */}
             </div>
             <div className="flex flex-col items-center tablet:items-start gap-y-2">
-              <RadioButton inputName="price" label="Price low to high" />
-              <RadioButton inputName="price" label="Price high to low" />
+              {/* <RadioButton inputName="price" label="Price low to high" /> */}
+              {/* <RadioButton inputName="price" label="Price high to low" /> */}
             </div>
           </div>
 
@@ -76,23 +77,25 @@ const ProductsHeader = ({ sortOption, setSortOption, productsCount }: navProps) 
             <div className="flex flex-col gap-y-2">
               <h1 className="text-start">Price:</h1>
               <div className="flex flex-row items-center gap-x-2">
-                <Input placeholder="Min" size="sm" />
+                {/* <Input type="number" placeholder="Min" size="sm" /> */}
                 <h1>-</h1>
-                <Input placeholder="Max" size="sm" />
+                {/* <Input type="number" placeholder="Max" size="sm" /> */}
               </div>
-              <Input type="range" />
+              {/* Create another component named Range in src/components/ui */}
+              {/* <Input type="range" /> */}
             </div>
             <div className="flex flex-col">
               <h1 className="text-start">Color:</h1>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 tablet:gap-0">
                 <div className="flex">
-                  <Checkbox label="White" />
+                  {/* Unkomment it and use by following documentation in src/components/ui/dev_readme.md */}
+                  {/* <Checkbox label="White" /> */}
                 </div>
                 <div className="flex">
-                  <Checkbox label="Gray" />
+                  {/* <Checkbox label="Gray" /> */}
                 </div>
                 <div className="flex">
-                  <Checkbox label="Black" />
+                  {/* <Checkbox label="Black" /> */}
                 </div>
               </div>
             </div>
