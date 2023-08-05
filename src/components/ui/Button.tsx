@@ -21,9 +21,9 @@ const buttonVariants = cva(
         "continue-with": "p-4 w-full font-secondary text-secondary bg-primary-dark flex justify-center items-center gap-x-4",
       },
       active: {
-        active: "before:visible lalala before:opacity-100",
+        active: "before:visible lalala before:opacity-100 before:translate-y-[2px]",
         inactive:
-          "hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[0px]",
+          "hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[2px]",
       },
     },
     defaultVariants: {

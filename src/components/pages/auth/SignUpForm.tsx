@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import { Checkbox, Input } from "../../ui"
+import { Button } from "~/components/ui/Button"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -12,22 +13,23 @@ function SignUpForm() {
   return (
     <form action="#" className="w-full space-y-4">
       <Input
+        placeholder="Email"
         type="email"
         id="sign-up-email"
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
       <Input
+        placeholder="Password"
         type='password'
         id="sign-up-password"
-        placeholder="Password"
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
       <Input
+        placeholder="Repeat Password"
         type='password'
         id="sign-up-repeatPassword"
-        placeholder="Repeat Password"
         value={repeatPassword}
         onChange={e => setRepeatPassword(e.target.value)}
       />
@@ -40,13 +42,9 @@ function SignUpForm() {
             onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
-        <Link href={"./recover"} className="text-cta">
-          Forgot Password?
-        </Link>
+        <Button variant='link'>Forgot password</Button>
       </div>
-      <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
-        Register Now
-      </button>
+      <Button className="w-full" variant='cta'>Register</Button>
     </form>
   )
 }

@@ -16,7 +16,7 @@ export function Checkbox({ isChecked = false, onChange, label, labelClassName = 
         onChange={onChange}
         {...props}
       />
-      <label className={`${labelClassName} select-none cursor-pointer`} onClick={onChange}>
+      <label className={`${labelClassName} font-secondary text-sm select-none cursor-pointer`} onClick={onChange}>
         {label}
       </label>
     </div>

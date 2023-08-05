@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Checkbox, Input } from "../../ui"
 import { useState } from "react"
+import { Button } from "~/components/ui/Button"
 
 function SignInForm() {
   const [email, setEmail] = useState("")
@@ -9,13 +10,14 @@ function SignInForm() {
   return (
     <form action="#" className="w-full space-y-4">
       <Input
+        placeholder="Email"
         type="email"
-        placeholder="Email or Username"
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
       <div className="flex relative items-center">
         <Input
+          placeholder="Password"
           type='password'
           value={password}
           onChange={e => setPassword(e.target.value)}
@@ -29,13 +31,8 @@ function SignInForm() {
             onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
-        <Link href={"./recover"} className="text-cta">
-          Forgot Password?
-        </Link>
       </div>
-      <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
-        Login
-      </button>
+      <Button className="w-full" variant='cta'>Login</Button>
     </form>
   )
 }
