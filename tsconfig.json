@@ -28,9 +28,11 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/components/ProgressProvider.ts",
-    "src/components/StatCircle.tsx",
-    "src/components/TradingViewWidget.jsx"
+    "src/components/pages/about/ProgressProvider.tsx",
+    "src/components/pages/about/StatCircle.tsx",
+    "src/components/TradingViewWidget.jsx",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules"]
 }
+

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { CartItem } from "~/components"
 const Cart = () => {
   return (
-    <main className="flex h-full min-h-screen flex-col items-center">
+    <div className="flex h-full min-h-screen flex-col items-center">
       <section className="mx-auto my-0 w-full max-w-[1062px] bg-secondary  tablet:px-0 rounded-t-xl">
         <div className="tablet:max-h-[390px] max-h-[300px] overflow-y-auto scrollbar">
           <table className="bg-secondary rounded-xl border-b-[64px] border-transparent w-full">
@@ -27,8 +27,7 @@ const Cart = () => {
         <div className="relative w-full h-full text-xs tablet:text-sm font-bold bg-secondary rounded-b-xl">
           <Link
             className="bg-cta top-8  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 left-8"
-            href={`products`}
-          >
+            href={`products`}>
             Back to products
           </Link>
           <button className="bg-cta-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">
@@ -39,7 +38,7 @@ const Cart = () => {
           </button>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

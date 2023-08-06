@@ -2,18 +2,19 @@ import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "nex
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
-import ProviderButton from "~/components/auth/ProviderButton"
+import { ProviderButton } from "~/components/pages/auth/ProviderButton"
 import { SignInForm } from "~/components"
 import Link from "next/link"
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
+    <div
+      className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
      tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
       <h1 className="text-md font-bold text-primary">Login</h1>
-      <SignInForm providers={providers} />
+      <SignInForm />
       <p className="font-bold">or</p>
-      {Object.values(providers).map((provider) => (
+      {Object.values(providers).map(provider => (
         <ProviderButton provider={provider} key={provider.id} />
       ))}
       <p>
@@ -39,6 +40,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const providers = await getProviders()
 
   return {
-    props: { providers: providers ?? [] }
+    props: { providers: providers ?? [] },
   }
 }

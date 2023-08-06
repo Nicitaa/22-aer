@@ -5,7 +5,9 @@ import { api } from "~/utils/api"
 import "~/styles/globals.css"
 import { Layout } from "~/components"
 
-const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { session, ...pageProps } }) => {
+const MyApp: AppType<{
+  session: Session | null
+}> = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
       <Layout>
