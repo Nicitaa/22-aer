@@ -4,10 +4,11 @@ import bags from "~/constant/bags.json"
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
+import router from "next/router"
 
 const Product = () => {
-  // const { id } = router.query
-  const foundProduct = bags?.find(bag => bag.id)
+  const { id } = router.query
+  const foundProduct = bags?.find(bag => bag.id === id)
   const [quantity, setQuantity] = useState(1)
 
   if (!foundProduct) {
