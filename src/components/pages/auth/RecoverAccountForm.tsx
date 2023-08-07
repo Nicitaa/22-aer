@@ -9,9 +9,8 @@ function RecoverAccountForm() {
       <form action="#">
         <label htmlFor="remember-email"></label>
         <Input
-          type="text"
-          id="remember-email"
-          placeholder="Email or Username"
+          placeholder="Email"
+          type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />

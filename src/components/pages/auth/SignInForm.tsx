@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Input } from "../../ui"
+import { Checkbox, Input } from "../../ui"
 import { useState } from "react"
+import { Button } from "~/components/ui/Button"
 
 function SignInForm() {
   const [email, setEmail] = useState("")
@@ -8,43 +8,30 @@ function SignInForm() {
   const [rememberMe, setRememberMe] = useState(false)
   return (
     <form action="#" className="w-full space-y-4">
-      <label htmlFor="sign-in-email"></label>
       <Input
-        type="text"
-        id="sign-in-email"
-        placeholder="Email or Username"
+        placeholder="Email"
+        type="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
       <div className="flex relative items-center">
-        <label htmlFor="sign-in-password"></label>
         <Input
-          type={`password`}
-          id="sign-in-password"
           placeholder="Password"
+          type='password'
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
       </div>
       <div className="flex justify-between items-center">
         <div className="flex flex-row-reverse gap-1 items-center ">
-          <label htmlFor="sign-in-rememberMe" className="text-xs">
-            Remember Me
-          </label>
-          <Input
-            type="checkbox"
-            id="sign-in-rememberMe"
-            checked={rememberMe}
+          <Checkbox
+            label="Remember me"
+            isChecked={rememberMe}
             onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
-        <Link href={"./recover"} className="text-cta">
-          Forgot Password?
-        </Link>
       </div>
-      <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md">
-        Login
-      </button>
+      <Button className="w-full" variant='cta'>Login</Button>
     </form>
   )
 }
