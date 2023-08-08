@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
+import { Button } from "~/components/ui/Button"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -26,7 +27,7 @@ function SignUpForm() {
       labelHidden={true}
       id="email"
       placeholder="Email"
-      handleChange={handleEmailChange}
+      onChange={handleEmailChange}
       key="Email"
     />,
     <Input
@@ -34,7 +35,7 @@ function SignUpForm() {
       type="password"
       placeholder="Password"
       value={password}
-      handleChange={handlePasswordChange}
+      onChange={handlePasswordChange}
       label="Password"
       labelHidden={true}
       key="Password"
@@ -46,11 +47,17 @@ function SignUpForm() {
       value={repeatPassword}
       label="Repeat Password"
       labelHidden={true}
-      handleChange={handleRepeatPasswordChange}
+      onChange={handleRepeatPasswordChange}
       key="Repeat Password"
     />,
     <div className="flex justify-start" key="Remember Me">
-      <Checkbox label="Remember Me" />
+      <Checkbox
+        label="Remember Me"
+        isChecked={rememberMe}
+        onChange={() => {
+          setRememberMe(prevValue => !prevValue)
+        }}
+      />
     </div>,
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
       Register

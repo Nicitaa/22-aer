@@ -1,4 +1,3 @@
-import React from "react"
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
@@ -7,7 +6,7 @@ import Link from "next/link"
 import SignUpForm from "~/components/pages/auth/SignUpForm"
 import AuthContainer from "~/components/pages/auth/AuthContainer"
 
-function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function SignUp({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
     <p>
       Already have an account?&nbsp;
@@ -25,7 +24,7 @@ function signup({ providers }: InferGetServerSidePropsType<typeof getServerSideP
   )
 }
 
-export default signup
+export default SignUp
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)

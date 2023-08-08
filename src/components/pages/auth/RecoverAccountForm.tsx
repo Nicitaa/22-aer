@@ -15,7 +15,7 @@ function RecoverAccountForm() {
       value={email}
       label="Email"
       labelHidden={true}
-      handleChange={handleEmailChange}
+      onChange={handleEmailChange}
       key="Email"
     />,
     <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">

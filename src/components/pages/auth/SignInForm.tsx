@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Checkbox, Input } from "../../ui"
 import { useState } from "react"
-import AuthForm from "./AuthForm"
+import { Button } from "~/components/ui/Button"
+import { AuthForm } from "."
 
 function SignInForm() {
   const [email, setEmail] = useState("")
@@ -21,7 +22,7 @@ function SignInForm() {
       id="email"
       placeholder="Email"
       value={email}
-      handleChange={handleEmailChange}
+      onChange={handleEmailChange}
       key="Email"
     />,
     <Input
@@ -31,11 +32,17 @@ function SignInForm() {
       id="password"
       placeholder="Password"
       value={password}
-      handleChange={handlePasswordChange}
+      onChange={handlePasswordChange}
       key="Password"
     />,
     <div className="flex justify-between items-center" key="Remember Me and Recover">
-      <Checkbox label="Remember Me" />
+      <Checkbox
+        label="Remember Me"
+        isChecked={rememberMe}
+        onChange={() => {
+          setRememberMe(prevValue => !prevValue)
+        }}
+      />
       <Link href="./recover" className="text-cta text-xs">
         Forgot Password?
       </Link>

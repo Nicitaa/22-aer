@@ -8,7 +8,7 @@ import RecoverAccountForm from "~/components/pages/auth/RecoverAccountForm"
 import { AuthContainer } from "~/components/pages/auth/"
 
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
-function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function RecoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (
     <p>
       Remember password?&nbsp;
@@ -27,7 +27,7 @@ function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getSer
   )
 }
 
-export default recoverAccount
+export default RecoverAccount
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)

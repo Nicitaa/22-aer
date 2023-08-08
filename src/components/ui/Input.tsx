@@ -2,9 +2,10 @@ import { useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import type { ChangeEvent } from "react"
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
-  type: string
-  value: number | string
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void
+  type: "email" | "password" | "number"
+  placeholder: string
+  value: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
   checked?: boolean
   size?: "sm" | "" | undefined
   label: string
@@ -12,7 +13,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   id: string
 }
 
-export function Input({ type, size, id, label, value, labelHidden, handleChange, ...props }: InputProps) {
+export function Input({ type, size, placeholder, ...props }: InputProps) {
   const [showPassword, setShowPassword] = useState(false)
   const toggleShowPassword = () => {
     setShowPassword(prevShowPassword => !prevShowPassword)
@@ -30,35 +31,60 @@ export function Input({ type, size, id, label, value, labelHidden, handleChange,
     }, 0)
   }
   return (
-    <div className="relative">
-      <label htmlFor={id} className={`${labelHidden ? "visually-hidden" : ""}`}>
-        {label}
-      </label>
-      <input
-        id={id}
-        className={`p-4 w-full text-sm tablet:text-md text-black bg-[#D9D9D9] placeholder:text-secondary
-     border-2 border-transparent  focus:border-cta outline-none ${size === "sm" ? "w-[100px] h-[50px]" : ""}`}
-        type={type === "password" ? (showPassword ? "text" : type) : type}
-        {...props}
-        onChange={e => {
-          handleChange(e)
-        }}
-      />
+    <>
       {type === "password" ? (
-        showPassword ? (
-          <AiFillEye
-            className="absolute right-4 w-8 h-8 text-secondary cursor-pointer  top-1/2 -translate-y-1/2"
-            onClick={() => toggleShowPassword()}
+        <div className="relative w-full">
+          <input
+            className={`peer/input p-4 bg-primary-dark text-secondary z-[9] ${
+              size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"
+            }
+              outline-none`}
+            type={showPassword ? "text" : "password"}
+            placeholder=" "
+            {...props}
           />
-        ) : (
-          <AiFillEyeInvisible
-            className="absolute right-4 w-8 h-8 text-secondary cursor-pointer top-1/2 -translate-y-1/2"
-            onClick={() => toggleShowPassword()}
-          />
-        )
+          <label
+            className="absolute 
+            left-1 top-[50%] translate-y-[-120%] text-xs
+            peer-placeholder-shown/input:left-4 peer-placeholder-shown/input:translate-y-[-50%] peer-placeholder-shown/input:text-md
+            font-secondary text-secondary transition-all duration-300
+             pointer-events-none select-none">
+            {placeholder}
+          </label>
+          {showPassword ? (
+            <AiFillEyeInvisible
+              className="absolute right-4 top-[50%] translate-y-[-50%] w-8 h-8 text-secondary cursor-pointer z-[10]"
+              onClick={() => setShowPassword(!showPassword)}
+            />
+          ) : (
+            <AiFillEye
+              className="absolute right-4 w-8 h-8 top-[50%] translate-y-[-50%] text-secondary cursor-pointer z-[10]"
+              onClick={() => setShowPassword(!showPassword)}
+            />
+          )}
+        </div>
       ) : (
-        <></>
+        <div className="relative w-full">
+          <input
+            className={`peer/input p-4 bg-primary-dark text-secondary z-[9] ${
+              size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"
+            }
+              outline-none`}
+            type="email"
+            placeholder=" "
+            required
+            {...props}
+          />
+          <label
+            className="absolute 
+            left-1 top-[50%] translate-y-[-120%] text-xs
+            peer-placeholder-shown/input:left-4 peer-placeholder-shown/input:translate-y-[-50%] peer-placeholder-shown/input:text-md
+             font-secondary text-secondary transition-all duration-300
+             pointer-events-none select-none">
+            {placeholder}
+          </label>
+        </div>
       )}
-    </div>
+    </>
   )
 }
