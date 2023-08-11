@@ -1,41 +1,43 @@
 import Link from "next/link"
 import { CartItem } from "~/components"
+import { Button } from "~/components/ui"
 const Cart = () => {
   return (
-    <div className="flex h-full min-h-screen flex-col items-center">
-      <section className="mx-auto my-0 w-full max-w-[1062px] bg-secondary  tablet:px-0 rounded-t-xl">
-        <div className="tablet:max-h-[390px] max-h-[300px] overflow-y-auto scrollbar">
+    <div className="flex h-[85vh] flex-col items-center">
+      <section className="mx-auto laptop:h-[70vh] h-[85vh] my-0 w-full max-w-[1062px] bg-secondary  tablet:px-0 rounded-t-xl">
+        <div className="h-[65%] overflow-y-auto scrollbar">
           <table className="bg-secondary rounded-xl border-b-[64px] border-transparent w-full">
-            <tbody>
-              <tr className="text-sm tablet:text-md font-bold">
-                <th className="py-8">Name</th>
+            <thead>
+              <tr className="text-sm tablet:text-md font-bold sticky top-0 bg-black">
+                <th className="py-8">Item</th>
                 <th className="py-8">Price</th>
-                <th className="py-8">Quantity</th>
+                <th className="py-8 tablet:block hidden">Quantity</th>
                 <th className="py-8">Subtotal</th>
+                <th className=""></th>
               </tr>
-              <>
-                <CartItem key={1} />
-                <CartItem key={2} />
-                <CartItem key={3} />
-                <CartItem key={4} />
-                <CartItem key={5} />
-                <CartItem key={6} />
-              </>
+            </thead>
+            <tbody>
+              <CartItem key={1} />
+              <CartItem key={2} />
+              <CartItem key={3} />
+              <CartItem key={4} />
+              <CartItem key={5} />
+              <CartItem key={6} />
             </tbody>
           </table>
         </div>
-        <div className="relative w-full h-full text-xs tablet:text-sm font-bold bg-secondary rounded-b-xl">
-          <Link
-            className="bg-cta top-8  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 left-8"
-            href={`products`}>
-            Back to products
-          </Link>
-          <button className="bg-cta-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">
-            Clear Cart
-          </button>
-          <button className="bg-cta-success  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 bottom-12 right-8">
-            Clear Cart
-          </button>
+        <div className=" relative h-[35%] w-full text-xs tablet:text-sm font-bold rounded-b-xl">
+          <div className="">
+            <Button href="products" className="absolute left-8 top-8">
+              Back to products
+            </Button>
+            <Button variant={"cta-danger"} className="absolute  top-8 right-8">
+              Clear Cart
+            </Button>
+          </div>
+          <Button variant={"cta-success"} className="absolute  bottom-12 right-8">
+            Submit
+          </Button>
         </div>
       </section>
     </div>
