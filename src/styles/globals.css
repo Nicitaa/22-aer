@@ -6,7 +6,9 @@
 
 :root {
   --primary: rgba(255, 255, 255, 0.9);
+  --primary-dark: rgba(255,255,255,0.4);
   --secondary: rgba(7, 7, 10, 0.4);
+  --secondary-dark: rgba(7,7,10,1);
   --stats-bar: rgba(79, 70, 186, 1);
   --stats-fill: rgba(51, 23, 165, 1);
   /* 320-768px */
@@ -93,8 +95,10 @@ input[type="radio"]:checked + .label:after {
 }
 
 .label {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary-dark);
 }
+
+
 
 /* Checkbox.tsx */
 .checkbox-container {
@@ -143,7 +147,7 @@ input[type="radio"]:checked + .label:after {
   font-family: "Font awesome 5 Free";
   font-weight: 900;
   font-size: 12px;
-  color: #000000;
+  color: var(--secondary-dark);
 }
 
 .checkbox-container input[type="checkbox"]:not(:checked)::after {
@@ -151,7 +155,6 @@ input[type="radio"]:checked + .label:after {
 }
 
 .checkbox-container input[type="checkbox"]:not(:checked) {
-  background-color: transparent;
   transition: all 0.3s;
 }
 
@@ -178,6 +181,9 @@ input[type="radio"]:checked + .label:after {
 .checkbox-container input[type="checkbox"]:checked::after {
   display: flex;
 }
+
+
+
 
 /* Slider */
 .slider-image {

@@ -1,7 +1,7 @@
 import React from "react"
 
-function newUser() {
+function NewUser() {
   return <div>new-user</div>
 }
 
-export default newUser
+export default NewUser
