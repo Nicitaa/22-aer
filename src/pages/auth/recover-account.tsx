@@ -7,7 +7,7 @@ import Link from "next/link"
 import RecoverAccountForm from "~/components/pages/auth/RecoverAccountForm"
 
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
-function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function RecoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div
       className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
@@ -15,16 +15,16 @@ function recoverAccount({ providers }: InferGetServerSidePropsType<typeof getSer
       <h1 className="text-md font-bold text-primary">Recover Account</h1>
       <RecoverAccountForm />
       <p>
-        Remember password?{" "}
+        Remember password?&nbsp;
         <span className="text-cta">
-          <Link href="./signin">{""}Login</Link>
+          <Link href="./signin">Login</Link>
         </span>
       </p>
     </div>
   )
 }
 
-export default recoverAccount
+export default RecoverAccount
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)

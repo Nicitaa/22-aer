@@ -8,7 +8,7 @@ https://www.notion.so/Basic-rules-06942f8ecb6f4139ba8191cb6c02238d
 ---
 
 INFO:
-Frontend on:
-T3 Next.js App + tailwind
+Project on:
+t3-app + tailwind + framer-motion + supabase
 Responsive
 pnpm
