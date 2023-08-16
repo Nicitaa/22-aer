@@ -63,7 +63,7 @@ export function Input({ type, size, placeholder, inputError, ...props }: InputPr
              font-secondary text-secondary transition-all duration-300
              pointer-events-none select-none">{placeholder}</label>
             <motion.p className="absolute font-secondary text-danger text-xs"
-              initial={{ rotate: 0 }} animate={{ rotate: [0, 355, 5, 0] }}>{inputError}</motion.p>
+              initial={{ rotate: 0 }} animate={{ rotate: [0, -5, 5, 0] }}>{inputError}</motion.p>
           </div>
         )}
     </>
