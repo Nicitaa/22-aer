@@ -1,14 +1,26 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
-import { Button } from "~/components/ui/Button"
+import useEmailSignUpErrors from "~/hooks/useEmailSignUpErrors"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
-
+  const [errors, setErrors] = useState({ email: "", password: "", repeatPassword: "" })
   const [rememberMe, setRememberMe] = useState(false)
+
+  //trigger real time validation
+  const [useValidation, setUseValidation] = useState(false)
+  //checkForEmail triggers the query to run in the below hook.
+  const [checkForEmail, setCheckForEmail] = useState(false)
+  //the useEmailSignUpErrors hook retrieves email errors on form submission.
+  const { error: emailError } = useEmailSignUpErrors({ email, checkForEmail, setCheckForEmail })
+  useEffect(() => {
+    setErrors(prevErrors => {
+      return { ...prevErrors, email: emailError }
+    })
+  }, [emailError])
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   }
@@ -19,6 +31,10 @@ function SignUpForm() {
     setRepeatPassword(e.target.value)
   }
 
+  const handleSubmit = () => {
+    setCheckForEmail(true)
+    setUseValidation(true)
+  }
   const inputs = [
     <Input
       value={email}
@@ -63,14 +79,7 @@ function SignUpForm() {
       Register
     </button>,
   ]
-  return (
-    <AuthForm
-      inputs={inputs}
-      onSubmit={() => {
-        return null
-      }}
-    />
-  )
+  return <AuthForm inputs={inputs} onSubmit={handleSubmit} />
 }
 
 export default SignUpForm

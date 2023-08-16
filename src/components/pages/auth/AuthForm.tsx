@@ -6,13 +6,12 @@ interface AuthFormProps {
 }
 
 export default function AuthForm({ inputs, onSubmit }: AuthFormProps) {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    onSubmit()
+  }
   return (
-    <form
-      onSubmit={e => {
-        e.preventDefault()
-        onSubmit()
-      }}
-      className="w-full space-y-4">
+    <form onSubmit={handleSubmit} className="w-full space-y-4">
       {inputs.map((input, index): ReactNode => {
         return <div key={index}>{input}</div>
       })}
