@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { CartItem } from "~/components"
 import { Button } from "~/components/ui"
 const Cart = () => {
