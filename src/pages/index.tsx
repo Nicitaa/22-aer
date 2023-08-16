@@ -23,7 +23,7 @@ export default function Home() {
                   className="w-full laptop:ml-[10%]"
                   array={topSales}
                   progressfillClassname="h-[3px] bg-cta"
-                  subTitleClassName="font-secondary text-sm text-primary-dark"
+                  subTitleClassName="font-secondary text-sm text-primary-foreground"
                   titleClassName="font-bold"
                   progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary"
                 />
@@ -31,7 +31,7 @@ export default function Home() {
                   <h1 className="text-lg font-bold laptop:w-[85%] laptop:ml-auto">
                     The best <br /> bag behind you
                   </h1>
-                  <div className="hidden font-secondary text-sm text-primary-dark tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
+                  <div className="hidden font-secondary text-sm text-primary-foreground tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
                     Have questions how we did something? - ask us<br />
                     As junior developers we provide low prices for now - its your chance!
                     <div className="flex flex-col items-center laptop:items-start">
