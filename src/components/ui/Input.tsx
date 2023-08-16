@@ -19,7 +19,7 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
         ? (
           <div className="relative w-full">
             <input
-              className={`peer/input p-4 bg-primary-dark text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
+              className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
               type={showPassword ? "text" : "password"} placeholder=" "
               {...props}
@@ -44,7 +44,7 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
         ) : (
           <div className="relative w-full">
             <input
-              className={`peer/input p-4 bg-primary-dark text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
+              className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
               type='email' placeholder=" " required
               {...props}

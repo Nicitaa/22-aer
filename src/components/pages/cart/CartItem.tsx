@@ -20,7 +20,7 @@ const CartItem = () => {
       <td className="pt-8 font-bold text-center">- 1 +</td>
       <td className="pt-8 font-bold text-center">$399.99</td>
       <td className="pt-8 ">
-        <button className="bg-cta-danger w-10 h-10 rounded-xl flex items-center justify-center">
+        <button className="bg-danger w-10 h-10 rounded-xl flex items-center justify-center">
           <BiSolidTrashAlt className="text-white w-6 h-6" />
         </button>
       </td>

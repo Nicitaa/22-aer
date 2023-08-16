@@ -30,10 +30,10 @@ const Cart = () => {
             href={`products`}>
             Back to products
           </Link>
-          <button className="bg-cta-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">
+          <button className="bg-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">
             Clear Cart
           </button>
-          <button className="bg-cta-success  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 bottom-12 right-8">
+          <button className="bg-success  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 bottom-12 right-8">
             Clear Cart
           </button>
         </div>
