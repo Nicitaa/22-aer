@@ -8,6 +8,9 @@ export type Props = {
 }
 
 export default function ProviderButton({ provider }: Props) {
+//Please use <Button variant='continue-with'/>
+
+export function ProviderButton({ provider }: Props) {
   const providerIcon =
     provider.id === "google" ? (
       <FaGoogle className="text-md" />

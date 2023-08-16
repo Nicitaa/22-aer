@@ -32,12 +32,20 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
   }
   return (
     <>
+<<<<<<< HEAD
       {type === "password" ? (
         <div className="relative w-full">
           <input
             className={`peer/input p-4 bg-primary-dark text-secondary z-[9] ${
               size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"
             }
+=======
+      {type === "password"
+        ? (
+          <div className="relative w-full">
+            <input
+              className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
+>>>>>>> development
               outline-none`}
             type={showPassword ? "text" : "password"}
             placeholder=" "
@@ -48,6 +56,7 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
             left-1 top-[50%] translate-y-[-120%] text-xs
             peer-placeholder-shown/input:left-4 peer-placeholder-shown/input:translate-y-[-50%] peer-placeholder-shown/input:text-md
             font-secondary text-secondary transition-all duration-300
+<<<<<<< HEAD
              pointer-events-none select-none">
             {placeholder}
           </label>
@@ -55,6 +64,28 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
             <AiFillEyeInvisible
               className="absolute right-4 top-[50%] translate-y-[-50%] w-8 h-8 text-secondary cursor-pointer z-[10]"
               onClick={() => setShowPassword(!showPassword)}
+=======
+             pointer-events-none select-none">{placeholder}</label>
+            {showPassword ? (
+              <AiFillEyeInvisible
+                className="absolute right-4 top-[50%] translate-y-[-50%] w-8 h-8 text-secondary cursor-pointer z-[10]"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            ) : (
+              <AiFillEye
+                className="absolute right-4 w-8 h-8 top-[50%] translate-y-[-50%] text-secondary cursor-pointer z-[10]"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
+          </div>
+        ) : (
+          <div className="relative w-full">
+            <input
+              className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
+              outline-none`}
+              type='email' placeholder=" " required
+              {...props}
+>>>>>>> development
             />
           ) : (
             <AiFillEye

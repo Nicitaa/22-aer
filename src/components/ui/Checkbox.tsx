@@ -9,7 +9,7 @@ export function Checkbox({ isChecked = false, onChange, label, labelClassName = 
   return (
     <div className="checkbox-container">
       <input
-        className="cursor-pointer bg-primary-dark"
+        className="cursor-pointer bg-primary-foreground"
         type="checkbox"
         id="check"
         checked={isChecked}
