@@ -1,10 +1,14 @@
+//please separate your imports - react/next - dependencies - hooks/components
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../../server/auth"
-import { ProviderButton } from "~/components/pages/auth/ProviderButton"
-import { SignInForm } from "~/components"
 import Link from "next/link"
+
+import { AiOutlineGoogle } from 'react-icons/ai'
+
+import { authOptions } from "../../server/auth"
+import { SignInForm } from "~/components"
+import { Button } from "~/components/ui"
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
@@ -14,9 +18,13 @@ export default function SignIn({ providers }: InferGetServerSidePropsType<typeof
       <h1 className="text-md font-bold text-primary">Login</h1>
       <SignInForm />
       <p className="font-bold">or</p>
-      {Object.values(providers).map(provider => (
+      <Button variant='continue-with'>
+        Continue with Google
+        <AiOutlineGoogle className="text-primary-foreground" size={42} />
+      </Button>
+      {/* {Object.values(providers).map(provider => (
         <ProviderButton provider={provider} key={provider.id} />
-      ))}
+      ))} */}
       <p>
         New to Aer?{" "}
         <span className="text-cta">

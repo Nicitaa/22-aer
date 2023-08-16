@@ -24,18 +24,18 @@ export default {
         img: "url('/background.webp')"
       },
       boxShadow: {
-  cta: '0px 0px 8px 1px rgb(44 200 207 / 1)',
+      cta: '0px 0px 8px 1px rgb(44 200 207 / 1)',
 },
       colors: {
-        primary: "rgba(var(--primary), 0.9)",
-        "primary-foreground": "rgba(var(--primary-foreground) ,1)",
-        secondary: "rgba(var(--secondary), 0.75)",
-        "secondary-foreground": "rgba(var(--secondary-foreground), 1)",
-        cta: "rgba(var(--cta), 1)",
-        "danger": "rgba(var(--danger), 1)",
-        "success": "rgba(var(--success), 1)",
-        "stats-bar": "rgba(var(--stats-bar), 1)",
-        "stats-fill": "rgba(var(--stats-fill), 1)"
+        primary: "hsl(var(--primary) / 1)",
+        "primary-foreground": "hsl(var(--primary-foreground) / 1)",
+        secondary: "hsl(var(--secondary) / 0.75)",
+        "secondary-foreground": "hsl(var(--secondary-foreground) / 1)",
+        cta: "hsl(var(--cta) / 1)",
+        "danger": "hsl(var(--danger) / 1)",
+        "success": "hsl(var(--success) / 1)",
+        "stats-bar": "hsl(var(--stats-bar) / 1)",
+        "stats-fill": "hsl(var(--stats-fill) / 1)"
       }
     }
   },

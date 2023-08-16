@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { CartItem } from "~/components"
+import { Button } from "~/components/ui"
 const Cart = () => {
   return (
     <div className="flex h-full min-h-screen flex-col items-center">
@@ -25,17 +26,16 @@ const Cart = () => {
           </table>
         </div>
         <div className="relative w-full h-full text-xs tablet:text-sm font-bold bg-secondary rounded-b-xl">
-          <Link
-            className="bg-cta top-8  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 left-8"
-            href={`products`}>
+          <Button
+            href='/products'>
             Back to products
-          </Link>
-          <button className="bg-danger  w-fit rounded-xl flex items-center justify-center absolute py-2  top-8 right-8 px-7">
+          </Button>
+          <Button variant='danger'>
             Clear Cart
-          </button>
-          <button className="bg-success  w-fit rounded-xl flex items-center justify-center absolute py-2 px-7 bottom-12 right-8">
-            Clear Cart
-          </button>
+          </Button>
+          <Button variant='success-outline'>
+            Submit
+          </Button>
         </div>
       </section>
     </div>

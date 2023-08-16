@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-  --primary: 255,255,255;
-  --primary-foreground: 168,164,164;
-  --secondary: 7,7,10;
-  --secondary-foreground: 7,7,10;
-  --cta: 44,200,207;
-  --danger: 197,52,52;
-  --success: 58,184,63;
-  --stats-bar: 79,70,186;
-  --stats-fill: 51,23,165;
+  --primary: 0deg 0% 90%;
+  --primary-foreground: 0deg 0% 70%;
+  --secondary: 240deg 18% 3%;
+  --secondary-foreground: 240deg 18% 3%;
+  --cta: 184deg 90% 60%;
+  --danger: 0deg 90% 50%;
+  --success: 122deg 90% 50%;
+  --stats-bar: 245deg 90% 50%;
+  --stats-fill: 252deg 90% 50%;
   
   /* 320-768px */
   --md: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
@@ -22,7 +22,7 @@
 }
 
 * {
-  border-color: rgb(var(--secondary));
+  border-color: hsl(var(--primary-foreground));
 }
 
 
@@ -64,33 +64,33 @@ body,
 
 /* About page */
 .CircularProgressbar-path {
-  stroke: rgb(var(--stats-fill)) !important;
+  stroke: hsl(var(--stats-fill)) !important;
 }
 
 .CircularProgressbar-trail {
-  stroke: rgb(var(--stats-bar)) !important;
+  stroke: hsl(var(--stats-bar)) !important;
 }
 
 .CircularProgressbar-text {
-  fill: rgb(var(--primary)) !important;
+  fill: hsl(var(--primary)) !important;
   font-size: var(--md) !important;
   animation: neonAnim 1s alternate-reverse infinite !important;
-  color: rgb(var(--primary)) !important;
+  color: hsl(var(--primary)) !important;
 }
 
 @keyframes neonAnim {
   from {
-    text-shadow: 0 0 10px rgb(var(--primary)), 0 0 40px rgb(var(--primary)), 0 0 100px rgb(var(--primary));
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 40px hsl(var(--primary)), 0 0 100px hsl(var(--primary));
   }
 
   to {
-    text-shadow: 0 0px 12px rgb(var(--primary)), 0 0 41px rgb(var(--primary)), 0 0 102px rgb(var(--primary));
+    text-shadow: 0 0px 12px hsl(var(--primary)), 0 0 41px hsl(var(--primary)), 0 0 102px hsl(var(--primary));
   }
 }
 
 /* RadioButton.tsx */
 input[type="radio"]:checked + .label {
-  border-color: rgb(var(--cta));
+  border-color: hsl(var(--cta));
 }
 
 input[type="radio"]:checked + .label:after {
@@ -100,11 +100,11 @@ input[type="radio"]:checked + .label:after {
 }
 
 .label::after {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .label {
-  border: 1px solid rgb(var(--primary-foreground));
+  border: 1px solid hsl(var(--primary-foreground));
 }
 
 
@@ -125,7 +125,7 @@ input[type="radio"]:checked + .label:after {
   width: 15px;
   margin: 0px 5px 0px 3px;
   border-radius: 2px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 3px hsla(0, 0, 0, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,7 +143,7 @@ input[type="radio"]:checked + .label:after {
   transition: all 0.4s;
   opacity: 0%;
   pointer-events: none;
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container:hover input[type="checkbox"]:not(:checked)::before {
@@ -156,7 +156,7 @@ input[type="radio"]:checked + .label:after {
   font-family: "Font awesome 5 Free";
   font-weight: 900;
   font-size: 12px;
-  color: rgb(var(--secondary-foreground));
+  color: hsl(var(--secondary-foreground));
 }
 
 .checkbox-container input[type="checkbox"]:not(:checked)::after {
@@ -168,23 +168,23 @@ input[type="radio"]:checked + .label:after {
 }
 
 .checkbox-container input[type="checkbox"]:not(:checked):hover {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container input[type="checkbox"]:not(:checked):active {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container input[type="checkbox"]:checked {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container input[type="checkbox"]:checked:hover {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container input[type="checkbox"]:checked:active {
-  background-color: rgb(var(--cta));
+  background-color: hsl(var(--cta));
 }
 
 .checkbox-container input[type="checkbox"]:checked::after {
