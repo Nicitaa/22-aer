@@ -5,11 +5,8 @@ import { getServerSession } from "next-auth/next"
 import Link from "next/link"
 import AuthContainer from "~/components/pages/auth/AuthContainer"
 
-import { AiOutlineGoogle } from "react-icons/ai"
-
 import { authOptions } from "../../server/auth"
 import { SignInForm } from "~/components"
-import { Button } from "~/components/ui"
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const customContent = (

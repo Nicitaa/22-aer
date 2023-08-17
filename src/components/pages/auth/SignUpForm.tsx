@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
-import useEmailSignUpErrors from "~/hooks/useEmailSignUpErrors"
+import useEmailExistsQuery from "~/hooks/useEmailExistsQuery"
+import { validatePasswordMessage, validateRepeatPasswordMessage } from "~/utils/auth"
+import { useFormValidation } from "~/hooks/useFormValidation"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
+
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
-  const [errors, setErrors] = useState({ email: "", password: "", repeatPassword: "" })
+
   const [rememberMe, setRememberMe] = useState(false)
 
-  //trigger real time validation
-  const [useValidation, setUseValidation] = useState(false)
   //checkForEmail triggers the query to run in the below hook.
   const [checkForEmail, setCheckForEmail] = useState(false)
-  //the useEmailSignUpErrors hook retrieves email errors on form submission.
-  const { error: emailError } = useEmailSignUpErrors({ email, checkForEmail, setCheckForEmail })
-  useEffect(() => {
-    setErrors(prevErrors => {
-      return { ...prevErrors, email: emailError }
-    })
-  }, [emailError])
+
+  const emailInput = { email, checkForEmail, setCheckForEmail }
+  const passwordInput = { value: password, validationMessage: validatePasswordMessage(password) }
+  const repeatPasswordInput = {
+    value: repeatPassword,
+    validationMessage: validateRepeatPasswordMessage(password, repeatPassword),
+  }
+  const { setUseValidation, inputStates } = useFormValidation([emailInput, passwordInput, repeatPasswordInput])
+  console.log(inputStates)
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   }
@@ -36,24 +39,13 @@ function SignUpForm() {
     setUseValidation(true)
   }
   const inputs = [
-    <Input
-      value={email}
-      type="email"
-      label="Email"
-      labelHidden={true}
-      id="email"
-      placeholder="Email"
-      onChange={handleEmailChange}
-      key="Email"
-    />,
+    <Input value={email} type="email" id="email" placeholder="Email" onChange={handleEmailChange} key="Email" />,
     <Input
       id="password"
       type="password"
       placeholder="Password"
       value={password}
       onChange={handlePasswordChange}
-      label="Password"
-      labelHidden={true}
       key="Password"
     />,
     <Input
@@ -61,8 +53,6 @@ function SignUpForm() {
       type="password"
       placeholder="Repeat Password"
       value={repeatPassword}
-      label="Repeat Password"
-      labelHidden={true}
       onChange={handleRepeatPasswordChange}
       key="Repeat Password"
     />,

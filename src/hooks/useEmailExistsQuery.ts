@@ -1,14 +1,21 @@
-import { type Dispatch, useState, type SetStateAction, useEffect } from "react"
+import { type Dispatch, type SetStateAction, useEffect } from "react"
 import { api } from "~/utils/api"
-import { validateEmail } from "~/utils/auth"
-interface emailSignupErrors {
+import { validateEmail, validateEmailMessage } from "~/utils/auth"
+import useInputValidation from "./useInputValidation"
+export interface emailValidationProps {
   email: string
   checkForEmail: boolean
+  enabled?: boolean
   setCheckForEmail: Dispatch<SetStateAction<boolean>>
+  name?: string
 }
-function useEmailSignUpErrors({ email, checkForEmail, setCheckForEmail }: emailSignupErrors) {
-  const [error, setError] = useState("")
-  console.log(error)
+function useEmailExistsQuery({ email, checkForEmail, setCheckForEmail, enabled }: emailValidationProps) {
+  const { error, setError } = useInputValidation({
+    value: email,
+    validationMessage: validateEmailMessage(email),
+    enabled,
+  })
+
   const { data: emailExistsData, status } = api.credentials.getEmailExists.useQuery(
     { email },
     { enabled: checkForEmail && validateEmail(email) }
@@ -26,13 +33,10 @@ function useEmailSignUpErrors({ email, checkForEmail, setCheckForEmail }: emailS
       updateError()
     }
   }
-  console.log("this is emailExistsData: " + emailExistsData)
   function updateError() {
     try {
       if (status === "success" && emailExistsData === true) {
         setError("This Email Already Exists!")
-      } else if (status === "error" && !validateEmail(email)) {
-        setError("Please enter a valid email address")
       }
     } catch (error) {
       console.error("An error occurred while checking email existence:", error)
@@ -41,4 +45,4 @@ function useEmailSignUpErrors({ email, checkForEmail, setCheckForEmail }: emailS
   }
   return { error }
 }
-export default useEmailSignUpErrors
+export default useEmailExistsQuery

@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react"
-import ProviderButton from "./ProviderButton"
 import { ClientSafeProvider, LiteralUnion } from "next-auth/react"
 import { BuiltInProviderType } from "next-auth/providers"
+import { Button } from "~/components/ui"
+import { AiOutlineFacebook, AiOutlineGithub, AiOutlineGoogle } from "react-icons/ai"
 
 interface AuthContainerProps {
   children: ReactNode
@@ -11,6 +12,18 @@ interface AuthContainerProps {
 }
 
 export default function AuthContainer({ children, title, customContent, providers }: AuthContainerProps) {
+  function getProviderIcon(provider: ClientSafeProvider) {
+    const providerIcon =
+      provider.id === "google" ? (
+        <AiOutlineGoogle className="text-primary-foreground" size={42} />
+      ) : provider.id === "facebook" ? (
+        <AiOutlineFacebook className="text-primary-foreground" size={42} />
+      ) : (
+        <AiOutlineGithub className="text-primary-foreground" size={42} />
+      )
+    return providerIcon
+  }
+
   return (
     <div
       className="flex text-md flex-col items-center w-[456px] max-w-[90vw] mx-auto px-4 py-2 rounded-[12px]
@@ -18,8 +31,11 @@ export default function AuthContainer({ children, title, customContent, provider
       <h1 className="text-md font-bold text-primary">{title}</h1>
       {children}
       <p className="font-bold">or</p>
-      {Object.values(providers).map(provider => (
-        <ProviderButton provider={provider} key={provider.id} />
+      {Object.values(providers).map((provider, i) => (
+        <Button variant="continue-with" key={i}>
+          Continue with {provider.name}
+          {getProviderIcon(provider)}
+        </Button>
       ))}
       {customContent}
     </div>

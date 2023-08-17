@@ -1,6 +1,5 @@
 import { z } from "zod"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
-import { validateEmail } from "~/utils/auth"
 
 // Define a validation schema for the input parameter
 const emailExistsInput = z.object({
@@ -8,10 +7,12 @@ const emailExistsInput = z.object({
 })
 
 // Define a validation schema for the output result
-const emailExistsOutput = z.boolean()
+//const emailExistsOutput = z.boolean()
 
 export const credentialsRouter = createTRPCRouter({
   getEmailExists: publicProcedure.input(emailExistsInput).query(async ({ input, ctx }) => {
+    input = { ...input, email: input.email.toLowerCase() }
+
     // Validate the input using the input schema
     const validatedInput = emailExistsInput.parse(input)
 
