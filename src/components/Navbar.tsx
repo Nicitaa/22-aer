@@ -26,9 +26,8 @@ export function Navbar() {
   }
 
   function navClick(href: string) {
-    //semi for ';' at the end of line
-    void router.push(href) //semi true
-    hideHamburgerMenu() //semi false
+    void router.push(href)
+    hideHamburgerMenu()
   }
 
   const navLinks = [

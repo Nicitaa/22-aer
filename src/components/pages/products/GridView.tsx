@@ -17,7 +17,7 @@ const GridView = ({ products }: { products: Product[] }) => {
         <section key={index} className="group relative mx-4 mb-8 overflow-hidden rounded-t-2xl">
           <Link href={`product?id=${product.id}`}>
             <Image
-              className="aspect-video object-cover object-center duration-300 scale-125 group-hover:scale-100"
+              className="aspect-video object-cover object-center duration-300  scale-100 group-hover:scale-110"
               src={product.preview ?? ""}
               alt="Placeholder Image"
               width={1280}

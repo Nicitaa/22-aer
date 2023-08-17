@@ -4,26 +4,29 @@ import { VariantProps, cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 const buttonVariants = cva(
-  "font-bold text-primary rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300",
+  "text-primary-foreground rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300",
   {
     variants: {
       variant: {
-        cta: "bg-cta px-4 py-2",
-        "cta-danger": "bg-cta-danger px-4 py-2",
-        "cta-success": "bg-cta-success px-4 py-2",
-        neon: "bg-secondary-dark border-2 border-solid border-cta shadow-cta px-4 py-2",
-        "nav-link": `relative w-fit
+        cta: "font-bold text-secondary bg-cta px-4 py-2",
+        "danger": "font-bold bg-danger px-4 py-2",
+        "danger-outline": "font-bold bg-transparent border-[1px] broder-danger px-4 py-2",
+        "success": "font-bold text-secondary bg-success px-4 py-2",
+        "success-outline": "font-bold  bg-transparent border-[1px] border-success px-4 py-2",
+        neon: "font-bold bg-secondary-foreground border-2 border-solid border-cta shadow-cta px-4 py-2",
+        "nav-link": `relative w-fit font-bold 
           before:absolute before:bottom-[-4px] before:w-full before:content-['']
            before:invisible before:opacity-0 before:translate-y-[0px]
            before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
            before:duration-300 before:pointer-events-none`,
-        link: "",
-        "continue-with": "bg-primary text-secondary-dark flex justify-center items-center gap-x-4",
+        link: "text-cta cursor-pointer",
+        "continue-with": `p-4 w-full font-secondary bg-transparent border-[1px] flex justify-center items-center gap-x-4
+         hover:bg-secondary`,
       },
       active: {
-        active: "before:visible lalala before:opacity-100",
+        active: "before:visible lalala before:opacity-100 before:translate-y-[2px]",
         inactive:
-          "hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[0px]",
+          "hover:before:visible hover:before:opacity-100 before:translate-y-[10px] hover:before:translate-y-[2px]",
       },
     },
     defaultVariants: {
@@ -34,7 +37,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   href?: string
 }
 

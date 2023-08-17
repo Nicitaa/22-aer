@@ -69,18 +69,18 @@ const Product = () => {
           <article className=" flex flex-col py-6 px-8">
             <h1 className=" text-lg font-bold">{title}</h1>
             <span className=" text-md font-bold">Price</span>
-            <p className="scrollbar text-sm text-primary-dark h-full max-h-[350px] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-foreground h-full max-h-[350px] overflow-y-auto">
               ${(price / 100).toFixed(2)}
             </p>
             <span className=" text-md font-bold">Description:</span>
-            <p className="scrollbar text-sm text-primary-darker h-full max-h-[350px] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-foreground h-full max-h-[350px] overflow-y-auto">
               {subTitle.substring(0, 150)}
             </p>
           </article>
           {/* button container */}
           <div className=" flex justify-end  w-full laptop:absolute bottom-0 bg-secondary laptop:py-8 px-6 py-6 laptop:text-md text-xs font-bold gap-7">
             <div className="flex items-center ">
-              <button className="relative w-8 h-8 flex items-center justify-center bg-cta-danger">
+              <button className="relative w-8 h-8 flex items-center justify-center bg-danger">
                 <AiOutlineMinus
                   className="text-white text-center w-5 h-6"
                   onClick={() => {
@@ -89,7 +89,7 @@ const Product = () => {
                 />
               </button>
               <span className="mx-3">{quantity}</span>
-              <button className="bg-cta-success w-8 h-8 flex items-center justify-center">
+              <button className="bg-success w-8 h-8 flex items-center justify-center">
                 <AiOutlinePlus
                   className="text-white text-center w-7 h-7"
                   onClick={() => {
