@@ -1,6 +1,5 @@
 import { CartItem } from "~/components"
 import { Button } from "~/components/ui"
-import { Button } from "~/components/ui"
 const Cart = () => {
   return (
     <div className="flex h-[85vh] flex-col items-center">
@@ -31,11 +30,11 @@ const Cart = () => {
             <Button href="products" className="absolute left-8 top-8">
               Back to products
             </Button>
-            <Button variant={"cta-danger"} className="absolute  top-8 right-8">
+            <Button variant={"danger"} className="absolute  top-8 right-8">
               Clear Cart
             </Button>
           </div>
-          <Button variant={"cta-success"} className="absolute  bottom-12 right-8">
+          <Button variant={"success-outline"} className="absolute  bottom-12 right-8">
             Submit
           </Button>
         </div>

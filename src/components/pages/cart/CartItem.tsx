@@ -23,7 +23,7 @@ const CartItem = () => {
       <td className="pt-8 font-bold text-center">$399,99</td>
       <td className="pt-8 font-bold text-center tablet:table-cell hidden">
         <div className="flex items-center justify-center ">
-          <button className=" tablet:w-8 tablet:h-8 w-4 h-4 flex items-center justify-center bg-cta-danger">
+          <button className=" tablet:w-8 tablet:h-8 w-4 h-4 flex items-center justify-center bg-danger">
             <AiOutlineMinus
               className="text-white text-center w-5 h-6"
               onClick={() => {
@@ -32,7 +32,7 @@ const CartItem = () => {
             />
           </button>
           <span className="mx-3">{quantity}</span>
-          <button className="bg-cta-success tablet:w-8 tablet:h-8 w-4 h-4 flex items-center justify-center">
+          <button className="bg-success tablet:w-8 tablet:h-8 w-4 h-4 flex items-center justify-center">
             <AiOutlinePlus
               className="text-white text-center w-7 h-7"
               onClick={() => {
@@ -44,7 +44,7 @@ const CartItem = () => {
       </td>
       <td className="pt-8 font-bold text-center">$399.99</td>
       <td className="pt-8 font-bold text-center ">
-        <button className="bg-cta-danger w-10 h-10 rounded-xl flex items-center justify-center">
+        <button className="bg-danger w-10 h-10 rounded-xl flex items-center justify-center">
           <BiSolidTrashAlt className="text-white w-6 h-6" />
         </button>
       </td>
