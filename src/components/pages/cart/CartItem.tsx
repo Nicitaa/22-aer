@@ -7,7 +7,7 @@ const CartItem = () => {
 
   return (
     <tr className=" text-xs tablet:text-md">
-      <td className="pt-8 tablet:grid grid-cols-2 gap-4 items-center tablet:w-full max-w-[250px] pl-2 tablet:pl-8 ">
+      <td className="pt-8 flex gap-3 items-center  pl-3 tablet:pl-8 ">
         <Image
           className="tablet:w-[100px] w-[50px]"
           src={"/images/products/original/flat-bag-1b.webp"}
@@ -18,10 +18,10 @@ const CartItem = () => {
           objectFit="cover"
           objectPosition="center"
         />
-        <h5 className="font-bold tablet:w-[200px] text-left tablet:text-center">Name</h5>
+        <h5 className="font-bold text-left tablet:text-center">Green bag</h5>
       </td>
-      <td className="pt-8 font-bold text-center">$399,99</td>
-      <td className="pt-8 font-bold text-center tablet:table-cell hidden">
+      <td className="pt-8 font-bold text-center text-cta ">$399,99</td>
+      <td className="pt-8 font-bold text-center ">
         <div className="flex items-center justify-center ">
           <button className=" tablet:w-8 tablet:h-8 w-4 h-4 flex items-center justify-center bg-danger">
             <AiOutlineMinus
@@ -42,10 +42,10 @@ const CartItem = () => {
           </button>
         </div>
       </td>
-      <td className="pt-8 font-bold text-center">$399.99</td>
-      <td className="pt-8 font-bold text-center ">
-        <button className="bg-danger w-10 h-10 rounded-xl flex items-center justify-center">
-          <BiSolidTrashAlt className="text-white w-6 h-6" />
+      <td className="pt-8 font-bold text-center tablet:table-cell hidden">$399.99</td>
+      <td className="pt-8 font-bold">
+        <button className="bg-danger tablet:w-10 tablet:h-10 w-6 h-6 tablet:rounded-xl rounded-md flex items-center justify-center mx-3">
+          <BiSolidTrashAlt className="text-white tablet:w-6 tablet:h-6 w-4 h-4" />
         </button>
       </td>
     </tr>
