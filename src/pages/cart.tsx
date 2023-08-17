@@ -1,5 +1,6 @@
 import { CartItem } from "~/components"
 import { Button } from "~/components/ui"
+import { Button } from "~/components/ui"
 const Cart = () => {
   return (
     <div className="flex h-[85vh] flex-col items-center">

@@ -6,6 +6,8 @@ export type Props = {
   provider: ClientSafeProvider
 }
 
+//Please use <Button variant='continue-with'/>
+
 export function ProviderButton({ provider }: Props) {
   const providerIcon =
     provider.id === "google" ? (
