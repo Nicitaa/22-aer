@@ -29,8 +29,7 @@ export { CartItem }
 
 /* /auth/ */
 import SignInForm from "./pages/auth/SignInForm"
-import { ProviderButton } from "./pages/auth/ProviderButton"
-export { SignInForm,ProviderButton }
+export { SignInForm }
 
 /* /about */
 import {StatCircle} from "./pages/about/StatCircle"

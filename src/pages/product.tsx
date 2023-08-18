@@ -6,6 +6,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
 import { useRouter } from "next/router"
 import { priceFormatter } from "~/utils/priceFormatter"
 import ImgCarousel from "~/components/pages/product/Carousel"
+import { Button } from "~/components/ui"
 
 type FoundProduct =
   | {
@@ -45,16 +46,16 @@ const Product = () => {
           <article className=" flex flex-col py-6 px-8 h-full">
             <h1 className=" text-lg font-bold">{title}</h1>
             <span className=" text-md font-bold">Price</span>
-            <p className="text-sm text-primary-dark">{priceFormatter(price)}</p>
+            <p className="text-sm text-primary-foreground">{priceFormatter(price)}</p>
             <span className=" text-md font-bold">Description:</span>
-            <p className="scrollbar text-sm text-primary-darker laptop:h-[38%] monitor:h-[60%] h-[30vh] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-foreground laptop:h-[38%] monitor:h-[60%] h-[30vh] overflow-y-auto">
               {subTitle}
             </p>
           </article>
           {/* button container */}
           <div className=" flex  justify-between  w-full laptop:absolute bottom-0 bg-secondary laptop:py-8 px-6 py-6 laptop:text-md text-xs font-bold gap-7">
             <div className="flex items-center justify-center ">
-              <button className="relative w-8 h-8 flex items-center justify-center bg-cta-danger">
+              <button className="relative w-8 h-8 flex items-center justify-center bg-danger">
                 <AiOutlineMinus
                   className="text-white text-center w-5 h-6"
                   onClick={() => {
@@ -63,7 +64,7 @@ const Product = () => {
                 />
               </button>
               <span className="mx-3">{quantity}</span>
-              <button className="bg-cta-success w-8 h-8 flex items-center justify-center">
+              <button className="bg-success w-8 h-8 flex items-center justify-center">
                 <AiOutlinePlus
                   className="text-white text-center w-7 h-7"
                   onClick={() => {
@@ -72,13 +73,8 @@ const Product = () => {
                 />
               </button>
             </div>
-
-            <button className="bg-cta rounded-xl w-1/2 flex items-center justify-center py-2 laptop:px-7 bottom-12 right-8">
-              Add to cart
-            </button>
-            <button className="bg-cta rounded-xl w-1/2 flex items-center justify-center py-2 laptop:px-7 bottom-12 right-8">
-              Buy
-            </button>
+            <Button className="tablet:w-1/2"> Add to cart</Button>
+            <Button className="tablet:w-1/2">Buy</Button>
           </div>
           {/*End of button container */}
         </div>
