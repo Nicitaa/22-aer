@@ -16,8 +16,8 @@ const ImgCarousel = ({ imagesUrl }: { imagesUrl: string[] }) => {
         return (
           <div key={index} className=" tablet:h-[68vh]">
             {/*Doesn't work properly with Next.js <Image/>*/}
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <img src={imageUrl} className="h-full object-cover object-center" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={imageUrl} alt="Img" className="h-full object-cover object-center" />
           </div>
         )
       })}
