@@ -27,6 +27,7 @@
     "react-circular-progressbar": "2.0.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "react-responsive-carousel": "^3.2.23",
     "superjson": "^1.12.4",
     "tailwind-merge": "^1.14.0",
     "typeface-inter": "^3.18.1",
