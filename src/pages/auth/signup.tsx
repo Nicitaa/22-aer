@@ -1,8 +1,8 @@
+//please organize imports
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../server/auth"
-import { ProviderButton } from "~/components"
 import Link from "next/link"
 import SignUpForm from "~/components/pages/auth/SignUpForm"
 
@@ -14,9 +14,9 @@ function Signup({ providers }: InferGetServerSidePropsType<typeof getServerSideP
       <h1 className="text-md font-bold text-primary">Register</h1>
       <SignUpForm />
       <p className="font-bold">or</p>
-      {Object.values(providers).map(provider => (
-        <ProviderButton provider={provider} key={provider.id} />
-      ))}
+      {/* {Object.values(providers).map(provider => (
+      <ProviderButton provider={provider} key={provider.id} />
+      {/* ))} */}
       <p>
         Already have an account?{" "}
         <span className="text-cta">

@@ -15,7 +15,7 @@ export function StatCircle({ label, percent, big }: StatCircle) {
       className="w-full flex flex-col gap-2 justify-around items-center"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}>
-      <h1 className="font-primary text-medium font-bold whitespace-nowrap">{label}</h1>
+      <h1 className="text-medium font-bold whitespace-nowrap">{label}</h1>
 
       <div className={`${big ? "w-32 h-32" : "w-24 h-24"}`}>
         <ProgressProvider valueStart={0} valueEnd={percent}>

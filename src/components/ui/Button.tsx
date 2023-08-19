@@ -4,21 +4,24 @@ import { VariantProps, cva } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 const buttonVariants = cva(
-  "text-primary rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300",
+  "text-primary-foreground rounded-md disabled:pointer-events-none hover:brightness-90 transition-color duration-300",
   {
     variants: {
       variant: {
-        cta: "font-bold bg-cta px-4 py-2",
-        "cta-danger": "font-bold bg-cta-danger px-4 py-2",
-        "cta-success": "font-bold bg-cta-success px-4 py-2",
-        neon: "font-bold bg-secondary-dark border-2 border-solid border-cta shadow-cta px-4 py-2",
+        cta: "font-bold text-secondary bg-cta px-4 py-2",
+        "danger": "font-bold bg-danger px-4 py-2",
+        "danger-outline": "font-bold bg-transparent border-[1px] broder-danger px-4 py-2",
+        "success": "font-bold text-secondary bg-success px-4 py-2",
+        "success-outline": "font-bold  bg-transparent border-[1px] border-success px-4 py-2",
+        neon: "font-bold bg-secondary-foreground border-2 border-solid border-cta shadow-cta px-4 py-2",
         "nav-link": `relative w-fit font-bold 
           before:absolute before:bottom-[-4px] before:w-full before:content-['']
            before:invisible before:opacity-0 before:translate-y-[0px]
            before:border-b-[3px] before:border-solid before:border-cta before:rounded-md before:transition-all
            before:duration-300 before:pointer-events-none`,
         link: "text-cta cursor-pointer",
-        "continue-with": "p-4 w-full font-secondary text-secondary bg-primary-dark flex justify-center items-center gap-x-4",
+        "continue-with": `p-4 w-full font-secondary bg-transparent border-[1px] flex justify-center items-center gap-x-4
+         hover:bg-secondary`,
       },
       active: {
         active: "before:visible lalala before:opacity-100 before:translate-y-[2px]",
