@@ -4,13 +4,13 @@ import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import Link from "next/link"
 
-import { AiOutlineGoogle } from 'react-icons/ai'
+import { AiOutlineGoogle } from "react-icons/ai"
 
 import { authOptions } from "../../server/auth"
 import { SignInForm } from "~/components"
 import { Button } from "~/components/ui"
 
-export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function SignIn({}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div
       className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
@@ -18,7 +18,7 @@ export default function SignIn({ providers }: InferGetServerSidePropsType<typeof
       <h1 className="text-md font-bold text-primary">Login</h1>
       <SignInForm />
       <p className="font-bold">or</p>
-      <Button variant='continue-with'>
+      <Button variant="continue-with">
         Continue with Google
         <AiOutlineGoogle className="text-primary-foreground" size={42} />
       </Button>

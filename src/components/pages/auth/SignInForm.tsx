@@ -19,6 +19,7 @@ function SignInForm() {
           placeholder="Password"
           type='password'
           value={password}
+          inputError="Enter valid email"
           onChange={e => setPassword(e.target.value)}
         />
       </div>
