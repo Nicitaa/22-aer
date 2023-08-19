@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { ChangeEvent, useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 
@@ -21,7 +21,7 @@ export function Input({ type, size, placeholder, inputError, ...props }: InputPr
         <div className="relative w-full">
           <input
             className={`peer/input p-4 bg-primary-dark text-secondary z-[9]
-              ${inputError && "border-danger border-[1px]"}
+              ${inputError ? "border-danger border-[1px]" : ""}
               ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
             type={showPassword ? "text" : "password"}
@@ -58,7 +58,7 @@ export function Input({ type, size, placeholder, inputError, ...props }: InputPr
         <div className="relative w-full">
           <input
             className={`peer/input p-4 bg-primary-dark text-secondary z-[9] 
-               ${inputError && "border-danger border-[1px]"}
+               ${inputError ? "border-danger border-[1px]" : ""}
               ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
             type="email"
