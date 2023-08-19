@@ -1,8 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
 import useEmailExistsQuery from "~/hooks/useEmailExistsQuery"
-import { validatePasswordMessage, validateRepeatPasswordMessage } from "~/utils/auth"
+import {
+  validateEmail,
+  validatePassword,
+  validatePasswordMessage,
+  validateRepeatPassword,
+  validateRepeatPasswordMessage,
+} from "~/utils/auth"
+import useInputValidation from "~/hooks/useInputValidation"
+import { api } from "~/utils/api"
 import { useFormValidation } from "~/hooks/useFormValidation"
 
 function SignUpForm() {
@@ -12,18 +20,6 @@ function SignUpForm() {
   const [repeatPassword, setRepeatPassword] = useState("")
 
   const [rememberMe, setRememberMe] = useState(false)
-
-  //checkForEmail triggers the query to run in the below hook.
-  const [checkForEmail, setCheckForEmail] = useState(false)
-
-  const emailInput = { email, checkForEmail, setCheckForEmail }
-  const passwordInput = { value: password, validationMessage: validatePasswordMessage(password) }
-  const repeatPasswordInput = {
-    value: repeatPassword,
-    validationMessage: validateRepeatPasswordMessage(password, repeatPassword),
-  }
-  const { setUseValidation, inputStates } = useFormValidation([emailInput, passwordInput, repeatPasswordInput])
-  console.log(inputStates)
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   }
@@ -33,11 +29,34 @@ function SignUpForm() {
   const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRepeatPassword(e.target.value)
   }
-
-  const handleSubmit = () => {
-    setCheckForEmail(true)
-    setUseValidation(true)
+  const handleSubmit = async () => {
+    setEnableValidation(true)
+    if (validateInputs()) {
+      const response = await createUserMutation.mutateAsync({ email, password })
+      console.log("this is response: " + response)
+      if (response) {
+        emailValidationData.setErrorMessage(response)
+      } else {
+        //user mutated. redirect
+        console.log("User Created")
+      }
+    }
   }
+  const [enableValidation, setEnableValidation] = useState(false)
+
+  const { emailValidationData, passwordValidationData, repeatPasswordValidationData } = useFormValidation({
+    email,
+    password,
+    repeatPassword,
+    enableValidation,
+  })
+  console.log(repeatPasswordValidationData.errorMessage)
+
+  const createUserMutation = api.credentials.createUser.useMutation({})
+  const validateInputs = () => {
+    return validateEmail(email) && validatePassword(password) && validateRepeatPassword(password, repeatPassword)
+  }
+  //useEffect used to submit form when the email is finished checking but make sure to validate others
   const inputs = [
     <Input value={email} type="email" id="email" placeholder="Email" onChange={handleEmailChange} key="Email" />,
     <Input

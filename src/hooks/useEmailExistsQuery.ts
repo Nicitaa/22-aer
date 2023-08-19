@@ -1,48 +1,27 @@
-import { type Dispatch, type SetStateAction, useEffect } from "react"
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
 import { api } from "~/utils/api"
 import { validateEmail, validateEmailMessage } from "~/utils/auth"
 import useInputValidation from "./useInputValidation"
 export interface emailValidationProps {
   email: string
-  checkForEmail: boolean
-  enabled?: boolean
-  setCheckForEmail: Dispatch<SetStateAction<boolean>>
-  name?: string
+  enabled: boolean
 }
-function useEmailExistsQuery({ email, checkForEmail, setCheckForEmail, enabled }: emailValidationProps) {
-  const { error, setError } = useInputValidation({
+function useEmailExistsQuery({ email, enabled }: emailValidationProps) {
+  const { errorMessage, setErrorMessage } = useInputValidation({
     value: email,
     validationMessage: validateEmailMessage(email),
     enabled,
   })
-
-  const { data: emailExistsData, status } = api.credentials.getEmailExists.useQuery(
+  const { data: emailExistsData, isFetched } = api.credentials.getEmailExists.useQuery(
     { email },
-    { enabled: checkForEmail && validateEmail(email) }
+    { enabled: enabled && validateEmail(email) }
   )
   useEffect(() => {
-    //status === success means the check is completed.
-
-    handleQueryUpdate(status)
-  }, [status])
-  // This function will be called when the query completes
-  function handleQueryUpdate(status: string) {
-    console.log("Query status:", status)
-    if (status === "error" || status === "success") {
-      setCheckForEmail(false)
-      updateError()
+    //when the data is fetched, update error msg.
+    if (emailExistsData) {
+      setErrorMessage("The email already exists. Please try again.")
     }
-  }
-  function updateError() {
-    try {
-      if (status === "success" && emailExistsData === true) {
-        setError("This Email Already Exists!")
-      }
-    } catch (error) {
-      console.error("An error occurred while checking email existence:", error)
-      setError("An error occurred has occured. Please try again later")
-    }
-  }
-  return { error }
+  }, [email])
+  return { setErrorMessage, emailExistsData, isFetched }
 }
 export default useEmailExistsQuery

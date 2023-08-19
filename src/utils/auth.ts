@@ -21,16 +21,27 @@ function validatePasswordMessage(password: string): string {
   }
   return ""
 }
+function validateRepeatPassword(password: string, repeatPassword: string): boolean {
+  if (!validatePassword(repeatPassword) || password !== repeatPassword) {
+    return false
+  }
+  return true
+}
 function validateRepeatPasswordMessage(password: string, repeatPassword: string): string {
   if (repeatPassword.length === 0) {
     return "Repeat password is required"
   }
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
-  if (!passwordRegex.test(repeatPassword)) {
-    return "Repeat password requires a number, lowercase letter, uppercase letter, and must be atleast 8 characters long"
-  } else if (password !== repeatPassword) {
+  if (password !== repeatPassword) {
     return "The password and repeat password must be the same"
   }
   return ""
 }
-export { validateEmail, validateEmailMessage, validatePassword, validatePasswordMessage, validateRepeatPasswordMessage }
+export {
+  validateEmail,
+  validateEmailMessage,
+  validatePassword,
+  validatePasswordMessage,
+  validateRepeatPassword,
+  validateRepeatPasswordMessage,
+}

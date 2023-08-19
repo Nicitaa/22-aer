@@ -1,9 +1,14 @@
 import { z } from "zod"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
+import { validateEmail, validatePassword } from "~/utils/auth"
 
 // Define a validation schema for the input parameter
 const emailExistsInput = z.object({
   email: z.string().email(),
+})
+const createAccountInput = z.object({
+  email: z.string().email(),
+  password: z.string(),
 })
 
 // Define a validation schema for the output result
@@ -23,6 +28,28 @@ export const credentialsRouter = createTRPCRouter({
 
     // Return a boolean indicating whether the email exists
     return !!existingUser
+  }),
+  createUser: publicProcedure.input(createAccountInput).mutation(async ({ input, ctx }) => {
+    input = { ...input, email: input.email.toLowerCase() }
+    const washedInput = createAccountInput.parse(input)
+    if (!validateEmail(washedInput.email) || !validatePassword(washedInput.password)) {
+      return "Error, the field information is not validated."
+    }
+    //check if email exists in db
+    const existingUser = await ctx.prisma.user.findUnique({
+      where: { email: washedInput.email },
+    })
+
+    if (!!existingUser) {
+      return "The email address already exists!"
+    }
+    await ctx.prisma.user.create({
+      data: {
+        email: washedInput.email,
+        password: washedInput.password,
+        emailVerified: null,
+      },
+    })
   }),
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany()
