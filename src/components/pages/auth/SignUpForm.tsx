@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
-import useEmailExistsQuery from "~/hooks/useEmailExistsQuery"
-import {
-  validateEmail,
-  validatePassword,
-  validatePasswordMessage,
-  validateRepeatPassword,
-  validateRepeatPasswordMessage,
-} from "~/utils/auth"
-import useInputValidation from "~/hooks/useInputValidation"
+import { validateEmail, validatePassword, validateRepeatPassword } from "~/utils/auth"
 import { api } from "~/utils/api"
 import { useFormValidation } from "~/hooks/useFormValidation"
 
@@ -29,28 +21,24 @@ function SignUpForm() {
   const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRepeatPassword(e.target.value)
   }
-  const handleSubmit = async () => {
-    setEnableValidation(true)
-    if (validateInputs()) {
-      const response = await createUserMutation.mutateAsync({ email, password })
-      console.log("this is response: " + response)
-      if (response) {
-        emailValidationData.setErrorMessage(response)
-      } else {
-        //user mutated. redirect
-        console.log("User Created")
-      }
-    }
+  const handleSubmit = () => {
+    createUserMutation
+      .mutateAsync({ email, password })
+      .then(result => {
+        console.log(result)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
   const [enableValidation, setEnableValidation] = useState(false)
 
-  const { emailValidationData, passwordValidationData, repeatPasswordValidationData } = useFormValidation({
+  const { emailValidationData } = useFormValidation({
     email,
     password,
     repeatPassword,
     enableValidation,
   })
-  console.log(repeatPasswordValidationData.errorMessage)
 
   const createUserMutation = api.credentials.createUser.useMutation({})
   const validateInputs = () => {

@@ -19,6 +19,7 @@
     "@trpc/next": "^10.32.0",
     "@trpc/react-query": "^10.32.0",
     "@trpc/server": "^10.32.0",
+    "argon2": "^0.31.0",
     "class-variance-authority": "^0.7.0",
     "framer-motion": "^10.12.17",
     "next": "^13.4.2",

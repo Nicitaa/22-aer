@@ -1,14 +1,11 @@
+import { TRPCError } from "@trpc/server"
+import { hash } from "argon2"
 import { z } from "zod"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
-import { validateEmail, validatePassword } from "~/utils/auth"
-
+import { signUpSchema, validateEmail, validatePassword } from "~/utils/auth"
 // Define a validation schema for the input parameter
 const emailExistsInput = z.object({
   email: z.string().email(),
-})
-const createAccountInput = z.object({
-  email: z.string().email(),
-  password: z.string(),
 })
 
 // Define a validation schema for the output result
@@ -29,27 +26,43 @@ export const credentialsRouter = createTRPCRouter({
     // Return a boolean indicating whether the email exists
     return !!existingUser
   }),
-  createUser: publicProcedure.input(createAccountInput).mutation(async ({ input, ctx }) => {
+  createUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
+    const { email, password } = input
+    //check if email exists in db
+    const exists = await ctx.prisma.user.findUnique({
+      where: { email },
+    })
+
+    if (exists) {
+      throw new TRPCError({
+        code: "CONFLICT",
+        message: "User already exists.",
+      })
+    }
+    const hashedPassword = await hash(password)
+    const result = await ctx.prisma.user.create({
+      data: { email, password: hashedPassword },
+    })
+    return { status: 201, message: "Account created successfully", result: result.email }
+  }),
+  verifyUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
     input = { ...input, email: input.email.toLowerCase() }
-    const washedInput = createAccountInput.parse(input)
+    const washedInput = signUpSchema.parse(input)
     if (!validateEmail(washedInput.email) || !validatePassword(washedInput.password)) {
-      return "Error, the field information is not validated."
+      return "Error, the field information is not valid."
     }
     //check if email exists in db
     const existingUser = await ctx.prisma.user.findUnique({
       where: { email: washedInput.email },
     })
-
-    if (!!existingUser) {
-      return "The email address already exists!"
+    if (!existingUser) {
+      return "Incorrect credentials"
     }
-    await ctx.prisma.user.create({
-      data: {
-        email: washedInput.email,
-        password: washedInput.password,
-        emailVerified: null,
-      },
-    })
+    if (existingUser.password === washedInput.password) {
+      return "User Verified"
+    } else {
+      return "Incorrect credentials."
+    }
   }),
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany()
