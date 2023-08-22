@@ -33,7 +33,7 @@ export default function SignIn({ providers }: InferGetServerSidePropsType<typeof
       <h1 className="text-md font-bold text-primary">Login</h1>
       <SignInForm />
       <p className="font-bold">or</p>
-      <Button variant='continue-with'>
+      <Button variant="continue-with">
         Continue with Google
         <AiOutlineGoogle className="text-primary-foreground" size={42} />
       </Button>

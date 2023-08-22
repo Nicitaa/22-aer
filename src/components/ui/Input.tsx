@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { ChangeEvent, useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 
@@ -8,9 +9,10 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
   checked?: boolean
   size?: "sm" | "" | undefined
+  inputError?: string | undefined
 }
 
-export function Input({ type, size, placeholder, ...props }: InputProps) {
+export function Input({ type, size, placeholder, inputError, ...props }: InputProps) {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -18,9 +20,9 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
       {type === "password" ? (
         <div className="relative w-full">
           <input
-            className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${
-              size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"
-            }
+            className={`peer/input p-4 bg-primary-dark text-secondary z-[9]
+              ${inputError ? "border-danger border-[1px]" : ""}
+              ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
             type={showPassword ? "text" : "password"}
             placeholder=" "
@@ -45,13 +47,19 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
               onClick={() => setShowPassword(!showPassword)}
             />
           )}
+          <motion.p
+            className="absolute font-secondary text-danger text-xs"
+            initial={{ rotate: 0 }}
+            animate={{ rotate: [0, -5, 5, 0] }}>
+            {inputError}
+          </motion.p>
         </div>
       ) : (
         <div className="relative w-full">
           <input
-            className={`peer/input p-4 bg-primary-foreground text-secondary z-[9] ${
-              size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"
-            }
+            className={`peer/input p-4 bg-primary-dark text-secondary z-[9] 
+               ${inputError ? "border-danger border-[1px]" : ""}
+              ${size === "sm" ? "w-[100px] h-[40px]" : "w-full h-[55px]"}
               outline-none`}
             type="email"
             placeholder=" "
@@ -66,6 +74,12 @@ export function Input({ type, size, placeholder, ...props }: InputProps) {
              pointer-events-none select-none">
             {placeholder}
           </label>
+          <motion.p
+            className="absolute font-secondary text-danger text-xs"
+            initial={{ rotate: 0 }}
+            animate={{ rotate: [0, -5, 5, 0] }}>
+            {inputError}
+          </motion.p>
         </div>
       )}
     </>
