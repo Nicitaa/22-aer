@@ -14,6 +14,8 @@ export default {
     },
 
     screens: {
+      mobile: "415px",
+      // => @media (min-width: 415px) { ... }
       tablet: "768px",
       // => @media (min-width: 768px) { ... }
       laptop: "1024px",

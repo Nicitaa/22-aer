@@ -85,7 +85,7 @@ export function Slider3D({
       }}
       className={`${className as string} overflow-hidden`}>
       <h1 className={`absolute top-[5%] left-1/2 -translate-x-1/2 ${labelClassName as string}`}>{label}</h1>
-      <div className="relative flex flex-col py-8 pt-16 tablet:pt-20 tablet:gap-y-4">
+      <div className="relative flex flex-col py-8 mobile:pt-10 tablet:pt-12 tablet:pb-4 tablet:gap-y-2">
         <div className="relative flex flex-none justify-center items-center w-[100vw]">
           <Images slideTo={slideTo} array={array} />
         </div>

@@ -24,14 +24,14 @@ export default function Home() {
                   array={topSales}
                   progressfillClassname="h-[3px] bg-cta"
                   subTitleClassName="font-secondary text-sm text-primary-foreground"
-                  titleClassName="font-bold"
+                  titleClassName="font-bold mb-2 tablet:mb-0"
                   progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary"
                 />
-                <div className="w-full max-h-[60vh] pb-4">
-                  <h1 className="text-lg font-bold laptop:w-[85%] laptop:ml-auto">
+                <div className="w-full max-h-[60vh] pb-4 tablet:pb-0">
+                  <h1 className="text-[clamp(2rem,1.8rem+1vw,3rem)] font-bold laptop:w-[85%] laptop:ml-auto">
                     The best <br /> bag behind you
                   </h1>
-                  <div className="hidden font-secondary text-sm text-primary-foreground tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
+                  <div className="hidden font-secondary text-xs text-primary-foreground tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
                     Have questions how we did something? - ask us
                     <br />
                     As junior developers we provide low prices for now - its your chance!
