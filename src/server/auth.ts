@@ -1,6 +1,6 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { type GetServerSidePropsContext } from "next"
-import { getServerSession, type NextAuthOptions, type DefaultSession, User } from "next-auth"
+import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
@@ -9,8 +9,6 @@ import { env } from "~/env.mjs"
 import { prisma } from "~/server/db"
 import { signInSchema } from "~/utils/auth"
 import { verify } from "argon2"
-import { AdapterAccount, AdapterUser } from "next-auth/adapters"
-import { Account } from "@prisma/client"
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -39,14 +37,12 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma),
+  callbacks: {},
   pages: {
     signIn: "/auth/signin",
   },
 
-  session: {
-    strategy: "jwt",
-  },
-  adapter: PrismaAdapter(prisma),
   providers: [
     /*GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
@@ -111,6 +107,9 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  session: {
+    strategy: "jwt",
+  },
 }
 
 /**

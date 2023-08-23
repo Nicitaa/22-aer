@@ -3,16 +3,13 @@ import { hash } from "argon2"
 import { z } from "zod"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
 import { signUpSchema, validateEmail, validatePassword } from "~/utils/auth"
-// Define a validation schema for the input parameter
-const emailExistsInput = z.object({
-  email: z.string().email(),
-})
+import { generateAndSaveVerificationToken } from "~/utils/serverAuth"
 
 // Define a validation schema for the output result
 //const emailExistsOutput = z.boolean()
 
 export const credentialsRouter = createTRPCRouter({
-  getEmailExists: publicProcedure.input(emailExistsInput).query(async ({ input, ctx }) => {
+  /*   getEmailExists: publicProcedure.input(emailExistsInput).query(async ({ input, ctx }) => {
     input = { ...input, email: input.email.toLowerCase() }
 
     // Validate the input using the input schema
@@ -26,7 +23,7 @@ export const credentialsRouter = createTRPCRouter({
     // Return a boolean indicating whether the email exists
     return !!existingUser
   }),
-  createUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
+ */ createUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
     const { email, password } = input
     //check if email exists in db
     const exists = await ctx.prisma.user.findUnique({
@@ -43,6 +40,10 @@ export const credentialsRouter = createTRPCRouter({
     const result = await ctx.prisma.user.create({
       data: { email, password: hashedPassword },
     })
+    //if result is good, do the email verification stuff
+    // Generate and save a unique verification token
+    const verificationToken = await generateAndSaveVerificationToken(ctx, result.id)
+
     return { status: 201, message: "Account created successfully", result: result.email }
   }),
   verifyUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
@@ -64,6 +65,7 @@ export const credentialsRouter = createTRPCRouter({
       return "Incorrect credentials."
     }
   }),
+
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany()
   }),
