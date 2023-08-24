@@ -6,25 +6,24 @@
 
 @layer base {
   :root {
-  --primary: 0deg 0% 90%;
-  --primary-foreground: 0deg 0% 70%;
-  --secondary: 240deg 18% 3%;
-  --secondary-foreground: 240deg 18% 3%;
-  --cta: 184deg 90% 60%;
-  --danger: 0deg 90% 50%;
-  --success: 122deg 90% 50%;
-  --stats-bar: 245deg 90% 50%;
-  --stats-fill: 252deg 90% 50%;
-  
-  /* 320-768px */
-  --md: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
+    --primary: 0deg 0% 90%;
+    --primary-foreground: 0deg 0% 70%;
+    --secondary: 240deg 18% 3%;
+    --secondary-foreground: 240deg 18% 3%;
+    --cta: 184deg 90% 60%;
+    --danger: 0deg 90% 50%;
+    --success: 122deg 90% 50%;
+    --stats-bar: 245deg 90% 50%;
+    --stats-fill: 252deg 90% 50%;
+
+    /* 320-768px */
+    --md: clamp(1rem, 1.6473rem + -3.2366vw, 0.09375rem);
   }
 }
 
 * {
   border-color: hsl(var(--primary-foreground));
 }
-
 
 svg {
   -webkit-tap-highlight-color: transparent;
@@ -106,8 +105,6 @@ input[type="radio"]:checked + .label:after {
 .label {
   border: 1px solid hsl(var(--primary-foreground));
 }
-
-
 
 /* Checkbox.tsx */
 .checkbox-container {
@@ -191,9 +188,6 @@ input[type="radio"]:checked + .label:after {
   display: flex;
 }
 
-
-
-
 /* Slider */
 .slider-image {
   aspect-ratio: 16 / 9;
@@ -224,4 +218,31 @@ input[type="radio"]:checked + .label:after {
     width: 250px;
     aspect-ratio: 16 / 9;
   }
+}
+
+/* Product page > Carousel */
+.carousel {
+  text-align: center;
+  background-color: rgba(7, 7, 10, 0.75);
+}
+.carousel > .thumbs-wrapper {
+  margin: 0 !important;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+}
+.thumbs {
+  padding: 10px 3px !important;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.thumb {
+  width: 100% !important;
+  scale: 0.75;
+  border: 3px solid #333 !important;
+}
+li.thumb.selected {
+  scale: 1.1;
+  border: 3px solid #fff !important;
 }
