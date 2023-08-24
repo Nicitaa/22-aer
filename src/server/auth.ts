@@ -87,6 +87,7 @@ export const authOptions: NextAuthOptions = {
         if (!isValidPassword) {
           return null
         }
+
         const callbackUrl = new URLSearchParams(req.query).get("callbackUrl")
         return {
           id: user.id,

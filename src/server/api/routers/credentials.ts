@@ -1,8 +1,8 @@
 import { TRPCError } from "@trpc/server"
 import { hash } from "argon2"
-import { z } from "zod"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
 import { signUpSchema, validateEmail, validatePassword } from "~/utils/auth"
+import { sendVerificationEmail } from "~/utils/email"
 import { generateAndSaveVerificationToken } from "~/utils/serverAuth"
 
 // Define a validation schema for the output result
@@ -43,6 +43,12 @@ export const credentialsRouter = createTRPCRouter({
     //if result is good, do the email verification stuff
     // Generate and save a unique verification token
     const verificationToken = await generateAndSaveVerificationToken(ctx, result.id)
+    // Construct the verification link
+    const verificationLink = `${
+      process.env.NEXTAUTH_URL as string
+    }/api/auth/verify?verificationToken=${encodeURIComponent(verificationToken)}`
+    // Send verification email
+    await sendVerificationEmail({ email, verificationLink })
 
     return { status: 201, message: "Account created successfully", result: result.email }
   }),

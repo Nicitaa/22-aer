@@ -27,7 +27,6 @@ export default function AuthContainer({ children, title, customContent, provider
   const router = useRouter()
   //because the query parameters are usually an array of strings, and you need to extract the actual string value you want to use.
   const callbackUrl = Array.isArray(router.query.callbackUrl) ? router.query.callbackUrl[0] : router.query.callbackUrl
-  console.log(callbackUrl)
   return (
     <div
       className="flex text-md flex-col items-center w-[456px] max-w-[90vw] mx-auto px-4 py-2 rounded-[12px]

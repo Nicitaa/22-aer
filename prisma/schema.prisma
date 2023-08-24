@@ -56,12 +56,16 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    verificationTokens VerificationToken[] 
+
 }
 
 model VerificationToken {
     identifier String   @id
     token      String   @unique
     expires    DateTime
+    user       User     @relation(fields: [identifier], references: [id], onDelete: Cascade)
+
 
     @@unique([identifier, token])
 }
