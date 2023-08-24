@@ -6,7 +6,7 @@ import { authOptions } from "../../server/auth"
 import Link from "next/link"
 import SignUpForm from "~/components/pages/auth/SignUpForm"
 
-function Signup({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function Signup({}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div
       className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
