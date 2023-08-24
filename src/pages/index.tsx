@@ -18,7 +18,9 @@ export default function Home() {
               className="absolute top-1/2 w-full"
               animate={{ x: ["-100%", "0%"] }}
               exit={{ x: ["0%", "-100%"] }}>
-              <div className="-translate-y-full w-full flex flex-col-reverse laptop:flex-row items-center gap-y-4 px-4 tablet:px-8 laptop:px-12">
+              <div
+                className="main-counter mobile:-translate-y-full w-full
+                flex flex-col-reverse laptop:flex-row items-center gap-y-4 px-4 tablet:px-8 laptop:px-12">
                 <SliderCounter
                   className="w-full laptop:ml-[10%]"
                   array={topSales}
@@ -28,7 +30,7 @@ export default function Home() {
                   progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary"
                 />
                 <div className="w-full max-h-[60vh] pb-4 tablet:pb-0">
-                  <h1 className="text-[clamp(2rem,1.8rem+1vw,3rem)] font-bold laptop:w-[85%] laptop:ml-auto">
+                  <h1 className="text-[clamp(2rem,1.8rem+1vw,3rem)] hidden main-text mobile:block font-bold laptop:w-[85%] laptop:ml-auto">
                     The best <br /> bag behind you
                   </h1>
                   <div className="hidden font-secondary text-xs text-primary-foreground tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">

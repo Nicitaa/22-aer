@@ -213,3 +213,16 @@ input[type="radio"]:checked + .label:after {
     width: 225px;
   }
 }
+
+/* Main text */
+.main-counter {
+  transform: translateY(-150%);
+}
+@media (min-height: 650px) {
+  .main-text {
+    display: block;
+  }
+  .main-counter {
+    transform: translateY(-100%);
+  }
+}
