@@ -48,7 +48,7 @@ const Product = () => {
             <span className=" text-md font-bold">Price</span>
             <p className="text-sm text-primary-foreground">{priceFormatter(price)}</p>
             <span className=" text-md font-bold">Description:</span>
-            <p className="scrollbar text-sm text-primary-foreground laptop:h-[38%] monitor:h-[60%] h-[30vh] overflow-y-auto">
+            <p className="scrollbar text-sm text-primary-foreground laptop:h-[38%] desktop:h-[60%] h-[30vh] overflow-y-auto">
               {subTitle}
             </p>
           </article>
