@@ -190,20 +190,17 @@ input[type="radio"]:checked + .label:after {
 
 /* Slider */
 .slider-image {
-  aspect-ratio: 16 / 9;
-  transition: 1s ease;
+  width: 175px;
 }
 
 .slide-image-active {
-  width: 300px;
-  aspect-ratio: 16 / 9;
+  width: 250px;
   cursor: default;
 }
 
 .image-wrapper {
   transition: 0.8s ease;
   width: 300px;
-  aspect-ratio: 16 / 9;
   display: grid;
   place-items: center;
 }
@@ -211,12 +208,22 @@ input[type="radio"]:checked + .label:after {
 @media (max-width: 768px) {
   .slider-image {
     width: 150px;
-    aspect-ratio: 16 / 9;
   }
-
   .slide-image-active {
-    width: 250px;
-    aspect-ratio: 16 / 9;
+    width: 225px;
+  }
+}
+
+/* Main text */
+.main-counter {
+  transform: translateY(-150%);
+}
+@media (min-height: 650px) {
+  .main-text {
+    display: block;
+  }
+  .main-counter {
+    transform: translateY(-100%);
   }
 }
 
