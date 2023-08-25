@@ -37,7 +37,7 @@ export default function Home() {
                     Have questions how we did something? - ask us
                     <br />
                     As junior developers we provide low prices for now - its your chance!
-                    <div className="hidden desktop:flex flex-col items-center laptop:items-start">
+                    <div className="hidden laptop:flex flex-col items-center laptop:items-start">
                       <Link
                         className="relative w-fit
                         before:absolute before:right-0 before:w-[25%] before:content-['']
@@ -46,14 +46,14 @@ export default function Home() {
                         before:duration-300 before:pointer-events-none
                           hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
                             after:absolute after:right-0 after:w-[25%] after:content-['Nikita']
-                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[0px]
                         after:transition-all
                         after:duration-500 after:pointer-events-none
-                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[46px]
+                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[43px]
                         text-cta"
-                        href="https://t.me/icpcedu"
+                        href="https://t.me/nicitaacom"
                         target="_blank">
-                        t.me/icpcedu
+                        t.me/nicitaacom
                       </Link>
                       <Link
                         className="relative w-fit
@@ -63,10 +63,10 @@ export default function Home() {
                         before:duration-300 before:pointer-events-none
                           hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
                             after:absolute after:right-0 after:w-[25%] after:content-['Illia']
-                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[0px]
                         after:transition-all
                         after:duration-500 after:pointer-events-none
-                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[57px]
+                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[53px]
                         text-cta"
                         href="https://github.com/ottakist"
                         target="_blank">
@@ -80,10 +80,10 @@ export default function Home() {
                         before:duration-300 before:pointer-events-none
                           hover:before:visible hover:before:opacity-100 hover:before:translate-x-[25px]
                             after:absolute after:right-0 after:w-[25%] after:content-['Ahmad']
-                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[-2px]
+                        after:invisible after:opacity-0 after:translate-x-[0px] after:translate-y-[0px]
                         after:transition-all
                         after:duration-500 after:pointer-events-none
-                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[60px]
+                          hover:after:visible hover:after:opacity-100 hover:after:translate-x-[55px]
                         text-cta"
                         href="https://github.com/arifm6"
                         target="_blank">
