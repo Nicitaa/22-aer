@@ -34,17 +34,20 @@ export default function AuthContainer({ children, title, customContent, provider
       <h1 className="text-md font-bold text-primary">{title}</h1>
       {children}
       <p className="font-bold">or</p>
-      {Object.values(providers).map((provider, i) => (
-        <Button
-          variant="continue-with"
-          key={i}
-          onClick={() => {
-            void signIn(provider.id, { callbackUrl })
-          }}>
-          Continue with {provider.name}
-          {getProviderIcon(provider)}
-        </Button>
-      ))}
+      {Object.values(providers).map(
+        (provider, i) =>
+          provider.id !== "credentials" && (
+            <Button
+              variant="continue-with"
+              key={i}
+              onClick={() => {
+                void signIn(provider.id, { callbackUrl })
+              }}>
+              Continue with {provider.name}
+              {getProviderIcon(provider)}
+            </Button>
+          )
+      )}
       {customContent}
     </div>
   )
