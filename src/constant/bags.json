@@ -5,11 +5,7 @@
     "title": "Green bag",
     "subTitle": "This versatile green bag is suitable for individuals of all ages and styles thanks to its adaptable design and practical features. Its spacious interior can hold all your essentials while keeping them organized with various pockets and compartments. The adjustable strap can be worn over the shoulder or across the body, making it comfortable for anyone to carry. The durable material ensures it can withstand daily use, making it an excellent addition to your wardrobe for years to come. Whether you're on the go for work or leisure, this green bag is a reliable and stylish choice.",
     "price": 1099.99,
-    "imagesUrl": [
-      "/images/products/stock-1.jpg",
-      "/images/products/stock-65.jpg",
-      "/images/products/stock-71.jpg"
-    ]
+    "imagesUrl": ["/images/products/stock-1.jpg", "/images/products/stock-65.jpg", "/images/products/stock-71.jpg"]
   },
   {
     "id": "d6232d4f-a1a1-4ad5-a989-a618e0efac99",
@@ -38,7 +34,6 @@
       "/images/products/stock-17.jpg",
       "/images/products/stock-18.jpg",
       "/images/products/stock-19.jpg"
-
     ]
   },
   {
@@ -53,7 +48,6 @@
       "/images/products/stock-41.jpg",
       "/images/products/stock-49.jpg",
       "/images/products/stock-52.jpg"
-
     ]
   },
   {
@@ -62,10 +56,7 @@
     "title": "Yellow bag",
     "subTitle": "The yellow bag with multiple pockets is an ideal choice for individuals planning small travels. The bag's pockets provide sufficient storage space for organizing travel essentials. It ensures easy access to items and prevents losing due to disorganization. The multiple pockets inside the bag make it easier to categorize and separate items. One can easily put travel documents, phone, keys, wallet, and other items into separate pockets for quick access. The size of the bag is suitable for carrying around and can fit under the seat or in an overhead bin.",
     "price": 1999.99,
-    "imagesUrl": [
-      "/images/products/stock-5.jpg",
-      "/images/products/stock-20.jpg"
-    ]
+    "imagesUrl": ["/images/products/stock-5.jpg", "/images/products/stock-20.jpg"]
   },
   {
     "id": "e6a55901-3e08-4641-88a7-8eae00881eed",
@@ -132,10 +123,7 @@
     "title": "Orange bag",
     "subTitle": "All you need know that this bag:waterproof - keeps the temperature inside - capacious",
     "price": 199.99,
-    "imagesUrl": [
-      "/images/products/stock-10.jpg",
-      "/images/products/stock-72.jpg"
-    ]
+    "imagesUrl": ["/images/products/stock-10.jpg", "/images/products/stock-72.jpg"]
   },
   {
     "id": "586af496-ea1b-4324-b358-fc347e6ba6d6",
@@ -143,11 +131,7 @@
     "title": "Balck bag",
     "subTitle": "Just small leather bag",
     "price": 499.99,
-    "imagesUrl": [
-      "/images/products/stock-35.jpg",
-      "/images/products/stock-37.jpg",
-      "/images/products/stock-40.jpg"
-    ]
+    "imagesUrl": ["/images/products/stock-35.jpg", "/images/products/stock-37.jpg", "/images/products/stock-40.jpg"]
   },
   {
     "id": "6c73d666-3a82-46a9-b4c9-2074702fd5ac",
@@ -169,10 +153,7 @@
     "title": "Blue bag",
     "subTitle": "The most popular bag around others - have 2 pockets - you can put laptop inside for example",
     "price": 394.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "b24e0140-daca-4135-a2e6-ac066c67ecc3",
@@ -180,10 +161,7 @@
     "title": "Black bag",
     "subTitle": "This leather bag have 1 pocket and high price",
     "price": 529.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "e388cc63-5fc0-43f5-aa07-08de0cf62c7a",
@@ -191,10 +169,7 @@
     "title": "Black bag",
     "subTitle": "This bag fits for travelers - vert spacious and waterproof",
     "price": 749.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "b7d48788-34db-4b11-98de-f62b3626b084",
@@ -202,10 +177,7 @@
     "title": "Black bag",
     "subTitle": "2 pockets - fits for everyone but mostly for students",
     "price": 1099.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "3957db1a-1bde-4b40-bc15-017c1325635a",
@@ -213,21 +185,15 @@
     "title": "Black bag",
     "subTitle": "This is black bag - are you sure we need description for each bag?",
     "price": 1129.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "17f770dc-b631-4ae0-a7b2-3be5c4d4f698",
     "preview": "/images/products/stock-18.jpg",
     "title": "Black bag",
     "subTitle": "This bag have 4 pockets and any image you want",
-    "price": 900.00,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "price": 900.0,
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "88dddbae-7c29-4232-bf61-e88465599aa7",
@@ -235,10 +201,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 99.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "3cffbb5b-fb05-4ae7-b7c0-ad3dcdb2a07a",
@@ -246,197 +209,143 @@
     "title": "Yellow bag",
     "subTitle": "4 pockets",
     "price": 149.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "cb6de4d6-398c-47ca-b635-188c8f51b003",
     "preview": "/images/products/stock-21.jpg",
     "title": "Blue bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "The 'FIALLVERIEN KANKEN' bag is a perfect fit for anyone, and with its beautiful roses inside pocket, it's hard to resist. This versatile bag offers functionality and style, making it a great investment for daily use. It's perfect for carrying all your essentials, including laptops, books, and more. The bag's design is classic and timeless, making it easy to pair with any outfit. Plus, the roses inside pocket adds a touch of personality and charm. So, why not treat yourself to this amazing bag?",
     "price": 99.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "a8d6696a-8bff-4d6e-be83-3d9d8e5e2a50",
     "preview": "/images/products/stock-22.jpg",
     "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "Just take a look at this 2 girls that going to school or somewhere - it looks amazing with this clear and white bags on their backs. Hight quality leather keeps this bag clean. This bag very fit to white style with your daily outfit - we strongly reccomend buy this bag if you have white style outfit! - anyway you have 14 days warranty",
     "price": 939.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "4c46b090-d386-418c-85e0-8b6119a393c0",
     "preview": "/images/products/stock-23.jpg",
     "title": "Brown bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "This brown backpack is perfect for girls due to its high-quality leather and round, fluffy pieces. The bag flaunts a unique style that will surely add character to any outfit. The fluffy elements give it a playful touch, while the leather material adds a sophisticated vibe. With its ample space and durable construction, this backpack is perfect for day-to-day use. Whether for school or for travel, this brown backpack is a great pick. Girls who love stylish and functional bags will surely appreciate this must-have accessory.",
     "price": 919.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "9454ad29-9b7d-46b3-9630-13acca8766ec",
     "preview": "/images/products/stock-24.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "Add the finishing touch to your leather ensemble with our latest addition to the collection - a sleek black leather bag. Crafted with high-quality materials, this bag is both stylish and functional, making it the perfect accessory for any occasion. Whether you're dressing up for a night out or heading to the office, this versatile bag effortlessly complements your look. Don't miss out on the chance to elevate your style with this must-have bag.",
     "price": 89.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "0e4d15ec-798e-4185-bda2-41057f3f9630",
     "preview": "/images/products/stock-25.jpg",
     "title": "Turquoise bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "The turquoise bag appears basic, but with our 'createBag' page, you can easily customize and transform it into something amazing. This is especially ideal for gamers who need a sturdy and functional bag that reflects their style. Don't settle for a default look, unleash your creativity and design a bag that fits your needs and personality. Try it out and see how much better your bag can be!",
     "price": 230.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "7649da4c-b55d-478a-867f-15134de93308",
     "preview": "/images/products/stock-26.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "This tiny black leather bag is perfect for girls who love minimalism. It features a sleek design with subtle decorations, making it an ideal accessory for any outfit. Its compact size allows for easy carrying while still providing enough space for essential items. Whether heading to work or going out with friends, this bag is sure to add a touch of sophistication to any look.",
     "price": 199.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "de2b2699-36d7-41de-b08b-3227dc244733",
     "preview": "/images/products/stock-27.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "The Louis Vuitton bag is a versatile piece that suits anyone, regardless of age or style. It's an accessory that adds sophistication and elegance to any outfit. In addition, owning a Louis Vuitton bag can impress your friends and colleagues with your excellent taste in fashion. It's a status symbol that communicates success and luxury, making it a must-have item for those who appreciate fine things. The brand's impeccable craftsmanship and attention to detail elevate the bag's overall design, ensuring it remains an enduring classic for years to come.",
     "price": 299.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "f4d643b8-b476-43c5-9138-d59616dd7aa3",
     "preview": "/images/products/stock-28.jpg",
     "title": "Pink bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "This dark-pink bag would make a great accessory for girls. Its simple design adds to its appeal. It's generally unremarkable and would blend in well with many outfits, making it a versatile piece. The bag's color is bold enough to stand out but not too loud or overwhelming. It's a great option for those looking for a functional and fashionable bag that won't break the bank. Overall, it's a great addition to any accessory collection.",
     "price": 399.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "a2d20875-1a95-4c7b-993d-7930c52db1fe",
     "preview": "/images/products/stock-29.jpg",
     "title": "Pink bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "If you're not fashion-conscious but looking to add a pop of pink to your wardrobe, then this bag is perfect for you. It's simple yet stylish, making it easy to pair with most outfits. The bag's design allows for easy access and gives you a good overview of your belongings. So, whether you're on the go or simply running errands, this pink bag is practical and functional. Don't hesitate and grab one for yourself today!",
     "price": 499.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "4f23446f-dae1-4303-a919-f70520dfbd50",
     "preview": "/images/products/stock-30.jpg",
     "title": "Red bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "This chic red bag is perfect for professionals who work in an office setting. Its compact size makes it easy to carry around, but it offers enough room to fit your essentials. Personalize it with a fluffy accessory to add a touch of fun to your formal attire. With this bag, you can feel confident and stylish while you go about your daily business.",
     "price": 999.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "a6f451c7-7b17-46d8-9026-eace8e8dd727",
     "preview": "/images/products/stock-31.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "For those wanting to infuse some pink into their wardrobe without being overly fashion-focused, choose this sleek black bag. With its minimalistic style, it matches well with any outfit and offers quick access to your belongings. Its design also provides a clear view of what's inside, making it perfect for on-the-go use.",
     "price": 199.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "e711113b-b608-46d9-a117-06b5a9c40d3e",
     "preview": "/images/products/stock-32.jpg",
     "title": "Gray bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "The gray 'Fjallraven Kanken' bag is a widely popular and versatile option for everyday use. Its minimalist design and durable construction make it suitable for a variety of styles and occasions. With ample storage space and a comfortable fit, this backpack is a reliable choice for travelers, students, and commuters alike. Its understated aesthetic and practical features have made it a beloved staple in many wardrobes.",
     "price": 59.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "3bc12fb8-bb2c-4b40-9c51-81107586e869",
     "preview": "/images/products/stock-33.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 349.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "subTitle": "The sleek and elegant black Gucci bag is perfect for the high-end individuals and a great choice for any night party. With a chic design, it exudes luxury and sophistication. It is crafted with premium materials to ensure durability and longevity, making it a worthwhile investment. The spacious interior provides enough room to carry your essentials and valuables securely. Its aesthetically pleasing exterior is sure to turn heads and make a statement. Overall, this Gucci bag is a true fashion statement for the classy and sophisticated party-goer.",
+    "price": 1349.99,
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "9331898c-1e3d-43a7-a5b8-e719858a321b",
     "preview": "/images/products/stock-34.jpg",
     "title": "Turquoise bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "Although this turquoise bag may not be the best one we offer in our store, we do have many other options that are even better. However, if you still have your heart set on this particular bag, you can customize it using our 'createBag' page to make it unique and perfectly suited to your style and needs. Either way, we are here to help you find the perfect bag that meets all your requirements and exceeds your expectations.",
     "price": 249.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "da640611-5f7d-42e9-9ea0-53a268499183",
     "preview": "/images/products/stock-35.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "The black bag has a unique style and pairs perfectly with blue and black outfits. Adding a toy is optional but could enhance the overall look. Ultimately, the decision is up to personal preference.",
     "price": 949.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "26ecaa16-087e-42e9-bc9a-2c047c8b3a76",
     "preview": "/images/products/stock-36.jpg",
     "title": "Blue bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 500.00,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "subTitle": "This blue bag is perfect for anyone who needs a stylish bag for the office. However, it can also be used for daily outfits if needed. Although, we do have better options for daily outfits available in our store. We suggest you take a look at our full collection to find the perfect bag for your needs.",
+    "price": 500.0,
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "8c28ba0f-f3ba-4ee6-9b9c-0d1a1dfd11e2",
     "preview": "/images/products/stock-37.jpg",
     "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "subTitle": "This spacious gray bag is perfect for tourists or anyone who requires plenty of storage room. Its ample space can accommodate all your essentials and more, making travelling a breeze. Its neutral grey colour also adds versatility, allowing it to easily complement your wardrobe. Whether you are going on a weekend getaway or a long-haul trip, this bag is the perfect companion for your journey.",
     "price": 499.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "bcfafaed-3da2-40cc-80cf-ee6c72a92eb0",
@@ -444,10 +353,7 @@
     "title": "Pink bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 699.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "77a2d031-094d-4c09-9cfb-de2d8429e70d",
@@ -455,10 +361,7 @@
     "title": "Gray bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 899.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "e0188da3-e863-456b-960c-72b6e4b05a36",
@@ -466,10 +369,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 419.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "eeb0f1ad-ac9f-49d9-8c7e-876ee0bb9169",
@@ -477,10 +377,7 @@
     "title": "White bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 349.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "b8611df3-b9ad-49d9-9cef-b106fb19ebb4",
@@ -488,10 +385,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 389.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "80f7fa18-b560-45da-a1e6-415d30d5534c",
@@ -499,10 +393,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 129.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "55d8dc16-a3cc-469f-a51c-75067f506641",
@@ -510,10 +401,7 @@
     "title": "Gray bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 749.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "ed4e8ea4-daf2-45df-a6b8-8f620ab3abc5",
@@ -521,10 +409,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 889.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "5ea5e6f9-ee84-4605-b0e6-c444900fdb7f",
@@ -532,10 +417,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 679.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "b1da3bfb-15d0-4c4c-b6da-442384921256",
@@ -543,10 +425,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 849.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "14a2676c-d81d-47b1-887a-f6f4c702557d",
@@ -554,10 +433,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 459.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "2a815423-bc43-4b71-9fc5-adfd65628dd3",
@@ -565,10 +441,7 @@
     "title": "White package",
     "subTitle": "This is black bag have 1 pocket",
     "price": 249.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "9bc5677e-587d-4d17-8763-1fc6d78defd8",
@@ -576,10 +449,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 159.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "d10d96f4-9df4-4b1b-84c3-97841b037636",
@@ -587,10 +457,7 @@
     "title": "Gray bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 849.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "fa7f9e5c-b190-4e2d-a9e3-787bf49bc333",
@@ -598,10 +465,7 @@
     "title": "White bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 609.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "ae04eaf8-d974-4384-b426-7fc8dd91aaca",
@@ -609,10 +473,7 @@
     "title": "Red bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 1119.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "457b9393-f72d-4930-a684-f8eeb3a682d2",
@@ -620,10 +481,7 @@
     "title": "Red bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 1029.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "7f6da2e6-0524-4796-8ea7-01f5046ec76f",
@@ -631,10 +489,7 @@
     "title": "Blue bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 909.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "fff45a51-1c72-4c5d-acfc-244209e89cc0",
@@ -642,10 +497,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 501.59,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "edb4c21b-bdb5-4adc-beab-cbe98daaafc5",
@@ -653,10 +505,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 299.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "8bc76f21-834d-4c25-8179-fcdeee530aa6",
@@ -664,10 +513,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 309.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "cb1f4e43-596d-447c-b49f-ab8a03c9e9e7",
@@ -675,10 +521,7 @@
     "title": "Pink bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 499.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "e6ea6566-3b2c-43c0-b858-41875dcaa935",
@@ -686,10 +529,7 @@
     "title": "Brown bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 599.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "c473786f-9803-4818-8bb1-4d10b22ae4c8",
@@ -697,10 +537,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 99.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "0f4f29ac-de0b-464b-916f-7f3cc06629a1",
@@ -708,10 +545,7 @@
     "title": "White bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 699.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "8d11daec-2558-49c9-9e5d-c9a99c810fbb",
@@ -719,10 +553,7 @@
     "title": "White bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 999.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "7a8f6dcf-71ba-44d5-bed6-4e7ea5b6c502",
@@ -730,10 +561,7 @@
     "title": "Red bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 499.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "79971074-b4ea-4904-bf9f-57981048c6f1",
@@ -741,10 +569,7 @@
     "title": "Green bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 399.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "bfc4eb5e-3ff1-4aec-ad99-8d5bb3533398",
@@ -752,10 +577,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 359.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "26ba5d43-df91-4d2e-89e4-e65b28023674",
@@ -763,10 +585,7 @@
     "title": "White bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 599.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "d16b0c75-635c-4774-97bb-a9a7837eb917",
@@ -774,10 +593,7 @@
     "title": "Red bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 459.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "bbe17a96-d793-45b4-bdd8-a89dfbadbd4b",
@@ -785,10 +601,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 949.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "b430d8ae-f647-4377-ae3b-60ba81762c0c",
@@ -796,10 +609,7 @@
     "title": "Gray bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 849.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "763c4463-519b-43f8-bd2d-81a295ee0bf8",
@@ -807,10 +617,7 @@
     "title": "Green bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 859.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "3f794616-a3d1-4ac4-ac5c-4cfeae8de14e",
@@ -818,10 +625,7 @@
     "title": "Orange bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 789.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "f3c4d135-de9c-4764-bfb3-b7b28d351382",
@@ -829,10 +633,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 619.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "997b1572-b3e4-42e2-b66a-fbd6ad80b99c",
@@ -840,10 +641,7 @@
     "title": "Brown bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 439.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "8df6553c-6764-43d0-88ac-00f41b995a2a",
@@ -851,10 +649,7 @@
     "title": "Black bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 199.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   },
   {
     "id": "7d85c2aa-60c4-48ac-963c-87271fd84f7f",
@@ -862,9 +657,6 @@
     "title": "Brown bag",
     "subTitle": "This is black bag have 1 pocket",
     "price": 888.99,
-    "imagesUrl": [
-      "/",
-      "/"
-    ]
+    "imagesUrl": ["/", "/"]
   }
 ]

@@ -65,7 +65,7 @@ export function Navbar() {
           {/* LOGO */}
           <h1 className="font-primary text-lg font-bold">Aer</h1>
 
-          {/* Nav-links */}
+          {/* NAV-LINKS */}
           <ul className="hidden laptop:flex justify-between gap-x-8 text-sm">
             {navLinks.map(navLink => (
               <li className="relative" key={navLink.href}>
@@ -79,7 +79,7 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Hamburger menu */}
+          {/* HAMBURGER-ICON */}
           <motion.div
             className="flex laptop:hidden"
             animate={{
@@ -93,6 +93,7 @@ export function Navbar() {
         </motion.nav>
       </AnimatePresence>
 
+      {/* HAMBURGER-MENU */}
       <AnimatePresence>
         {isHamburgerMenu && (
           <motion.div
