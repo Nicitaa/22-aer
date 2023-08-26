@@ -22,7 +22,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Update the user's email verification status
     await prisma.user.update({
-      where: { id: dbVerificationToken?.identifier },
+      where: { id: dbVerificationToken?.id },
       data: { emailVerified: new Date() },
     })
 

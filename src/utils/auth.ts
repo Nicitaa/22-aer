@@ -8,7 +8,9 @@ export const signInSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
 })
-
+export const recoverAccountSchema = z.object({
+  email: z.string().email(),
+})
 //returns true if email valid, false otherwise
 function validateEmail(email: string): boolean {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/

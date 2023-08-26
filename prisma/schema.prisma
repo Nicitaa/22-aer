@@ -56,16 +56,31 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    verificationTokens VerificationToken[] 
+    verificationToken VerificationToken? 
+    recoveryToken     RecoveryToken?   // Allow multiple recovery tokens
+
 
 }
 
 model VerificationToken {
-    identifier String   @id
+    id String   @id 
     token      String   @unique
     expires    DateTime
-    user       User     @relation(fields: [identifier], references: [id], onDelete: Cascade)
+    user    User     @relation(fields: [id], references: [id], onDelete: Cascade)
 
 
-    @@unique([identifier, token])
+    @@unique([id, token])
 }
+
+model RecoveryToken {
+  id       String   @id 
+  token    String   @unique
+  expires  DateTime
+  user    User?    @relation(fields: [id], references: [id], onDelete: Cascade)
+}
+
+
+
+
+
+

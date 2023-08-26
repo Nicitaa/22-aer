@@ -81,7 +81,12 @@ export const authOptions: NextAuthOptions = {
           where: { email: creds.email },
         })
         if (!user) {
-          return null
+          return {
+            status: 404,
+            id: "",
+            error: "Invalid username or password",
+            message: "Invalid username or password",
+          }
         }
         const isValidPassword = await verify(user.password as string, creds.password)
         if (!isValidPassword) {
@@ -92,6 +97,7 @@ export const authOptions: NextAuthOptions = {
         return {
           id: user.id,
           email: user.email,
+          error: null,
           message: "Successfully signed in.",
           callbackUrl: callbackUrl || "/", // Include callbackUrl in the response
         }

@@ -1,9 +1,9 @@
 import { TRPCError } from "@trpc/server"
 import { hash } from "argon2"
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
-import { signUpSchema, validateEmail, validatePassword } from "~/utils/auth"
-import { sendVerificationEmail } from "~/utils/email"
-import { generateAndSaveVerificationToken } from "~/utils/serverAuth"
+import { recoverAccountSchema, signUpSchema, validateEmail, validatePassword } from "~/utils/auth"
+import { sendRecoveryEmail, sendVerificationEmail } from "~/utils/email"
+import { generateAndSaveRecoveryToken, generateAndSaveVerificationToken } from "~/utils/serverAuth"
 
 // Define a validation schema for the output result
 //const emailExistsOutput = z.boolean()
@@ -52,7 +52,7 @@ export const credentialsRouter = createTRPCRouter({
 
     return { status: 201, message: "Account created successfully", result: result.email }
   }),
-  verifyUser: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
+  authorizeUserLogin: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
     input = { ...input, email: input.email.toLowerCase() }
     const washedInput = signUpSchema.parse(input)
     if (!validateEmail(washedInput.email) || !validatePassword(washedInput.password)) {
@@ -66,12 +66,38 @@ export const credentialsRouter = createTRPCRouter({
       return "Incorrect credentials"
     }
     if (existingUser.password === washedInput.password) {
-      return "User Verified"
+      return "User Authorized"
     } else {
       return "Incorrect credentials."
     }
   }),
+  recoverPassword: publicProcedure.input(recoverAccountSchema).mutation(async ({ input, ctx }) => {
+    const washedInput = recoverAccountSchema.parse(input)
+    if (!validateEmail(washedInput.email)) {
+      return "Error, the email information is not valid."
+    }
+    // Generate a new recovery token and associate it with the user
+    const user = await ctx.prisma.user.findUnique({
+      where: { email: washedInput.email },
+    })
+    if (!user) {
+      return "User not found."
+    }
+    if (!user.emailVerified) {
+      return "Email not verified."
+    }
 
+    const recoveryToken = await generateAndSaveRecoveryToken(ctx, user.id)
+    const recoveryLink = `${process.env.NEXTAUTH_URL as string}/auth/change-password?recoveryToken=${encodeURIComponent(
+      recoveryToken
+    )}`
+    console.log(
+      "**************************************************************************************************************"
+    )
+
+    sendRecoveryEmail({ email: washedInput.email, recoveryLink })
+    return { status: 201, message: "Token created successfully", result: recoveryToken }
+  }),
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany()
   }),

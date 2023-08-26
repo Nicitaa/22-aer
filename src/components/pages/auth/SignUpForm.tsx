@@ -3,7 +3,9 @@ import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
 import { validateEmail, validatePassword, validateRepeatPassword } from "~/utils/auth"
 import { api } from "~/utils/api"
-import { useFormValidation } from "~/hooks/useFormValidation"
+//import { useFormValidation } from "~/hooks/useFormValidation"
+import { useRouter } from "next/router"
+import { signIn } from "next-auth/react"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
@@ -12,6 +14,7 @@ function SignUpForm() {
   const [repeatPassword, setRepeatPassword] = useState("")
 
   const [rememberMe, setRememberMe] = useState(false)
+  const router = useRouter()
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   }
@@ -24,21 +27,26 @@ function SignUpForm() {
   const handleSubmit = () => {
     createUserMutation
       .mutateAsync({ email, password })
-      .then(result => {
-        console.log(result)
+      .then(res => {
+        console.log(res)
+        if (res.status === 201) {
+          signIn("credentials", { email, password, callbackUrl: "/auth/register-success" })
+            .then(res => console.log(res))
+            .catch(error => console.error(error))
+        }
       })
       .catch(error => {
-        console.log(error)
+        console.error(error)
       })
   }
   const [enableValidation, setEnableValidation] = useState(false)
 
-  const { emailValidationData } = useFormValidation({
+  /* const { emailValidationData } = useFormValidation({
     email,
     password,
     repeatPassword,
     enableValidation,
-  })
+  })*/
 
   const createUserMutation = api.credentials.createUser.useMutation({})
   const validateInputs = () => {
@@ -76,7 +84,14 @@ function SignUpForm() {
       Register
     </button>,
   ]
-  return <AuthForm inputs={inputs} onSubmit={handleSubmit} />
+  return (
+    <AuthForm
+      inputs={inputs}
+      onSubmit={() => {
+        handleSubmit()
+      }}
+    />
+  )
 }
 
 export default SignUpForm
