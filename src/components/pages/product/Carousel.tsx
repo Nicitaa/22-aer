@@ -10,8 +10,9 @@ const ImgCarousel = ({ imagesUrl }: { imagesUrl: string[] }) => {
       showStatus={false}
       showArrows={true}
       infiniteLoop
-      selectedItem={0}
-      className="h-full tablet:h-[110%]">
+      showIndicators={false}
+      interval={5000}
+      className="h-full">
       {imagesUrl.map((imageUrl, index) => {
         return (
           <div key={index} className=" tablet:h-[68vh]">

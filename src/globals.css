@@ -37,25 +37,30 @@ body,
 
 /* remove scroll on mobile */
 @media screen and (max-width: 768px) {
+  #__next::-webkit-scrollbar,
   .scrollbar::-webkit-scrollbar {
     display: none;
   }
 }
 
 @layer utilities {
+  #__next::-webkit-scrollbar,
   .scrollbar::-webkit-scrollbar {
     width: 18px;
     height: 18px;
   }
 
+  #__next::-webkit-scrollbar-track,
   .scrollbar::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.6);
   }
 
+  #__next::-webkit-scrollbar-thumb,
   .scrollbar::-webkit-scrollbar-thumb {
     background: rgba(7, 7, 10, 0.4);
   }
 
+  #__next::-webkit-scrollbar-thumb:hover,
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(7, 7, 10, 0.4);
   }
@@ -247,9 +252,9 @@ input[type="radio"]:checked + .label:after {
 .thumb {
   width: 100% !important;
   scale: 0.75;
-  border: 3px solid #333 !important;
+  border: none !important;
 }
 li.thumb.selected {
   scale: 1.1;
-  border: 3px solid #fff !important;
+  border: none !important;
 }
