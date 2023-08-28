@@ -19,7 +19,7 @@ export default function Home() {
               animate={{ x: ["-100%", "0%"] }}
               exit={{ x: ["0%", "-100%"] }}>
               <div
-                className="main-counter mobile:-translate-y-full w-full
+                className="main-counter translate-y-[-150%] w-full
                 flex flex-col-reverse laptop:flex-row items-center gap-y-4 px-4 tablet:px-8 laptop:px-12">
                 <SliderCounter
                   className="w-full laptop:ml-[10%]"
@@ -30,14 +30,15 @@ export default function Home() {
                   progressbarClassName="w-full laptop:w-[400px] bg-secondary border-secondary"
                 />
                 <div className="w-full max-h-[60vh] pb-4 tablet:pb-0">
-                  <h1 className="text-[clamp(2rem,1.8rem+1vw,3rem)] hidden main-text mobile:block font-bold laptop:w-[85%] laptop:ml-auto">
+                  <h1 className="text-[clamp(2rem,1.8rem+1vw,3rem)] hidden laptop:block main-title font-bold laptop:w-[85%] laptop:ml-auto">
                     The best <br /> bag behind you
                   </h1>
-                  <div className="hidden font-secondary text-xs text-primary-foreground tablet:flex tablet:flex-col laptop:w-[85%] laptop:ml-auto">
-                    Have questions how we did something? - ask us
-                    <br />
-                    As junior developers we provide low prices for now - its your chance!
-                    <div className="hidden laptop:flex flex-col items-center laptop:items-start">
+                  <div className="main-subTitle hidden font-secondary text-xs text-primary-foreground tablet:flex-col laptop:w-[85%] laptop:ml-auto">
+                    <p>
+                      Have questions how we did something? - ask us <br />
+                      As junior developers we provide low prices for now - its your chance!
+                    </p>
+                    <div className="flex flex-col gap-y-2 laptop:gap-y-0 items-center laptop:items-start">
                       <Link
                         className="relative w-fit
                         before:absolute before:right-0 before:w-[25%] before:content-['']
@@ -102,7 +103,7 @@ export default function Home() {
             <motion.div className="absolute bottom-0" animate={{ x: ["100%", "0%"] }} exit={{ x: ["0%", "100%"] }}>
               <Slider3D
                 className="bg-secondary
-    flex flex-col justify-center mt-auto"
+                flex flex-col justify-center mt-auto"
                 label="Top sales"
                 labelClassName="font-bold"
                 array={topSales}
