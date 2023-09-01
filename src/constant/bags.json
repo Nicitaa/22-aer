@@ -1,662 +1,352 @@
 [
   {
     "id": "88a68fea-d1d2-4797-abe4-6e956da99b88",
-    "preview": "/images/products/stock-1.jpg",
-    "title": "Green bag",
-    "subTitle": "This versatile green bag is suitable for individuals of all ages and styles thanks to its adaptable design and practical features. Its spacious interior can hold all your essentials while keeping them organized with various pockets and compartments. The adjustable strap can be worn over the shoulder or across the body, making it comfortable for anyone to carry. The durable material ensures it can withstand daily use, making it an excellent addition to your wardrobe for years to come. Whether you're on the go for work or leisure, this green bag is a reliable and stylish choice.",
-    "price": 1099.99,
-    "imagesUrl": ["/images/products/stock-1.jpg", "/images/products/stock-65.jpg", "/images/products/stock-71.jpg"]
+    "preview": "/images/product/hybrid/hybrid_black-1.jpg",
+    "title": "Hybrid balck bag",
+    "subTitle": "Introducing a versatile hybrid black bag that is perfect for both travel and school use. This bag is not only stylish but also functional as it is both containable and waterproof. Its design ensures that you'll have enough space to store all your essential items for your travels or schoolwork while keeping them safe from water damage. This bag is an ideal choice for those who are looking for a durable and multi-purpose bag that can handle various occasions. Get your hands on this hybrid black bag and make your trips and school days easier and more convenient!",
+    "price": 499.99,
+    "imagesUrl": ["/images/product/hybrid/hybrid_black-2.jpg", "/images/product/hybrid/hybrid_black-3.jpg"]
   },
   {
     "id": "d6232d4f-a1a1-4ad5-a989-a618e0efac99",
-    "preview": "/images/products/stock-2.jpg",
-    "title": "Black bag",
-    "subTitle": "This sleek black bag is the perfect accessory for any girl. With its classic color and versatile design, it can match any outfit and be used for any occasion. Whether you're going out with friends, running errands, or heading to school or work, this bag has ample space to carry all your essentials. The sturdy construction and comfortable straps make it easy to carry, and the sophisticated style is sure to turn heads. Add this black bag to your collection and you'll never have to worry about finding the perfect accessory again!",
-    "price": 149.99,
-    "imagesUrl": [
-      "/images/products/stock-1.jpg",
-      "/images/products/stock-9.jpg",
-      "/images/products/stock-11.jpg",
-      "/images/products/stock-14.jpg"
-    ]
+    "preview": "/images/product/hybrid/hybrid_blue-1.jpg",
+    "title": "Hybrid blue bag",
+    "subTitle": "Introducing the versatile hybrid blue bag that is perfect for all your needs. Whether you're traveling, heading to school, or simply running errands, this bag is the ideal choice. Featuring a spacious design, this bag is highly containable and can fit everything you need. Additionally, it is made from waterproof materials to keep your belongings safe and secure no matter the weather. With its stylish blue design and functional features, this bag is sure to become your go-to accessory for any occasion.",
+    "price": 849.99,
+    "imagesUrl": ["/images/product/hybrid/hybrid-blue-2.jpg"]
   },
   {
     "id": "751a8020-f919-497b-9b81-dde7d934cacd",
-    "preview": "/images/products/stock-3.jpg",
-    "title": "Black bag",
-    "subTitle": "If you're a student or a high-quality bag seeker, this black bag is perfect for you. Its sleek and stylish design makes it appropriate for any setting, while its durability ensures it will last for a long time. With ample space for books, laptops, and other essentials, this bag is both practical and fashionable. It's the perfect choice for anyone who is looking for a reliable and stylish bag. So, grab this black bag today and take your style and organization to the next level.",
+    "preview": "/images/product/hybrid/hybrid_brown-1.jpg",
+    "title": "Hybrid brown bag",
+    "subTitle": "Introducing a versatile hybrid brown bag that fits all your travel, school, and personal needs. Not only is it spacious and convenient, but it's also waterproof to keep your belongings safe and dry. With its versatile design, you can use it as a carry-on bag for your flight and then as a backpack for your daily commute. This bag is perfect for anyone looking for a reliable, multi-purpose bag that can handle any situation. Don't settle for just any bag, choose the hybrid brown bag that has you covered.",
     "price": 449.99,
-    "imagesUrl": [
-      "/images/products/stock-3.jpg",
-      "/images/products/stock-14.jpg",
-      "/images/products/stock-15.jpg",
-      "/images/products/stock-16.jpg",
-      "/images/products/stock-17.jpg",
-      "/images/products/stock-18.jpg",
-      "/images/products/stock-19.jpg"
-    ]
+    "imagesUrl": ["images/product/hybrid/hybrid_brown-2.jpg"]
   },
   {
     "id": "956adc12-4863-4e9d-8b6d-211cad2c6477",
-    "preview": "/images/products/stock-4.jpg",
-    "title": "White bag",
-    "subTitle": "The versatile white bag can be used by anyone, whether you're heading to the forest or somewhere else. Its waterproof feature ensures your belongings remain dry even when it rains.",
+    "preview": "/images/product/hybrid/hybrid_gray-1.jpg",
+    "title": "Hybrid gray bag",
+    "subTitle": "This versatile gray bag is perfect for both travel and school use. It is a hybrid bag that is both waterproof and containable, ensuring that your belongings stay safe and dry. The bag features comfortable straps that help to alleviate pressure on your back and shoulders, making it easy to carry for extended periods of time. Whether you're heading to class or embarking on a weekend adventure, this hybrid bag is the perfect accessory to take with you wherever you go.",
     "price": 559.99,
-    "imagesUrl": [
-      "/images/products/stock-2.jpg",
-      "/images/products/stock-4.jpg",
-      "/images/products/stock-41.jpg",
-      "/images/products/stock-49.jpg",
-      "/images/products/stock-52.jpg"
-    ]
+    "imagesUrl": ["/images/product/hybrid/hybrid_gray-2.jpg"]
   },
   {
     "id": "133aa40e-6887-4915-badd-565d2e68df70",
-    "preview": "/images/products/stock-5.jpg",
-    "title": "Yellow bag",
-    "subTitle": "The yellow bag with multiple pockets is an ideal choice for individuals planning small travels. The bag's pockets provide sufficient storage space for organizing travel essentials. It ensures easy access to items and prevents losing due to disorganization. The multiple pockets inside the bag make it easier to categorize and separate items. One can easily put travel documents, phone, keys, wallet, and other items into separate pockets for quick access. The size of the bag is suitable for carrying around and can fit under the seat or in an overhead bin.",
-    "price": 1999.99,
-    "imagesUrl": ["/images/products/stock-5.jpg", "/images/products/stock-20.jpg"]
+    "preview": "/images/product/hybrid/hybrid_green-1.jpg",
+    "title": "Hybrid green bag",
+    "subTitle": "Introducing our versatile hybrid green bag perfect for travel and school use. Waterproof and spacious, it can contain all your essentials. The bag's comfortable straps relieve pressure on your back and shoulders, making it easy to carry. With this bag, you don't have to worry about changing your backpack every time you have a different activity. Whether it's a weekend getaway or just a regular school day, this hybrid green bag is perfect for you. Stay practical and stylish while on the go with this functional bag.",
+    "price": 899.99,
+    "imagesUrl": ["/images/product/hybrid/hybrid_green-2.jpg"]
   },
   {
     "id": "e6a55901-3e08-4641-88a7-8eae00881eed",
-    "preview": "/images/products/stock-6.jpg",
-    "title": "Blue bag",
-    "subTitle": "Despite its modest appearance, this bag surprisingly offers ample space to accommodate all your essentials. Its high-quality materials and design ensure durability and longevity, making it a practical investment for your everyday needs. Whether you're headed to work or exploring the outdoors, this bag is perfect for carrying everything you need without sacrificing style or comfort. Don't underestimate its size, as it can hold more than you think and keep you organized on the go. Experience the convenience of a spacious bag that exceeds expectations.",
-    "price": 299.99,
-    "imagesUrl": [
-      "/images/products/stock-6.jpg",
-      "/images/products/stock-13.jpg",
-      "/images/products/stock-21.jpg",
-      "/images/products/stock-36.jpg",
-      "/images/products/stock-55.jpg"
-    ]
+    "preview": "/images/product/hybrid/hybrid_orange-1.jpg",
+    "title": "Hybrid orange bag",
+    "subTitle": "The hybrid orange bag is ideal for travel, as it is waterproof and spacious. It has the added feature of comfortable straps which do not exert any pressure on the wearer's back or shoulders. This bag can hold a lot of items and is easy to contain, making it effortless to carry around during your travels. Invest in this bag for a hassle-free and enjoyable experience during your trips.",
+    "price": 1199.99,
+    "imagesUrl": ["/images/product/hybrid/hybrid_orange-2.jpg"]
   },
   {
     "id": "847a12bf-61f1-4da3-8eec-3e32d97b5b53",
-    "preview": "/images/products/stock-7.jpg",
-    "title": "Gray bag",
-    "subTitle": "This gray bag is incredibly spacious and comes with several pockets to store all your belongings. It is perfect for those who need ample space to carry around their essentials. Additionally, the bag is waterproof, ensuring that your belongings remain dry and protected even in wet conditions. Overall, this bag is a perfect combination of functionality and style, making it an excellent choice for anyone looking for a reliable and durable bag to carry around.",
-    "price": 99.99,
-    "imagesUrl": [
-      "/images/products/stock-7.jpg",
-      "/images/products/stock-32.jpg",
-      "/images/products/stock-39.jpg",
-      "/images/products/stock-44.jpg",
-      "/images/products/stock-70.jpg"
-    ]
+    "preview": "/images/product/hybrid/hybrid_white.jpg",
+    "title": "Hybrid white bag",
+    "subTitle": "If you're looking for a travel bag that is both waterproof and practical, then the hybrid white bag might be just what you need. This bag is perfect for small trips and contains 2 small, 1 medium, and 1 large pocket to help you organize your belongings. The bag is also easily containable, meaning you can easily store it in small spaces when not in use. With its versatility and convenience, the hybrid white bag is a great choice for those who like to travel light.",
+    "price": 749.99,
+    "imagesUrl": []
   },
   {
     "id": "e034b55c-e967-4b15-ad9f-3360f310dcac",
-    "preview": "/images/products/stock-8.jpg",
-    "title": "Red bag",
-    "subTitle": "Small bag has 2 pockets",
-    "price": 259.99,
-    "imagesUrl": [
-      "/images/products/stock-8.jpg",
-      "/images/products/stock-30.jpg",
-      "/images/products/stock-53.jpg",
-      "/images/products/stock-54.jpg",
-      "/images/products/stock-68.jpg"
-    ]
+    "preview": "/images/product/hybrid/hybrid_yellow.jpg",
+    "title": "Hybrid yelow bag",
+    "subTitle": "This compact hybrid white bag is ideal for short travels due to its waterproof and containable properties. It provides a hassle-free experience, as you can easily carry your essentials without worrying about them getting wet in case of sudden rain or water spills. The bag's size is perfect for such expeditions as it is small yet spacious enough to hold your items securely. The hybrid design ensures it can be worn in multiple ways, providing versatility while adding style to your outfit. In summary, this hybrid white bag is a must-have for anyone looking for an efficient yet stylish travel accessory.",
+    "price": 1259.99,
+    "imagesUrl": ["/images/product/hybrid/hybrid-yellow.jpg"]
   },
   {
     "id": "e0a3acf1-2b39-443d-a49f-5fa2139a0f70",
-    "preview": "/images/products/stock-9.jpg",
-    "title": "Black bag",
-    "subTitle": "This bag spacious and waterproof",
-    "price": 188.97,
+    "preview": "/images/product/leather/leather_black-1.jpg",
+    "title": "Leather black bag",
+    "subTitle": "Add the finishing touch to your leather ensemble with our latest addition to the collection - a sleek black leather bag. Crafted with high-quality materials, this bag is both stylish and functional, making it the perfect accessory for any occasion. Whether you're dressing up for a night out or heading to the office, this versatile bag effortlessly complements your look. Don't miss out on the chance to elevate your style with this must-have bag.",
+    "price": 844.97,
     "imagesUrl": [
-      "/images/products/stock-9.jpg",
-      "/images/products/stock-21.jpg",
-      "/images/products/stock-22.jpg",
-      "/images/products/stock-23.jpg",
-      "/images/products/stock-24.jpg",
-      "/images/products/stock-25.jpg",
-      "/images/products/stock-26.jpg",
-      "/images/products/stock-27.jpg"
+      "/images/product/leather/leather_black-1.jpg",
+      "/images/product/leather/leather_black-2.jpg",
+      "/images/product/leather/leather_black-3.jpg",
+      "/images/product/leather/leather_black-4.jpg",
+      "/images/product/leather/leather_black-5.jpg",
+      "/images/product/leather/leather_black-6.jpg",
+      "/images/product/leather/leather_black-7.jpg",
+      "/images/product/leather/leather_black-8.jpg",
+      "/images/product/leather/leather_black-9.jpg",
+      "/images/product/leather/leather_black-10.jpg"
     ]
   },
   {
     "id": "86b8260f-77ac-4bd1-83a2-522a1796a49b",
-    "preview": "/images/products/stock-10.jpg",
-    "title": "Orange bag",
-    "subTitle": "All you need know that this bag:waterproof - keeps the temperature inside - capacious",
+    "preview": "/images/product/leather/leather_blue.jpg",
+    "title": "Leather blue bag",
+    "subTitle": "This leather bag is perfect for office use as it includes two pockets. The sleek design of the bag makes it stylish and professional. The leather material adds durability and sophistication to the overall look of the bag. Whether carrying a laptop, documents, or personal items, this bag can accommodate all essentials easily. The multiple pockets ensure that everything is organized and easily accessible. With its stylish appearance and practical design, this leather bag is an ideal choice for anyone looking for a professional and functional accessory for their work attire.",
     "price": 199.99,
-    "imagesUrl": ["/images/products/stock-10.jpg", "/images/products/stock-72.jpg"]
+    "imagesUrl": ["/"]
   },
   {
     "id": "586af496-ea1b-4324-b358-fc347e6ba6d6",
-    "preview": "/images/products/stock-11.jpg",
-    "title": "Balck bag",
-    "subTitle": "Just small leather bag",
-    "price": 499.99,
-    "imagesUrl": ["/images/products/stock-35.jpg", "/images/products/stock-37.jpg", "/images/products/stock-40.jpg"]
+    "preview": "/images/product/leather/leather_brown.jpg",
+    "title": "Leather brown bag",
+    "subTitle": "This high-quality, leather brown bag is fully lined and is ideal for girls. It is a durable and stylish accessory that has been crafted with the utmost care and attention to detail to ensure it lasts for many years to come. The bag's attractive design is sure to turn heads, making it a great addition to any outfit. With its spacious interior and comfortable straps, it is perfect for carrying all your essentials with ease. The bag is a timeless piece that is sure to become a constant companion for every girl.",
+    "price": 399.99,
+    "imagesUrl": ["/"]
   },
   {
     "id": "6c73d666-3a82-46a9-b4c9-2074702fd5ac",
-    "preview": "/images/products/stock-12.jpg",
-    "title": "Pink bag",
-    "subTitle": "Beautiful pink bag - fits for gils - have 2 pockets",
-    "price": 189.99,
-    "imagesUrl": [
-      "/images/products/stock-12.jpg",
-      "/images/products/stock-28.jpg",
-      "/images/products/stock-29.jpg",
-      "/images/products/stock-38.jpg",
-      "/images/products/stock-39.jpg"
-    ]
+    "preview": "/images/product/leather/leather_gray.jpg",
+    "title": "Leather gray bag",
+    "subTitle": "This high-quality gray leather bag is fully lined and perfect for girls. Its excellent craftsmanship ensures durability and long-lasting style.",
+    "price": 499.99,
+    "imagesUrl": []
   },
   {
     "id": "a46bfae2-f849-4e41-8b0f-284df196fa89",
-    "preview": "/images/products/stock-13.jpg",
-    "title": "Blue bag",
-    "subTitle": "The most popular bag around others - have 2 pockets - you can put laptop inside for example",
-    "price": 394.99,
+    "preview": "/images/product/leather/leather_gucci_black.jpg",
+    "title": "Leather Gucci bag",
+    "subTitle": "This black Gucci bag boasts both high quality and price. Not only is it durable and made to last, but it's also stylish enough to complement any evening outfit. It's the perfect accessory to take to a night party, with enough size to hold all your essentials while still making a statement. If you're looking for a luxury bag that will elevate your style and last for years to come, this Gucci bag is definitely worth considering.",
+    "price": 849.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "b24e0140-daca-4135-a2e6-ac066c67ecc3",
-    "preview": "/images/products/stock-14.jpg",
-    "title": "Black bag",
-    "subTitle": "This leather bag have 1 pocket and high price",
+    "preview": "/images/product/leather/leather_louis-vuitton_black-1.jpg",
+    "title": "Leather Louis Vuitton bag",
+    "subTitle": "This Louis Vuitton bag is made with quality leather and features both a small and medium pocket. While it does not have premium leather, the material is still durable and stylish. Whether used for everyday wear or special occasions, this bag is sure to make a statement. Add it to your collection for a reliable and fashionable accessory.",
     "price": 529.99,
-    "imagesUrl": ["/", "/"]
+    "imagesUrl": ["/images/product/leather/leather_louis-vuitton_black-2.jpg", "/"]
   },
   {
     "id": "e388cc63-5fc0-43f5-aa07-08de0cf62c7a",
-    "preview": "/images/products/stock-15.jpg",
-    "title": "Black bag",
-    "subTitle": "This bag fits for travelers - vert spacious and waterproof",
+    "preview": "/images/product/leather/leather_pink-1.jpg",
+    "title": "Leather pink bag",
+    "subTitle": "This pink leather bag is ideal for school, particularly for girls. Its lively color makes it stand out, while the leather material ensures durability and longevity. The spacious size can accommodate books, stationery and other essentials, making it a perfect companion for a day at school. Its sleek design ensures it complements a variety of outfits effortlessly, while the adjustable strap allows for comfortable and customised carrying. This bag is a stylish and practical choice for any girl looking for a reliable and fashionable school bag.",
     "price": 749.99,
-    "imagesUrl": ["/", "/"]
+    "imagesUrl": ["/images/product/leather/leather_pink-2.jpg", "/images/product/leather/leather_pink-3.jpg"]
   },
   {
     "id": "b7d48788-34db-4b11-98de-f62b3626b084",
-    "preview": "/images/products/stock-16.jpg",
-    "title": "Black bag",
-    "subTitle": "2 pockets - fits for everyone but mostly for students",
-    "price": 1099.99,
-    "imagesUrl": ["/", "/"]
+    "preview": "/images/product/leather/leather_red-1.jpg",
+    "title": "Leather red bag",
+    "subTitle": "Looking for a statement piece to complete your outfit? Look no further than this small red leather bag! Its bold color and sleek design make it the perfect accessory for any occasion. Whether you're heading out for a night on the town or simply running errands, this bag is sure to turn heads. With its high-quality construction and practical features, you'll have everything you need right at your fingertips. So why wait? Give this must-have accessory a try today and see for yourself why it's a fashionista favorite!",
+    "price": 339.99,
+    "imagesUrl": [
+      "/images/product/leather/leather_red-2.jpg",
+      "/images/product/leather/leather_red-3.jpg",
+      "/images/product/leather/leather_red-4.jpg",
+      "/images/product/leather/leather_red-5.jpg"
+    ]
   },
   {
     "id": "3957db1a-1bde-4b40-bc15-017c1325635a",
-    "preview": "/images/products/stock-17.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag - are you sure we need description for each bag?",
-    "price": 1129.99,
+    "preview": "/images/product/leather/leather_turquoise.jpg",
+    "title": "Leather turquoise bag",
+    "subTitle": "While this leather turquoise bag may not be to everyone's taste, you can personalize it to your liking using our 'createBag' page. Experiment with different colors, materials, straps, and decorative elements to design a bag that reflects your unique style. Our easy-to-use interface ensures that you can see the final product before making any purchases, ensuring you get exactly what you want. Don't settle for a bag that doesn't fit your personality, create one that speaks to you with our innovative customization tool.",
+    "price": 129.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "17f770dc-b631-4ae0-a7b2-3be5c4d4f698",
-    "preview": "/images/products/stock-18.jpg",
-    "title": "Black bag",
-    "subTitle": "This bag have 4 pockets and any image you want",
-    "price": 900.0,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "88dddbae-7c29-4232-bf61-e88465599aa7",
-    "preview": "/images/products/stock-19.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 99.99,
-    "imagesUrl": ["/", "/"]
+    "preview": "/images/product/leather/leather_white-1.jpg",
+    "title": "Leather white bag",
+    "subTitle": "These two girls in their white outfits look great carrying a white leather bag. The bag perfectly complements their fashion choice and completes their overall look. If you are someone who loves to wear white outfits, we highly recommend purchasing this bag to enhance your style and complete your appearance. It is a great accessory that can elevate your fashion statement and make you stand out from the crowd. Invest in this white leather bag today and take your fashion game to the next level.",
+    "price": 330.0,
+    "imagesUrl": [
+      "/images/product/leather/leather_white-2.jpg",
+      "/images/product/leather/leather_white-3.jpg",
+      "/images/product/leather/leather_white-4.jpg"
+    ]
   },
   {
     "id": "3cffbb5b-fb05-4ae7-b7c0-ad3dcdb2a07a",
-    "preview": "/images/products/stock-20.jpg",
-    "title": "Yellow bag",
-    "subTitle": "4 pockets",
-    "price": 149.99,
+    "preview": "/images/product/pocket/pocket_white.jpg",
+    "title": "Pocket white",
+    "subTitle": "This is a white pocket with anime girl on it",
+    "price": 49.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "cb6de4d6-398c-47ca-b635-188c8f51b003",
-    "preview": "/images/products/stock-21.jpg",
-    "title": "Blue bag",
-    "subTitle": "The 'FIALLVERIEN KANKEN' bag is a perfect fit for anyone, and with its beautiful roses inside pocket, it's hard to resist. This versatile bag offers functionality and style, making it a great investment for daily use. It's perfect for carrying all your essentials, including laptops, books, and more. The bag's design is classic and timeless, making it easy to pair with any outfit. Plus, the roses inside pocket adds a touch of personality and charm. So, why not treat yourself to this amazing bag?",
-    "price": 99.99,
-    "imagesUrl": ["/", "/"]
+    "preview": "/images/product/school/school_black-1.jpg",
+    "title": "School black bag",
+    "subTitle": "This school black bag comes with comfortable straps, making it an ideal choice for students. It is recommended for those who prefer a black outfit. With its convenient design, this bag can effectively carry your school essentials while ensuring your comfort throughout the day. Consider purchasing this bag if you are looking for a reliable and stylish option for your everyday school use.",
+    "price": 199.99,
+    "imagesUrl": [
+      "/images/product/school/school_black-2.jpg",
+      "/images/product/school/school_black-3.jpg",
+      "/images/product/school/school_black-4.jpg"
+    ]
   },
   {
     "id": "a8d6696a-8bff-4d6e-be83-3d9d8e5e2a50",
-    "preview": "/images/products/stock-22.jpg",
-    "title": "White bag",
-    "subTitle": "Just take a look at this 2 girls that going to school or somewhere - it looks amazing with this clear and white bags on their backs. Hight quality leather keeps this bag clean. This bag very fit to white style with your daily outfit - we strongly reccomend buy this bag if you have white style outfit! - anyway you have 14 days warranty",
+    "preview": "/images/product/school/school_blue.jpg",
+    "title": "School blue bag",
+    "subTitle": "This school bag is crafted from top-quality materials and designed to cater to your needs. Perfect for those who love to explore after classes, this blue bag is spacious enough to store all your essentials and sturdy enough to withstand rough terrains. Whether it's a trip to the lake or a hike in the woods, this bag is your ideal companion. Its durable construction ensures that it will last for a long time, no matter how rugged your adventures get. Add this bag to your collection and enjoy the freedom to explore whenever you want!",
     "price": 939.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "4c46b090-d386-418c-85e0-8b6119a393c0",
-    "preview": "/images/products/stock-23.jpg",
-    "title": "Brown bag",
-    "subTitle": "This brown backpack is perfect for girls due to its high-quality leather and round, fluffy pieces. The bag flaunts a unique style that will surely add character to any outfit. The fluffy elements give it a playful touch, while the leather material adds a sophisticated vibe. With its ample space and durable construction, this backpack is perfect for day-to-day use. Whether for school or for travel, this brown backpack is a great pick. Girls who love stylish and functional bags will surely appreciate this must-have accessory.",
-    "price": 919.99,
+    "preview": "/images/product/school/school_fjallraven-kanken_black.jpg",
+    "title": "School fjallraven kanken black bag",
+    "subTitle": "The school Fjallraven Kanken bag has become one of the most popular bags amongst students. Known for its practicality and durability, this backpack has a simple yet stylish design. The bag is made from durable materials that can withstand heavy use, making it perfect for carrying textbooks or laptops. It comes in a wide range of colors, allowing students to pick one that suits their personal style. With its comfortable straps and spacious compartments, the school Fjallraven Kanken bag has become a go-to choice for students all around the world.",
+    "price": 319.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "9454ad29-9b7d-46b3-9630-13acca8766ec",
-    "preview": "/images/products/stock-24.jpg",
-    "title": "Black bag",
-    "subTitle": "Add the finishing touch to your leather ensemble with our latest addition to the collection - a sleek black leather bag. Crafted with high-quality materials, this bag is both stylish and functional, making it the perfect accessory for any occasion. Whether you're dressing up for a night out or heading to the office, this versatile bag effortlessly complements your look. Don't miss out on the chance to elevate your style with this must-have bag.",
+    "preview": "/images/product/school/school_fjallraven-kanken_blue-1.jpg",
+    "title": "School fjallraven kanken blue bag",
+    "subTitle": "The school fjallraven kanken blue bag is the most popular bag, and we highly recommend it to pair with black or blue outfits. It's perfect for carrying books and other essentials for school, and the blue color adds a pop of color to your look. The bag is made from durable materials and features comfortable straps for all-day wear. It's easy to see why this bag has become a must-have for students and fashion enthusiasts alike. Get yours today and elevate your daily commute in style!",
     "price": 89.99,
-    "imagesUrl": ["/", "/"]
+    "imagesUrl": ["/images/product/school/school_fjallraven-kanken_blue-2", "/"]
   },
   {
     "id": "0e4d15ec-798e-4185-bda2-41057f3f9630",
-    "preview": "/images/products/stock-25.jpg",
-    "title": "Turquoise bag",
-    "subTitle": "The turquoise bag appears basic, but with our 'createBag' page, you can easily customize and transform it into something amazing. This is especially ideal for gamers who need a sturdy and functional bag that reflects their style. Don't settle for a default look, unleash your creativity and design a bag that fits your needs and personality. Try it out and see how much better your bag can be!",
-    "price": 230.99,
+    "preview": "/images/product/school/school_fjallraven-kanken_gray.jpg",
+    "title": "School fjallraven kanken gray bag",
+    "subTitle": "The Fjallraven Kanken gray bag is a versatile accessory that can be used for school or daily outfits. It has a simple, classic design that is both practical and stylish. The bag is made of durable material and features a spacious main compartment, perfect for carrying books, notebooks, or a change of clothes. The front pocket is perfect for storing small items like your phone and keys. The bag's adjustable straps make it comfortable to wear, and its minimalist design makes it easy to match with any outfit. It's the perfect bag for anyone looking for function and fashion.",
+    "price": 50.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "7649da4c-b55d-478a-867f-15134de93308",
-    "preview": "/images/products/stock-26.jpg",
-    "title": "Black bag",
-    "subTitle": "This tiny black leather bag is perfect for girls who love minimalism. It features a sleek design with subtle decorations, making it an ideal accessory for any outfit. Its compact size allows for easy carrying while still providing enough space for essential items. Whether heading to work or going out with friends, this bag is sure to add a touch of sophistication to any look.",
-    "price": 199.99,
+    "preview": "/images/product/school/school_fjallraven-kanken_pink.jpg",
+    "title": "School fjallraven kanken pink bag",
+    "subTitle": "Attention girls! Our school fjallraven kanken pink bag is the perfect accessory for you. Not only is it stylish, but it's practical too. With a 14 day warranty, you can try it out with confidence. Don't miss out on this opportunity to add a touch of color to your daily school routine.",
+    "price": 99.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "de2b2699-36d7-41de-b08b-3227dc244733",
-    "preview": "/images/products/stock-27.jpg",
-    "title": "Black bag",
-    "subTitle": "The Louis Vuitton bag is a versatile piece that suits anyone, regardless of age or style. It's an accessory that adds sophistication and elegance to any outfit. In addition, owning a Louis Vuitton bag can impress your friends and colleagues with your excellent taste in fashion. It's a status symbol that communicates success and luxury, making it a must-have item for those who appreciate fine things. The brand's impeccable craftsmanship and attention to detail elevate the bag's overall design, ensuring it remains an enduring classic for years to come.",
-    "price": 299.99,
+    "preview": "/images/product/school/school_fjallraven-kanken_red.jpg",
+    "title": "School fjallraven kanken red bag",
+    "subTitle": "The Fjallraven Kanken Red Bag is a popular choice for school-goers. This stylish backpack is made from durable Vinylon F fabric that can withstand wear and tear. The spacious main compartment can accommodate books, notebooks, and essentials, while the front pocket provides additional storage for small items. The backpack also features adjustable shoulder straps and a top handle for easy carrying. The bright red color makes it easy to spot among other bags and adds a pop of color to your outfit.Overall, it's a reliable and fashionable accessory for any student.",
+    "price": 199.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "f4d643b8-b476-43c5-9138-d59616dd7aa3",
-    "preview": "/images/products/stock-28.jpg",
-    "title": "Pink bag",
-    "subTitle": "This dark-pink bag would make a great accessory for girls. Its simple design adds to its appeal. It's generally unremarkable and would blend in well with many outfits, making it a versatile piece. The bag's color is bold enough to stand out but not too loud or overwhelming. It's a great option for those looking for a functional and fashionable bag that won't break the bank. Overall, it's a great addition to any accessory collection.",
+    "preview": "/images/product/school/school_fjallraven-kanken_yellow.jpg",
+    "title": "School fjallraven kanken yellow bag",
+    "subTitle": "The school Fjallraven Kanken yellow bag is a top-quality backpack perfect for students of all ages. It is made with durable materials that can withstand daily wear and tear, and features a spacious main compartment that can accommodate textbooks, binders, and other school essentials. The bag also has a front zippered pocket for smaller items, as well as adjustable straps for a comfortable fit. The bright yellow color adds a fun and vibrant touch to any outfit, making it an excellent choice for those who want to stand out from the crowd.",
     "price": 399.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a2d20875-1a95-4c7b-993d-7930c52db1fe",
-    "preview": "/images/products/stock-29.jpg",
-    "title": "Pink bag",
-    "subTitle": "If you're not fashion-conscious but looking to add a pop of pink to your wardrobe, then this bag is perfect for you. It's simple yet stylish, making it easy to pair with most outfits. The bag's design allows for easy access and gives you a good overview of your belongings. So, whether you're on the go or simply running errands, this pink bag is practical and functional. Don't hesitate and grab one for yourself today!",
+    "preview": "/images/product/school/school_gray.jpg",
+    "title": "School gray bag",
+    "subTitle": "Sometimes you just need to put laptop in your bag and all done",
     "price": 499.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "4f23446f-dae1-4303-a919-f70520dfbd50",
-    "preview": "/images/products/stock-30.jpg",
-    "title": "Red bag",
-    "subTitle": "This chic red bag is perfect for professionals who work in an office setting. Its compact size makes it easy to carry around, but it offers enough room to fit your essentials. Personalize it with a fluffy accessory to add a touch of fun to your formal attire. With this bag, you can feel confident and stylish while you go about your daily business.",
+    "preview": "/images/product/school/school_green.jpg",
+    "title": "School green bag",
+    "subTitle": "This bag fir for school and daily outfilt - I have this one but in blue color - you may decorate it with fluffy toy",
     "price": 999.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "a6f451c7-7b17-46d8-9026-eace8e8dd727",
-    "preview": "/images/products/stock-31.jpg",
-    "title": "Black bag",
-    "subTitle": "For those wanting to infuse some pink into their wardrobe without being overly fashion-focused, choose this sleek black bag. With its minimalistic style, it matches well with any outfit and offers quick access to your belongings. Its design also provides a clear view of what's inside, making it perfect for on-the-go use.",
+    "preview": "/images/product/school/school_turquoise.jpg",
+    "title": "School turquoise bag",
+    "subTitle": "Gamers looking for a stylish and functional bag need look no further than this turquoise bag. With the ability to customize the bag using our 'createBag' page, gamers can add their own personal touch to this already stylish and functional bag. Whether you want to add your favorite gaming characters, quotes, or logos, this bag is the perfect canvas to express your gaming passion. So if you're looking for a bag that's as unique and individual as you are, this turquoise bag is definitely worth considering.",
     "price": 199.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "e711113b-b608-46d9-a117-06b5a9c40d3e",
-    "preview": "/images/products/stock-32.jpg",
-    "title": "Gray bag",
-    "subTitle": "The gray 'Fjallraven Kanken' bag is a widely popular and versatile option for everyday use. Its minimalist design and durable construction make it suitable for a variety of styles and occasions. With ample storage space and a comfortable fit, this backpack is a reliable choice for travelers, students, and commuters alike. Its understated aesthetic and practical features have made it a beloved staple in many wardrobes.",
-    "price": 59.99,
+    "preview": "/images/product/school/school_vinta_black.jpg",
+    "title": "School vinte black bag",
+    "subTitle": "The 'VINTE' school bag boasts a sleek and simple aesthetic, complemented by its quality and ultra-soft, comfortable straps. Perfect for students looking for functionality and style, this backpack is a standout choice.",
+    "price": 759.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "3bc12fb8-bb2c-4b40-9c51-81107586e869",
-    "preview": "/images/products/stock-33.jpg",
-    "title": "Black bag",
-    "subTitle": "The sleek and elegant black Gucci bag is perfect for the high-end individuals and a great choice for any night party. With a chic design, it exudes luxury and sophistication. It is crafted with premium materials to ensure durability and longevity, making it a worthwhile investment. The spacious interior provides enough room to carry your essentials and valuables securely. Its aesthetically pleasing exterior is sure to turn heads and make a statement. Overall, this Gucci bag is a true fashion statement for the classy and sophisticated party-goer.",
+    "preview": "/images/product/school/school_white.jpg",
+    "title": "School white bag",
+    "subTitle": "This school bag is made of high-quality materials and boasts a clean design that doesn't require constant cleaning. It comes with two pockets and two comfortable straps for easy carrying. Overall, it is a durable and practical choice for students.",
     "price": 1349.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "9331898c-1e3d-43a7-a5b8-e719858a321b",
-    "preview": "/images/products/stock-34.jpg",
-    "title": "Turquoise bag",
-    "subTitle": "Although this turquoise bag may not be the best one we offer in our store, we do have many other options that are even better. However, if you still have your heart set on this particular bag, you can customize it using our 'createBag' page to make it unique and perfectly suited to your style and needs. Either way, we are here to help you find the perfect bag that meets all your requirements and exceeds your expectations.",
+    "preview": "/images/product/small/small_black-1.jpg",
+    "title": "Small back bag",
+    "subTitle": "This compact backpack is ideal for those who don't require much room. Despite its slim straps, it's effortless to carry and care for. The bag's small size makes it easy to fit all your essentials inside.",
     "price": 249.99,
-    "imagesUrl": ["/", "/"]
+    "imagesUrl": ["/images/product/small/small_black-2.jpg", "/images/product/small/small_black-3.jpg"]
   },
   {
     "id": "da640611-5f7d-42e9-9ea0-53a268499183",
-    "preview": "/images/products/stock-35.jpg",
-    "title": "Black bag",
-    "subTitle": "The black bag has a unique style and pairs perfectly with blue and black outfits. Adding a toy is optional but could enhance the overall look. Ultimately, the decision is up to personal preference.",
-    "price": 949.99,
+    "preview": "/images/product/small/small_red.jpg",
+    "title": "Small red bag",
+    "subTitle": "This small red bag may not be suitable for travel, but it's perfect for when you only need to carry a few items. With a 14-day warranty, you can shop with confidence. And if you're looking for something more customized, check out our store where you can create your own bag using our 'createBag' page. We have plenty of better solutions for all your carrying needs.",
+    "price": 119.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "26ecaa16-087e-42e9-bc9a-2c047c8b3a76",
-    "preview": "/images/products/stock-36.jpg",
-    "title": "Blue bag",
-    "subTitle": "This blue bag is perfect for anyone who needs a stylish bag for the office. However, it can also be used for daily outfits if needed. Although, we do have better options for daily outfits available in our store. We suggest you take a look at our full collection to find the perfect bag for your needs.",
-    "price": 500.0,
+    "preview": "/images/product/small/small_white.jpg",
+    "title": "Small white bag",
+    "subTitle": "With a small white bag, you can embark on an adventure to the mountains. This compact bag can be your trusted companion as you explore the breathtaking landscapes and immerse yourself in the serenity of nature. ",
+    "price": 300.0,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "8c28ba0f-f3ba-4ee6-9b9c-0d1a1dfd11e2",
-    "preview": "/images/products/stock-37.jpg",
-    "title": "Black bag",
-    "subTitle": "This spacious gray bag is perfect for tourists or anyone who requires plenty of storage room. Its ample space can accommodate all your essentials and more, making travelling a breeze. Its neutral grey colour also adds versatility, allowing it to easily complement your wardrobe. Whether you are going on a weekend getaway or a long-haul trip, this bag is the perfect companion for your journey.",
-    "price": 499.99,
+    "preview": "/images/product/travel/travel_black-white.jpg",
+    "title": "Travel black-white bag",
+    "subTitle": "White white-black bag for travels really huge and can contain 120 liters - make sure you physically able to care it - Assuming you are physically able to manage the bag, its generous capacity offers ample space to accommodate all your travel essentials. Whether you're embarking on a long trip or prefer to have everything you need in one place, this bag can be an ideal choice. You can pack clothing, shoes, toiletries, electronics, and other travel necessities without worrying about running out of space.",
+    "price": 1499.99,
     "imagesUrl": ["/", "/"]
   },
   {
     "id": "bcfafaed-3da2-40cc-80cf-ee6c72a92eb0",
-    "preview": "/images/products/stock-38.jpg",
-    "title": "Pink bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 699.99,
-    "imagesUrl": ["/", "/"]
+    "preview": "/images/product/travel/travel_blue-1.jpg",
+    "title": "Travel blue bag",
+    "subTitle": "A blue bag designed for travel with a capacity of 100 liters sounds like a great choice for those who need ample space to pack their belongings. The comfortable straps are an important feature as they ensure that carrying the bag for extended periods won't strain your shoulders or back. With its generous size, you'll have plenty of room to pack clothing, shoes, toiletries, and other essentials for your travels. This bag can accommodate a variety of items, making it suitable for long trips or those who prefer to have everything they need in one place. When using a bag of this size, it's important to remember that weight distribution plays a crucial role in ensuring your comfort and ease of movement. Pack your items strategically, placing heavier objects closer to your back, and distribute the weight evenly to maintain balance. Overall, a 100-liter blue travel bag with comfortable straps is a practical and convenient choice for travelers who require a spacious and reliable companion. Enjoy your adventures with this reliable travel companion!",
+    "price": 799.99,
+    "imagesUrl": ["/images/product/travel/travel_blue-2.jpg", "/"]
   },
   {
     "id": "77a2d031-094d-4c09-9cfb-de2d8429e70d",
-    "preview": "/images/products/stock-39.jpg",
-    "title": "Gray bag",
-    "subTitle": "This is black bag have 1 pocket",
+    "preview": "/images/product/travel/travel_gray-1.jpg",
+    "title": "Travel gray bag",
+    "subTitle": "A gray bag designed for travel is a versatile and practical choice for carrying all your essentials. With its neutral color, it can easily complement any outfit or travel style. The spacious interior allows you to pack everything you need for your journeys, whether it's for a short weekend getaway or an extended adventure.",
     "price": 899.99,
-    "imagesUrl": ["/", "/"]
+    "imagesUrl": [
+      "/images/product/travel/travel_gray-1.jpg",
+      "/images/product/travel/travel_gray-2.jpg",
+      "/images/product/travel/travel_gray-3.jpg",
+      "/images/product/travel/travel_gray-4.jpg",
+      "/images/product/travel/travel_gray-5.jpg"
+    ]
   },
   {
     "id": "e0188da3-e863-456b-960c-72b6e4b05a36",
-    "preview": "/images/products/stock-40.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 419.99,
+    "preview": "/images/product/travel/travel_qreoory_red.jpg",
+    "title": "Travel qreoory red bag",
+    "subTitle": "The Travel Qreoory red bag is an excellent choice for travelers seeking a combination of quality, functionality, and style. With its high-quality construction, you can trust that this bag will withstand the demands of your adventures. The waterproof feature ensures that your belongings stay dry even in wet conditions, providing peace of mind during unpredictable weather.",
+    "price": 1419.99,
     "imagesUrl": ["/", "/"]
   },
   {
-    "id": "eeb0f1ad-ac9f-49d9-8c7e-876ee0bb9169",
-    "preview": "/images/products/stock-41.jpg",
-    "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 349.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "b8611df3-b9ad-49d9-9cef-b106fb19ebb4",
-    "preview": "/images/products/stock-42.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 389.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "80f7fa18-b560-45da-a1e6-415d30d5534c",
-    "preview": "/images/products/stock-43.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 129.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "55d8dc16-a3cc-469f-a51c-75067f506641",
-    "preview": "/images/products/stock-44.jpg",
-    "title": "Gray bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 749.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "ed4e8ea4-daf2-45df-a6b8-8f620ab3abc5",
-    "preview": "/images/products/stock-45.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 889.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "5ea5e6f9-ee84-4605-b0e6-c444900fdb7f",
-    "preview": "/images/products/stock-46.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 679.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "b1da3bfb-15d0-4c4c-b6da-442384921256",
-    "preview": "/images/products/stock-47.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 849.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "14a2676c-d81d-47b1-887a-f6f4c702557d",
-    "preview": "/images/products/stock-48.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 459.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "2a815423-bc43-4b71-9fc5-adfd65628dd3",
-    "preview": "/images/products/stock-49.jpg",
-    "title": "White package",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 249.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "9bc5677e-587d-4d17-8763-1fc6d78defd8",
-    "preview": "/images/products/stock-50.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 159.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "d10d96f4-9df4-4b1b-84c3-97841b037636",
-    "preview": "/images/products/stock-51.jpg",
-    "title": "Gray bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 849.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "fa7f9e5c-b190-4e2d-a9e3-787bf49bc333",
-    "preview": "/images/products/stock-52.jpg",
-    "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 609.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "ae04eaf8-d974-4384-b426-7fc8dd91aaca",
-    "preview": "/images/products/stock-53.jpg",
-    "title": "Red bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 1119.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "457b9393-f72d-4930-a684-f8eeb3a682d2",
-    "preview": "/images/products/stock-54.jpg",
-    "title": "Red bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 1029.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "7f6da2e6-0524-4796-8ea7-01f5046ec76f",
-    "preview": "/images/products/stock-55.jpg",
-    "title": "Blue bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 909.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "fff45a51-1c72-4c5d-acfc-244209e89cc0",
-    "preview": "/images/products/stock-56.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 501.59,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "edb4c21b-bdb5-4adc-beab-cbe98daaafc5",
-    "preview": "/images/products/stock-57.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 299.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "8bc76f21-834d-4c25-8179-fcdeee530aa6",
-    "preview": "/images/products/stock-58.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 309.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "cb1f4e43-596d-447c-b49f-ab8a03c9e9e7",
-    "preview": "/images/products/stock-59.jpg",
-    "title": "Pink bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 499.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "e6ea6566-3b2c-43c0-b858-41875dcaa935",
-    "preview": "/images/products/stock-60.jpg",
-    "title": "Brown bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 599.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "c473786f-9803-4818-8bb1-4d10b22ae4c8",
-    "preview": "/images/products/stock-61.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 99.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "0f4f29ac-de0b-464b-916f-7f3cc06629a1",
-    "preview": "/images/products/stock-62.jpg",
-    "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 699.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "8d11daec-2558-49c9-9e5d-c9a99c810fbb",
-    "preview": "/images/products/stock-63.jpg",
-    "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 999.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "7a8f6dcf-71ba-44d5-bed6-4e7ea5b6c502",
-    "preview": "/images/products/stock-64.jpg",
-    "title": "Red bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 499.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "79971074-b4ea-4904-bf9f-57981048c6f1",
-    "preview": "/images/products/stock-65.jpg",
-    "title": "Green bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 399.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "bfc4eb5e-3ff1-4aec-ad99-8d5bb3533398",
-    "preview": "/images/products/stock-66.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 359.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "26ba5d43-df91-4d2e-89e4-e65b28023674",
-    "preview": "/images/products/stock-67.jpg",
-    "title": "White bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 599.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "d16b0c75-635c-4774-97bb-a9a7837eb917",
-    "preview": "/images/products/stock-68.jpg",
-    "title": "Red bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 459.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "bbe17a96-d793-45b4-bdd8-a89dfbadbd4b",
-    "preview": "/images/products/stock-69.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 949.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "b430d8ae-f647-4377-ae3b-60ba81762c0c",
-    "preview": "/images/products/stock-70.jpg",
-    "title": "Gray bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 849.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "763c4463-519b-43f8-bd2d-81a295ee0bf8",
-    "preview": "/images/products/stock-71.jpg",
-    "title": "Green bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 859.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "3f794616-a3d1-4ac4-ac5c-4cfeae8de14e",
-    "preview": "/images/products/stock-72.jpg",
-    "title": "Orange bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 789.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "f3c4d135-de9c-4764-bfb3-b7b28d351382",
-    "preview": "/images/products/stock-73.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 619.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "997b1572-b3e4-42e2-b66a-fbd6ad80b99c",
-    "preview": "/images/products/stock-74.jpg",
-    "title": "Brown bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 439.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "8df6553c-6764-43d0-88ac-00f41b995a2a",
-    "preview": "/images/products/stock-75.jpg",
-    "title": "Black bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 199.99,
-    "imagesUrl": ["/", "/"]
-  },
-  {
-    "id": "7d85c2aa-60c4-48ac-963c-87271fd84f7f",
-    "preview": "/images/products/stock-76.jpg",
-    "title": "Brown bag",
-    "subTitle": "This is black bag have 1 pocket",
-    "price": 888.99,
+    "id": "e0188da3-e863-456b-960c-72b6e4bjfae",
+    "preview": "/images/product/travel/travel_gray-5.jpg",
+    "title": "Travel Midjourney bag",
+    "subTitle": "Have you ever heared somethig about midjourney - image for this bag was generated by midjourney and its the most rarely bag in the workd that's why price for this bag crazy - make sure you have rich daddy to buy it - with this bag you will absolutely unique because noone around you have this bag",
+    "price": 5999.99,
     "imagesUrl": ["/", "/"]
   }
 ]
