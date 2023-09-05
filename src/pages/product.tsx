@@ -36,57 +36,63 @@ const Product = () => {
 
   const { title, subTitle, price, imagesUrl } = foundProduct
   return (
-    <section className=" laptop:flex mx-auto my-0 laptop:h-[80vh]   w-full max-w-[1384px] laptop:px-8 tablet:px-0">
-      <div className="laptop:w-1/2 h-full w-full">
-        <ImgCarousel imagesUrl={imagesUrl} />
-      </div>
-      {/* About item container */}
-      <div className=" relative laptop:w-1/2 w-full laptop:h-[85%] laptop:bg-secondary">
-        <article className="py-6 px-8  h-full">
-          <h1 className=" text-lg font-bold">{title}</h1>
-          <span className=" text-md font-bold">Price</span>
-          <p className="text-sm text-primary-foreground">{priceFormatter(price)}</p>
-          <span className=" text-md font-bold">Description:</span>
-          <div className="text-sm text-primary-foreground laptop:max-h-[40%] desktop:max-h-[60%] scrollbar max-h-[30vh] overflow-y-auto">
+    <div className="w-full text-center   ">
+      <div className="laptop:grid  laptop:grid-cols-2 w-full laptop:w-[90%] my-0 mx-auto items-center h-full laptop:mt-8">
+        <div className="laptop:h-full">
+          <ImgCarousel imagesUrl={imagesUrl.slice(0, 4)} />
+        </div>
+
+        <article className="flex flex-col flex-1   bg-secondary  text-left h-[60vh]">
+          <div className="px-6 laptop:pt-6 pt-0 pb-3">
+            <h1 className=" text-lg font-bold  truncate">{title}</h1>
+            <div className="desktop:hidden block">
+              <span className=" text-md font-bold">Price:</span>
+              <p className="text-sm text-primary-foreground">{priceFormatter(price)}</p>
+            </div>
+          </div>
+
+          <span className="px-6 text-md font-bold">Description:</span>
+          <div className="px-6 text-sm text-primary-foreground max-h-[100%]   scrollbar overflow-y-auto">
             <p>{subTitle}</p>
           </div>
-        </article>
-        {/* button container */}
-        <div className=" flex  justify-between  w-full laptop:absolute bottom-0 bg-secondary  px-6 py-6  gap-7">
-          <div className="flex items-center justify-center ">
-            <button className="relative w-8 h-8 flex items-center justify-center bg-danger">
-              <AiOutlineMinus
-                className="text-white text-center w-5 h-6"
+
+          <div className=" flex mt-auto justify-between   w-full   bg-secondary  px-6 py-6  gap-4">
+            <div className=" desktop:flex hidden   gap-1 items-center">
+              <span className=" text-md font-bold">Price:</span>
+              <p className="text-sm text-primary-foreground">{priceFormatter(price)}</p>
+            </div>
+            <div className="flex items-center justify-center ">
+              <button
                 onClick={() => {
                   setQuantity(prev => (prev !== 1 ? prev - 1 : 1))
                 }}
-              />
-            </button>
-            <span className="mx-3">{quantity}</span>
-            <button className="bg-success w-8 h-8 flex items-center justify-center">
-              <AiOutlinePlus
-                className="text-white text-center w-7 h-7"
+                className="relative w-8 h-8 flex items-center justify-center bg-danger">
+                <AiOutlineMinus className="text-white text-center w-5 h-6" />
+              </button>
+              <span className="mx-3">{quantity}</span>
+              <button
                 onClick={() => {
                   setQuantity(prev => prev + 1)
                 }}
-              />
-            </button>
+                className="bg-success w-8 h-8 flex items-center justify-center">
+                <AiOutlinePlus className="text-white text-center w-7 h-7" />
+              </button>
+            </div>
+            <div className="w-full flex gap-4 justify-end">
+              <Button className="w-1/2 whitespace-nowrap mobile:w-auto tablet:w-1/2 p-0" variant={"cta"}>
+                Add to cart
+              </Button>
+              <Button className="w-1/2 whitespace-nowrap mobile:w-auto tablet:w-1/2 p-0" variant={"cta"}>
+                Buy
+              </Button>
+            </div>
           </div>
-          <div className="w-full flex gap-7 justify-end">
-            <Button className="tablet:w-1/2" variant={"cta"}>
-              {" "}
-              Add to cart
-            </Button>
-            <Button className="tablet:w-1/2" variant={"cta"}>
-              Buy
-            </Button>
-          </div>
-        </div>
-        {/*End of button container */}
+        </article>
       </div>
-      {/* End of about item container */}
-    </section>
+    </div>
   )
 }
 
 export default Product
+
+
