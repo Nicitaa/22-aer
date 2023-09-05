@@ -24,8 +24,8 @@ const GridView = ({ products }: { products: Product[] }) => {
               height={720}
             />
           </Link>
-          <div className="font-primary absolute bottom-0 flex w-full justify-between bg-gray-800 bg-opacity-50  px-1 text-[14px] capitalize text-white tablet:text-xs laptop:text-md ">
-            <span>{product.title}</span>
+          <div className="font-primary truncate flex-nowrap absolute bottom-0 flex w-full justify-between bg-gray-800 bg-opacity-50  px-1 text-[14px] capitalize text-white tablet:text-xs laptop:text-md ">
+            <span className="truncate">{product.title}</span>
             <span className="text-cta">{priceFormatter(product.price)}</span>
           </div>
         </section>
