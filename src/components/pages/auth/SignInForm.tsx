@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Checkbox, Input } from "../../ui"
 import { useState } from "react"
 import { Button } from "~/components/ui/Button"
@@ -8,16 +9,11 @@ function SignInForm() {
   const [rememberMe, setRememberMe] = useState(false)
   return (
     <form action="#" className="w-full space-y-4">
-      <Input
-        placeholder="Email"
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
+      <Input placeholder="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
       <div className="flex relative items-center">
         <Input
           placeholder="Password"
-          type='password'
+          type="password"
           value={password}
           inputError="Enter valid email"
           onChange={e => setPassword(e.target.value)}
@@ -31,8 +27,13 @@ function SignInForm() {
             onChange={() => setRememberMe(prevValue => !prevValue)}
           />
         </div>
+        <Link href="./recover" className="text-cta">
+          Forgot Password?
+        </Link>
       </div>
-      <Button className="w-full" variant='cta'>Login</Button>
+      <Button className="w-full" variant="cta">
+        Login
+      </Button>
     </form>
   )
 }
