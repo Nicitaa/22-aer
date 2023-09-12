@@ -11,35 +11,50 @@ export const signInSchema = z.object({
 export const recoverAccountSchema = z.object({
   email: z.string().email(),
 })
-function validateEmail(email: string): string {
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+function validateEmail(email: string): string[] {
+  const errors: string[] = []
+  // Check if the email is empty
   if (!email) {
-    return "Email is required"
-  } else if (!emailRegex.test(email)) {
-    return "Please enter a valid email address"
+    errors.push("Email address is required.")
   }
-  return ""
+
+  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+  if (!emailRegex.test(email)) {
+    errors.push("Invalid email address format.")
+  }
+  return errors
 }
-function validatePassword(password: string): string {
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
+function validatePassword(password: string): string[] {
+  const errors: string[] = []
+
+  // Check if the password is empty
   if (!password) {
-    return "Password is required"
-  } else if (!passwordRegex.test(password)) {
-    return "Password requires a number, lowercase letter, uppercase letter, and must be atleast 8 characters long"
+    errors.push("Password is required.")
   }
-  return ""
-}
-function validateRepeatPassword(password: string, repeatPassword: string): string {
-  if (!repeatPassword) {
-    return "Repeat password is required"
+
+  // Check password length
+  if (password.length < 8) {
+    errors.push("Password must be at least 8 characters long.")
   }
-  else if (password !== repeatPassword) {
-    return "The password and repeat password must be the same"
+
+  // Check for an uppercase, lower case, and a number/digit.
+
+  const passwordRegex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/
+  if (!passwordRegex.test(password)) {
+    errors.push("Password requires a number, lowercase letter, uppercase letter, and must be atleast 8 characters long")
   }
-  return ""
+  return errors
 }
-export {
-  validateEmail,
-  validatePassword,
-  validateRepeatPassword,
+function validateRepeatPassword(password: string, repeatPassword: string): string[] {
+  const errors: string[] = []
+  // Check if the password and repeatPassword are empty
+  if (!password || !repeatPassword) {
+    errors.push("Both password and repeat password are required.")
+  }
+  // Check if the passwords match
+  if (password !== repeatPassword) {
+    errors.push("Passwords do not match.")
+  }
+  return errors
 }
+export { validateEmail, validatePassword, validateRepeatPassword }
