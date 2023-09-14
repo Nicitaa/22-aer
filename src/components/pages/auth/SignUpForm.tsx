@@ -1,10 +1,8 @@
 import React, { useState } from "react"
 import { Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
-import { validateEmail, validatePassword, validateRepeatPassword } from "~/utils/auth"
 import { api } from "~/utils/api"
 //import { useFormValidation } from "~/hooks/useFormValidation"
-import { useRouter } from "next/router"
 import { signIn } from "next-auth/react"
 
 function SignUpForm() {
@@ -14,7 +12,6 @@ function SignUpForm() {
   const [repeatPassword, setRepeatPassword] = useState("")
 
   const [rememberMe, setRememberMe] = useState(false)
-  const router = useRouter()
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   }
@@ -39,7 +36,6 @@ function SignUpForm() {
         console.error(error)
       })
   }
-  const [enableValidation, setEnableValidation] = useState(false)
 
   /* const { emailValidationData } = useFormValidation({
     email,
@@ -49,9 +45,6 @@ function SignUpForm() {
   })*/
 
   const createUserMutation = api.credentials.createUser.useMutation({})
-  const validateInputs = () => {
-    return validateEmail(email) && validatePassword(password) && validateRepeatPassword(password, repeatPassword)
-  }
   //useEffect used to submit form when the email is finished checking but make sure to validate others
   const inputs = [
     <Input value={email} type="email" id="email" placeholder="Email" onChange={handleEmailChange} key="Email" />,

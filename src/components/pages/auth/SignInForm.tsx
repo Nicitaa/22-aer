@@ -2,7 +2,6 @@ import Link from "next/link"
 import { Checkbox, Input } from "../../ui"
 import { useState } from "react"
 import { AuthForm } from "."
-import { validateEmail, validatePassword } from "~/utils/auth"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
 
@@ -30,11 +29,6 @@ function SignInForm() {
       })
 
     return
-  }
-  const [enableValidation, setEnableValidation] = useState(false)
-
-  const validateInputs = () => {
-    return validateEmail(email) && validatePassword(password)
   }
 
   const inputs = [
