@@ -2,7 +2,7 @@ import React, { ReactNode } from "react"
 import { ClientSafeProvider, LiteralUnion, signIn } from "next-auth/react"
 import { BuiltInProviderType } from "next-auth/providers"
 import { Button } from "~/components/ui"
-import { AiOutlineFacebook, AiOutlineGithub, AiOutlineGoogle } from "react-icons/ai"
+import {BiLogoFacebook, BiLogoGithub, BiLogoGoogle } from "react-icons/bi"
 import { useRouter } from "next/router"
 
 interface AuthContainerProps {
@@ -16,11 +16,11 @@ export default function AuthContainer({ children, title, footerHelp, providers }
   function getProviderIcon(provider: ClientSafeProvider) {
     const providerIcon =
       provider.id === "google" ? (
-        <AiOutlineGoogle className="text-primary-foreground" size={42} />
+        <BiLogoGoogle className="text-primary-foreground" size={42} />
       ) : provider.id === "facebook" ? (
-        <AiOutlineFacebook className="text-primary-foreground" size={42} />
+        <BiLogoFacebook className="text-primary-foreground" size={42} />
       ) : (
-        <AiOutlineGithub className="text-primary-foreground" size={42} />
+        <BiLogoGithub className="text-primary-foreground" size={42} />
       )
     return providerIcon
   }
