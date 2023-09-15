@@ -15,7 +15,7 @@ interface SendRecoveryEmailParams {
 export async function sendVerificationEmail({ email, verificationLink }: SendVerificationEmailParams) {
   const msg = {
     to: email,
-    from: "arifmassih6@gmail.com", // Change this to your sender email
+    from: process.env.SENDGRID_EMAIL_ADDRESS as string, // Change this to your sender email
     subject: "Verify Your Email",
     html: `<p>Click the following link to verify your email:</p>
            <a href="${verificationLink}">${verificationLink}</a>`,
@@ -34,7 +34,7 @@ export async function sendVerificationEmail({ email, verificationLink }: SendVer
 export function sendRecoveryEmail({ email, recoveryLink }: SendRecoveryEmailParams) {
   const msg = {
     to: email,
-    from: "arifmassih6@gmail.com", // Change this to your sender email
+    from: process.env.SENDGRID_EMAIL_ADDRESS as string, // Change this to your sender email
     subject: "Recover Your Account",
     html: `<p>Click the following link to recover your account:</p>
            <a href="${recoveryLink}">${recoveryLink}</a>`,

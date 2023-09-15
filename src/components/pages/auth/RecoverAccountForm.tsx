@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Input } from "../../ui"
+import { Button, Input } from "../../ui"
 import AuthForm from "./AuthForm"
 import { api } from "~/utils/api"
 
@@ -21,9 +21,9 @@ function RecoverAccountForm() {
   }
   const inputs = [
     <Input id="email" type="email" placeholder="Email" value={email} onChange={handleEmailChange} key="Email" />,
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
+    <Button type="submit" className="w-full" key="submit">
       Send Email
-    </button>,
+    </Button>,
   ]
   return (
     <AuthForm

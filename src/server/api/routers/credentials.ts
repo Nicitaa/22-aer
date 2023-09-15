@@ -91,9 +91,6 @@ export const credentialsRouter = createTRPCRouter({
     const recoveryLink = `${process.env.NEXTAUTH_URL as string}/auth/change-password?recoveryToken=${encodeURIComponent(
       recoveryToken
     )}`
-    console.log(
-      "**************************************************************************************************************"
-    )
 
     sendRecoveryEmail({ email: washedInput.email, recoveryLink })
     return { status: 201, message: "Token created successfully", result: recoveryToken }
@@ -106,32 +103,4 @@ export const credentialsRouter = createTRPCRouter({
     return "you can now see this secret message!"
   }),
 })
-/*
 
-import { z } from "zod"
-import { createTRPCRouter, publicProcedure, protectedProcedure } from "~/server/api/trpc"
-// Define a validation schema for the input parameter
-const emailExistsInput = z.object({
-  email: z.string().email(),
-})
-
-// Define a validation schema for the output result
-const emailExistsOutput = z.boolean()
-
-export const credentialsRouter = createTRPCRouter({
-  getEmailExists: publicProcedure.query(opts => {
-    // Validate the input using the input schema
-    const validatedInput = emailExistsInput.parse(opts.input)
-
-    return {
-      input: validatedInput,
-      result: opts.ctx.prisma.user
-        .findUnique({
-          where: { email: validatedInput.email },
-        })
-        .then(user => !!user), // Convert to boolean
-      output: emailExistsOutput, // Validate the output using zod
-    }
-  }),
-})
-*/

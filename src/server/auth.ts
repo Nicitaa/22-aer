@@ -1,7 +1,6 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { type GetServerSidePropsContext } from "next"
 import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
-//import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -88,7 +87,7 @@ export const authOptions: NextAuthOptions = {
             message: "Invalid username or password",
           }
         }
-        const isValidPassword = await verify(user.password as string, creds.password)
+        const isValidPassword = await verify(user.password, creds.password)
         if (!isValidPassword) {
           return null
         }
@@ -104,15 +103,8 @@ export const authOptions: NextAuthOptions = {
       },
     }),
 
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
+    
+      //follow link for more providers https://next-auth.js.org/providers/github
   ],
   session: {
     strategy: "jwt",

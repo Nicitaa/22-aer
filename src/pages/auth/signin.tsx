@@ -9,7 +9,7 @@ import { authOptions } from "../../server/auth"
 import { SignInForm } from "~/components"
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const customContent = (
+  const footerHelp = (
     <p>
       New to Aer?&nbsp;
       <span className="text-cta">
@@ -20,37 +20,11 @@ export default function SignIn({ providers }: InferGetServerSidePropsType<typeof
 
   return (
     <>
-      <AuthContainer providers={providers} title="Login" customContent={customContent}>
+      <AuthContainer providers={providers} title="Login" footerHelp={footerHelp}>
         <SignInForm />
       </AuthContainer>
     </>
-  )
-  {
-    /**
-    <div
-      className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
-     tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
-      <h1 className="text-md font-bold text-primary">Login</h1>
-      <SignInForm />
-      <p className="font-bold">or</p>
-      <Button variant="continue-with">
-        Continue with Google
-        <AiOutlineGoogle className="text-primary-foreground" size={42} />
-      </Button>
-      {/* {Object.values(providers).map(provider => (
-        <ProviderButton provider={provider} key={provider.id} />
-      ))} 
-      <p>
-        New to Aer?{" "}
-        <span className="text-cta">
-          <Link href="./signup">Register</Link>
-        </span>
-      </p>
-    </div>
-  */
-  }
-}
-
+  )}
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)
 

@@ -2,13 +2,14 @@
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../../server/auth"
 import Link from "next/link"
+
+import { authOptions } from "../../server/auth"
 import SignUpForm from "~/components/pages/auth/SignUpForm"
 import AuthContainer from "~/components/pages/auth/AuthContainer"
 
 function SignUp({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const customContent = (
+  const footerHelp = (
     <p>
       Already have an account?&nbsp;
       <span className="text-cta">
@@ -18,7 +19,7 @@ function SignUp({ providers }: InferGetServerSidePropsType<typeof getServerSideP
   )
   return (
     <>
-      <AuthContainer providers={providers} title="Login" customContent={customContent}>
+      <AuthContainer providers={providers} title="Login" footerHelp={footerHelp}>
         <SignUpForm />
       </AuthContainer>
     </>

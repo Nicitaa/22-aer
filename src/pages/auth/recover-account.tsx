@@ -7,9 +7,8 @@ import Link from "next/link"
 import RecoverAccountForm from "~/components/pages/auth/RecoverAccountForm"
 import { AuthContainer } from "~/components/pages/auth/"
 
-//eslint-disable-next-line @typescript-eslint/no-unused-vars
 function RecoverAccount({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const customContent = (
+  const footerHelp = (
     <p>
       Remember password?&nbsp;
       <span className="text-cta">
@@ -20,7 +19,7 @@ function RecoverAccount({ providers }: InferGetServerSidePropsType<typeof getSer
 
   return (
     <>
-      <AuthContainer providers={providers} title="Recover Account" customContent={customContent}>
+      <AuthContainer providers={providers} title="Recover Account" footerHelp={footerHelp}>
         <RecoverAccountForm />
       </AuthContainer>
     </>

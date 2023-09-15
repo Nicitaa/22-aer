@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { Checkbox, Input } from "../../ui"
+import { Button, Checkbox, Input } from "../../ui"
 import { AuthForm } from "."
 import { api } from "~/utils/api"
-//import { useFormValidation } from "~/hooks/useFormValidation"
 import { signIn } from "next-auth/react"
 
 function SignUpForm() {
@@ -37,15 +36,8 @@ function SignUpForm() {
       })
   }
 
-  /* const { emailValidationData } = useFormValidation({
-    email,
-    password,
-    repeatPassword,
-    enableValidation,
-  })*/
 
   const createUserMutation = api.credentials.createUser.useMutation({})
-  //useEffect used to submit form when the email is finished checking but make sure to validate others
   const inputs = [
     <Input value={email} type="email" id="email" placeholder="Email" onChange={handleEmailChange} key="Email" />,
     <Input
@@ -73,10 +65,10 @@ function SignUpForm() {
         }}
       />
     </div>,
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
-      Register
-    </button>,
-  ]
+    <Button type="submit" className="w-full" key="submit">
+    Register
+  </Button>,
+]
   return (
     <AuthForm
       inputs={inputs}

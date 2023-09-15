@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Checkbox, Input } from "../../ui"
+import { Button, Checkbox, Input } from "../../ui"
 import { useState } from "react"
 import { AuthForm } from "."
 import { signIn } from "next-auth/react"
@@ -49,14 +49,14 @@ function SignInForm() {
           setRememberMe(prevValue => !prevValue)
         }}
       />
-      <Link href="./recover" className="text-cta text-xs">
+      <Link href="./recover-account" className="text-cta text-xs">
         Forgot Password?
       </Link>
     </div>,
 
-    <button type="submit" className="p-4 w-full bg-cta rounded-lg text-md" key="submit">
+    <Button type="submit" className="w-full" key="submit">
       Login
-    </button>,
+    </Button>,
   ]
   return <AuthForm inputs={inputs} onSubmit={handleSubmit} />
 }

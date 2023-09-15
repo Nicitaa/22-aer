@@ -9,10 +9,10 @@ interface AuthContainerProps {
   children: ReactNode
   title: string
   providers: Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider> | never[]
-  customContent?: ReactNode
+  footerHelp?: ReactNode
 }
 
-export default function AuthContainer({ children, title, customContent, providers }: AuthContainerProps) {
+export default function AuthContainer({ children, title, footerHelp, providers }: AuthContainerProps) {
   function getProviderIcon(provider: ClientSafeProvider) {
     const providerIcon =
       provider.id === "google" ? (
@@ -48,7 +48,7 @@ export default function AuthContainer({ children, title, customContent, provider
             </Button>
           )
       )}
-      {customContent}
+      {footerHelp}
     </div>
   )
 }
