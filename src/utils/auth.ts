@@ -11,13 +11,14 @@ export const signInSchema = z.object({
 export const recoverAccountSchema = z.object({
   email: z.string().email(),
 })
+/**NOTE: The validation functions below return an array of errors. If the array is empty, it is a valid email/password/repeatpassword */
 function validateEmail(email: string): string[] {
   const errors: string[] = []
   // Check if the email is empty
   if (!email) {
     errors.push("Email address is required.")
   }
-
+//regex tests if email is proper format
   const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
   if (!emailRegex.test(email)) {
     errors.push("Invalid email address format.")

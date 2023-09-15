@@ -55,7 +55,9 @@ export const credentialsRouter = createTRPCRouter({
   authorizeUserLogin: publicProcedure.input(signUpSchema).mutation(async ({ input, ctx }) => {
     input = { ...input, email: input.email.toLowerCase() }
     const washedInput = signUpSchema.parse(input)
-    if (!validateEmail(washedInput.email) || !validatePassword(washedInput.password)) {
+    const emailErrors = validateEmail(washedInput.email)
+    const passwordErrors = validatePassword(washedInput.password)
+    if (emailErrors.length > 0|| passwordErrors.length > 0) {
       return "Error, the field information is not valid."
     }
     //check if email exists in db
@@ -73,7 +75,8 @@ export const credentialsRouter = createTRPCRouter({
   }),
   recoverPassword: publicProcedure.input(recoverAccountSchema).mutation(async ({ input, ctx }) => {
     const washedInput = recoverAccountSchema.parse(input)
-    if (!validateEmail(washedInput.email)) {
+    const emailErrors = validateEmail(washedInput.email)
+    if (emailErrors.length > 0) {
       return "Error, the email information is not valid."
     }
     // Generate a new recovery token and associate it with the user
