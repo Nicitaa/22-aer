@@ -7,7 +7,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { verificationToken } = req.query
   console.log(verificationToken)
   if (!verificationToken || typeof verificationToken !== "string") {
-    return res.status(400).json({ error: "Invalid token" })
+    return res.status(400).json({ message: "Invalid token" })
   }
 
   try {
@@ -17,7 +17,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     })
 
     if (!verificationToken) {
-      return res.status(404).json({ error: "Verification token not found" })
+      return res.status(404).json({ message: "Verification token not found" })
     }
 
     // Update the user's email verification status
@@ -29,7 +29,7 @@ const verifyHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).json({ success: true })
   } catch (error) {
     console.error(error)
-    return res.status(500).json({ error: "Internal server error" })
+    return res.status(500).json({ message: "Internal server error" })
   }
 }
 

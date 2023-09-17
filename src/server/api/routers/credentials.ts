@@ -57,7 +57,7 @@ export const credentialsRouter = createTRPCRouter({
     const washedInput = signUpSchema.parse(input)
     const emailErrors = validateEmail(washedInput.email)
     const passwordErrors = validatePassword(washedInput.password)
-    if (emailErrors.length > 0|| passwordErrors.length > 0) {
+    if (emailErrors.length > 0 || passwordErrors.length > 0) {
       return "Error, the field information is not valid."
     }
     //check if email exists in db
@@ -96,7 +96,7 @@ export const credentialsRouter = createTRPCRouter({
     )}`
 
     sendRecoveryEmail({ email: washedInput.email, recoveryLink })
-    return { status: 201, message: "Token created successfully", result: recoveryToken }
+    return { status: 201, message: "Token created successfully" }
   }),
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany()
@@ -106,4 +106,3 @@ export const credentialsRouter = createTRPCRouter({
     return "you can now see this secret message!"
   }),
 })
-

@@ -80,12 +80,7 @@ export const authOptions: NextAuthOptions = {
           where: { email: creds.email },
         })
         if (!user) {
-          return {
-            status: 404,
-            id: "",
-            error: "Invalid username or password",
-            message: "Invalid username or password",
-          }
+          return null
         }
         const isValidPassword = await verify(user.password as string, creds.password)
         if (!isValidPassword) {
@@ -103,11 +98,10 @@ export const authOptions: NextAuthOptions = {
       },
     }),
 
-    
-      //follow link for more providers https://next-auth.js.org/providers/github
+    //follow link for more providers https://next-auth.js.org/providers/github
   ],
   session: {
-    strategy: "database",
+    strategy: "jwt",
   },
 }
 
