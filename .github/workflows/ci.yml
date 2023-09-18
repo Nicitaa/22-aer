@@ -33,7 +33,7 @@ jobs:
         run: bun i
 
       - name: Building
-        run: bun build src/main.tsx --outdir ./public
+        run: bun build src/pages/_app.tsx --outdir ./public
         env:
           DATABASE_URL: "http://localhost:3000"
           NEXTAUTH_SECRET: "random"
