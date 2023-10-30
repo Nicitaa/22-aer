@@ -2,6 +2,10 @@
 
 ![work in progress](https://i.imgur.com/UReasHi.png)
 
+<br/>
+<br/>
+<br/>
+
 # Clone repository
 
 ## Step 1.1 - clone repository (variant 1)
@@ -26,6 +30,8 @@ pnpm i
 pnpm dev
 ```
 
+<br/>
+<br/>
 <br/>
 
 ## Step 2 - setup .env
