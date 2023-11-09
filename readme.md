@@ -1,6 +1,6 @@
 # What inside? <br/> <sub> https://22-aer-nicitaa.vercel.app/ </sub>
 
-![work in progress](https://i.imgur.com/UReasHi.png)
+![22_aer](https://i.imgur.com/UReasHi.png)
 
 <br/>
 <br/>
