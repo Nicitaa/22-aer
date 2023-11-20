@@ -1,12 +1,13 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { type GetServerSidePropsContext } from "next"
 import { getServerSession, type NextAuthOptions, type DefaultSession } from "next-auth"
-//import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
-
+import CredentialsProvider from "next-auth/providers/credentials"
 import { env } from "~/env.mjs"
 import { prisma } from "~/server/db"
+import { signInSchema } from "~/utils/auth"
+import { verify } from "argon2"
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -35,19 +36,12 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
-  pages: {
-    //signIn: "/auth/signin"
-  },
-  callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
-  },
   adapter: PrismaAdapter(prisma),
+  callbacks: {},
+  pages: {
+    signIn: "/auth/signin",
+  },
+
   providers: [
     /*GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
@@ -61,16 +55,54 @@ export const authOptions: NextAuthOptions = {
       clientId: env.FACEBOOK_CLIENT_ID,
       clientSecret: env.FACEBOOK_CLIENT_SECRET,
     }),
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
+    CredentialsProvider({
+      // The name to display on the sign in form (e.g. 'Sign in with...')
+      name: "Credentials",
+      // The credentials is used to generate a suitable form on the sign in page.
+      // You can specify whatever fields you are expecting to be submitted.
+      // e.g. domain, username, password, 2FA token, etc.
+      // You can pass any HTML attribute to the <input> tag through the object.
+      credentials: {
+        email: { label: "Email", type: "email", placeholder: "Email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials, req) {
+        // You need to provide your own logic here that takes the credentials
+        // submitted and returns either a object representing a user or value
+        // that is false/null if the credentials are invalid.
+        // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
+        // You can also use the `req` object to obtain additional parameters
+        // (i.e., the request IP address)
+
+        const creds = signInSchema.parse(credentials)
+
+        const user = await prisma.user.findFirst({
+          where: { email: creds.email },
+        })
+        if (!user) {
+          return null
+        }
+        const isValidPassword = await verify(user.password as string, creds.password)
+        if (!isValidPassword) {
+          return null
+        }
+
+        const callbackUrl = new URLSearchParams(req.query).get("callbackUrl")
+        return {
+          id: user.id,
+          email: user.email,
+          error: null,
+          message: "Successfully signed in.",
+          callbackUrl: callbackUrl || "/", // Include callbackUrl in the response
+        }
+      },
+    }),
+
+    //follow link for more providers https://next-auth.js.org/providers/github
   ],
+  session: {
+    strategy: "jwt",
+  },
 }
 
 /**

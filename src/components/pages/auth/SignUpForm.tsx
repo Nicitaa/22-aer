@@ -1,50 +1,81 @@
 import React, { useState } from "react"
-import { Checkbox, Input } from "../../ui"
-import { Button } from "~/components/ui/Button"
+import { Button, Checkbox, Input } from "../../ui"
+import { AuthForm } from "."
+import { api } from "~/utils/api"
+import { signIn } from "next-auth/react"
 
 function SignUpForm() {
   const [email, setEmail] = useState("")
+
   const [password, setPassword] = useState("")
   const [repeatPassword, setRepeatPassword] = useState("")
 
   const [rememberMe, setRememberMe] = useState(false)
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+  const handleRepeatPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRepeatPassword(e.target.value)
+  }
+  const handleSubmit = () => {
+    createUserMutation
+      .mutateAsync({ email, password })
+      .then(res => {
+        console.log(res)
+        if (res.status === 201) {
+          signIn("credentials", { email, password, callbackUrl: "/auth/register-success" })
+            .then(res => console.log(res))
+            .catch(error => console.error(error))
+        }
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
 
+
+  const createUserMutation = api.credentials.createUser.useMutation({})
+  const inputs = [
+    <Input value={email} type="email" id="email" placeholder="Email" onChange={handleEmailChange} key="Email" />,
+    <Input
+      id="password"
+      type="password"
+      placeholder="Password"
+      value={password}
+      onChange={handlePasswordChange}
+      key="Password"
+    />,
+    <Input
+      id="repeatPassword"
+      type="password"
+      placeholder="Repeat Password"
+      value={repeatPassword}
+      onChange={handleRepeatPasswordChange}
+      key="Repeat Password"
+    />,
+    <div className="flex justify-start" key="Remember Me">
+      <Checkbox
+        label="Remember Me"
+        isChecked={rememberMe}
+        onChange={() => {
+          setRememberMe(prevValue => !prevValue)
+        }}
+      />
+    </div>,
+    <Button type="submit" className="w-full" key="submit">
+    Register
+  </Button>,
+]
   return (
-    <form action="#" className="w-full space-y-4">
-      <Input
-        placeholder="Email"
-        type="email"
-        id="sign-up-email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
-      <Input
-        placeholder="Password"
-        type='password'
-        id="sign-up-password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      />
-      <Input
-        placeholder="Repeat Password"
-        type='password'
-        id="sign-up-repeatPassword"
-        value={repeatPassword}
-        onChange={e => setRepeatPassword(e.target.value)}
-      />
-      <div className="flex justify-between items-center">
-        <div className="flex flex-row-reverse gap-1 items-center ">
-          <Checkbox
-            id="sign-up-rememberMe"
-            label="Remember me"
-            isChecked={rememberMe}
-            onChange={() => setRememberMe(prevValue => !prevValue)}
-          />
-        </div>
-        <Button variant='link'>Forgot password</Button>
-      </div>
-      <Button className="w-full" variant='cta'>Register</Button>
-    </form>
+    <AuthForm
+      inputs={inputs}
+      onSubmit={() => {
+        handleSubmit()
+      }}
+    />
   )
 }
 

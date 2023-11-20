@@ -24,6 +24,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string(),
     FACEBOOK_CLIENT_ID: z.string(),
     FACEBOOK_CLIENT_SECRET: z.string(),
+    SENDGRID_API_KEY: z.string(),
+    SENDGRID_EMAIL_ADDRESS: z.string().email()
   },
 
   /**
@@ -50,6 +52,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     FACEBOOK_CLIENT_ID: process.env.FACEBOOK_CLIENT_ID,
     FACEBOOK_CLIENT_SECRET: process.env.FACEBOOK_CLIENT_SECRET,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    SENDGRID_EMAIL_ADDRESS: process.env.SENDGRID_EMAIL_ADDRESS
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

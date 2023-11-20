@@ -2,32 +2,31 @@
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../../server/auth"
 import Link from "next/link"
-import SignUpForm from "~/components/pages/auth/SignUpForm"
 
-function Signup({}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+import { authOptions } from "../../server/auth"
+import SignUpForm from "~/components/pages/auth/SignUpForm"
+import AuthContainer from "~/components/pages/auth/AuthContainer"
+
+function SignUp({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const footerHelp = (
+    <p>
+      Already have an account?&nbsp;
+      <span className="text-cta">
+        <Link href="./signin">Login</Link>
+      </span>
+    </p>
+  )
   return (
-    <div
-      className="flex flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px] 
-    tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
-      <h1 className="text-md font-bold text-primary">Register</h1>
-      <SignUpForm />
-      <p className="font-bold">or</p>
-      {/* {Object.values(providers).map(provider => (
-      <ProviderButton provider={provider} key={provider.id} />
-      {/* ))} */}
-      <p>
-        Already have an account?{" "}
-        <span className="text-cta">
-          <Link href="./signin">{""}Login</Link>
-        </span>
-      </p>
-    </div>
+    <>
+      <AuthContainer providers={providers} title="Login" footerHelp={footerHelp}>
+        <SignUpForm />
+      </AuthContainer>
+    </>
   )
 }
 
-export default Signup
+export default SignUp
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)

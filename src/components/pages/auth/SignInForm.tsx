@@ -1,40 +1,64 @@
-import { Checkbox, Input } from "../../ui"
+import Link from "next/link"
+import { Button, Checkbox, Input } from "../../ui"
 import { useState } from "react"
-import { Button } from "~/components/ui/Button"
+import { AuthForm } from "."
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/router"
 
 function SignInForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
-  return (
-    <form action="#" className="w-full space-y-4">
-      <Input
-        placeholder="Email"
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+  const router = useRouter()
+  //because the query parameters are usually an array of strings, and you need to extract the actual string value you want to use.
+  const callbackUrl = Array.isArray(router.query.callbackUrl) ? router.query.callbackUrl[0] : router.query.callbackUrl
+
+  const handleSubmit = () => {
+    signIn("credentials", { email, password, callbackUrl: callbackUrl })
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+    return
+  }
+
+  const inputs = [
+    <Input type="email" id="email" placeholder="Email" value={email} onChange={handleEmailChange} key="Email" />,
+    <Input
+      type="password"
+      id="password"
+      placeholder="Password"
+      value={password}
+      onChange={handlePasswordChange}
+      key="Password"
+    />,
+    <div className="flex justify-between items-center" key="Remember Me and Recover">
+      <Checkbox
+        label="Remember Me"
+        isChecked={rememberMe}
+        onChange={() => {
+          setRememberMe(prevValue => !prevValue)
+        }}
       />
-      <div className="flex relative items-center">
-        <Input
-          placeholder="Password"
-          type='password'
-          value={password}
-          inputError="Enter valid email"
-          onChange={e => setPassword(e.target.value)}
-        />
-      </div>
-      <div className="flex justify-between items-center">
-        <div className="flex flex-row-reverse gap-1 items-center ">
-          <Checkbox
-            label="Remember me"
-            isChecked={rememberMe}
-            onChange={() => setRememberMe(prevValue => !prevValue)}
-          />
-        </div>
-      </div>
-      <Button className="w-full" variant='cta'>Login</Button>
-    </form>
-  )
+      <Link href="./recover-account" className="text-cta text-xs">
+        Forgot Password?
+      </Link>
+    </div>,
+
+    <Button type="submit" className="w-full" key="submit">
+      Login
+    </Button>,
+  ]
+  return <AuthForm inputs={inputs} onSubmit={handleSubmit} />
 }
 
 export default SignInForm

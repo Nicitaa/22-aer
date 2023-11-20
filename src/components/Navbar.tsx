@@ -1,6 +1,8 @@
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { useRouter } from "next/router"
 import { useState } from "react"
+import { signIn, signOut, useSession } from "next-auth/react"
+
 import { AnimatePresence, motion } from "framer-motion"
 import { useMainText, useSlider3D } from "~/hooks"
 import { Button } from "./ui/Button"
@@ -47,13 +49,10 @@ export function Navbar() {
       label: "Cart",
       href: "/cart",
     },
-    {
-      label: "Login",
-      href: "/auth/signin",
-    },
   ]
 
   const router = useRouter()
+  const { data: sessionData } = useSession()
 
   return (
     <>
@@ -77,6 +76,14 @@ export function Navbar() {
                 </Button>
               </li>
             ))}
+            <li className="relative">
+              <Button
+                active="inactive"
+                variant="nav-link"
+                onClick={sessionData ? () => void signOut() : () => void signIn()}>
+                {sessionData ? "Sign out" : "Sign in"}
+              </Button>
+            </li>
           </ul>
 
           {/* HAMBURGER-ICON */}
@@ -114,6 +121,16 @@ export function Navbar() {
                   </Button>
                 </li>
               ))}
+              <li className="relative">
+                <Button
+                  className="text-lg"
+                  variant="nav-link"
+                  onClick={sessionData ? () => void signOut() : () => void signIn()}
+                  active="inactive">
+                  {" "}
+                  {sessionData ? "Sign out" : "Sign in"}
+                </Button>
+              </li>
             </ul>
           </motion.div>
         )}

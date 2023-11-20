@@ -3,38 +3,28 @@ import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "nex
 import { getProviders } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import Link from "next/link"
-
-import { AiOutlineGoogle } from "react-icons/ai"
+import AuthContainer from "~/components/pages/auth/AuthContainer"
 
 import { authOptions } from "../../server/auth"
 import { SignInForm } from "~/components"
-import { Button } from "~/components/ui"
 
-export default function SignIn({}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  return (
-    <div
-      className="flex text-md flex-col items-center w-[456px] max-w-[80vw] mx-auto px-4 py-2 rounded-[12px]
-     tablet:px-6 tablet:py-4 laptop:px-10 laptop:py-6 space-y-4 bg-secondary ">
-      <h1 className="text-md font-bold text-primary">Login</h1>
-      <SignInForm />
-      <p className="font-bold">or</p>
-      <Button variant="continue-with">
-        Continue with Google
-        <AiOutlineGoogle className="text-primary-foreground" size={42} />
-      </Button>
-      {/* {Object.values(providers).map(provider => (
-        <ProviderButton provider={provider} key={provider.id} />
-      ))} */}
-      <p>
-        New to Aer?{" "}
-        <span className="text-cta">
-          <Link href="./signup">Register</Link>
-        </span>
-      </p>
-    </div>
+export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const footerHelp = (
+    <p>
+      New to Aer?&nbsp;
+      <span className="text-cta">
+        <Link href="./signup">Register</Link>
+      </span>
+    </p>
   )
-}
 
+  return (
+    <>
+      <AuthContainer providers={providers} title="Login" footerHelp={footerHelp}>
+        <SignInForm />
+      </AuthContainer>
+    </>
+  )}
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions)
 
