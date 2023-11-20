@@ -23,6 +23,7 @@ export default {
       desktop: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
+
     extend: {
       backgroundImage: {
         img: "url('/background.webp')",

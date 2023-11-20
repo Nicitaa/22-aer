@@ -5,7 +5,17 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useMainText, useSlider3D } from "~/hooks"
 import { Button } from "./ui/Button"
 import useMain from "~/hooks/useMain"
-
+import { PiShoppingCartFill } from "react-icons/pi"
+const CartIcon = () => {
+  return (
+    <div className="absolute top-1 -right-6">
+      <PiShoppingCartFill className=" relative w-6 h-6" />
+      <div className="absolute -bottom-1 -right-1 rounded-full w-4 h-4 block bg-cta text-[12px] font-bold text-center">
+        1
+      </div>
+    </div>
+  )
+}
 export function Navbar() {
   const [isHamburgerMenu, setHamburgerMenu] = useState<boolean>(false)
   const slider3D = useSlider3D()
@@ -75,6 +85,7 @@ export function Navbar() {
                   href={navLink.href}>
                   {navLink.label}
                 </Button>
+                {navLink.label === "Cart" && <CartIcon />}
               </li>
             ))}
           </ul>
